@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 
@@ -19,7 +19,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
 
   // get the collection format
   collectionFormat =
-      (collectionFormat.isEmpty) ? "csv" : collectionFormat; // default: csv
+      collectionFormat.isEmpty ? "csv" : collectionFormat; // default: csv
 
   if (collectionFormat == "multi") {
     return values.map((v) => new QueryParam(name, parameterToString(v)));

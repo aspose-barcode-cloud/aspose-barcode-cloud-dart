@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class FilesUploadResult {
   /* List of uploaded file names */
@@ -15,7 +15,6 @@ class FilesUploadResult {
   }
 
   FilesUploadResult.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     uploaded =
         (json['uploaded'] as List).map((item) => item as String).toList();
     errors = Error.listFromJson(json['errors']);
@@ -26,9 +25,7 @@ class FilesUploadResult {
   }
 
   static List<FilesUploadResult> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new FilesUploadResult.fromJson(value)).toList();
+    return json.map((value) => new FilesUploadResult.fromJson(value)).toList();
   }
 
   static Map<String, FilesUploadResult> mapFromJson(

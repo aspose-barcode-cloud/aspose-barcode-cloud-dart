@@ -1,4 +1,4 @@
-library barcode.api;
+library aspose_barcode_cloud.api;
 
 import 'dart:async';
 import 'dart:convert';

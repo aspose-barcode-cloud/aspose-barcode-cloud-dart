@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class StorageApi {
   final ApiClient apiClient;
@@ -10,8 +10,6 @@ class StorageApi {
   ///
   Future<DiscUsage?> getDiscUsage({String? storageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
 
     // create path and map variables
     String requestPath = "/barcode/storage/disc".replaceAll("{format}", "json");
@@ -35,7 +33,7 @@ class StorageApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -56,11 +54,6 @@ class StorageApi {
   Future<FileVersions?> getFileVersions(String path,
       {String? storageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/version/{path}"
@@ -86,7 +79,7 @@ class StorageApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -108,11 +101,6 @@ class StorageApi {
   Future<ObjectExist?> objectExists(String path,
       {String? storageName, String? versionId}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/exist/{path}"
@@ -142,7 +130,7 @@ class StorageApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -162,11 +150,6 @@ class StorageApi {
   ///
   Future<StorageExist?> storageExists(String storageName) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (storageName == null) {
-      throw new ApiException(0, "Missing required param: storageName");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/{storageName}/exist"
@@ -188,7 +171,7 @@ class StorageApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,

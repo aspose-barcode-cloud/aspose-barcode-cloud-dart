@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class GeneratorParams {
   /* Type of barcode to generate. */
@@ -168,7 +168,6 @@ class GeneratorParams {
   }
 
   GeneratorParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     typeOfBarcode = new EncodeBarcodeType.fromJson(json['typeOfBarcode']);
     text = json['text'];
     twoDDisplayText = json['twoDDisplayText'];
@@ -297,9 +296,7 @@ class GeneratorParams {
   }
 
   static List<GeneratorParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new GeneratorParams.fromJson(value)).toList();
+    return json.map((value) => new GeneratorParams.fromJson(value)).toList();
   }
 
   static Map<String, GeneratorParams> mapFromJson(

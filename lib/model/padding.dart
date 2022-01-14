@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class Padding {
   /* Left padding. */
@@ -21,7 +21,6 @@ class Padding {
   }
 
   Padding.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     left = json['left'] == null ? null : json['left'].toDouble();
     right = json['right'] == null ? null : json['right'].toDouble();
     top = json['top'] == null ? null : json['top'].toDouble();
@@ -33,9 +32,7 @@ class Padding {
   }
 
   static List<Padding> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new Padding.fromJson(value)).toList();
+    return json.map((value) => new Padding.fromJson(value)).toList();
   }
 
   static Map<String, Padding> mapFromJson(

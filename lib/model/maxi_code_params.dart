@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class MaxiCodeParams {
   /* Height/Width ratio of 2D BarCode module. */
@@ -15,7 +15,6 @@ class MaxiCodeParams {
   }
 
   MaxiCodeParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     encodeMode = json['encodeMode'];
@@ -26,9 +25,7 @@ class MaxiCodeParams {
   }
 
   static List<MaxiCodeParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new MaxiCodeParams.fromJson(value)).toList();
+    return json.map((value) => new MaxiCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, MaxiCodeParams> mapFromJson(

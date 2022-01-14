@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class CodabarParams {
   /* Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. */
@@ -18,7 +18,6 @@ class CodabarParams {
   }
 
   CodabarParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     checksumMode = new CodabarChecksumMode.fromJson(json['checksumMode']);
     startSymbol = new CodabarSymbol.fromJson(json['startSymbol']);
     stopSymbol = new CodabarSymbol.fromJson(json['stopSymbol']);
@@ -33,9 +32,7 @@ class CodabarParams {
   }
 
   static List<CodabarParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new CodabarParams.fromJson(value)).toList();
+    return json.map((value) => new CodabarParams.fromJson(value)).toList();
   }
 
   static Map<String, CodabarParams> mapFromJson(

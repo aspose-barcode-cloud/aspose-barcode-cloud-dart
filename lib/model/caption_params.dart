@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class CaptionParams {
   /* Caption text. */
@@ -30,7 +30,6 @@ class CaptionParams {
   }
 
   CaptionParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     text = json['text'];
     alignment = new TextAlignment.fromJson(json['alignment']);
     color = json['color'];
@@ -53,9 +52,7 @@ class CaptionParams {
   }
 
   static List<CaptionParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new CaptionParams.fromJson(value)).toList();
+    return json.map((value) => new CaptionParams.fromJson(value)).toList();
   }
 
   static Map<String, CaptionParams> mapFromJson(

@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class FontParams {
   /* Font family. */
@@ -18,7 +18,6 @@ class FontParams {
   }
 
   FontParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     family = json['family'];
     size = json['size'] == null ? null : json['size'].toDouble();
     style = new FontStyle.fromJson(json['style']);
@@ -29,9 +28,7 @@ class FontParams {
   }
 
   static List<FontParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new FontParams.fromJson(value)).toList();
+    return json.map((value) => new FontParams.fromJson(value)).toList();
   }
 
   static Map<String, FontParams> mapFromJson(

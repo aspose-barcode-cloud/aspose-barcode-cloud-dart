@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class AustralianPostParams {
   /* Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\" */
@@ -15,7 +15,6 @@ class AustralianPostParams {
   }
 
   AustralianPostParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     encodingTable =
         new CustomerInformationInterpretingType.fromJson(json['encodingTable']);
     shortBarHeight = json['shortBarHeight'] == null
@@ -28,11 +27,9 @@ class AustralianPostParams {
   }
 
   static List<AustralianPostParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json
-            .map((value) => new AustralianPostParams.fromJson(value))
-            .toList();
+    return json
+        .map((value) => new AustralianPostParams.fromJson(value))
+        .toList();
   }
 
   static Map<String, AustralianPostParams> mapFromJson(

@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class FolderApi {
   final ApiClient apiClient;
@@ -11,14 +11,6 @@ class FolderApi {
   Future copyFolder(String srcPath, String destPath,
       {String? srcStorageName, String? destStorageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (srcPath == null) {
-      throw new ApiException(0, "Missing required param: srcPath");
-    }
-    if (destPath == null) {
-      throw new ApiException(0, "Missing required param: destPath");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/copy/{srcPath}"
@@ -50,7 +42,7 @@ class FolderApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -70,11 +62,6 @@ class FolderApi {
   ///
   Future createFolder(String path, {String? storageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/{path}"
@@ -100,7 +87,7 @@ class FolderApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -121,11 +108,6 @@ class FolderApi {
   Future deleteFolder(String path,
       {String? storageName, bool? recursive}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/{path}"
@@ -155,7 +137,7 @@ class FolderApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
@@ -175,11 +157,6 @@ class FolderApi {
   ///
   Future<FilesList?> getFilesList(String path, {String? storageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/{path}"
@@ -205,7 +182,7 @@ class FolderApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -226,14 +203,6 @@ class FolderApi {
   Future moveFolder(String srcPath, String destPath,
       {String? srcStorageName, String? destStorageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (srcPath == null) {
-      throw new ApiException(0, "Missing required param: srcPath");
-    }
-    if (destPath == null) {
-      throw new ApiException(0, "Missing required param: destPath");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/move/{srcPath}"
@@ -265,7 +234,7 @@ class FolderApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,

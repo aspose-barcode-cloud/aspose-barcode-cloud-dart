@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class MacroCharacter {
   /// The underlying value of this enum member.

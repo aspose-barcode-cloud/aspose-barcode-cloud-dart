@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 abstract class Authentication {
   /// Apply authentication settings to header and query params.

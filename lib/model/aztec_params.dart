@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class AztecParams {
   /* Height/Width ratio of 2D BarCode module. */
@@ -21,7 +21,6 @@ class AztecParams {
   }
 
   AztecParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     errorLevel = json['errorLevel'];
@@ -39,9 +38,7 @@ class AztecParams {
   }
 
   static List<AztecParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new AztecParams.fromJson(value)).toList();
+    return json.map((value) => new AztecParams.fromJson(value)).toList();
   }
 
   static Map<String, AztecParams> mapFromJson(

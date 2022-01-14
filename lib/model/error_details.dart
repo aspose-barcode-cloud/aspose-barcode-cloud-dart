@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class ErrorDetails {
   /* The request id */
@@ -15,7 +15,6 @@ class ErrorDetails {
   }
 
   ErrorDetails.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     requestId = json['requestId'];
     date = json['date'] == null ? null : DateTime.parse(json['date']);
   }
@@ -28,9 +27,7 @@ class ErrorDetails {
   }
 
   static List<ErrorDetails> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new ErrorDetails.fromJson(value)).toList();
+    return json.map((value) => new ErrorDetails.fromJson(value)).toList();
   }
 
   static Map<String, ErrorDetails> mapFromJson(
