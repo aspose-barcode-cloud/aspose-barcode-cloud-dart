@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class CodablockParams {
   /* Height/Width ratio of 2D BarCode module. */
@@ -18,7 +18,6 @@ class CodablockParams {
   }
 
   CodablockParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     columns = json['columns'];
@@ -30,9 +29,7 @@ class CodablockParams {
   }
 
   static List<CodablockParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new CodablockParams.fromJson(value)).toList();
+    return json.map((value) => new CodablockParams.fromJson(value)).toList();
   }
 
   static Map<String, CodablockParams> mapFromJson(

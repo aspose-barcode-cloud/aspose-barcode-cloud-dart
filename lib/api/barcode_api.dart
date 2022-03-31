@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class BarcodeApi {
   final ApiClient apiClient;
@@ -43,14 +43,6 @@ class BarcodeApi {
       double? barWidthReduction,
       String? format}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (type == null) {
-      throw new ApiException(0, "Missing required param: type");
-    }
-    if (text == null) {
-      throw new ApiException(0, "Missing required param: text");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/generate".replaceAll("{format}", "json");
@@ -204,7 +196,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -261,11 +253,6 @@ class BarcodeApi {
       String? storage,
       String? folder}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (name == null) {
-      throw new ApiException(0, "Missing required param: name");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/{name}/recognize"
@@ -441,7 +428,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -499,8 +486,6 @@ class BarcodeApi {
       String? url,
       MultipartFile? image}) async {
     Object? postBody = null;
-
-    // verify required params are set
 
     // create path and map variables
     String requestPath = "/barcode/recognize".replaceAll("{format}", "json");
@@ -661,6 +646,7 @@ class BarcodeApi {
 
     List<String> contentTypes = [
       "multipart/form-data",
+      "application/x-www-form-urlencoded",
       "application/octet-stream"
     ];
 
@@ -703,11 +689,6 @@ class BarcodeApi {
       {String? format}) async {
     Object? postBody = generatorParamsList;
 
-    // verify required params are set
-    if (generatorParamsList == null) {
-      throw new ApiException(0, "Missing required param: generatorParamsList");
-    }
-
     // create path and map variables
     String requestPath =
         "/barcode/generateMultiple".replaceAll("{format}", "json");
@@ -731,7 +712,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
@@ -787,17 +768,6 @@ class BarcodeApi {
       String? folder,
       String? format}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (name == null) {
-      throw new ApiException(0, "Missing required param: name");
-    }
-    if (type == null) {
-      throw new ApiException(0, "Missing required param: type");
-    }
-    if (text == null) {
-      throw new ApiException(0, "Missing required param: text");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/{name}/generate"
@@ -952,9 +922,10 @@ class BarcodeApi {
     }
 
     List<String> contentTypes = [
+      "multipart/form-data",
+      "application/x-www-form-urlencoded",
       "application/json",
-      "application/xml",
-      "multipart/form-data"
+      "application/xml"
     ];
 
     String contentType =
@@ -965,7 +936,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -988,14 +959,6 @@ class BarcodeApi {
       String name, ReaderParams readerParams,
       {String? type, String? storage, String? folder}) async {
     Object? postBody = readerParams;
-
-    // verify required params are set
-    if (name == null) {
-      throw new ApiException(0, "Missing required param: name");
-    }
-    if (readerParams == null) {
-      throw new ApiException(0, "Missing required param: readerParams");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/{name}/recognize"
@@ -1029,7 +992,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -1052,14 +1015,6 @@ class BarcodeApi {
       String name, GeneratorParamsList generatorParamsList,
       {String? format, String? folder, String? storage}) async {
     Object? postBody = generatorParamsList;
-
-    // verify required params are set
-    if (name == null) {
-      throw new ApiException(0, "Missing required param: name");
-    }
-    if (generatorParamsList == null) {
-      throw new ApiException(0, "Missing required param: generatorParamsList");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/{name}/generateMultiple"
@@ -1093,7 +1048,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,

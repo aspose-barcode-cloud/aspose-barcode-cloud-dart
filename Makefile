@@ -3,7 +3,7 @@ all:	test	lint
 
 .PHONY:	lint
 lint:
-	dart analyze
+	dart analyze lib
 
 .PHONY:	test
 test:
@@ -12,3 +12,14 @@ test:
 .PHONY: publish
 publish:
 	dart pub publish --dry-run
+
+.PHONY: format
+format:
+	dart format .
+
+.PHONY: fix
+fix:
+	dart fix --apply
+
+.PHONY: after-gen
+after-gen: format

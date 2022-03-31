@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class Error {
   /* Code */
@@ -21,7 +21,6 @@ class Error {
   }
 
   Error.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     code = json['code'];
     message = json['message'];
     description = json['description'];
@@ -38,9 +37,7 @@ class Error {
   }
 
   static List<Error> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new Error.fromJson(value)).toList();
+    return json.map((value) => new Error.fromJson(value)).toList();
   }
 
   static Map<String, Error> mapFromJson(

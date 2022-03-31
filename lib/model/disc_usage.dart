@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class DiscUsage {
   /* Application used disc space. */
@@ -15,7 +15,6 @@ class DiscUsage {
   }
 
   DiscUsage.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     usedSize = json['usedSize'];
     totalSize = json['totalSize'];
   }
@@ -25,9 +24,7 @@ class DiscUsage {
   }
 
   static List<DiscUsage> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new DiscUsage.fromJson(value)).toList();
+    return json.map((value) => new DiscUsage.fromJson(value)).toList();
   }
 
   static Map<String, DiscUsage> mapFromJson(

@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class Pdf417Params {
   /* Height/Width ratio of 2D BarCode module. */
@@ -69,7 +69,6 @@ class Pdf417Params {
   }
 
   Pdf417Params.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     textEncoding = json['textEncoding'];
@@ -123,9 +122,7 @@ class Pdf417Params {
   }
 
   static List<Pdf417Params> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new Pdf417Params.fromJson(value)).toList();
+    return json.map((value) => new Pdf417Params.fromJson(value)).toList();
   }
 
   static Map<String, Pdf417Params> mapFromJson(

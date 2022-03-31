@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class FileApi {
   final ApiClient apiClient;
@@ -13,14 +13,6 @@ class FileApi {
       String? destStorageName,
       String? versionId}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (srcPath == null) {
-      throw new ApiException(0, "Missing required param: srcPath");
-    }
-    if (destPath == null) {
-      throw new ApiException(0, "Missing required param: destPath");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/copy/{srcPath}"
@@ -56,7 +48,7 @@ class FileApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -78,11 +70,6 @@ class FileApi {
       {String? storageName, String? versionId}) async {
     Object? postBody = null;
 
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
-
     // create path and map variables
     String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
@@ -111,7 +98,7 @@ class FileApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
@@ -133,11 +120,6 @@ class FileApi {
       {String? storageName, String? versionId}) async {
     Object? postBody = null;
 
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
-
     // create path and map variables
     String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
@@ -166,7 +148,7 @@ class FileApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -189,14 +171,6 @@ class FileApi {
       String? destStorageName,
       String? versionId}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (srcPath == null) {
-      throw new ApiException(0, "Missing required param: srcPath");
-    }
-    if (destPath == null) {
-      throw new ApiException(0, "Missing required param: destPath");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/move/{srcPath}"
@@ -232,7 +206,7 @@ class FileApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      if (hasFields && mp != null) postBody = mp;
+      if (hasFields) postBody = mp;
     } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -253,14 +227,6 @@ class FileApi {
   Future<FilesUploadResult?> uploadFile(String path, MultipartFile file,
       {String? storageName}) async {
     Object? postBody = null;
-
-    // verify required params are set
-    if (path == null) {
-      throw new ApiException(0, "Missing required param: path");
-    }
-    if (file == null) {
-      throw new ApiException(0, "Missing required param: file");
-    }
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/{path}"
@@ -287,9 +253,11 @@ class FileApi {
       MultipartRequest? mp;
 
       mp = new MultipartRequest('PUT', Uri.parse(requestPath));
-      hasFields = true;
-      mp.fields['File'] = file.field;
-      mp.files.add(file);
+      if (file != null) {
+        hasFields = true;
+        mp.fields['File'] = file.field;
+        mp.files.add(file);
+      }
 
       if (hasFields) postBody = mp;
     } else {}

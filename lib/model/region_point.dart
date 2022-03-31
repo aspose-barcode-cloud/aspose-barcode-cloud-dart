@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class RegionPoint {
   /* X-coordinate */
@@ -15,7 +15,6 @@ class RegionPoint {
   }
 
   RegionPoint.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     X = json['X'];
     Y = json['Y'];
   }
@@ -25,9 +24,7 @@ class RegionPoint {
   }
 
   static List<RegionPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new RegionPoint.fromJson(value)).toList();
+    return json.map((value) => new RegionPoint.fromJson(value)).toList();
   }
 
   static Map<String, RegionPoint> mapFromJson(

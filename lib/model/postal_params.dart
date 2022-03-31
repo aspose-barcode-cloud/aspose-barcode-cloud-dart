@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class PostalParams {
   /* Short bar's height of Postal barcodes. */
@@ -12,7 +12,6 @@ class PostalParams {
   }
 
   PostalParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     shortBarHeight = json['shortBarHeight'] == null
         ? null
         : json['shortBarHeight'].toDouble();
@@ -23,9 +22,7 @@ class PostalParams {
   }
 
   static List<PostalParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new PostalParams.fromJson(value)).toList();
+    return json.map((value) => new PostalParams.fromJson(value)).toList();
   }
 
   static Map<String, PostalParams> mapFromJson(

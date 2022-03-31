@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class ResultImageInfo {
   /* Result file size. */
@@ -18,7 +18,6 @@ class ResultImageInfo {
   }
 
   ResultImageInfo.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     fileSize = json['fileSize'];
     imageWidth = json['imageWidth'];
     imageHeight = json['imageHeight'];
@@ -33,9 +32,7 @@ class ResultImageInfo {
   }
 
   static List<ResultImageInfo> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new ResultImageInfo.fromJson(value)).toList();
+    return json.map((value) => new ResultImageInfo.fromJson(value)).toList();
   }
 
   static Map<String, ResultImageInfo> mapFromJson(

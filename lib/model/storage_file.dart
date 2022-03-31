@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class StorageFile {
   /* File or folder name. */
@@ -24,7 +24,6 @@ class StorageFile {
   }
 
   StorageFile.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     name = json['name'];
     isFolder = json['isFolder'];
     modifiedDate = json['modifiedDate'] == null
@@ -46,9 +45,7 @@ class StorageFile {
   }
 
   static List<StorageFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new StorageFile.fromJson(value)).toList();
+    return json.map((value) => new StorageFile.fromJson(value)).toList();
   }
 
   static Map<String, StorageFile> mapFromJson(

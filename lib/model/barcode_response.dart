@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class BarcodeResponse {
   /* Barcode data. */
@@ -21,7 +21,6 @@ class BarcodeResponse {
   }
 
   BarcodeResponse.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     barcodeValue = json['barcodeValue'];
     type = json['type'];
     region = RegionPoint.listFromJson(json['region']);
@@ -38,9 +37,7 @@ class BarcodeResponse {
   }
 
   static List<BarcodeResponse> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new BarcodeResponse.fromJson(value)).toList();
+    return json.map((value) => new BarcodeResponse.fromJson(value)).toList();
   }
 
   static Map<String, BarcodeResponse> mapFromJson(

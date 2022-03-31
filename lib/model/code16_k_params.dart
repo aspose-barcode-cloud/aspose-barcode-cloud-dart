@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class Code16KParams {
   /* Height/Width ratio of 2D BarCode module. */
@@ -18,7 +18,6 @@ class Code16KParams {
   }
 
   Code16KParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     quietZoneLeftCoef = json['quietZoneLeftCoef'];
@@ -34,9 +33,7 @@ class Code16KParams {
   }
 
   static List<Code16KParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new Code16KParams.fromJson(value)).toList();
+    return json.map((value) => new Code16KParams.fromJson(value)).toList();
   }
 
   static Map<String, Code16KParams> mapFromJson(

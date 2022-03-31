@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class ReaderParams {
   /* The type of barcode to read. */
@@ -100,7 +100,7 @@ class ReaderParams {
 /* Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. */
   CustomerInformationInterpretingType? australianPostEncodingTable = null;
 
-/* The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\". */
+/* The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\". */
   bool? ignoreEndingFillingPatternsForCTable = null;
 
   ReaderParams();
@@ -111,7 +111,6 @@ class ReaderParams {
   }
 
   ReaderParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     type = new DecodeBarcodeType.fromJson(json['type']);
     checksumValidation =
         new ChecksumValidation.fromJson(json['checksumValidation']);
@@ -199,9 +198,7 @@ class ReaderParams {
   }
 
   static List<ReaderParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new ReaderParams.fromJson(value)).toList();
+    return json.map((value) => new ReaderParams.fromJson(value)).toList();
   }
 
   static Map<String, ReaderParams> mapFromJson(

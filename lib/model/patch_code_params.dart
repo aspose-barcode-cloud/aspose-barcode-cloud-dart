@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class PatchCodeParams {
   /* Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode. */
@@ -15,7 +15,6 @@ class PatchCodeParams {
   }
 
   PatchCodeParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     extraBarcodeText = json['extraBarcodeText'];
     patchFormat = new PatchFormat.fromJson(json['patchFormat']);
   }
@@ -25,9 +24,7 @@ class PatchCodeParams {
   }
 
   static List<PatchCodeParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new PatchCodeParams.fromJson(value)).toList();
+    return json.map((value) => new PatchCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, PatchCodeParams> mapFromJson(

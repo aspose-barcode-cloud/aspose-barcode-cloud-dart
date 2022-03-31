@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class StructuredAppend {
   /* The index of the QR structured append mode barcode. Index starts from 0. */
@@ -18,7 +18,6 @@ class StructuredAppend {
   }
 
   StructuredAppend.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     sequenceIndicator = json['sequenceIndicator'];
     totalCount = json['totalCount'];
     parityByte = json['parityByte'];
@@ -33,9 +32,7 @@ class StructuredAppend {
   }
 
   static List<StructuredAppend> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new StructuredAppend.fromJson(value)).toList();
+    return json.map((value) => new StructuredAppend.fromJson(value)).toList();
   }
 
   static Map<String, StructuredAppend> mapFromJson(

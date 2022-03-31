@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class DotCodeParams {
   /* Height/Width ratio of 2D BarCode module. */
@@ -15,7 +15,6 @@ class DotCodeParams {
   }
 
   DotCodeParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     dotCodeMask = json['dotCodeMask'];
@@ -26,9 +25,7 @@ class DotCodeParams {
   }
 
   static List<DotCodeParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new DotCodeParams.fromJson(value)).toList();
+    return json.map((value) => new DotCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, DotCodeParams> mapFromJson(

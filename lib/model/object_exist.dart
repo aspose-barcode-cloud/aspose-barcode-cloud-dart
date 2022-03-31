@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class ObjectExist {
   /* Indicates that the file or folder exists. */
@@ -15,7 +15,6 @@ class ObjectExist {
   }
 
   ObjectExist.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     exists = json['exists'];
     isFolder = json['isFolder'];
   }
@@ -25,9 +24,7 @@ class ObjectExist {
   }
 
   static List<ObjectExist> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new ObjectExist.fromJson(value)).toList();
+    return json.map((value) => new ObjectExist.fromJson(value)).toList();
   }
 
   static Map<String, ObjectExist> mapFromJson(

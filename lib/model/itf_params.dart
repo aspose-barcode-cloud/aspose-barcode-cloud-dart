@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class ITFParams {
   /* ITF border (bearer bar) thickness in Unit value. Default value: 12pt. */
@@ -18,7 +18,6 @@ class ITFParams {
   }
 
   ITFParams.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     borderThickness = json['borderThickness'] == null
         ? null
         : json['borderThickness'].toDouble();
@@ -35,9 +34,7 @@ class ITFParams {
   }
 
   static List<ITFParams> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new ITFParams.fromJson(value)).toList();
+    return json.map((value) => new ITFParams.fromJson(value)).toList();
   }
 
   static Map<String, ITFParams> mapFromJson(

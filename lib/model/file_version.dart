@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class FileVersion {
   /* File or folder name. */
@@ -30,7 +30,6 @@ class FileVersion {
   }
 
   FileVersion.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     name = json['name'];
     isFolder = json['isFolder'];
     modifiedDate = json['modifiedDate'] == null
@@ -56,9 +55,7 @@ class FileVersion {
   }
 
   static List<FileVersion> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new FileVersion.fromJson(value)).toList();
+    return json.map((value) => new FileVersion.fromJson(value)).toList();
   }
 
   static Map<String, FileVersion> mapFromJson(

@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class StorageExist {
   /* Shows that the storage exists. */
@@ -12,7 +12,6 @@ class StorageExist {
   }
 
   StorageExist.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
     exists = json['exists'];
   }
 
@@ -21,9 +20,7 @@ class StorageExist {
   }
 
   static List<StorageExist> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => new StorageExist.fromJson(value)).toList();
+    return json.map((value) => new StorageExist.fromJson(value)).toList();
   }
 
   static Map<String, StorageExist> mapFromJson(

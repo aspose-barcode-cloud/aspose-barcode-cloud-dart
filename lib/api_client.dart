@@ -1,4 +1,4 @@
-part of barcode.api;
+part of aspose_barcode_cloud.api;
 
 class QueryParam {
   String name;
@@ -235,9 +235,7 @@ class ApiClient {
       List<String> authNames) async {
     await _updateParamsForAuth(queryParams, headerParams);
 
-    var ps = queryParams
-        .where((p) => p.value != null)
-        .map((p) => '${p.name}=${p.value}');
+    var ps = queryParams.map((p) => '${p.name}=${p.value}');
     String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
 
     String url = basePath + path + queryString;
