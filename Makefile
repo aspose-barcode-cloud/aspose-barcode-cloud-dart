@@ -23,3 +23,7 @@ fix:
 
 .PHONY: after-gen
 after-gen: format
+
+.PHONY: update
+update:
+	dart pub upgrade
