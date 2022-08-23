@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.22.8
+
+* August 2022 release
+
 ## 0.22.7
 
 * Stable release
