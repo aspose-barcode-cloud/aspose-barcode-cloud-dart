@@ -2,7 +2,7 @@
 
 ## 0.22.9
 
-* August 2022 release
+* September 2022 release
 
 ## 0.22.8
 
