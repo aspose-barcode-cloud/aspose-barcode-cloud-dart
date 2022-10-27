@@ -147,6 +147,8 @@ class ApiClient {
           return new Pdf417CompactionMode.fromJson(value);
         case 'Pdf417ErrorLevel':
           return new Pdf417ErrorLevel.fromJson(value);
+        case 'Pdf417MacroTerminator':
+          return new Pdf417MacroTerminator.fromJson(value);
         case 'Pdf417Params':
           return new Pdf417Params.fromJson(value);
         case 'PostalParams':
