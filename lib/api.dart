@@ -67,6 +67,7 @@ part 'model/patch_code_params.dart';
 part 'model/patch_format.dart';
 part 'model/pdf417_compaction_mode.dart';
 part 'model/pdf417_error_level.dart';
+part 'model/pdf417_macro_terminator.dart';
 part 'model/pdf417_params.dart';
 part 'model/postal_params.dart';
 part 'model/preset_type.dart';

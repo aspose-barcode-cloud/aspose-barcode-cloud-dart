@@ -84,6 +84,8 @@ String parameterToString(dynamic value) {
     return Pdf417CompactionMode.encode(value).toString();
   } else if (value is Pdf417ErrorLevel) {
     return Pdf417ErrorLevel.encode(value).toString();
+  } else if (value is Pdf417MacroTerminator) {
+    return Pdf417MacroTerminator.encode(value).toString();
   } else if (value is PresetType) {
     return PresetType.encode(value).toString();
   } else if (value is QREncodeMode) {

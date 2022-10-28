@@ -61,11 +61,14 @@ class Pdf417Params {
 /* Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes. */
   Code128Emulation? code128Emulation = null;
 
+/* Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the segment. Applied only for Macro PDF417. */
+  Pdf417MacroTerminator? pdf417MacroTerminator = null;
+
   Pdf417Params();
 
   @override
   String toString() {
-    return 'Pdf417Params[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, compactionMode=$compactionMode, errorLevel=$errorLevel, macroFileID=$macroFileID, macroSegmentID=$macroSegmentID, macroSegmentsCount=$macroSegmentsCount, rows=$rows, truncate=$truncate, pdf417ECIEncoding=$pdf417ECIEncoding, isReaderInitialization=$isReaderInitialization, macroTimeStamp=$macroTimeStamp, macroSender=$macroSender, macroFileSize=$macroFileSize, macroChecksum=$macroChecksum, macroFileName=$macroFileName, macroAddressee=$macroAddressee, macroECIEncoding=$macroECIEncoding, code128Emulation=$code128Emulation, ]';
+    return 'Pdf417Params[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, compactionMode=$compactionMode, errorLevel=$errorLevel, macroFileID=$macroFileID, macroSegmentID=$macroSegmentID, macroSegmentsCount=$macroSegmentsCount, rows=$rows, truncate=$truncate, pdf417ECIEncoding=$pdf417ECIEncoding, isReaderInitialization=$isReaderInitialization, macroTimeStamp=$macroTimeStamp, macroSender=$macroSender, macroFileSize=$macroFileSize, macroChecksum=$macroChecksum, macroFileName=$macroFileName, macroAddressee=$macroAddressee, macroECIEncoding=$macroECIEncoding, code128Emulation=$code128Emulation, pdf417MacroTerminator=$pdf417MacroTerminator, ]';
   }
 
   Pdf417Params.fromJson(Map<String, dynamic> json) {
@@ -92,6 +95,8 @@ class Pdf417Params {
     macroAddressee = json['macroAddressee'];
     macroECIEncoding = new ECIEncodings.fromJson(json['macroECIEncoding']);
     code128Emulation = new Code128Emulation.fromJson(json['code128Emulation']);
+    pdf417MacroTerminator =
+        new Pdf417MacroTerminator.fromJson(json['pdf417MacroTerminator']);
   }
 
   Map<String, dynamic> toJson() {
@@ -117,7 +122,8 @@ class Pdf417Params {
       'MacroFileName': macroFileName,
       'MacroAddressee': macroAddressee,
       'MacroECIEncoding': macroECIEncoding,
-      'Code128Emulation': code128Emulation
+      'Code128Emulation': code128Emulation,
+      'Pdf417MacroTerminator': pdf417MacroTerminator
     };
   }
 
