@@ -4,24 +4,24 @@ class MaxiCodeParams {
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
-/* MaxiCode encode mode. */
-  int? encodeMode = null;
+/* Encoding mode for MaxiCode barcodes. */
+  MaxiCodeMode? mode = null;
 
   MaxiCodeParams();
 
   @override
   String toString() {
-    return 'MaxiCodeParams[aspectRatio=$aspectRatio, encodeMode=$encodeMode, ]';
+    return 'MaxiCodeParams[aspectRatio=$aspectRatio, mode=$mode, ]';
   }
 
   MaxiCodeParams.fromJson(Map<String, dynamic> json) {
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    encodeMode = json['encodeMode'];
+    mode = new MaxiCodeMode.fromJson(json['mode']);
   }
 
   Map<String, dynamic> toJson() {
-    return {'AspectRatio': aspectRatio, 'EncodeMode': encodeMode};
+    return {'AspectRatio': aspectRatio, 'Mode': mode};
   }
 
   static List<MaxiCodeParams> listFromJson(List<dynamic> json) {

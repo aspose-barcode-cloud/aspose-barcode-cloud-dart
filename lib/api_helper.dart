@@ -78,6 +78,8 @@ String parameterToString(dynamic value) {
     return ITF14BorderType.encode(value).toString();
   } else if (value is MacroCharacter) {
     return MacroCharacter.encode(value).toString();
+  } else if (value is MaxiCodeMode) {
+    return MaxiCodeMode.encode(value).toString();
   } else if (value is PatchFormat) {
     return PatchFormat.encode(value).toString();
   } else if (value is Pdf417CompactionMode) {
