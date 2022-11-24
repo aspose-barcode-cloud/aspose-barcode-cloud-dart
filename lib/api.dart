@@ -60,6 +60,7 @@ part 'model/generator_params_list.dart';
 part 'model/itf14_border_type.dart';
 part 'model/itf_params.dart';
 part 'model/macro_character.dart';
+part 'model/maxi_code_mode.dart';
 part 'model/maxi_code_params.dart';
 part 'model/object_exist.dart';
 part 'model/padding.dart';

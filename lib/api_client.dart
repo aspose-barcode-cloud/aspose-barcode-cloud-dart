@@ -133,6 +133,8 @@ class ApiClient {
           return new ITFParams.fromJson(value);
         case 'MacroCharacter':
           return new MacroCharacter.fromJson(value);
+        case 'MaxiCodeMode':
+          return new MaxiCodeMode.fromJson(value);
         case 'MaxiCodeParams':
           return new MaxiCodeParams.fromJson(value);
         case 'ObjectExist':
