@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.22.11
+
+* November 2022 release
+
 ## 0.22.10
 
 * October 2022 release
