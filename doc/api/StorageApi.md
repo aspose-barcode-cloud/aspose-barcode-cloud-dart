@@ -8,7 +8,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**getDiscUsage**](StorageApi.md#getDiscUsage) | **GET** /barcode/storage/disc | Get disc usage
 [**getFileVersions**](StorageApi.md#getFileVersions) | **GET** /barcode/storage/version/{path} | Get file versions
 [**objectExists**](StorageApi.md#objectExists) | **GET** /barcode/storage/exist/{path} | Check if file or folder exists
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Get disc usage
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -29,7 +29,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 var api_instance = new StorageApi();
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     var result = api_instance.getDiscUsage(storageName);
     print(result);
 } catch (e) {
@@ -40,7 +40,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **storageName** | **String**| Storage name | [optional] 
 
 ### Return type
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 Get file versions
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -72,7 +72,7 @@ var api_instance = new StorageApi();
 var path = path_example; // String | File path e.g. '/file.ext'
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     var result = api_instance.getFileVersions(path, storageName);
     print(result);
 } catch (e) {
@@ -83,7 +83,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File path e.g. &#39;/file.ext&#39; | 
  **storageName** | **String**| Storage name | [optional] 
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 Check if file or folder exists
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -117,7 +117,7 @@ var path = path_example; // String | File or folder path e.g. '/file.ext' or '/f
 var storageName = storageName_example; // String | Storage name
 var versionId = versionId_example; // String | File version ID
 
-try { 
+try {
     var result = api_instance.objectExists(path, storageName, versionId);
     print(result);
 } catch (e) {
@@ -128,7 +128,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
  **storageName** | **String**| Storage name | [optional] 
  **versionId** | **String**| File version ID | [optional] 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 Check if storage exists
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -161,7 +161,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 var api_instance = new StorageApi();
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     var result = api_instance.storageExists(storageName);
     print(result);
 } catch (e) {
@@ -172,7 +172,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **storageName** | **String**| Storage name | 
 
 ### Return type

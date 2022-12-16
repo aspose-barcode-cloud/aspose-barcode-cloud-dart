@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **left** | **double** | Left padding. | [optional] [default to null]
 **right** | **double** | Right padding. | [optional] [default to null]
 **top** | **double** | Top padding. | [optional] [default to null]

@@ -7,8 +7,8 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspectRatio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] [default to null]
-**dotCodeMask** | **int** | Mask of Dotcode barcode. Default value: -1. | [optional] [default to null]
+**dotCodeMask** | **int** | DEPRECATED: DotCodeMask is now calculated automatically | [optional] [default to null]
 
 

@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **type** | [**DecodeBarcodeType**](DecodeBarcodeType.md) | The type of barcode to read. | [optional] [default to null]
 **checksumValidation** | [**ChecksumValidation**](ChecksumValidation.md) | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional] [default to null]
 **detectEncoding** | **bool** | A flag which force engine to detect codetext encoding for Unicode. | [optional] [default to null]

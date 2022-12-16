@@ -8,7 +8,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**copyFile**](FileApi.md#copyFile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
 [**deleteFile**](FileApi.md#deleteFile) | **DELETE** /barcode/storage/file/{path} | Delete file
 [**downloadFile**](FileApi.md#downloadFile) | **GET** /barcode/storage/file/{path} | Download file
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Copy file
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -34,7 +34,7 @@ var srcStorageName = srcStorageName_example; // String | Source storage name
 var destStorageName = destStorageName_example; // String | Destination storage name
 var versionId = versionId_example; // String | File version ID to copy
 
-try { 
+try {
     api_instance.copyFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
 } catch (e) {
     print("Exception when calling FileApi->copyFile: $e\n");
@@ -44,7 +44,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Source file path e.g. &#39;/folder/file.ext&#39; | 
  **destPath** | **String**| Destination file path | 
  **srcStorageName** | **String**| Source storage name | [optional] 
@@ -70,7 +70,7 @@ void (empty response body)
 
 Delete file
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -81,7 +81,7 @@ var path = path_example; // String | File path e.g. '/folder/file.ext'
 var storageName = storageName_example; // String | Storage name
 var versionId = versionId_example; // String | File version ID to delete
 
-try { 
+try {
     api_instance.deleteFile(path, storageName, versionId);
 } catch (e) {
     print("Exception when calling FileApi->deleteFile: $e\n");
@@ -91,7 +91,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
  **storageName** | **String**| Storage name | [optional] 
  **versionId** | **String**| File version ID to delete | [optional] 
@@ -115,7 +115,7 @@ void (empty response body)
 
 Download file
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -126,7 +126,7 @@ var path = path_example; // String | File path e.g. '/folder/file.ext'
 var storageName = storageName_example; // String | Storage name
 var versionId = versionId_example; // String | File version ID to download
 
-try { 
+try {
     var result = api_instance.downloadFile(path, storageName, versionId);
     print(result);
 } catch (e) {
@@ -137,7 +137,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; | 
  **storageName** | **String**| Storage name | [optional] 
  **versionId** | **String**| File version ID to download | [optional] 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 Move file
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -174,7 +174,7 @@ var srcStorageName = srcStorageName_example; // String | Source storage name
 var destStorageName = destStorageName_example; // String | Destination storage name
 var versionId = versionId_example; // String | File version ID to move
 
-try { 
+try {
     api_instance.moveFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
 } catch (e) {
     print("Exception when calling FileApi->moveFile: $e\n");
@@ -184,7 +184,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Source file path e.g. &#39;/src.ext&#39; | 
  **destPath** | **String**| Destination file path e.g. &#39;/dest.ext&#39; | 
  **srcStorageName** | **String**| Source storage name | [optional] 
@@ -210,7 +210,7 @@ void (empty response body)
 
 Upload file
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -221,7 +221,7 @@ var path = path_example; // String | Path where to upload including filename and
 var file = /path/to/file.txt; // MultipartFile | File to upload
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     var result = api_instance.uploadFile(path, file, storageName);
     print(result);
 } catch (e) {
@@ -232,7 +232,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header. | 
  **file** | **MultipartFile**| File to upload | 
  **storageName** | **String**| Storage name | [optional] 

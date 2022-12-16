@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **typeOfBarcode** | [**EncodeBarcodeType**](EncodeBarcodeType.md) | Type of barcode to generate. | [default to null]
 **text** | **String** | Text to encode. | [default to null]
 **twoDDisplayText** | **String** | Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] [default to null]
