@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.22.12
+
+* December 2022 release
+* dotCodeMask mark as DEPRECATED and will be calculated automatically
+
 ## 0.22.11
 
 * November 2022 release

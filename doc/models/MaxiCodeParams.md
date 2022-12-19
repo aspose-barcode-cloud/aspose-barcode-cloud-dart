@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspectRatio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] [default to null]
 **mode** | [**MaxiCodeMode**](MaxiCodeMode.md) | Encoding mode for MaxiCode barcodes. | [optional] [default to null]
 

@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **uploaded** | **List&lt;String&gt;** | List of uploaded file names | [optional] [default to []]
 **errors** | [**List&lt;Error&gt;**](Error.md) | List of errors. | [optional] [default to []]
 

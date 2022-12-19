@@ -4,7 +4,7 @@ class DotCodeParams {
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
-/* Mask of Dotcode barcode. Default value: -1. */
+/* DEPRECATED: DotCodeMask is now calculated automatically */
   int? dotCodeMask = null;
 
   DotCodeParams();

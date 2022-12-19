@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **text** | **String** | Caption text. | [optional] [default to null]
 **alignment** | [**TextAlignment**](TextAlignment.md) | Text alignment. | [optional] [default to null]
 **color** | **String** | Text color. | [optional] [default to null]

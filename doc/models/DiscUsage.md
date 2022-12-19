@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **usedSize** | **int** | Application used disc space. | [default to null]
 **totalSize** | **int** | Total disc space. | [default to null]
 

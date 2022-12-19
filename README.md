@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Dart
 
 - API version: 3.0
-- SDK version: 0.22.11
+- SDK version: 0.22.12
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -32,7 +32,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 0.22.11
+  aspose_barcode_cloud: 0.22.12
 ```
 
 ## Sample usage
@@ -99,7 +99,7 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 All URIs are relative to *<https://api.aspose.cloud/v3.0>*
 
 Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
+----- | ------ | ------------ | -----------
 *BarcodeApi* | [**getBarcodeGenerate**](doc/api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
 *BarcodeApi* | [**getBarcodeRecognize**](doc/api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
 *BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](doc/api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.

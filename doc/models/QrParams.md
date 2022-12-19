@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspectRatio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] [default to null]
 **textEncoding** | **String** | Encoding of codetext. | [optional] [default to null]
 **encodeType** | [**QREncodeType**](QREncodeType.md) | QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for MicroQR. | [optional] [default to null]

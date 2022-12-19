@@ -8,7 +8,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**getBarcodeGenerate**](BarcodeApi.md#getBarcodeGenerate) | **GET** /barcode/generate | Generate barcode.
 [**getBarcodeRecognize**](BarcodeApi.md#getBarcodeRecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
 [**postBarcodeRecognizeFromUrlOrContent**](BarcodeApi.md#postBarcodeRecognizeFromUrlOrContent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 Generate barcode.
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -66,7 +66,7 @@ var supplementSpace = 1.2; // double | Space between main the BarCode and supple
 var barWidthReduction = 1.2; // double | Bars reduction value that is used to compensate ink spread while printing.
 var format = format_example; // String | Result image format.
 
-try { 
+try {
     var result = api_instance.getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, format);
     print(result);
 } catch (e) {
@@ -77,7 +77,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **type** | **String**| Type of barcode to generate. | 
  **text** | **String**| Text to encode. | 
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 Recognize barcode from a file on server.
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -179,7 +179,7 @@ var rectangleRegion = rectangleRegion_example; // String |
 var storage = storage_example; // String | The image storage.
 var folder = folder_example; // String | The image folder.
 
-try { 
+try {
     var result = api_instance.getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, storage, folder);
     print(result);
 } catch (e) {
@@ -190,7 +190,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **name** | **String**| The image file name. | 
  **type** | **String**| The type of barcode to read. | [optional] 
  **checksumValidation** | **String**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional] 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -294,7 +294,7 @@ var rectangleRegion = rectangleRegion_example; // String |
 var url = url_example; // String | The image file url.
 var image = /path/to/file.txt; // MultipartFile | Image data
 
-try { 
+try {
     var result = api_instance.postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, url, image);
     print(result);
 } catch (e) {
@@ -305,7 +305,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **type** | **String**| The type of barcode to read. | [optional] 
  **checksumValidation** | **String**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional] 
  **detectEncoding** | **bool**| A flag which force engine to detect codetext encoding for Unicode. | [optional] 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 Generate multiple barcodes and return in response stream
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -373,7 +373,7 @@ var api_instance = new BarcodeApi();
 var generatorParamsList = new GeneratorParamsList(); // GeneratorParamsList | List of barcodes
 var format = format_example; // String | Format to return stream in
 
-try { 
+try {
     var result = api_instance.postGenerateMultiple(generatorParamsList, format);
     print(result);
 } catch (e) {
@@ -384,7 +384,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **generatorParamsList** | [**GeneratorParamsList**](GeneratorParamsList.md)| List of barcodes | 
  **format** | **String**| Format to return stream in | [optional] [default to png]
 
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -453,7 +453,7 @@ var storage = storage_example; // String | Image's storage.
 var folder = folder_example; // String | Image's folder.
 var format = format_example; // String | The image format.
 
-try { 
+try {
     var result = api_instance.putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, storage, folder, format);
     print(result);
 } catch (e) {
@@ -464,7 +464,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **name** | **String**| The image file name. | 
  **type** | **String**| Type of barcode to generate. | 
  **text** | **String**| Text to encode. | 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 Recognition of a barcode from file on server with parameters in body.
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -536,7 +536,7 @@ var type = type_example; // String |
 var storage = storage_example; // String | The storage name
 var folder = folder_example; // String | The image folder.
 
-try { 
+try {
     var result = api_instance.putBarcodeRecognizeFromBody(name, readerParams, type, storage, folder);
     print(result);
 } catch (e) {
@@ -547,7 +547,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **name** | **String**| The image file name. | 
  **readerParams** | [**ReaderParams**](ReaderParams.md)| BarcodeReader object with parameters. | 
  **type** | **String**|  | [optional] 
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 Generate image with multiple barcodes and put new file on server
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -586,7 +586,7 @@ var format = format_example; // String | Format of file
 var folder = folder_example; // String | Folder to place file to
 var storage = storage_example; // String | The storage name
 
-try { 
+try {
     var result = api_instance.putGenerateMultiple(name, generatorParamsList, format, folder, storage);
     print(result);
 } catch (e) {
@@ -597,7 +597,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **name** | **String**| New filename | 
  **generatorParamsList** | [**GeneratorParamsList**](GeneratorParamsList.md)| List of barcodes | 
  **format** | **String**| Format of file | [optional] [default to png]

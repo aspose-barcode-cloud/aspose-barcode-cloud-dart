@@ -7,7 +7,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **sequenceIndicator** | **int** | The index of the QR structured append mode barcode. Index starts from 0. | [optional] [default to null]
 **totalCount** | **int** | QR structured append mode barcodes quantity. Max value is 16. | [optional] [default to null]
 **parityByte** | **int** | QR structured append mode parity data. | [optional] [default to null]

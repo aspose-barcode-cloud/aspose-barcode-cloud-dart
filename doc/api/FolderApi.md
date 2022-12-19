@@ -8,7 +8,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**copyFolder**](FolderApi.md#copyFolder) | **PUT** /barcode/storage/folder/copy/{srcPath} | Copy folder
 [**createFolder**](FolderApi.md#createFolder) | **PUT** /barcode/storage/folder/{path} | Create the folder
 [**deleteFolder**](FolderApi.md#deleteFolder) | **DELETE** /barcode/storage/folder/{path} | Delete folder
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Copy folder
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -33,7 +33,7 @@ var destPath = destPath_example; // String | Destination folder path e.g. '/dst'
 var srcStorageName = srcStorageName_example; // String | Source storage name
 var destStorageName = destStorageName_example; // String | Destination storage name
 
-try { 
+try {
     api_instance.copyFolder(srcPath, destPath, srcStorageName, destStorageName);
 } catch (e) {
     print("Exception when calling FolderApi->copyFolder: $e\n");
@@ -43,7 +43,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Source folder path e.g. &#39;/src&#39; | 
  **destPath** | **String**| Destination folder path e.g. &#39;/dst&#39; | 
  **srcStorageName** | **String**| Source storage name | [optional] 
@@ -68,7 +68,7 @@ void (empty response body)
 
 Create the folder
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -78,7 +78,7 @@ var api_instance = new FolderApi();
 var path = path_example; // String | Folder path to create e.g. 'folder_1/folder_2/'
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     api_instance.createFolder(path, storageName);
 } catch (e) {
     print("Exception when calling FolderApi->createFolder: $e\n");
@@ -88,7 +88,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; | 
  **storageName** | **String**| Storage name | [optional] 
 
@@ -111,7 +111,7 @@ void (empty response body)
 
 Delete folder
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -122,7 +122,7 @@ var path = path_example; // String | Folder path e.g. '/folder'
 var storageName = storageName_example; // String | Storage name
 var recursive = true; // bool | Enable to delete folders, subfolders and files
 
-try { 
+try {
     api_instance.deleteFolder(path, storageName, recursive);
 } catch (e) {
     print("Exception when calling FolderApi->deleteFolder: $e\n");
@@ -132,7 +132,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
  **storageName** | **String**| Storage name | [optional] 
  **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
@@ -156,7 +156,7 @@ void (empty response body)
 
 Get all files and folders within a folder
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -166,7 +166,7 @@ var api_instance = new FolderApi();
 var path = path_example; // String | Folder path e.g. '/folder'
 var storageName = storageName_example; // String | Storage name
 
-try { 
+try {
     var result = api_instance.getFilesList(path, storageName);
     print(result);
 } catch (e) {
@@ -177,7 +177,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| Folder path e.g. &#39;/folder&#39; | 
  **storageName** | **String**| Storage name | [optional] 
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 Move folder
 
-### Example 
+### Example
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
@@ -212,7 +212,7 @@ var destPath = destPath_example; // String | Destination folder path to move to 
 var srcStorageName = srcStorageName_example; // String | Source storage name
 var destStorageName = destStorageName_example; // String | Destination storage name
 
-try { 
+try {
     api_instance.moveFolder(srcPath, destPath, srcStorageName, destStorageName);
 } catch (e) {
     print("Exception when calling FolderApi->moveFolder: $e\n");
@@ -222,7 +222,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Folder path to move e.g. &#39;/folder&#39; | 
  **destPath** | **String**| Destination folder path to move to e.g &#39;/dst&#39; | 
  **srcStorageName** | **String**| Source storage name | [optional] 
