@@ -99,6 +99,8 @@ class ApiClient {
           return new DecodeBarcodeType.fromJson(value);
         case 'DiscUsage':
           return new DiscUsage.fromJson(value);
+        case 'DotCodeEncodeMode':
+          return new DotCodeEncodeMode.fromJson(value);
         case 'DotCodeParams':
           return new DotCodeParams.fromJson(value);
         case 'ECIEncodings':
@@ -133,6 +135,8 @@ class ApiClient {
           return new ITFParams.fromJson(value);
         case 'MacroCharacter':
           return new MacroCharacter.fromJson(value);
+        case 'MaxiCodeEncodeMode':
+          return new MaxiCodeEncodeMode.fromJson(value);
         case 'MaxiCodeMode':
           return new MaxiCodeMode.fromJson(value);
         case 'MaxiCodeParams':

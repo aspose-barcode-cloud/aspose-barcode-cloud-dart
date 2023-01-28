@@ -240,6 +240,10 @@ class EncodeBarcodeType {
   /// See EncodeTypes
   static EncodeBarcodeType mailmark_ = EncodeBarcodeType._internal("Mailmark");
 
+  /// See EncodeTypes
+  static EncodeBarcodeType gS1DotCode_ =
+      EncodeBarcodeType._internal("GS1DotCode");
+
   EncodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "Codabar":
@@ -441,6 +445,9 @@ class EncodeBarcodeType {
         value = data;
         break;
       case "Mailmark":
+        value = data;
+        break;
+      case "GS1DotCode":
         value = data;
         break;
       default:

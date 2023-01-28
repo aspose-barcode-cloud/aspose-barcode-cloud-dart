@@ -241,6 +241,50 @@ class DecodeBarcodeType {
   /// See DecodeType
   static DecodeBarcodeType mailmark_ = DecodeBarcodeType._internal("Mailmark");
 
+  /// See DecodeType
+  static DecodeBarcodeType gS1DotCode_ =
+      DecodeBarcodeType._internal("GS1DotCode");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCCode39LIC_ =
+      DecodeBarcodeType._internal("HIBCCode39LIC");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCCode128LIC_ =
+      DecodeBarcodeType._internal("HIBCCode128LIC");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCAztecLIC_ =
+      DecodeBarcodeType._internal("HIBCAztecLIC");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCDataMatrixLIC_ =
+      DecodeBarcodeType._internal("HIBCDataMatrixLIC");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCQRLIC_ =
+      DecodeBarcodeType._internal("HIBCQRLIC");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCCode39PAS_ =
+      DecodeBarcodeType._internal("HIBCCode39PAS");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCCode128PAS_ =
+      DecodeBarcodeType._internal("HIBCCode128PAS");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCAztecPAS_ =
+      DecodeBarcodeType._internal("HIBCAztecPAS");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCDataMatrixPAS_ =
+      DecodeBarcodeType._internal("HIBCDataMatrixPAS");
+
+  /// See DecodeType
+  static DecodeBarcodeType hIBCQRPAS_ =
+      DecodeBarcodeType._internal("HIBCQRPAS");
+
   DecodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "all":
@@ -445,6 +489,39 @@ class DecodeBarcodeType {
         value = data;
         break;
       case "Mailmark":
+        value = data;
+        break;
+      case "GS1DotCode":
+        value = data;
+        break;
+      case "HIBCCode39LIC":
+        value = data;
+        break;
+      case "HIBCCode128LIC":
+        value = data;
+        break;
+      case "HIBCAztecLIC":
+        value = data;
+        break;
+      case "HIBCDataMatrixLIC":
+        value = data;
+        break;
+      case "HIBCQRLIC":
+        value = data;
+        break;
+      case "HIBCCode39PAS":
+        value = data;
+        break;
+      case "HIBCCode128PAS":
+        value = data;
+        break;
+      case "HIBCAztecPAS":
+        value = data;
+        break;
+      case "HIBCDataMatrixPAS":
+        value = data;
+        break;
+      case "HIBCQRPAS":
         value = data;
         break;
       default:

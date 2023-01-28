@@ -64,6 +64,8 @@ String parameterToString(dynamic value) {
     return DataMatrixEncodeMode.encode(value).toString();
   } else if (value is DecodeBarcodeType) {
     return DecodeBarcodeType.encode(value).toString();
+  } else if (value is DotCodeEncodeMode) {
+    return DotCodeEncodeMode.encode(value).toString();
   } else if (value is ECIEncodings) {
     return ECIEncodings.encode(value).toString();
   } else if (value is EnableChecksum) {
@@ -78,6 +80,8 @@ String parameterToString(dynamic value) {
     return ITF14BorderType.encode(value).toString();
   } else if (value is MacroCharacter) {
     return MacroCharacter.encode(value).toString();
+  } else if (value is MaxiCodeEncodeMode) {
+    return MaxiCodeEncodeMode.encode(value).toString();
   } else if (value is MaxiCodeMode) {
     return MaxiCodeMode.encode(value).toString();
   } else if (value is PatchFormat) {
