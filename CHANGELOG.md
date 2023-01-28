@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.23.1
+
+* December 2022 release
+* dotCodeMask deleted
+* DotCodeEncodeMode added
+* DotCode params added
+* MaxiCodeEncodeMode added
+* HIBC decode types added
+
+
 ## 0.22.12
 
 * December 2022 release
