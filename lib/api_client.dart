@@ -21,8 +21,8 @@ class ApiClient {
       {String? clientId,
       String? clientSecret,
       String? accessToken,
-      tokenUrl: "https://api.aspose.cloud/connect/token",
-      this.basePath: "https://api.aspose.cloud/v3.0"}) {
+      tokenUrl = "https://api.aspose.cloud/connect/token",
+      this.basePath = "https://api.aspose.cloud/v3.0"}) {
     _authentication = new OAuth(
         clientId: clientId,
         clientSecret: clientSecret,
