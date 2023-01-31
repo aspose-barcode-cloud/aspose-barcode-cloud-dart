@@ -21,8 +21,8 @@ class ApiClient {
       {String? clientId,
       String? clientSecret,
       String? accessToken,
-      tokenUrl: "https://api.aspose.cloud/connect/token",
-      this.basePath: "https://api.aspose.cloud/v3.0"}) {
+      tokenUrl = "https://api.aspose.cloud/connect/token",
+      this.basePath = "https://api.aspose.cloud/v3.0"}) {
     _authentication = new OAuth(
         clientId: clientId,
         clientSecret: clientSecret,
@@ -99,6 +99,8 @@ class ApiClient {
           return new DecodeBarcodeType.fromJson(value);
         case 'DiscUsage':
           return new DiscUsage.fromJson(value);
+        case 'DotCodeEncodeMode':
+          return new DotCodeEncodeMode.fromJson(value);
         case 'DotCodeParams':
           return new DotCodeParams.fromJson(value);
         case 'ECIEncodings':
@@ -133,6 +135,8 @@ class ApiClient {
           return new ITFParams.fromJson(value);
         case 'MacroCharacter':
           return new MacroCharacter.fromJson(value);
+        case 'MaxiCodeEncodeMode':
+          return new MaxiCodeEncodeMode.fromJson(value);
         case 'MaxiCodeMode':
           return new MaxiCodeMode.fromJson(value);
         case 'MaxiCodeParams':

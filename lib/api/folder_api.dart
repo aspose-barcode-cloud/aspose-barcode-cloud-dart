@@ -14,8 +14,7 @@ class FolderApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/copy/{srcPath}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "srcPath" + "}", srcPath.toString());
+        .replaceAll("{srcPath}", srcPath.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -32,26 +31,15 @@ class FolderApi {
           "", "destStorageName", destStorageName));
     }
 
-    List<String> contentTypes = ["application/json"];
+    String contentType = "application/json";
 
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
     } else {
       return;
     }
@@ -64,9 +52,8 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/folder/{path}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path.toString());
+    String requestPath =
+        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -77,26 +64,14 @@ class FolderApi {
           "", "storageName", storageName));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
     } else {
       return;
     }
@@ -110,9 +85,8 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/folder/{path}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path.toString());
+    String requestPath =
+        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -127,26 +101,14 @@ class FolderApi {
           _convertParametersForCollectionFormat("", "recursive", recursive));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
     } else {
       return;
     }
@@ -159,9 +121,8 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/folder/{path}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path.toString());
+    String requestPath =
+        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -172,28 +133,16 @@ class FolderApi {
           "", "storageName", storageName));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'FilesList') as FilesList;
     } else {
-      return null;
+      return apiClient.deserialize(response.body, 'FilesList') as FilesList;
     }
   }
 
@@ -206,8 +155,7 @@ class FolderApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/move/{srcPath}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "srcPath" + "}", srcPath.toString());
+        .replaceAll("{srcPath}", srcPath.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -224,26 +172,14 @@ class FolderApi {
           "", "destStorageName", destStorageName));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
     } else {
       return;
     }

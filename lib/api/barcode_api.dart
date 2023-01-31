@@ -45,7 +45,7 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/generate".replaceAll("{format}", "json");
+    String requestPath = "/barcode/generate";
 
     // query params
     List<QueryParam> queryParams = [];
@@ -186,28 +186,16 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return response.bodyBytes;
     } else {
-      return null;
+      return response.bodyBytes;
     }
   }
 
@@ -255,9 +243,8 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/recognize"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+    String requestPath =
+        "/barcode/{name}/recognize".replaceAll("{name}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -418,29 +405,17 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
+    } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
-    } else {
-      return null;
     }
   }
 
@@ -488,7 +463,7 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/recognize".replaceAll("{format}", "json");
+    String requestPath = "/barcode/recognize";
 
     // query params
     List<QueryParam> queryParams = [];
@@ -644,40 +619,30 @@ class BarcodeApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "url", url));
     }
 
-    List<String> contentTypes = [
-      "multipart/form-data",
-      "application/x-www-form-urlencoded",
-      "application/octet-stream"
-    ];
+    String contentType = "multipart/form-data";
 
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
+    bool hasFields = false;
+    MultipartRequest? mp;
 
-      mp = new MultipartRequest('POST', Uri.parse(requestPath));
-      if (image != null) {
-        hasFields = true;
-        mp.fields['image'] = image.field;
-        mp.files.add(image);
-      }
+    mp = new MultipartRequest('POST', Uri.parse(requestPath));
+    if (image != null) {
+      hasFields = true;
+      mp.fields['image'] = image.field;
+      mp.files.add(image);
+    }
 
-      if (hasFields) postBody = mp;
-    } else {}
+    if (hasFields) postBody = mp;
 
     var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
+    } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
-    } else {
-      return null;
     }
   }
 
@@ -690,8 +655,7 @@ class BarcodeApi {
     Object? postBody = generatorParamsList;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/generateMultiple".replaceAll("{format}", "json");
+    String requestPath = "/barcode/generateMultiple";
 
     // query params
     List<QueryParam> queryParams = [];
@@ -702,28 +666,16 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = ["application/json", "application/xml"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return response.bodyBytes;
     } else {
-      return null;
+      return response.bodyBytes;
     }
   }
 
@@ -770,9 +722,8 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/generate"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+    String requestPath =
+        "/barcode/{name}/generate".replaceAll("{name}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -921,34 +872,17 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = [
-      "multipart/form-data",
-      "application/x-www-form-urlencoded",
-      "application/json",
-      "application/xml"
-    ];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
+    } else {
       return apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
-    } else {
-      return null;
     }
   }
 
@@ -961,9 +895,8 @@ class BarcodeApi {
     Object? postBody = readerParams;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/recognize"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+    String requestPath =
+        "/barcode/{name}/recognize".replaceAll("{name}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -982,29 +915,17 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    List<String> contentTypes = ["application/json"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
+    } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
-    } else {
-      return null;
     }
   }
 
@@ -1018,8 +939,7 @@ class BarcodeApi {
 
     // create path and map variables
     String requestPath = "/barcode/{name}/generateMultiple"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+        .replaceAll("{name}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1038,29 +958,17 @@ class BarcodeApi {
           _convertParametersForCollectionFormat("", "storage", storage));
     }
 
-    List<String> contentTypes = ["application/json", "application/xml"];
-
-    String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = "application/json";
     List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      if (hasFields) postBody = mp;
-    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
+    } else {
       return apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
-    } else {
-      return null;
     }
   }
 }
