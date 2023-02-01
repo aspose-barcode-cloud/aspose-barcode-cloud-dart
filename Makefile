@@ -7,7 +7,7 @@ init:
 
 .PHONY:	lint
 lint: init
-	dart analyze lib example
+	dart analyze --fatal-infos lib example
 
 .PHONY:	test
 test:
@@ -25,7 +25,7 @@ fix: init
 .PHONY: after-gen
 after-gen: fix
 	./scripts/annotate-deprecated.bash
-	dart format . > /dev/null
+	@dart format .
 
 .PHONY: update
 update:
