@@ -1,4 +1,4 @@
-name: "Dart compile"
+name: "Dart test"
 
 on:
   push:
@@ -11,14 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
 
       - name: Install dependencies
         run: dart pub get
 
-      - name: Dart compile
-        run: dart compile js example/main.dart
+      - name: Dart test
+        run: dart test
+        env:
+          TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 
       - name: Dart try publish
         run: dart pub publish --dry-run

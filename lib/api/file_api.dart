@@ -16,7 +16,8 @@ class FileApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/copy/{srcPath}"
-        .replaceAll("{srcPath}", srcPath.toString());
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "srcPath" + "}", srcPath.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -37,7 +38,10 @@ class FileApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -58,8 +62,9 @@ class FileApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/file/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/file/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -74,7 +79,10 @@ class FileApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
@@ -95,8 +103,9 @@ class FileApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/file/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/file/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -111,7 +120,10 @@ class FileApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -135,6 +147,7 @@ class FileApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/move/{srcPath}"
+        .replaceAll("{format}", "json")
         .replaceAll("{" + "srcPath" + "}", srcPath.toString());
 
     // query params
@@ -156,7 +169,10 @@ class FileApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -178,6 +194,7 @@ class FileApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/file/{path}"
+        .replaceAll("{format}", "json")
         .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
@@ -189,15 +206,26 @@ class FileApi {
           "", "storageName", storageName));
     }
 
-    String contentType = "multipart/form-data";
+    List<String> contentTypes = ["multipart/form-data"];
 
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    MultipartRequest? mp;
-    mp = new MultipartRequest('PUT', Uri.parse(requestPath));
-    mp.fields['File'] = file.field;
-    mp.files.add(file);
-    postBody = mp;
+    if (contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest? mp;
+
+      mp = new MultipartRequest('PUT', Uri.parse(requestPath));
+      // ignore: unnecessary_null_comparison
+      if (file != null) {
+        hasFields = true;
+        mp.fields['File'] = file.field;
+        mp.files.add(file);
+      }
+
+      if (hasFields) postBody = mp;
+    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);

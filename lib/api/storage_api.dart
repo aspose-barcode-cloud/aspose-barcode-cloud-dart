@@ -12,7 +12,7 @@ class StorageApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/disc";
+    String requestPath = "/barcode/storage/disc".replaceAll("{format}", "json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -23,7 +23,10 @@ class StorageApi {
           "", "storageName", storageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -45,6 +48,7 @@ class StorageApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/version/{path}"
+        .replaceAll("{format}", "json")
         .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
@@ -56,7 +60,10 @@ class StorageApi {
           "", "storageName", storageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -78,8 +85,9 @@ class StorageApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/exist/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/exist/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -94,7 +102,10 @@ class StorageApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -115,14 +126,18 @@ class StorageApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/{storageName}/exist"
-        .replaceAll("{storageName}", storageName.toString());
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "storageName" + "}", storageName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,

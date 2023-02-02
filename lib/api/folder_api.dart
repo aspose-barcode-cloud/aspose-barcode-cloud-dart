@@ -14,7 +14,8 @@ class FolderApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/copy/{srcPath}"
-        .replaceAll("{srcPath}", srcPath.toString());
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "srcPath" + "}", srcPath.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -31,8 +32,10 @@ class FolderApi {
           "", "destStorageName", destStorageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
 
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -52,8 +55,9 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/folder/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -64,7 +68,10 @@ class FolderApi {
           "", "storageName", storageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -85,8 +92,9 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/folder/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -101,7 +109,10 @@ class FolderApi {
           _convertParametersForCollectionFormat("", "recursive", recursive));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
@@ -121,8 +132,9 @@ class FolderApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/storage/folder/{path}".replaceAll("{path}", path.toString());
+    String requestPath = "/barcode/storage/folder/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -133,7 +145,10 @@ class FolderApi {
           "", "storageName", storageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -155,7 +170,8 @@ class FolderApi {
 
     // create path and map variables
     String requestPath = "/barcode/storage/folder/move/{srcPath}"
-        .replaceAll("{srcPath}", srcPath.toString());
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "srcPath" + "}", srcPath.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -172,7 +188,10 @@ class FolderApi {
           "", "destStorageName", destStorageName));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
