@@ -37,7 +37,7 @@ class CodabarParams {
 
   static Map<String, CodabarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, CodabarParams>();
+    final map = new Map<String, CodabarParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CodabarParams.fromJson(value));

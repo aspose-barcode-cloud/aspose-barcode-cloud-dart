@@ -50,7 +50,7 @@ class StorageFile {
 
   static Map<String, StorageFile> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, StorageFile>();
+    final map = new Map<String, StorageFile>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new StorageFile.fromJson(value));

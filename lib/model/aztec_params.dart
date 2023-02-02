@@ -43,7 +43,7 @@ class AztecParams {
 
   static Map<String, AztecParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, AztecParams>();
+    final map = new Map<String, AztecParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new AztecParams.fromJson(value));

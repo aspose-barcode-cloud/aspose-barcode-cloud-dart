@@ -43,7 +43,7 @@ class ApiError {
 
   static Map<String, ApiError> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ApiError>();
+    final map = new Map<String, ApiError>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ApiError.fromJson(value));

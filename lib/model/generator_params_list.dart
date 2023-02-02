@@ -35,7 +35,7 @@ class GeneratorParamsList {
 
   static Map<String, GeneratorParamsList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, GeneratorParamsList>();
+    final map = new Map<String, GeneratorParamsList>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new GeneratorParamsList.fromJson(value));

@@ -57,7 +57,7 @@ class CaptionParams {
 
   static Map<String, CaptionParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, CaptionParams>();
+    final map = new Map<String, CaptionParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CaptionParams.fromJson(value));

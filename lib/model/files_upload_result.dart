@@ -30,7 +30,7 @@ class FilesUploadResult {
 
   static Map<String, FilesUploadResult> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, FilesUploadResult>();
+    final map = new Map<String, FilesUploadResult>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new FilesUploadResult.fromJson(value));

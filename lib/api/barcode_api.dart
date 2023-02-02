@@ -192,7 +192,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -415,7 +415,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -651,7 +651,7 @@ class BarcodeApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -689,7 +689,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -904,7 +904,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -951,7 +951,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -998,7 +998,7 @@ class BarcodeApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {

@@ -42,7 +42,7 @@ class Error {
 
   static Map<String, Error> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Error>();
+    final map = new Map<String, Error>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new Error.fromJson(value));

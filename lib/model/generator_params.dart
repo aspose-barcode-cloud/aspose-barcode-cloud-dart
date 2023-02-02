@@ -301,7 +301,7 @@ class GeneratorParams {
 
   static Map<String, GeneratorParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, GeneratorParams>();
+    final map = new Map<String, GeneratorParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new GeneratorParams.fromJson(value));

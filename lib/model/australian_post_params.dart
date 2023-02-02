@@ -34,7 +34,7 @@ class AustralianPostParams {
 
   static Map<String, AustralianPostParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, AustralianPostParams>();
+    final map = new Map<String, AustralianPostParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new AustralianPostParams.fromJson(value));

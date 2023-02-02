@@ -5,7 +5,7 @@ const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 // port from Java version
 Iterable<QueryParam> _convertParametersForCollectionFormat(
     String collectionFormat, String name, dynamic value) {
-  var params = <QueryParam>[];
+  final params = <QueryParam>[];
 
   // preconditions
   if (name.isEmpty || value == null) return params;

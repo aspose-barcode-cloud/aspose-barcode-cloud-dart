@@ -29,7 +29,7 @@ class ObjectExist {
 
   static Map<String, ObjectExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ObjectExist>();
+    final map = new Map<String, ObjectExist>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ObjectExist.fromJson(value));

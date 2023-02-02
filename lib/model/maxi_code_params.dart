@@ -34,7 +34,7 @@ class MaxiCodeParams {
 
   static Map<String, MaxiCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, MaxiCodeParams>();
+    final map = new Map<String, MaxiCodeParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new MaxiCodeParams.fromJson(value));

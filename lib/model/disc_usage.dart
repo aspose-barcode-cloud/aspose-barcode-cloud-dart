@@ -29,7 +29,7 @@ class DiscUsage {
 
   static Map<String, DiscUsage> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, DiscUsage>();
+    final map = new Map<String, DiscUsage>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new DiscUsage.fromJson(value));

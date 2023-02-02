@@ -26,11 +26,11 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new StorageApi();
-var storageName = storageName_example; // String | Storage name
+final api_instance = new StorageApi();
+final storageName = storageName_example; // String | Storage name
 
 try {
-    var result = api_instance.getDiscUsage(storageName);
+    final result = api_instance.getDiscUsage(storageName);
     print(result);
 } catch (e) {
     print("Exception when calling StorageApi->getDiscUsage: $e\n");
@@ -68,12 +68,12 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new StorageApi();
-var path = path_example; // String | File path e.g. '/file.ext'
-var storageName = storageName_example; // String | Storage name
+final api_instance = new StorageApi();
+final path = path_example; // String | File path e.g. '/file.ext'
+final storageName = storageName_example; // String | Storage name
 
 try {
-    var result = api_instance.getFileVersions(path, storageName);
+    final result = api_instance.getFileVersions(path, storageName);
     print(result);
 } catch (e) {
     print("Exception when calling StorageApi->getFileVersions: $e\n");
@@ -112,13 +112,13 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new StorageApi();
-var path = path_example; // String | File or folder path e.g. '/file.ext' or '/folder'
-var storageName = storageName_example; // String | Storage name
-var versionId = versionId_example; // String | File version ID
+final api_instance = new StorageApi();
+final path = path_example; // String | File or folder path e.g. '/file.ext' or '/folder'
+final storageName = storageName_example; // String | Storage name
+final versionId = versionId_example; // String | File version ID
 
 try {
-    var result = api_instance.objectExists(path, storageName, versionId);
+    final result = api_instance.objectExists(path, storageName, versionId);
     print(result);
 } catch (e) {
     print("Exception when calling StorageApi->objectExists: $e\n");
@@ -158,11 +158,11 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new StorageApi();
-var storageName = storageName_example; // String | Storage name
+final api_instance = new StorageApi();
+final storageName = storageName_example; // String | Storage name
 
 try {
-    var result = api_instance.storageExists(storageName);
+    final result = api_instance.storageExists(storageName);
     print(result);
 } catch (e) {
     print("Exception when calling StorageApi->storageExists: $e\n");

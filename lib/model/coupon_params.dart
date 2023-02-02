@@ -27,7 +27,7 @@ class CouponParams {
 
   static Map<String, CouponParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, CouponParams>();
+    final map = new Map<String, CouponParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CouponParams.fromJson(value));

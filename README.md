@@ -52,12 +52,12 @@ import 'package:http/http.dart';
 Future<void> main() async {
   const fileName = "qr.png";
   // Setup
-  var apiClient = barcode.ApiClient(
+  final apiClient = barcode.ApiClient(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
     clientSecret:
         "Client Secret from https://dashboard.aspose.cloud/applications",
   );
-  var api = barcode.BarcodeApi(apiClient);
+  final api = barcode.BarcodeApi(apiClient);
 
   // Generate image with barcode
   Uint8List? generated =
@@ -67,7 +67,7 @@ Future<void> main() async {
   print("Generated image saved to " + fileName);
 
   // Recognize generated image
-  var formFile = MultipartFile.fromBytes("image", generated.toList(),
+  final formFile = MultipartFile.fromBytes("image", generated.toList(),
       filename: "barcode.png");
   barcode.BarcodeResponseList? recognized =
       await api.postBarcodeRecognizeFromUrlOrContent(image: formFile);

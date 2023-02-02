@@ -63,7 +63,7 @@ class QrParams {
 
   static Map<String, QrParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, QrParams>();
+    final map = new Map<String, QrParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new QrParams.fromJson(value));

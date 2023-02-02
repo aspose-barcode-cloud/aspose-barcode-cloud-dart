@@ -48,7 +48,7 @@ class DataBarParams {
 
   static Map<String, DataBarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, DataBarParams>();
+    final map = new Map<String, DataBarParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new DataBarParams.fromJson(value));

@@ -38,7 +38,7 @@ class Code16KParams {
 
   static Map<String, Code16KParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Code16KParams>();
+    final map = new Map<String, Code16KParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new Code16KParams.fromJson(value));

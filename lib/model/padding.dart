@@ -37,7 +37,7 @@ class Padding {
 
   static Map<String, Padding> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Padding>();
+    final map = new Map<String, Padding>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new Padding.fromJson(value));

@@ -133,7 +133,7 @@ class Pdf417Params {
 
   static Map<String, Pdf417Params> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Pdf417Params>();
+    final map = new Map<String, Pdf417Params>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new Pdf417Params.fromJson(value));

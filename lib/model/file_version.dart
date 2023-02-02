@@ -60,7 +60,7 @@ class FileVersion {
 
   static Map<String, FileVersion> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, FileVersion>();
+    final map = new Map<String, FileVersion>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new FileVersion.fromJson(value));

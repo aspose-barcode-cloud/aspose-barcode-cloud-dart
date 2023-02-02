@@ -29,7 +29,7 @@ class StorageApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -66,7 +66,7 @@ class StorageApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -108,7 +108,7 @@ class StorageApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -140,7 +140,7 @@ class StorageApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {

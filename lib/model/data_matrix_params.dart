@@ -59,7 +59,7 @@ class DataMatrixParams {
 
   static Map<String, DataMatrixParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, DataMatrixParams>();
+    final map = new Map<String, DataMatrixParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new DataMatrixParams.fromJson(value));

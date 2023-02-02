@@ -37,7 +37,7 @@ class ResultImageInfo {
 
   static Map<String, ResultImageInfo> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ResultImageInfo>();
+    final map = new Map<String, ResultImageInfo>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ResultImageInfo.fromJson(value));

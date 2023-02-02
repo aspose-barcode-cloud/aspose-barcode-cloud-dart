@@ -37,7 +37,7 @@ class StructuredAppend {
 
   static Map<String, StructuredAppend> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, StructuredAppend>();
+    final map = new Map<String, StructuredAppend>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new StructuredAppend.fromJson(value));

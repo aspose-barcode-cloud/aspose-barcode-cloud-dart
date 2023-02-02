@@ -34,7 +34,7 @@ class CodablockParams {
 
   static Map<String, CodablockParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, CodablockParams>();
+    final map = new Map<String, CodablockParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CodablockParams.fromJson(value));

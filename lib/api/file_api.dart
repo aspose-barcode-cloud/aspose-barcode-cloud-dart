@@ -44,7 +44,7 @@ class FileApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -85,8 +85,15 @@ class FileApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    final response = await apiClient.invokeAPI(
+        requestPath,
+        'DELETE',
+        queryParams,
+        postBody,
+        headerParams,
+        formParams,
+        contentType,
+        authNames);
 
     if (response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -126,7 +133,7 @@ class FileApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -175,7 +182,7 @@ class FileApi {
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -227,7 +234,7 @@ class FileApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {

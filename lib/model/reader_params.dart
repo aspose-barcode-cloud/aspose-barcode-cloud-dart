@@ -203,7 +203,7 @@ class ReaderParams {
 
   static Map<String, ReaderParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ReaderParams>();
+    final map = new Map<String, ReaderParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ReaderParams.fromJson(value));
