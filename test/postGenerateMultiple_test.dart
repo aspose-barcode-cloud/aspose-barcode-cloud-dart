@@ -16,7 +16,7 @@ void main() {
     final generatorParamsList = GeneratorParamsList()
       ..barcodeBuilders!.add(barcode);
 
-    final Uint8List? generated =
+    final Uint8List generated =
         await TestConfiguration.BarcodeApi.postGenerateMultiple(
             generatorParamsList);
 

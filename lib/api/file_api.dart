@@ -5,8 +5,8 @@ class FileApi {
 
   FileApi(this.apiClient) {}
 
-  /// Copy file
   ///
+  /// Copy file
   ///
   Future copyFile(String srcPath, String destPath,
       {String? srcStorageName,
@@ -54,8 +54,8 @@ class FileApi {
     }
   }
 
-  /// Delete file
   ///
+  /// Delete file
   ///
   Future deleteFile(String path,
       {String? storageName, String? versionId}) async {
@@ -102,10 +102,10 @@ class FileApi {
     }
   }
 
+  ///
   /// Download file
   ///
-  ///
-  Future<Uint8List?> downloadFile(String path,
+  Future<Uint8List> downloadFile(String path,
       {String? storageName, String? versionId}) async {
     Object? postBody = null;
 
@@ -143,8 +143,8 @@ class FileApi {
     }
   }
 
-  /// Move file
   ///
+  /// Move file
   ///
   Future moveFile(String srcPath, String destPath,
       {String? srcStorageName,
@@ -192,10 +192,10 @@ class FileApi {
     }
   }
 
+  ///
   /// Upload file
   ///
-  ///
-  Future<FilesUploadResult?> uploadFile(String path, MultipartFile file,
+  Future<FilesUploadResult> uploadFile(String path, MultipartFile file,
       {String? storageName}) async {
     Object? postBody = null;
 

@@ -5,10 +5,10 @@ class BarcodeApi {
 
   BarcodeApi(this.apiClient) {}
 
+  ///
   /// Generate barcode.
   ///
-  ///
-  Future<Uint8List?> getBarcodeGenerate(String type, String text,
+  Future<Uint8List> getBarcodeGenerate(String type, String text,
       {String? twoDDisplayText,
       String? textLocation,
       String? textAlignment,
@@ -202,10 +202,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Recognize barcode from a file on server.
   ///
-  ///
-  Future<BarcodeResponseList?> getBarcodeRecognize(String name,
+  Future<BarcodeResponseList> getBarcodeRecognize(String name,
       {String? type,
       String? checksumValidation,
       bool? detectEncoding,
@@ -426,10 +426,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
   ///
-  ///
-  Future<BarcodeResponseList?> postBarcodeRecognizeFromUrlOrContent(
+  Future<BarcodeResponseList> postBarcodeRecognizeFromUrlOrContent(
       {String? type,
       String? checksumValidation,
       bool? detectEncoding,
@@ -662,10 +662,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate multiple barcodes and return in response stream
   ///
-  ///
-  Future<Uint8List?> postGenerateMultiple(
+  Future<Uint8List> postGenerateMultiple(
       GeneratorParamsList generatorParamsList,
       {String? format}) async {
     Object? postBody = generatorParamsList;
@@ -699,10 +699,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate barcode and save on server (from query params or from file with json or xml content)
   ///
-  ///
-  Future<ResultImageInfo?> putBarcodeGenerateFile(
+  Future<ResultImageInfo> putBarcodeGenerateFile(
       String name, String type, String text,
       {String? twoDDisplayText,
       String? textLocation,
@@ -915,10 +915,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Recognition of a barcode from file on server with parameters in body.
   ///
-  ///
-  Future<BarcodeResponseList?> putBarcodeRecognizeFromBody(
+  Future<BarcodeResponseList> putBarcodeRecognizeFromBody(
       String name, ReaderParams readerParams,
       {String? type, String? storage, String? folder}) async {
     Object? postBody = readerParams;
@@ -962,10 +962,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate image with multiple barcodes and put new file on server
   ///
-  ///
-  Future<ResultImageInfo?> putGenerateMultiple(
+  Future<ResultImageInfo> putGenerateMultiple(
       String name, GeneratorParamsList generatorParamsList,
       {String? format, String? folder, String? storage}) async {
     Object? postBody = generatorParamsList;

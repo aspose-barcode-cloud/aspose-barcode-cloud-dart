@@ -5,8 +5,8 @@ class FolderApi {
 
   FolderApi(this.apiClient) {}
 
-  /// Copy folder
   ///
+  /// Copy folder
   ///
   Future copyFolder(String srcPath, String destPath,
       {String? srcStorageName, String? destStorageName}) async {
@@ -48,8 +48,8 @@ class FolderApi {
     }
   }
 
-  /// Create the folder
   ///
+  /// Create the folder
   ///
   Future createFolder(String path, {String? storageName}) async {
     Object? postBody = null;
@@ -84,8 +84,8 @@ class FolderApi {
     }
   }
 
-  /// Delete folder
   ///
+  /// Delete folder
   ///
   Future deleteFolder(String path,
       {String? storageName, bool? recursive}) async {
@@ -132,10 +132,10 @@ class FolderApi {
     }
   }
 
+  ///
   /// Get all files and folders within a folder
   ///
-  ///
-  Future<FilesList?> getFilesList(String path, {String? storageName}) async {
+  Future<FilesList> getFilesList(String path, {String? storageName}) async {
     Object? postBody = null;
 
     // create path and map variables
@@ -168,8 +168,8 @@ class FolderApi {
     }
   }
 
-  /// Move folder
   ///
+  /// Move folder
   ///
   Future moveFolder(String srcPath, String destPath,
       {String? srcStorageName, String? destStorageName}) async {

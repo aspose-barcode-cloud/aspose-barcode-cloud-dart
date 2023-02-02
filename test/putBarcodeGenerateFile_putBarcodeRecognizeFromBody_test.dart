@@ -7,7 +7,7 @@ void main() {
   final remoteFileName = TestConfiguration.generateRandomString(16) + ".png";
 
   test('.putBarcodeGenerateFile', () async {
-    final ResultImageInfo? generated =
+    final ResultImageInfo generated =
         await TestConfiguration.BarcodeApi.putBarcodeGenerateFile(
             remoteFileName, EncodeBarcodeType.qR_.toString(), remoteFileName,
             folder: TestConfiguration.folder);
@@ -19,7 +19,7 @@ void main() {
   });
 
   test('.putBarcodeRecognizeFromBody', () async {
-    final BarcodeResponseList? recognized =
+    final BarcodeResponseList recognized =
         await TestConfiguration.BarcodeApi.putBarcodeRecognizeFromBody(
       remoteFileName,
       ReaderParams()..preset = PresetType.highPerformance_,

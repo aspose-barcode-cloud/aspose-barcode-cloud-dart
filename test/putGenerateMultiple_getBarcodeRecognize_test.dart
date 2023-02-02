@@ -14,7 +14,7 @@ void main() {
     final generatorParamsList = GeneratorParamsList()
       ..barcodeBuilders!.add(barcode);
 
-    final ResultImageInfo? generated =
+    final ResultImageInfo generated =
         await TestConfiguration.BarcodeApi.putGenerateMultiple(
             remoteFileName, generatorParamsList,
             folder: TestConfiguration.folder);
@@ -26,7 +26,7 @@ void main() {
   });
 
   test('.getBarcodeRecognize', () async {
-    final BarcodeResponseList? recognized =
+    final BarcodeResponseList recognized =
         await TestConfiguration.BarcodeApi.getBarcodeRecognize(
       remoteFileName,
       folder: TestConfiguration.folder,

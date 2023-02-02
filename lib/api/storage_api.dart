@@ -5,10 +5,10 @@ class StorageApi {
 
   StorageApi(this.apiClient) {}
 
+  ///
   /// Get disc usage
   ///
-  ///
-  Future<DiscUsage?> getDiscUsage({String? storageName}) async {
+  Future<DiscUsage> getDiscUsage({String? storageName}) async {
     Object? postBody = null;
 
     // create path and map variables
@@ -39,10 +39,10 @@ class StorageApi {
     }
   }
 
+  ///
   /// Get file versions
   ///
-  ///
-  Future<FileVersions?> getFileVersions(String path,
+  Future<FileVersions> getFileVersions(String path,
       {String? storageName}) async {
     Object? postBody = null;
 
@@ -77,10 +77,10 @@ class StorageApi {
     }
   }
 
+  ///
   /// Check if file or folder exists
   ///
-  ///
-  Future<ObjectExist?> objectExists(String path,
+  Future<ObjectExist> objectExists(String path,
       {String? storageName, String? versionId}) async {
     Object? postBody = null;
 
@@ -118,10 +118,10 @@ class StorageApi {
     }
   }
 
+  ///
   /// Check if storage exists
   ///
-  ///
-  Future<StorageExist?> storageExists(String storageName) async {
+  Future<StorageExist> storageExists(String storageName) async {
     Object? postBody = null;
 
     // create path and map variables
