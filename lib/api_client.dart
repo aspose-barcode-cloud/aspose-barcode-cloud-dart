@@ -1,22 +1,12 @@
 part of aspose_barcode_cloud.api;
 
 class QueryParam {
+  QueryParam(this.name, this.value);
   String name;
   String value;
-
-  QueryParam(this.name, this.value);
 }
 
 class ApiClient {
-  String basePath;
-  final client = new Client();
-
-  Map<String, String> _defaultHeaderMap = {};
-  late Authentication _authentication;
-
-  final _RegList = new RegExp(r'^List<(.*)>$');
-  final _RegMap = new RegExp(r'^Map<String,(.*)>$');
-
   ApiClient(
       {String? clientId,
       String? clientSecret,
@@ -29,6 +19,15 @@ class ApiClient {
         accessToken: accessToken,
         tokenUrl: tokenUrl);
   }
+
+  String basePath;
+  final client = new Client();
+
+  Map<String, String> _defaultHeaderMap = {};
+  late Authentication _authentication;
+
+  final _RegList = new RegExp(r'^List<(.*)>$');
+  final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
@@ -214,7 +213,9 @@ class ApiClient {
     // Remove all spaces.  Necessary for reg expressions as well.
     targetType = targetType.replaceAll(' ', '');
 
-    if (targetType == 'String') return jsonVal;
+    if (targetType == 'String') {
+      return jsonVal;
+    }
 
     final decodedJson = json.decode(jsonVal);
     return _deserialize(decodedJson, targetType);
@@ -244,9 +245,9 @@ class ApiClient {
     await _updateParamsForAuth(queryParams, headerParams);
 
     final ps = queryParams.map((p) => '${p.name}=${p.value}');
-    String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
+    final String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
 
-    String url = basePath + path + queryString;
+    final String url = basePath + path + queryString;
 
     headerParams.addAll(_defaultHeaderMap);
     headerParams['Content-Type'] = contentType;

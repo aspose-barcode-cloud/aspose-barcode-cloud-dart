@@ -1,33 +1,35 @@
 part of aspose_barcode_cloud.api;
 
 class StorageApi {
-  final ApiClient apiClient;
-
   StorageApi(this.apiClient) {}
+
+  final ApiClient apiClient;
 
   ///
   /// Get disc usage
   ///
   Future<DiscUsage> getDiscUsage({String? storageName}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/disc".replaceAll("{format}", "json");
+    final String requestPath =
+        "/barcode/storage/disc".replaceAll("{format}", "json");
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (storageName != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "storageName", storageName));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
@@ -44,27 +46,28 @@ class StorageApi {
   ///
   Future<FileVersions> getFileVersions(String path,
       {String? storageName}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/version/{path}"
+    final String requestPath = "/barcode/storage/version/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path.toString());
+        .replaceAll("{" + "path" + "}", path);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (storageName != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "storageName", storageName));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
@@ -82,17 +85,18 @@ class StorageApi {
   ///
   Future<ObjectExist> objectExists(String path,
       {String? storageName, String? versionId}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/exist/{path}"
+    final String requestPath = "/barcode/storage/exist/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path.toString());
+        .replaceAll("{" + "path" + "}", path);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (storageName != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "storageName", storageName));
@@ -102,11 +106,11 @@ class StorageApi {
           _convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
@@ -122,23 +126,24 @@ class StorageApi {
   /// Check if storage exists
   ///
   Future<StorageExist> storageExists(String storageName) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/storage/{storageName}/exist"
+    final String requestPath = "/barcode/storage/{storageName}/exist"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "storageName" + "}", storageName.toString());
+        .replaceAll("{" + "storageName" + "}", storageName);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);

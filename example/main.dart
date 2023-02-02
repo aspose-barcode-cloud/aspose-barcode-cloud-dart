@@ -16,19 +16,19 @@ Future<void> main() async {
   ));
 
   // Generate image with barcode
-  final Uint8List? generated =
+  final Uint8List generated =
       await api.getBarcodeGenerate("QR", "text", textLocation: "None");
   // Save generated image to file
-  new File(fileName).writeAsBytesSync(generated!);
+  new File(fileName).writeAsBytesSync(generated);
   print("Generated image saved to " + fileName);
 
   // Recognize generated image
   final formFile = MultipartFile.fromBytes("image", generated.toList(),
       filename: "barcode.png");
-  final BarcodeResponseList? recognized =
+  final BarcodeResponseList recognized =
       await api.postBarcodeRecognizeFromUrlOrContent(image: formFile);
 
-  if (recognized!.barcodes != null && recognized.barcodes!.length > 0) {
+  if (recognized.barcodes != null && recognized.barcodes!.length > 0) {
     print("Recognized Type: " + recognized.barcodes![0].type!);
     print("Recognized Value: " + recognized.barcodes![0].barcodeValue!);
   } else {

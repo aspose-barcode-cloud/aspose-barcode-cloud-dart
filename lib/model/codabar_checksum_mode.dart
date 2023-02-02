@@ -1,16 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class CodabarChecksumMode {
-  /// The underlying value of this enum member.
-  String? value;
-
   CodabarChecksumMode._internal(this.value);
-
-  ///
-  static CodabarChecksumMode mod10_ = CodabarChecksumMode._internal("Mod10");
-
-  ///
-  static CodabarChecksumMode mod16_ = CodabarChecksumMode._internal("Mod16");
 
   CodabarChecksumMode.fromJson(dynamic data) {
     switch (data) {
@@ -21,19 +12,23 @@ class CodabarChecksumMode {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodabarChecksumMode data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static CodabarChecksumMode mod10_ = CodabarChecksumMode._internal("Mod10");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static CodabarChecksumMode mod16_ = CodabarChecksumMode._internal("Mod16");
+
+  static dynamic encode(CodabarChecksumMode data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

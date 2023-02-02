@@ -1,10 +1,44 @@
 part of aspose_barcode_cloud.api;
 
 class DataMatrixEncodeMode {
+  DataMatrixEncodeMode._internal(this.value);
+
+  DataMatrixEncodeMode.fromJson(dynamic data) {
+    switch (data) {
+      case "Auto":
+        value = data;
+        break;
+      case "ASCII":
+        value = data;
+        break;
+      case "Full":
+        value = data;
+        break;
+      case "Custom":
+        value = data;
+        break;
+      case "C40":
+        value = data;
+        break;
+      case "Text":
+        value = data;
+        break;
+      case "EDIFACT":
+        value = data;
+        break;
+      case "ANSIX12":
+        value = data;
+        break;
+      case "ExtendedCodetext":
+        value = data;
+        break;
+      default:
+        throw Exception('Unknown enum value to decode: $data');
+    }
+  }
+
   /// The underlying value of this enum member.
   String? value;
-
-  DataMatrixEncodeMode._internal(this.value);
 
   ///
   static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
@@ -37,49 +71,10 @@ class DataMatrixEncodeMode {
   static DataMatrixEncodeMode extendedCodetext_ =
       DataMatrixEncodeMode._internal("ExtendedCodetext");
 
-  DataMatrixEncodeMode.fromJson(dynamic data) {
-    switch (data) {
-      case "Auto":
-        value = data;
-        break;
-      case "ASCII":
-        value = data;
-        break;
-      case "Full":
-        value = data;
-        break;
-      case "Custom":
-        value = data;
-        break;
-      case "C40":
-        value = data;
-        break;
-      case "Text":
-        value = data;
-        break;
-      case "EDIFACT":
-        value = data;
-        break;
-      case "ANSIX12":
-        value = data;
-        break;
-      case "ExtendedCodetext":
-        value = data;
-        break;
-      default:
-        throw ('Unknown enum value to decode: $data');
-    }
-  }
+  static dynamic encode(DataMatrixEncodeMode data) => data.value;
 
-  static dynamic encode(DataMatrixEncodeMode data) {
-    return data.value;
-  }
+  String? toJson() => value;
 
-  String? toJson() {
-    return value;
-  }
-
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

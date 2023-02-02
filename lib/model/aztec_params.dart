@@ -1,6 +1,15 @@
 part of aspose_barcode_cloud.api;
 
 class AztecParams {
+  AztecParams();
+
+  AztecParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    errorLevel = json['errorLevel'];
+    symbolMode = new AztecSymbolMode.fromJson(json['symbolMode']);
+    textEncoding = json['textEncoding'];
+  }
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
@@ -13,33 +22,19 @@ class AztecParams {
 /* Sets the encoding of codetext. */
   String? textEncoding = null;
 
-  AztecParams();
-
   @override
-  String toString() {
-    return 'AztecParams[aspectRatio=$aspectRatio, errorLevel=$errorLevel, symbolMode=$symbolMode, textEncoding=$textEncoding, ]';
-  }
+  String toString() =>
+      'AztecParams[aspectRatio=$aspectRatio, errorLevel=$errorLevel, symbolMode=$symbolMode, textEncoding=$textEncoding, ]';
 
-  AztecParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    errorLevel = json['errorLevel'];
-    symbolMode = new AztecSymbolMode.fromJson(json['symbolMode']);
-    textEncoding = json['textEncoding'];
-  }
+  Map<String, dynamic> toJson() => {
+        'AspectRatio': aspectRatio,
+        'ErrorLevel': errorLevel,
+        'SymbolMode': symbolMode,
+        'TextEncoding': textEncoding
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'AspectRatio': aspectRatio,
-      'ErrorLevel': errorLevel,
-      'SymbolMode': symbolMode,
-      'TextEncoding': textEncoding
-    };
-  }
-
-  static List<AztecParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new AztecParams.fromJson(value)).toList();
-  }
+  static List<AztecParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new AztecParams.fromJson(value)).toList();
 
   static Map<String, AztecParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

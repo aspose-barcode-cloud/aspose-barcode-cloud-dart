@@ -3,8 +3,7 @@ all:	test	lint
 
 .PHONY:	lint
 lint:
-	dart analyze lib
-	dart analyze example
+	dart analyze lib example
 
 .PHONY:	test
 test:

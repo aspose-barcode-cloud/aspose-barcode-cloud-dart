@@ -1,25 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class FontStyle {
-  /// The underlying value of this enum member.
-  String? value;
-
   FontStyle._internal(this.value);
-
-  ///
-  static FontStyle regular_ = FontStyle._internal("Regular");
-
-  ///
-  static FontStyle bold_ = FontStyle._internal("Bold");
-
-  ///
-  static FontStyle italic_ = FontStyle._internal("Italic");
-
-  ///
-  static FontStyle underline_ = FontStyle._internal("Underline");
-
-  ///
-  static FontStyle strikeout_ = FontStyle._internal("Strikeout");
 
   FontStyle.fromJson(dynamic data) {
     switch (data) {
@@ -39,19 +21,32 @@ class FontStyle {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(FontStyle data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static FontStyle regular_ = FontStyle._internal("Regular");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static FontStyle bold_ = FontStyle._internal("Bold");
+
+  ///
+  static FontStyle italic_ = FontStyle._internal("Italic");
+
+  ///
+  static FontStyle underline_ = FontStyle._internal("Underline");
+
+  ///
+  static FontStyle strikeout_ = FontStyle._internal("Strikeout");
+
+  static dynamic encode(FontStyle data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

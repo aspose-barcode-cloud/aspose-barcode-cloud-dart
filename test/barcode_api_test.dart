@@ -20,7 +20,7 @@ void main() {
       // Recognize generated image
       final barcode = MultipartFile.fromBytes('image', generated.toList(),
           filename: 'barcode.png');
-      final BarcodeResponseList? recognized = await TestConfiguration.BarcodeApi
+      final BarcodeResponseList recognized = await TestConfiguration.BarcodeApi
           .postBarcodeRecognizeFromUrlOrContent(
         image: barcode,
         preset: PresetType.highPerformance_.toString(),

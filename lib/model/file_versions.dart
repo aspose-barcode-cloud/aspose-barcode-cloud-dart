@@ -1,27 +1,21 @@
 part of aspose_barcode_cloud.api;
 
 class FileVersions {
-  /* File versions FileVersion. */
-  List<FileVersion>? value = [];
-
   FileVersions();
-
-  @override
-  String toString() {
-    return 'FileVersions[value=$value, ]';
-  }
 
   FileVersions.fromJson(Map<String, dynamic> json) {
     value = FileVersion.listFromJson(json['value']);
   }
+  /* File versions FileVersion. */
+  List<FileVersion>? value = [];
 
-  Map<String, dynamic> toJson() {
-    return {'Value': value};
-  }
+  @override
+  String toString() => 'FileVersions[value=$value, ]';
 
-  static List<FileVersions> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FileVersions.fromJson(value)).toList();
-  }
+  Map<String, dynamic> toJson() => {'Value': value};
+
+  static List<FileVersions> listFromJson(List<dynamic> json) =>
+      json.map((value) => new FileVersions.fromJson(value)).toList();
 
   static Map<String, FileVersions> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

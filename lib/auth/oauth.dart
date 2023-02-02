@@ -1,12 +1,6 @@
 part of aspose_barcode_cloud.api;
 
 class OAuth implements Authentication {
-  String? clientId;
-  String? clientSecret;
-  String tokenUrl;
-  String? accessToken;
-  DateTime? tokenExpiration;
-
   OAuth(
       {this.clientId,
       this.clientSecret,
@@ -17,6 +11,11 @@ class OAuth implements Authentication {
           0, "clientId and clientSecret or accessToken required");
     }
   }
+  String? clientId;
+  String? clientSecret;
+  String tokenUrl;
+  String? accessToken;
+  DateTime? tokenExpiration;
 
   @override
   Future<void> applyToParams(
@@ -48,7 +47,7 @@ class OAuth implements Authentication {
     }
 
     final data = jsonDecode(response_text);
-    int expires_in = data['expires_in'];
+    final int expires_in = data['expires_in'];
 
     accessToken = data['access_token'];
     tokenExpiration = DateTime.now().add(Duration(seconds: expires_in));

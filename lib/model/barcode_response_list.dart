@@ -1,29 +1,21 @@
 part of aspose_barcode_cloud.api;
 
 class BarcodeResponseList {
-  /* List of barcodes which are present in image. */
-  List<BarcodeResponse>? barcodes = [];
-
   BarcodeResponseList();
-
-  @override
-  String toString() {
-    return 'BarcodeResponseList[barcodes=$barcodes, ]';
-  }
 
   BarcodeResponseList.fromJson(Map<String, dynamic> json) {
     barcodes = BarcodeResponse.listFromJson(json['barcodes']);
   }
+  /* List of barcodes which are present in image. */
+  List<BarcodeResponse>? barcodes = [];
 
-  Map<String, dynamic> toJson() {
-    return {'Barcodes': barcodes};
-  }
+  @override
+  String toString() => 'BarcodeResponseList[barcodes=$barcodes, ]';
 
-  static List<BarcodeResponseList> listFromJson(List<dynamic> json) {
-    return json
-        .map((value) => new BarcodeResponseList.fromJson(value))
-        .toList();
-  }
+  Map<String, dynamic> toJson() => {'Barcodes': barcodes};
+
+  static List<BarcodeResponseList> listFromJson(List<dynamic> json) =>
+      json.map((value) => new BarcodeResponseList.fromJson(value)).toList();
 
   static Map<String, BarcodeResponseList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

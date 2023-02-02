@@ -1,22 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class Code128Emulation {
-  /// The underlying value of this enum member.
-  String? value;
-
   Code128Emulation._internal(this.value);
-
-  ///
-  static Code128Emulation none_ = Code128Emulation._internal("None");
-
-  ///
-  static Code128Emulation code903_ = Code128Emulation._internal("Code903");
-
-  ///
-  static Code128Emulation code904_ = Code128Emulation._internal("Code904");
-
-  ///
-  static Code128Emulation code905_ = Code128Emulation._internal("Code905");
 
   Code128Emulation.fromJson(dynamic data) {
     switch (data) {
@@ -33,19 +18,29 @@ class Code128Emulation {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(Code128Emulation data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static Code128Emulation none_ = Code128Emulation._internal("None");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static Code128Emulation code903_ = Code128Emulation._internal("Code903");
+
+  ///
+  static Code128Emulation code904_ = Code128Emulation._internal("Code904");
+
+  ///
+  static Code128Emulation code905_ = Code128Emulation._internal("Code905");
+
+  static dynamic encode(Code128Emulation data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

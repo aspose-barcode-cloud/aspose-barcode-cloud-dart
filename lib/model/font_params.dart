@@ -1,6 +1,13 @@
 part of aspose_barcode_cloud.api;
 
 class FontParams {
+  FontParams();
+
+  FontParams.fromJson(Map<String, dynamic> json) {
+    family = json['family'];
+    size = json['size'] == null ? null : json['size'].toDouble();
+    style = new FontStyle.fromJson(json['style']);
+  }
   /* Font family. */
   String? family = null;
 
@@ -10,26 +17,14 @@ class FontParams {
 /* Font style. */
   FontStyle? style = null;
 
-  FontParams();
-
   @override
-  String toString() {
-    return 'FontParams[family=$family, size=$size, style=$style, ]';
-  }
+  String toString() => 'FontParams[family=$family, size=$size, style=$style, ]';
 
-  FontParams.fromJson(Map<String, dynamic> json) {
-    family = json['family'];
-    size = json['size'] == null ? null : json['size'].toDouble();
-    style = new FontStyle.fromJson(json['style']);
-  }
+  Map<String, dynamic> toJson() =>
+      {'Family': family, 'Size': size, 'Style': style};
 
-  Map<String, dynamic> toJson() {
-    return {'Family': family, 'Size': size, 'Style': style};
-  }
-
-  static List<FontParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FontParams.fromJson(value)).toList();
-  }
+  static List<FontParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new FontParams.fromJson(value)).toList();
 
   static Map<String, FontParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

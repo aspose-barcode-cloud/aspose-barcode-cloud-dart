@@ -1,6 +1,54 @@
 part of aspose_barcode_cloud.api;
 
 class ReaderParams {
+  ReaderParams();
+
+  ReaderParams.fromJson(Map<String, dynamic> json) {
+    type = new DecodeBarcodeType.fromJson(json['type']);
+    checksumValidation =
+        new ChecksumValidation.fromJson(json['checksumValidation']);
+    detectEncoding = json['detectEncoding'];
+    preset = new PresetType.fromJson(json['preset']);
+    rectX = json['rectX'];
+    rectY = json['rectY'];
+    rectWidth = json['rectWidth'];
+    rectHeight = json['rectHeight'];
+    stripFNC = json['stripFNC'];
+    timeout = json['timeout'];
+    medianSmoothingWindowSize = json['medianSmoothingWindowSize'];
+    allowMedianSmoothing = json['allowMedianSmoothing'];
+    allowComplexBackground = json['allowComplexBackground'];
+    allowDatamatrixIndustrialBarcodes =
+        json['allowDatamatrixIndustrialBarcodes'];
+    allowDecreasedImage = json['allowDecreasedImage'];
+    allowDetectScanGap = json['allowDetectScanGap'];
+    allowIncorrectBarcodes = json['allowIncorrectBarcodes'];
+    allowInvertImage = json['allowInvertImage'];
+    allowMicroWhiteSpotsRemoving = json['allowMicroWhiteSpotsRemoving'];
+    allowOneDFastBarcodesDetector = json['allowOneDFastBarcodesDetector'];
+    allowOneDWipedBarsRestoration = json['allowOneDWipedBarsRestoration'];
+    allowQRMicroQrRestoration = json['allowQRMicroQrRestoration'];
+    allowRegularImage = json['allowRegularImage'];
+    allowSaltAndPepperFiltering = json['allowSaltAndPepperFiltering'];
+    allowWhiteSpotsRemoving = json['allowWhiteSpotsRemoving'];
+    checkMore1DVariants = json['checkMore1DVariants'];
+    fastScanOnly = json['fastScanOnly'];
+    regionLikelihoodThresholdPercent =
+        json['regionLikelihoodThresholdPercent'] == null
+            ? null
+            : json['regionLikelihoodThresholdPercent'].toDouble();
+    scanWindowSizes =
+        (json['scanWindowSizes'] as List).map((item) => item as int).toList();
+    similarity =
+        json['similarity'] == null ? null : json['similarity'].toDouble();
+    skipDiagonalSearch = json['skipDiagonalSearch'];
+    readTinyBarcodes = json['readTinyBarcodes'];
+    australianPostEncodingTable =
+        new CustomerInformationInterpretingType.fromJson(
+            json['australianPostEncodingTable']);
+    ignoreEndingFillingPatternsForCTable =
+        json['ignoreEndingFillingPatternsForCTable'];
+  }
   /* The type of barcode to read. */
   DecodeBarcodeType? type = null;
 
@@ -103,103 +151,50 @@ class ReaderParams {
 /* The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\". */
   bool? ignoreEndingFillingPatternsForCTable = null;
 
-  ReaderParams();
-
   @override
-  String toString() {
-    return 'ReaderParams[type=$type, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
-  }
+  String toString() =>
+      'ReaderParams[type=$type, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
 
-  ReaderParams.fromJson(Map<String, dynamic> json) {
-    type = new DecodeBarcodeType.fromJson(json['type']);
-    checksumValidation =
-        new ChecksumValidation.fromJson(json['checksumValidation']);
-    detectEncoding = json['detectEncoding'];
-    preset = new PresetType.fromJson(json['preset']);
-    rectX = json['rectX'];
-    rectY = json['rectY'];
-    rectWidth = json['rectWidth'];
-    rectHeight = json['rectHeight'];
-    stripFNC = json['stripFNC'];
-    timeout = json['timeout'];
-    medianSmoothingWindowSize = json['medianSmoothingWindowSize'];
-    allowMedianSmoothing = json['allowMedianSmoothing'];
-    allowComplexBackground = json['allowComplexBackground'];
-    allowDatamatrixIndustrialBarcodes =
-        json['allowDatamatrixIndustrialBarcodes'];
-    allowDecreasedImage = json['allowDecreasedImage'];
-    allowDetectScanGap = json['allowDetectScanGap'];
-    allowIncorrectBarcodes = json['allowIncorrectBarcodes'];
-    allowInvertImage = json['allowInvertImage'];
-    allowMicroWhiteSpotsRemoving = json['allowMicroWhiteSpotsRemoving'];
-    allowOneDFastBarcodesDetector = json['allowOneDFastBarcodesDetector'];
-    allowOneDWipedBarsRestoration = json['allowOneDWipedBarsRestoration'];
-    allowQRMicroQrRestoration = json['allowQRMicroQrRestoration'];
-    allowRegularImage = json['allowRegularImage'];
-    allowSaltAndPepperFiltering = json['allowSaltAndPepperFiltering'];
-    allowWhiteSpotsRemoving = json['allowWhiteSpotsRemoving'];
-    checkMore1DVariants = json['checkMore1DVariants'];
-    fastScanOnly = json['fastScanOnly'];
-    regionLikelihoodThresholdPercent =
-        json['regionLikelihoodThresholdPercent'] == null
-            ? null
-            : json['regionLikelihoodThresholdPercent'].toDouble();
-    scanWindowSizes =
-        (json['scanWindowSizes'] as List).map((item) => item as int).toList();
-    similarity =
-        json['similarity'] == null ? null : json['similarity'].toDouble();
-    skipDiagonalSearch = json['skipDiagonalSearch'];
-    readTinyBarcodes = json['readTinyBarcodes'];
-    australianPostEncodingTable =
-        new CustomerInformationInterpretingType.fromJson(
-            json['australianPostEncodingTable']);
-    ignoreEndingFillingPatternsForCTable =
-        json['ignoreEndingFillingPatternsForCTable'];
-  }
+  Map<String, dynamic> toJson() => {
+        'Type': type,
+        'ChecksumValidation': checksumValidation,
+        'DetectEncoding': detectEncoding,
+        'Preset': preset,
+        'RectX': rectX,
+        'RectY': rectY,
+        'RectWidth': rectWidth,
+        'RectHeight': rectHeight,
+        'StripFNC': stripFNC,
+        'Timeout': timeout,
+        'MedianSmoothingWindowSize': medianSmoothingWindowSize,
+        'AllowMedianSmoothing': allowMedianSmoothing,
+        'AllowComplexBackground': allowComplexBackground,
+        'AllowDatamatrixIndustrialBarcodes': allowDatamatrixIndustrialBarcodes,
+        'AllowDecreasedImage': allowDecreasedImage,
+        'AllowDetectScanGap': allowDetectScanGap,
+        'AllowIncorrectBarcodes': allowIncorrectBarcodes,
+        'AllowInvertImage': allowInvertImage,
+        'AllowMicroWhiteSpotsRemoving': allowMicroWhiteSpotsRemoving,
+        'AllowOneDFastBarcodesDetector': allowOneDFastBarcodesDetector,
+        'AllowOneDWipedBarsRestoration': allowOneDWipedBarsRestoration,
+        'AllowQRMicroQrRestoration': allowQRMicroQrRestoration,
+        'AllowRegularImage': allowRegularImage,
+        'AllowSaltAndPepperFiltering': allowSaltAndPepperFiltering,
+        'AllowWhiteSpotsRemoving': allowWhiteSpotsRemoving,
+        'CheckMore1DVariants': checkMore1DVariants,
+        'FastScanOnly': fastScanOnly,
+        'RegionLikelihoodThresholdPercent': regionLikelihoodThresholdPercent,
+        'ScanWindowSizes': scanWindowSizes,
+        'Similarity': similarity,
+        'SkipDiagonalSearch': skipDiagonalSearch,
+        'ReadTinyBarcodes': readTinyBarcodes,
+        'AustralianPostEncodingTable': australianPostEncodingTable,
+        'IgnoreEndingFillingPatternsForCTable':
+            ignoreEndingFillingPatternsForCTable
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'Type': type,
-      'ChecksumValidation': checksumValidation,
-      'DetectEncoding': detectEncoding,
-      'Preset': preset,
-      'RectX': rectX,
-      'RectY': rectY,
-      'RectWidth': rectWidth,
-      'RectHeight': rectHeight,
-      'StripFNC': stripFNC,
-      'Timeout': timeout,
-      'MedianSmoothingWindowSize': medianSmoothingWindowSize,
-      'AllowMedianSmoothing': allowMedianSmoothing,
-      'AllowComplexBackground': allowComplexBackground,
-      'AllowDatamatrixIndustrialBarcodes': allowDatamatrixIndustrialBarcodes,
-      'AllowDecreasedImage': allowDecreasedImage,
-      'AllowDetectScanGap': allowDetectScanGap,
-      'AllowIncorrectBarcodes': allowIncorrectBarcodes,
-      'AllowInvertImage': allowInvertImage,
-      'AllowMicroWhiteSpotsRemoving': allowMicroWhiteSpotsRemoving,
-      'AllowOneDFastBarcodesDetector': allowOneDFastBarcodesDetector,
-      'AllowOneDWipedBarsRestoration': allowOneDWipedBarsRestoration,
-      'AllowQRMicroQrRestoration': allowQRMicroQrRestoration,
-      'AllowRegularImage': allowRegularImage,
-      'AllowSaltAndPepperFiltering': allowSaltAndPepperFiltering,
-      'AllowWhiteSpotsRemoving': allowWhiteSpotsRemoving,
-      'CheckMore1DVariants': checkMore1DVariants,
-      'FastScanOnly': fastScanOnly,
-      'RegionLikelihoodThresholdPercent': regionLikelihoodThresholdPercent,
-      'ScanWindowSizes': scanWindowSizes,
-      'Similarity': similarity,
-      'SkipDiagonalSearch': skipDiagonalSearch,
-      'ReadTinyBarcodes': readTinyBarcodes,
-      'AustralianPostEncodingTable': australianPostEncodingTable,
-      'IgnoreEndingFillingPatternsForCTable':
-          ignoreEndingFillingPatternsForCTable
-    };
-  }
-
-  static List<ReaderParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ReaderParams.fromJson(value)).toList();
-  }
+  static List<ReaderParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new ReaderParams.fromJson(value)).toList();
 
   static Map<String, ReaderParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

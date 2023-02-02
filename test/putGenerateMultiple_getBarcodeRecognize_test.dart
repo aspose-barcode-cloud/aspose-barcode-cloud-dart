@@ -20,7 +20,7 @@ void main() {
             folder: TestConfiguration.folder);
 
     expect(generated, isNotNull);
-    expect(generated!.fileSize, greaterThan(0));
+    expect(generated.fileSize, greaterThan(0));
     expect(generated.imageHeight, greaterThan(0));
     expect(generated.imageWidth, greaterThan(0));
   });
@@ -33,7 +33,7 @@ void main() {
       preset: PresetType.highPerformance_.value,
     );
 
-    expect(recognized!.barcodes, isNotNull);
+    expect(recognized.barcodes, isNotNull);
     expect(recognized.barcodes, isNotEmpty);
 
     final first = recognized.barcodes![0];

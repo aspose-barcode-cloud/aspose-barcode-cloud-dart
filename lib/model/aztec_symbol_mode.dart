@@ -1,22 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class AztecSymbolMode {
-  /// The underlying value of this enum member.
-  String? value;
-
   AztecSymbolMode._internal(this.value);
-
-  ///
-  static AztecSymbolMode auto_ = AztecSymbolMode._internal("Auto");
-
-  ///
-  static AztecSymbolMode compact_ = AztecSymbolMode._internal("Compact");
-
-  ///
-  static AztecSymbolMode fullRange_ = AztecSymbolMode._internal("FullRange");
-
-  ///
-  static AztecSymbolMode rune_ = AztecSymbolMode._internal("Rune");
 
   AztecSymbolMode.fromJson(dynamic data) {
     switch (data) {
@@ -33,19 +18,29 @@ class AztecSymbolMode {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(AztecSymbolMode data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static AztecSymbolMode auto_ = AztecSymbolMode._internal("Auto");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static AztecSymbolMode compact_ = AztecSymbolMode._internal("Compact");
+
+  ///
+  static AztecSymbolMode fullRange_ = AztecSymbolMode._internal("FullRange");
+
+  ///
+  static AztecSymbolMode rune_ = AztecSymbolMode._internal("Rune");
+
+  static dynamic encode(AztecSymbolMode data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

@@ -1,29 +1,24 @@
 part of aspose_barcode_cloud.api;
 
 class ApiErrorResponse {
-  String? requestId = null;
-
-  ApiError? error = null;
-
   ApiErrorResponse();
-
-  @override
-  String toString() {
-    return 'ApiErrorResponse[requestId=$requestId, error=$error, ]';
-  }
 
   ApiErrorResponse.fromJson(Map<String, dynamic> json) {
     requestId = json['requestId'];
     error = new ApiError.fromJson(json['error']);
   }
 
-  Map<String, dynamic> toJson() {
-    return {'RequestId': requestId, 'Error': error};
-  }
+  String? requestId = null;
 
-  static List<ApiErrorResponse> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ApiErrorResponse.fromJson(value)).toList();
-  }
+  ApiError? error = null;
+
+  @override
+  String toString() => 'ApiErrorResponse[requestId=$requestId, error=$error, ]';
+
+  Map<String, dynamic> toJson() => {'RequestId': requestId, 'Error': error};
+
+  static List<ApiErrorResponse> listFromJson(List<dynamic> json) =>
+      json.map((value) => new ApiErrorResponse.fromJson(value)).toList();
 
   static Map<String, ApiErrorResponse> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

@@ -1,31 +1,25 @@
 part of aspose_barcode_cloud.api;
 
 class RegionPoint {
+  RegionPoint();
+
+  RegionPoint.fromJson(Map<String, dynamic> json) {
+    X = json['X'];
+    Y = json['Y'];
+  }
   /* X-coordinate */
   int? X = null;
 
 /* Y-coordinate */
   int? Y = null;
 
-  RegionPoint();
-
   @override
-  String toString() {
-    return 'RegionPoint[X=$X, Y=$Y, ]';
-  }
+  String toString() => 'RegionPoint[X=$X, Y=$Y, ]';
 
-  RegionPoint.fromJson(Map<String, dynamic> json) {
-    X = json['X'];
-    Y = json['Y'];
-  }
+  Map<String, dynamic> toJson() => {'X': X, 'Y': Y};
 
-  Map<String, dynamic> toJson() {
-    return {'X': X, 'Y': Y};
-  }
-
-  static List<RegionPoint> listFromJson(List<dynamic> json) {
-    return json.map((value) => new RegionPoint.fromJson(value)).toList();
-  }
+  static List<RegionPoint> listFromJson(List<dynamic> json) =>
+      json.map((value) => new RegionPoint.fromJson(value)).toList();
 
   static Map<String, RegionPoint> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

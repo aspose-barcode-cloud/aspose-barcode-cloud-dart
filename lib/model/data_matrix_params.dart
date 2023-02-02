@@ -1,6 +1,19 @@
 part of aspose_barcode_cloud.api;
 
 class DataMatrixParams {
+  DataMatrixParams();
+
+  DataMatrixParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    textEncoding = json['textEncoding'];
+    columns = json['columns'];
+    dataMatrixEcc = new DataMatrixEccType.fromJson(json['dataMatrixEcc']);
+    dataMatrixEncodeMode =
+        new DataMatrixEncodeMode.fromJson(json['dataMatrixEncodeMode']);
+    rows = json['rows'];
+    macroCharacters = new MacroCharacter.fromJson(json['macroCharacters']);
+  }
   /* Height/Width ratio of 2D BarCode module */
   double? aspectRatio = null;
 
@@ -22,40 +35,22 @@ class DataMatrixParams {
 /* Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None. */
   MacroCharacter? macroCharacters = null;
 
-  DataMatrixParams();
-
   @override
-  String toString() {
-    return 'DataMatrixParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, dataMatrixEcc=$dataMatrixEcc, dataMatrixEncodeMode=$dataMatrixEncodeMode, rows=$rows, macroCharacters=$macroCharacters, ]';
-  }
+  String toString() =>
+      'DataMatrixParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, dataMatrixEcc=$dataMatrixEcc, dataMatrixEncodeMode=$dataMatrixEncodeMode, rows=$rows, macroCharacters=$macroCharacters, ]';
 
-  DataMatrixParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    textEncoding = json['textEncoding'];
-    columns = json['columns'];
-    dataMatrixEcc = new DataMatrixEccType.fromJson(json['dataMatrixEcc']);
-    dataMatrixEncodeMode =
-        new DataMatrixEncodeMode.fromJson(json['dataMatrixEncodeMode']);
-    rows = json['rows'];
-    macroCharacters = new MacroCharacter.fromJson(json['macroCharacters']);
-  }
+  Map<String, dynamic> toJson() => {
+        'AspectRatio': aspectRatio,
+        'TextEncoding': textEncoding,
+        'Columns': columns,
+        'DataMatrixEcc': dataMatrixEcc,
+        'DataMatrixEncodeMode': dataMatrixEncodeMode,
+        'Rows': rows,
+        'MacroCharacters': macroCharacters
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'AspectRatio': aspectRatio,
-      'TextEncoding': textEncoding,
-      'Columns': columns,
-      'DataMatrixEcc': dataMatrixEcc,
-      'DataMatrixEncodeMode': dataMatrixEncodeMode,
-      'Rows': rows,
-      'MacroCharacters': macroCharacters
-    };
-  }
-
-  static List<DataMatrixParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new DataMatrixParams.fromJson(value)).toList();
-  }
+  static List<DataMatrixParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new DataMatrixParams.fromJson(value)).toList();
 
   static Map<String, DataMatrixParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

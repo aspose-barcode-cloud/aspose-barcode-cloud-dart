@@ -1,6 +1,13 @@
 part of aspose_barcode_cloud.api;
 
 class ResultImageInfo {
+  ResultImageInfo();
+
+  ResultImageInfo.fromJson(Map<String, dynamic> json) {
+    fileSize = json['fileSize'];
+    imageWidth = json['imageWidth'];
+    imageHeight = json['imageHeight'];
+  }
   /* Result file size. */
   int? fileSize = null;
 
@@ -10,30 +17,18 @@ class ResultImageInfo {
 /* Result image height. */
   int? imageHeight = null;
 
-  ResultImageInfo();
-
   @override
-  String toString() {
-    return 'ResultImageInfo[fileSize=$fileSize, imageWidth=$imageWidth, imageHeight=$imageHeight, ]';
-  }
+  String toString() =>
+      'ResultImageInfo[fileSize=$fileSize, imageWidth=$imageWidth, imageHeight=$imageHeight, ]';
 
-  ResultImageInfo.fromJson(Map<String, dynamic> json) {
-    fileSize = json['fileSize'];
-    imageWidth = json['imageWidth'];
-    imageHeight = json['imageHeight'];
-  }
+  Map<String, dynamic> toJson() => {
+        'FileSize': fileSize,
+        'ImageWidth': imageWidth,
+        'ImageHeight': imageHeight
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'FileSize': fileSize,
-      'ImageWidth': imageWidth,
-      'ImageHeight': imageHeight
-    };
-  }
-
-  static List<ResultImageInfo> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ResultImageInfo.fromJson(value)).toList();
-  }
+  static List<ResultImageInfo> listFromJson(List<dynamic> json) =>
+      json.map((value) => new ResultImageInfo.fromJson(value)).toList();
 
   static Map<String, ResultImageInfo> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

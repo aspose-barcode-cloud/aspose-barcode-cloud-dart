@@ -1,6 +1,17 @@
 part of aspose_barcode_cloud.api;
 
 class StorageFile {
+  StorageFile();
+
+  StorageFile.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    isFolder = json['isFolder'];
+    modifiedDate = json['modifiedDate'] == null
+        ? null
+        : DateTime.parse(json['modifiedDate']);
+    size = json['size'];
+    path = json['path'];
+  }
   /* File or folder name. */
   String? name = null;
 
@@ -16,37 +27,21 @@ class StorageFile {
 /* File or folder path. */
   String? path = null;
 
-  StorageFile();
-
   @override
-  String toString() {
-    return 'StorageFile[name=$name, isFolder=$isFolder, modifiedDate=$modifiedDate, size=$size, path=$path, ]';
-  }
+  String toString() =>
+      'StorageFile[name=$name, isFolder=$isFolder, modifiedDate=$modifiedDate, size=$size, path=$path, ]';
 
-  StorageFile.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    isFolder = json['isFolder'];
-    modifiedDate = json['modifiedDate'] == null
-        ? null
-        : DateTime.parse(json['modifiedDate']);
-    size = json['size'];
-    path = json['path'];
-  }
+  Map<String, dynamic> toJson() => {
+        'Name': name,
+        'IsFolder': isFolder,
+        'ModifiedDate':
+            modifiedDate == null ? '' : modifiedDate!.toUtc().toIso8601String(),
+        'Size': size,
+        'Path': path
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'Name': name,
-      'IsFolder': isFolder,
-      'ModifiedDate':
-          modifiedDate == null ? '' : modifiedDate!.toUtc().toIso8601String(),
-      'Size': size,
-      'Path': path
-    };
-  }
-
-  static List<StorageFile> listFromJson(List<dynamic> json) {
-    return json.map((value) => new StorageFile.fromJson(value)).toList();
-  }
+  static List<StorageFile> listFromJson(List<dynamic> json) =>
+      json.map((value) => new StorageFile.fromJson(value)).toList();
 
   static Map<String, StorageFile> mapFromJson(
       Map<String, Map<String, dynamic>> json) {

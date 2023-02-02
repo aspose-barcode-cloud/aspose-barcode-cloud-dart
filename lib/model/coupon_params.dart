@@ -1,29 +1,23 @@
 part of aspose_barcode_cloud.api;
 
 class CouponParams {
-  /* Space between main the BarCode and supplement BarCode in Unit value. */
-  double? supplementSpace = null;
-
   CouponParams();
-
-  @override
-  String toString() {
-    return 'CouponParams[supplementSpace=$supplementSpace, ]';
-  }
 
   CouponParams.fromJson(Map<String, dynamic> json) {
     supplementSpace = json['supplementSpace'] == null
         ? null
         : json['supplementSpace'].toDouble();
   }
+  /* Space between main the BarCode and supplement BarCode in Unit value. */
+  double? supplementSpace = null;
 
-  Map<String, dynamic> toJson() {
-    return {'SupplementSpace': supplementSpace};
-  }
+  @override
+  String toString() => 'CouponParams[supplementSpace=$supplementSpace, ]';
 
-  static List<CouponParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new CouponParams.fromJson(value)).toList();
-  }
+  Map<String, dynamic> toJson() => {'SupplementSpace': supplementSpace};
+
+  static List<CouponParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new CouponParams.fromJson(value)).toList();
 
   static Map<String, CouponParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
