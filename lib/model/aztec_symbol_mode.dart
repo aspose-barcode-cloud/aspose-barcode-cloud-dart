@@ -40,4 +40,12 @@ class AztecSymbolMode {
   static dynamic encode(AztecSymbolMode data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

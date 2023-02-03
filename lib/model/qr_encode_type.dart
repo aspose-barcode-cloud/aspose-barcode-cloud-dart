@@ -34,4 +34,12 @@ class QREncodeType {
   static dynamic encode(QREncodeType data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

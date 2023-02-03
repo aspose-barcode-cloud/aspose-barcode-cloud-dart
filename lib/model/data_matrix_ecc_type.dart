@@ -58,4 +58,12 @@ class DataMatrixEccType {
   static dynamic encode(DataMatrixEccType data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

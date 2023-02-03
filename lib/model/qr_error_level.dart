@@ -40,4 +40,12 @@ class QRErrorLevel {
   static dynamic encode(QRErrorLevel data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

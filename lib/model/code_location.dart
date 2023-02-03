@@ -34,4 +34,12 @@ class CodeLocation {
   static dynamic encode(CodeLocation data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }
