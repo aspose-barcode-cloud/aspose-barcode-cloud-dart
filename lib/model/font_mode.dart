@@ -28,4 +28,12 @@ class FontMode {
   static dynamic encode(FontMode data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

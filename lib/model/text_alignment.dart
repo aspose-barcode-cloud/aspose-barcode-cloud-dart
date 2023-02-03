@@ -34,4 +34,12 @@ class TextAlignment {
   static dynamic encode(TextAlignment data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

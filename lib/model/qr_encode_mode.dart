@@ -53,4 +53,12 @@ class QREncodeMode {
   static dynamic encode(QREncodeMode data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

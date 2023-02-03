@@ -45,7 +45,7 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/generate";
+    String requestPath = "/barcode/generate".replaceAll("{format}", "json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -186,7 +186,10 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -243,8 +246,9 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/{name}/recognize".replaceAll("{name}", name.toString());
+    String requestPath = "/barcode/{name}/recognize"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -405,7 +409,10 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -463,7 +470,7 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/recognize";
+    String requestPath = "/barcode/recognize".replaceAll("{format}", "json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -619,21 +626,30 @@ class BarcodeApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "url", url));
     }
 
-    String contentType = "multipart/form-data";
+    List<String> contentTypes = [
+      "multipart/form-data",
+      "application/x-www-form-urlencoded",
+      "application/octet-stream"
+    ];
 
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
-    bool hasFields = false;
-    MultipartRequest? mp;
+    if (contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest? mp;
 
-    mp = new MultipartRequest('POST', Uri.parse(requestPath));
-    if (image != null) {
-      hasFields = true;
-      mp.fields['image'] = image.field;
-      mp.files.add(image);
-    }
+      mp = new MultipartRequest('POST', Uri.parse(requestPath));
+      // ignore: unnecessary_null_comparison
+      if (image != null) {
+        hasFields = true;
+        mp.fields['image'] = image.field;
+        mp.files.add(image);
+      }
 
-    if (hasFields) postBody = mp;
+      if (hasFields) postBody = mp;
+    } else {}
 
     var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
@@ -655,7 +671,8 @@ class BarcodeApi {
     Object? postBody = generatorParamsList;
 
     // create path and map variables
-    String requestPath = "/barcode/generateMultiple";
+    String requestPath =
+        "/barcode/generateMultiple".replaceAll("{format}", "json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -666,7 +683,10 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json", "application/xml"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
@@ -722,8 +742,9 @@ class BarcodeApi {
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/{name}/generate".replaceAll("{name}", name.toString());
+    String requestPath = "/barcode/{name}/generate"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -872,7 +893,15 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = [
+      "multipart/form-data",
+      "application/x-www-form-urlencoded",
+      "application/json",
+      "application/xml"
+    ];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -895,8 +924,9 @@ class BarcodeApi {
     Object? postBody = readerParams;
 
     // create path and map variables
-    String requestPath =
-        "/barcode/{name}/recognize".replaceAll("{name}", name.toString());
+    String requestPath = "/barcode/{name}/recognize"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -915,7 +945,10 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -939,7 +972,8 @@ class BarcodeApi {
 
     // create path and map variables
     String requestPath = "/barcode/{name}/generateMultiple"
-        .replaceAll("{name}", name.toString());
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -958,7 +992,10 @@ class BarcodeApi {
           _convertParametersForCollectionFormat("", "storage", storage));
     }
 
-    String contentType = "application/json";
+    List<String> contentTypes = ["application/json", "application/xml"];
+
+    String contentType =
+        contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["JWT"];
 
     var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,

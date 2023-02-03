@@ -46,4 +46,12 @@ class ITF14BorderType {
   static dynamic encode(ITF14BorderType data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

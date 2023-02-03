@@ -42,4 +42,12 @@ class Pdf417CompactionMode {
   static dynamic encode(Pdf417CompactionMode data) {
     return data.value;
   }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }
