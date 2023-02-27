@@ -430,7 +430,7 @@ class BarcodeApi {
   }
 
   ///
-  /// Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+  /// Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
   ///
   Future<BarcodeResponseList> postBarcodeRecognizeFromUrlOrContent(
       {String? type,

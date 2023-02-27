@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------ | ------------ | -----------
 [**getBarcodeGenerate**](BarcodeApi.md#getBarcodeGenerate) | **GET** /barcode/generate | Generate barcode.
 [**getBarcodeRecognize**](BarcodeApi.md#getBarcodeRecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-[**postBarcodeRecognizeFromUrlOrContent**](BarcodeApi.md#postBarcodeRecognizeFromUrlOrContent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+[**postBarcodeRecognizeFromUrlOrContent**](BarcodeApi.md#postBarcodeRecognizeFromUrlOrContent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
 [**postGenerateMultiple**](BarcodeApi.md#postGenerateMultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
 [**putBarcodeGenerateFile**](BarcodeApi.md#putBarcodeGenerateFile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 [**putBarcodeRecognizeFromBody**](BarcodeApi.md#putBarcodeRecognizeFromBody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
@@ -150,7 +150,7 @@ final rectY = 56; // int | Set Y for area for recognition.
 final rectWidth = 56; // int | Set Width of area for recognition.
 final rectHeight = 56; // int | Set Height of area for recognition.
 final stripFNC = true; // bool | Value indicating whether FNC symbol strip must be done.
-final timeout = 56; // int | Timeout of recognition process.
+final timeout = 56; // int | Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout.
 final medianSmoothingWindowSize = 56; // int | Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set.
 final allowMedianSmoothing = true; // bool | Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes.
 final allowComplexBackground = true; // bool | Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode.
@@ -174,7 +174,7 @@ final similarity = 1.2; // double | Similarity coefficient depends on how homoge
 final skipDiagonalSearch = true; // bool | Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
 final readTinyBarcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 final australianPostEncodingTable = australianPostEncodingTable_example; // String | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
-final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
+final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
 final rectangleRegion = rectangleRegion_example; // String | 
 final storage = storage_example; // String | The image storage.
 final folder = folder_example; // String | The image folder.
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
  **rectWidth** | **int**| Set Width of area for recognition. | [optional] 
  **rectHeight** | **int**| Set Height of area for recognition. | [optional] 
  **stripFNC** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional] 
- **timeout** | **int**| Timeout of recognition process. | [optional] 
+ **timeout** | **int**| Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout. | [optional] 
  **medianSmoothingWindowSize** | **int**| Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set. | [optional] 
  **allowMedianSmoothing** | **bool**| Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes. | [optional] 
  **allowComplexBackground** | **bool**| Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode. | [optional] 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
  **skipDiagonalSearch** | **bool**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional] 
  **readTinyBarcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional] 
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] 
- **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter \&quot;z\&quot;. | [optional] 
+ **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional] 
  **rectangleRegion** | **String**|  | [optional] 
  **storage** | **String**| The image storage. | [optional] 
  **folder** | **String**| The image folder. | [optional] 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 # **postBarcodeRecognizeFromUrlOrContent**
 > BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, url, image)
 
-Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
 
 ### Example
 ```dart
@@ -265,7 +265,7 @@ final rectY = 56; // int | Set Y for area for recognition.
 final rectWidth = 56; // int | Set Width of area for recognition.
 final rectHeight = 56; // int | Set Height of area for recognition.
 final stripFNC = true; // bool | Value indicating whether FNC symbol strip must be done.
-final timeout = 56; // int | Timeout of recognition process.
+final timeout = 56; // int | Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout.
 final medianSmoothingWindowSize = 56; // int | Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set.
 final allowMedianSmoothing = true; // bool | Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes.
 final allowComplexBackground = true; // bool | Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode.
@@ -289,7 +289,7 @@ final similarity = 1.2; // double | Similarity coefficient depends on how homoge
 final skipDiagonalSearch = true; // bool | Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
 final readTinyBarcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 final australianPostEncodingTable = australianPostEncodingTable_example; // String | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
-final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
+final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
 final rectangleRegion = rectangleRegion_example; // String | 
 final url = url_example; // String | The image file url.
 final image = /path/to/file.txt; // MultipartFile | Image data
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
  **rectWidth** | **int**| Set Width of area for recognition. | [optional] 
  **rectHeight** | **int**| Set Height of area for recognition. | [optional] 
  **stripFNC** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional] 
- **timeout** | **int**| Timeout of recognition process. | [optional] 
+ **timeout** | **int**| Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout. | [optional] 
  **medianSmoothingWindowSize** | **int**| Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set. | [optional] 
  **allowMedianSmoothing** | **bool**| Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes. | [optional] 
  **allowComplexBackground** | **bool**| Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode. | [optional] 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
  **skipDiagonalSearch** | **bool**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional] 
  **readTinyBarcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional] 
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] 
- **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter \&quot;z\&quot;. | [optional] 
+ **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional] 
  **rectangleRegion** | **String**|  | [optional] 
  **url** | **String**| The image file url. | [optional] 
  **image** | **MultipartFile**| Image data | [optional] 
