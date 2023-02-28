@@ -1,19 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class QREncodeType {
-  /// The underlying value of this enum member.
-  String? value;
-
   QREncodeType._internal(this.value);
-
-  ///
-  static QREncodeType auto_ = QREncodeType._internal("Auto");
-
-  ///
-  static QREncodeType forceQR_ = QREncodeType._internal("ForceQR");
-
-  ///
-  static QREncodeType forceMicroQR_ = QREncodeType._internal("ForceMicroQR");
 
   QREncodeType.fromJson(dynamic data) {
     switch (data) {
@@ -27,19 +15,26 @@ class QREncodeType {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QREncodeType data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static QREncodeType auto_ = QREncodeType._internal("Auto");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static QREncodeType forceQR_ = QREncodeType._internal("ForceQR");
+
+  ///
+  static QREncodeType forceMicroQR_ = QREncodeType._internal("ForceMicroQR");
+
+  static dynamic encode(QREncodeType data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

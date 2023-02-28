@@ -1,6 +1,19 @@
 part of aspose_barcode_cloud.api;
 
 class QrParams {
+  QrParams();
+
+  QrParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    textEncoding = json['textEncoding'];
+    encodeType = new QREncodeType.fromJson(json['encodeType']);
+    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
+    encodeMode = new QREncodeMode.fromJson(json['encodeMode']);
+    errorLevel = new QRErrorLevel.fromJson(json['errorLevel']);
+    version = new QRVersion.fromJson(json['version']);
+    structuredAppend = new StructuredAppend.fromJson(json['structuredAppend']);
+  }
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
@@ -25,45 +38,27 @@ class QrParams {
 /* QR structured append parameters. */
   StructuredAppend? structuredAppend = null;
 
-  QrParams();
-
   @override
-  String toString() {
-    return 'QrParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, encodeType=$encodeType, eCIEncoding=$eCIEncoding, encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, structuredAppend=$structuredAppend, ]';
-  }
+  String toString() =>
+      'QrParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, encodeType=$encodeType, eCIEncoding=$eCIEncoding, encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, structuredAppend=$structuredAppend, ]';
 
-  QrParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    textEncoding = json['textEncoding'];
-    encodeType = new QREncodeType.fromJson(json['encodeType']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
-    encodeMode = new QREncodeMode.fromJson(json['encodeMode']);
-    errorLevel = new QRErrorLevel.fromJson(json['errorLevel']);
-    version = new QRVersion.fromJson(json['version']);
-    structuredAppend = new StructuredAppend.fromJson(json['structuredAppend']);
-  }
+  Map<String, dynamic> toJson() => {
+        'AspectRatio': aspectRatio,
+        'TextEncoding': textEncoding,
+        'EncodeType': encodeType,
+        'ECIEncoding': eCIEncoding,
+        'EncodeMode': encodeMode,
+        'ErrorLevel': errorLevel,
+        'Version': version,
+        'StructuredAppend': structuredAppend
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'AspectRatio': aspectRatio,
-      'TextEncoding': textEncoding,
-      'EncodeType': encodeType,
-      'ECIEncoding': eCIEncoding,
-      'EncodeMode': encodeMode,
-      'ErrorLevel': errorLevel,
-      'Version': version,
-      'StructuredAppend': structuredAppend
-    };
-  }
-
-  static List<QrParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new QrParams.fromJson(value)).toList();
-  }
+  static List<QrParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new QrParams.fromJson(value)).toList();
 
   static Map<String, QrParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, QrParams>();
+    final map = new Map<String, QrParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new QrParams.fromJson(value));

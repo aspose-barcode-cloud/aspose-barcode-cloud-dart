@@ -1,22 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class CodabarSymbol {
-  /// The underlying value of this enum member.
-  String? value;
-
   CodabarSymbol._internal(this.value);
-
-  ///
-  static CodabarSymbol a_ = CodabarSymbol._internal("A");
-
-  ///
-  static CodabarSymbol b_ = CodabarSymbol._internal("B");
-
-  ///
-  static CodabarSymbol c_ = CodabarSymbol._internal("C");
-
-  ///
-  static CodabarSymbol d_ = CodabarSymbol._internal("D");
 
   CodabarSymbol.fromJson(dynamic data) {
     switch (data) {
@@ -33,19 +18,29 @@ class CodabarSymbol {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodabarSymbol data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static CodabarSymbol a_ = CodabarSymbol._internal("A");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static CodabarSymbol b_ = CodabarSymbol._internal("B");
+
+  ///
+  static CodabarSymbol c_ = CodabarSymbol._internal("C");
+
+  ///
+  static CodabarSymbol d_ = CodabarSymbol._internal("D");
+
+  static dynamic encode(CodabarSymbol data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

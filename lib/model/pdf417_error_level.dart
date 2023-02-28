@@ -1,37 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class Pdf417ErrorLevel {
-  /// The underlying value of this enum member.
-  String? value;
-
   Pdf417ErrorLevel._internal(this.value);
-
-  ///
-  static Pdf417ErrorLevel level0_ = Pdf417ErrorLevel._internal("Level0");
-
-  ///
-  static Pdf417ErrorLevel level1_ = Pdf417ErrorLevel._internal("Level1");
-
-  ///
-  static Pdf417ErrorLevel level2_ = Pdf417ErrorLevel._internal("Level2");
-
-  ///
-  static Pdf417ErrorLevel level3_ = Pdf417ErrorLevel._internal("Level3");
-
-  ///
-  static Pdf417ErrorLevel level4_ = Pdf417ErrorLevel._internal("Level4");
-
-  ///
-  static Pdf417ErrorLevel level5_ = Pdf417ErrorLevel._internal("Level5");
-
-  ///
-  static Pdf417ErrorLevel level6_ = Pdf417ErrorLevel._internal("Level6");
-
-  ///
-  static Pdf417ErrorLevel level7_ = Pdf417ErrorLevel._internal("Level7");
-
-  ///
-  static Pdf417ErrorLevel level8_ = Pdf417ErrorLevel._internal("Level8");
 
   Pdf417ErrorLevel.fromJson(dynamic data) {
     switch (data) {
@@ -63,19 +33,44 @@ class Pdf417ErrorLevel {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(Pdf417ErrorLevel data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static Pdf417ErrorLevel level0_ = Pdf417ErrorLevel._internal("Level0");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static Pdf417ErrorLevel level1_ = Pdf417ErrorLevel._internal("Level1");
+
+  ///
+  static Pdf417ErrorLevel level2_ = Pdf417ErrorLevel._internal("Level2");
+
+  ///
+  static Pdf417ErrorLevel level3_ = Pdf417ErrorLevel._internal("Level3");
+
+  ///
+  static Pdf417ErrorLevel level4_ = Pdf417ErrorLevel._internal("Level4");
+
+  ///
+  static Pdf417ErrorLevel level5_ = Pdf417ErrorLevel._internal("Level5");
+
+  ///
+  static Pdf417ErrorLevel level6_ = Pdf417ErrorLevel._internal("Level6");
+
+  ///
+  static Pdf417ErrorLevel level7_ = Pdf417ErrorLevel._internal("Level7");
+
+  ///
+  static Pdf417ErrorLevel level8_ = Pdf417ErrorLevel._internal("Level8");
+
+  static dynamic encode(Pdf417ErrorLevel data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

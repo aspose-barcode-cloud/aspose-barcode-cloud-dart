@@ -1,14 +1,14 @@
 part of aspose_barcode_cloud.api;
 
 class BarcodeApi {
-  final ApiClient apiClient;
-
   BarcodeApi(this.apiClient) {}
 
+  final ApiClient apiClient;
+
+  ///
   /// Generate barcode.
   ///
-  ///
-  Future<Uint8List?> getBarcodeGenerate(String type, String text,
+  Future<Uint8List> getBarcodeGenerate(String type, String text,
       {String? twoDDisplayText,
       String? textLocation,
       String? textAlignment,
@@ -42,15 +42,17 @@ class BarcodeApi {
       double? supplementSpace,
       double? barWidthReduction,
       String? format}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/generate".replaceAll("{format}", "json");
+    final String requestPath =
+        "/barcode/generate".replaceAll("{format}", "json");
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     queryParams.addAll(_convertParametersForCollectionFormat("", "Type", type));
     queryParams.addAll(_convertParametersForCollectionFormat("", "Text", text));
     if (twoDDisplayText != null) {
@@ -186,13 +188,13 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -202,10 +204,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Recognize barcode from a file on server.
   ///
-  ///
-  Future<BarcodeResponseList?> getBarcodeRecognize(String name,
+  Future<BarcodeResponseList> getBarcodeRecognize(String name,
       {String? type,
       String? checksumValidation,
       bool? detectEncoding,
@@ -243,17 +245,18 @@ class BarcodeApi {
       String? rectangleRegion,
       String? storage,
       String? folder}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/recognize"
+    final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+        .replaceAll("{" + "name" + "}", name);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "Type", type));
@@ -409,13 +412,13 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -426,10 +429,10 @@ class BarcodeApi {
     }
   }
 
-  /// Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
   ///
+  /// Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
   ///
-  Future<BarcodeResponseList?> postBarcodeRecognizeFromUrlOrContent(
+  Future<BarcodeResponseList> postBarcodeRecognizeFromUrlOrContent(
       {String? type,
       String? checksumValidation,
       bool? detectEncoding,
@@ -467,15 +470,17 @@ class BarcodeApi {
       String? rectangleRegion,
       String? url,
       MultipartFile? image}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/recognize".replaceAll("{format}", "json");
+    final String requestPath =
+        "/barcode/recognize".replaceAll("{format}", "json");
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "Type", type));
@@ -626,15 +631,15 @@ class BarcodeApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "url", url));
     }
 
-    List<String> contentTypes = [
+    final List<String> contentTypes = [
       "multipart/form-data",
       "application/x-www-form-urlencoded",
       "application/octet-stream"
     ];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -648,10 +653,12 @@ class BarcodeApi {
         mp.files.add(image);
       }
 
-      if (hasFields) postBody = mp;
+      if (hasFields) {
+        postBody = mp;
+      }
     } else {}
 
-    var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -662,34 +669,35 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate multiple barcodes and return in response stream
   ///
-  ///
-  Future<Uint8List?> postGenerateMultiple(
+  Future<Uint8List> postGenerateMultiple(
       GeneratorParamsList generatorParamsList,
       {String? format}) async {
+    // ignore: prefer_final_locals
     Object? postBody = generatorParamsList;
 
     // create path and map variables
-    String requestPath =
+    final String requestPath =
         "/barcode/generateMultiple".replaceAll("{format}", "json");
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (format != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = ["application/json", "application/xml"];
+    final List<String> contentTypes = ["application/json", "application/xml"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -699,10 +707,10 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate barcode and save on server (from query params or from file with json or xml content)
   ///
-  ///
-  Future<ResultImageInfo?> putBarcodeGenerateFile(
+  Future<ResultImageInfo> putBarcodeGenerateFile(
       String name, String type, String text,
       {String? twoDDisplayText,
       String? textLocation,
@@ -739,17 +747,18 @@ class BarcodeApi {
       String? storage,
       String? folder,
       String? format}) async {
+    // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/generate"
+    final String requestPath = "/barcode/{name}/generate"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+        .replaceAll("{" + "name" + "}", name);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     queryParams.addAll(_convertParametersForCollectionFormat("", "Type", type));
     queryParams.addAll(_convertParametersForCollectionFormat("", "Text", text));
     if (twoDDisplayText != null) {
@@ -893,18 +902,18 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "format", format));
     }
 
-    List<String> contentTypes = [
+    final List<String> contentTypes = [
       "multipart/form-data",
       "application/x-www-form-urlencoded",
       "application/json",
       "application/xml"
     ];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -915,23 +924,24 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Recognition of a barcode from file on server with parameters in body.
   ///
-  ///
-  Future<BarcodeResponseList?> putBarcodeRecognizeFromBody(
+  Future<BarcodeResponseList> putBarcodeRecognizeFromBody(
       String name, ReaderParams readerParams,
       {String? type, String? storage, String? folder}) async {
+    // ignore: prefer_final_locals
     Object? postBody = readerParams;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/recognize"
+    final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+        .replaceAll("{" + "name" + "}", name);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "type", type));
@@ -945,13 +955,13 @@ class BarcodeApi {
           .addAll(_convertParametersForCollectionFormat("", "folder", folder));
     }
 
-    List<String> contentTypes = ["application/json"];
+    final List<String> contentTypes = ["application/json"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -962,23 +972,24 @@ class BarcodeApi {
     }
   }
 
+  ///
   /// Generate image with multiple barcodes and put new file on server
   ///
-  ///
-  Future<ResultImageInfo?> putGenerateMultiple(
+  Future<ResultImageInfo> putGenerateMultiple(
       String name, GeneratorParamsList generatorParamsList,
       {String? format, String? folder, String? storage}) async {
+    // ignore: prefer_final_locals
     Object? postBody = generatorParamsList;
 
     // create path and map variables
-    String requestPath = "/barcode/{name}/generateMultiple"
+    final String requestPath = "/barcode/{name}/generateMultiple"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name.toString());
+        .replaceAll("{" + "name" + "}", name);
 
     // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
     if (format != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "format", format));
@@ -992,13 +1003,13 @@ class BarcodeApi {
           _convertParametersForCollectionFormat("", "storage", storage));
     }
 
-    List<String> contentTypes = ["application/json", "application/xml"];
+    final List<String> contentTypes = ["application/json", "application/xml"];
 
-    String contentType =
+    final String contentType =
         contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["JWT"];
+    final List<String> authNames = ["JWT"];
 
-    var response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {

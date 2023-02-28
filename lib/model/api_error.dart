@@ -1,22 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class ApiError {
-  String? code = null;
-
-  String? message = null;
-
-  String? description = null;
-
-  DateTime? dateTime = null;
-
-  ApiError? innerError = null;
-
   ApiError();
-
-  @override
-  String toString() {
-    return 'ApiError[code=$code, message=$message, description=$description, dateTime=$dateTime, innerError=$innerError, ]';
-  }
 
   ApiError.fromJson(Map<String, dynamic> json) {
     code = json['code'];
@@ -27,23 +12,34 @@ class ApiError {
     innerError = new ApiError.fromJson(json['innerError']);
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'Code': code,
-      'Message': message,
-      'Description': description,
-      'DateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
-      'InnerError': innerError
-    };
-  }
+  String? code = null;
 
-  static List<ApiError> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ApiError.fromJson(value)).toList();
-  }
+  String? message = null;
+
+  String? description = null;
+
+  DateTime? dateTime = null;
+
+  ApiError? innerError = null;
+
+  @override
+  String toString() =>
+      'ApiError[code=$code, message=$message, description=$description, dateTime=$dateTime, innerError=$innerError, ]';
+
+  Map<String, dynamic> toJson() => {
+        'Code': code,
+        'Message': message,
+        'Description': description,
+        'DateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
+        'InnerError': innerError
+      };
+
+  static List<ApiError> listFromJson(List<dynamic> json) =>
+      json.map((value) => new ApiError.fromJson(value)).toList();
 
   static Map<String, ApiError> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ApiError>();
+    final map = new Map<String, ApiError>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ApiError.fromJson(value));

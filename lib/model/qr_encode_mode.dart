@@ -1,29 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class QREncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
-
   QREncodeMode._internal(this.value);
-
-  ///
-  static QREncodeMode auto_ = QREncodeMode._internal("Auto");
-
-  ///
-  static QREncodeMode bytes_ = QREncodeMode._internal("Bytes");
-
-  ///
-  static QREncodeMode utf8BOM_ = QREncodeMode._internal("Utf8BOM");
-
-  ///
-  static QREncodeMode utf16BEBOM_ = QREncodeMode._internal("Utf16BEBOM");
-
-  ///
-  static QREncodeMode eCIEncoding_ = QREncodeMode._internal("ECIEncoding");
-
-  ///
-  static QREncodeMode extendedCodetext_ =
-      QREncodeMode._internal("ExtendedCodetext");
 
   QREncodeMode.fromJson(dynamic data) {
     switch (data) {
@@ -46,19 +24,36 @@ class QREncodeMode {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QREncodeMode data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static QREncodeMode auto_ = QREncodeMode._internal("Auto");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static QREncodeMode bytes_ = QREncodeMode._internal("Bytes");
+
+  ///
+  static QREncodeMode utf8BOM_ = QREncodeMode._internal("Utf8BOM");
+
+  ///
+  static QREncodeMode utf16BEBOM_ = QREncodeMode._internal("Utf16BEBOM");
+
+  ///
+  static QREncodeMode eCIEncoding_ = QREncodeMode._internal("ECIEncoding");
+
+  ///
+  static QREncodeMode extendedCodetext_ =
+      QREncodeMode._internal("ExtendedCodetext");
+
+  static dynamic encode(QREncodeMode data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

@@ -16,13 +16,13 @@ void main() {
     final generatorParamsList = GeneratorParamsList()
       ..barcodeBuilders!.add(barcode);
 
-    final Uint8List? generated =
+    final Uint8List generated =
         await TestConfiguration.BarcodeApi.postGenerateMultiple(
             generatorParamsList);
 
     expect(generated, isNotNull);
     expect(generated, isNotEmpty);
-    expect(generated!.length, greaterThan(0));
+    expect(generated.length, greaterThan(0));
     new File("qr.png").writeAsBytesSync(generated);
   });
 }

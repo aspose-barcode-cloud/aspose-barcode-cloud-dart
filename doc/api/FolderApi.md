@@ -27,11 +27,11 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FolderApi();
-var srcPath = srcPath_example; // String | Source folder path e.g. '/src'
-var destPath = destPath_example; // String | Destination folder path e.g. '/dst'
-var srcStorageName = srcStorageName_example; // String | Source storage name
-var destStorageName = destStorageName_example; // String | Destination storage name
+final api_instance = new FolderApi();
+final srcPath = srcPath_example; // String | Source folder path e.g. '/src'
+final destPath = destPath_example; // String | Destination folder path e.g. '/dst'
+final srcStorageName = srcStorageName_example; // String | Source storage name
+final destStorageName = destStorageName_example; // String | Destination storage name
 
 try {
     api_instance.copyFolder(srcPath, destPath, srcStorageName, destStorageName);
@@ -74,9 +74,9 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FolderApi();
-var path = path_example; // String | Folder path to create e.g. 'folder_1/folder_2/'
-var storageName = storageName_example; // String | Storage name
+final api_instance = new FolderApi();
+final path = path_example; // String | Folder path to create e.g. 'folder_1/folder_2/'
+final storageName = storageName_example; // String | Storage name
 
 try {
     api_instance.createFolder(path, storageName);
@@ -117,10 +117,10 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FolderApi();
-var path = path_example; // String | Folder path e.g. '/folder'
-var storageName = storageName_example; // String | Storage name
-var recursive = true; // bool | Enable to delete folders, subfolders and files
+final api_instance = new FolderApi();
+final path = path_example; // String | Folder path e.g. '/folder'
+final storageName = storageName_example; // String | Storage name
+final recursive = true; // bool | Enable to delete folders, subfolders and files
 
 try {
     api_instance.deleteFolder(path, storageName, recursive);
@@ -162,12 +162,12 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FolderApi();
-var path = path_example; // String | Folder path e.g. '/folder'
-var storageName = storageName_example; // String | Storage name
+final api_instance = new FolderApi();
+final path = path_example; // String | Folder path e.g. '/folder'
+final storageName = storageName_example; // String | Storage name
 
 try {
-    var result = api_instance.getFilesList(path, storageName);
+    final result = api_instance.getFilesList(path, storageName);
     print(result);
 } catch (e) {
     print("Exception when calling FolderApi->getFilesList: $e\n");
@@ -206,11 +206,11 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FolderApi();
-var srcPath = srcPath_example; // String | Folder path to move e.g. '/folder'
-var destPath = destPath_example; // String | Destination folder path to move to e.g '/dst'
-var srcStorageName = srcStorageName_example; // String | Source storage name
-var destStorageName = destStorageName_example; // String | Destination storage name
+final api_instance = new FolderApi();
+final srcPath = srcPath_example; // String | Folder path to move e.g. '/folder'
+final destPath = destPath_example; // String | Destination folder path to move to e.g '/dst'
+final srcStorageName = srcStorageName_example; // String | Source storage name
+final destStorageName = destStorageName_example; // String | Destination storage name
 
 try {
     api_instance.moveFolder(srcPath, destPath, srcStorageName, destStorageName);

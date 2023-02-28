@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Dart
 
 - API version: 3.0
-- SDK version: 0.23.1
+- SDK version: 0.23.2
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -32,7 +32,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 0.23.1
+  aspose_barcode_cloud: 0.23.2
 ```
 
 ## Sample usage
@@ -52,12 +52,12 @@ import 'package:http/http.dart';
 Future<void> main() async {
   const fileName = "qr.png";
   // Setup
-  var apiClient = barcode.ApiClient(
+  final apiClient = barcode.ApiClient(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
     clientSecret:
         "Client Secret from https://dashboard.aspose.cloud/applications",
   );
-  var api = barcode.BarcodeApi(apiClient);
+  final api = barcode.BarcodeApi(apiClient);
 
   // Generate image with barcode
   Uint8List? generated =
@@ -67,7 +67,7 @@ Future<void> main() async {
   print("Generated image saved to " + fileName);
 
   // Recognize generated image
-  var formFile = MultipartFile.fromBytes("image", generated.toList(),
+  final formFile = MultipartFile.fromBytes("image", generated.toList(),
       filename: "barcode.png");
   barcode.BarcodeResponseList? recognized =
       await api.postBarcodeRecognizeFromUrlOrContent(image: formFile);
@@ -102,7 +102,7 @@ Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *BarcodeApi* | [**getBarcodeGenerate**](doc/api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
 *BarcodeApi* | [**getBarcodeRecognize**](doc/api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](doc/api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](doc/api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
 *BarcodeApi* | [**postGenerateMultiple**](doc/api/BarcodeApi.md#postgeneratemultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
 *BarcodeApi* | [**putBarcodeGenerateFile**](doc/api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 *BarcodeApi* | [**putBarcodeRecognizeFromBody**](doc/api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.

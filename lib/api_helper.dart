@@ -5,17 +5,19 @@ const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 // port from Java version
 Iterable<QueryParam> _convertParametersForCollectionFormat(
     String collectionFormat, String name, dynamic value) {
-  var params = <QueryParam>[];
+  final params = <QueryParam>[];
 
   // preconditions
-  if (name.isEmpty || value == null) return params;
+  if (name.isEmpty || value == null) {
+    return params;
+  }
 
   if (value is! List) {
     params.add(new QueryParam(name, parameterToString(value)));
     return params;
   }
 
-  List values = value;
+  final List values = value;
 
   // get the collection format
   collectionFormat =
@@ -25,10 +27,10 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
     return values.map((v) => new QueryParam(name, parameterToString(v)));
   }
 
-  String delimiter = _delimiters[collectionFormat] ?? ",";
+  final String delimiter = _delimiters[collectionFormat] ?? ",";
 
-  params.add(new QueryParam(
-      name, values.map((v) => parameterToString(v)).join(delimiter)));
+  params
+      .add(new QueryParam(name, values.map(parameterToString).join(delimiter)));
   return params;
 }
 

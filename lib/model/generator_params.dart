@@ -1,6 +1,77 @@
 part of aspose_barcode_cloud.api;
 
 class GeneratorParams {
+  GeneratorParams();
+
+  GeneratorParams.fromJson(Map<String, dynamic> json) {
+    typeOfBarcode = new EncodeBarcodeType.fromJson(json['typeOfBarcode']);
+    text = json['text'];
+    twoDDisplayText = json['twoDDisplayText'];
+    textLocation = new CodeLocation.fromJson(json['textLocation']);
+    textAlignment = new TextAlignment.fromJson(json['textAlignment']);
+    textColor = json['textColor'];
+    font = new FontParams.fromJson(json['font']);
+    fontSizeMode = new FontMode.fromJson(json['fontSizeMode']);
+    noWrap = json['noWrap'];
+    resolution =
+        json['resolution'] == null ? null : json['resolution'].toDouble();
+    resolutionX =
+        json['resolutionX'] == null ? null : json['resolutionX'].toDouble();
+    resolutionY =
+        json['resolutionY'] == null ? null : json['resolutionY'].toDouble();
+    dimensionX =
+        json['dimensionX'] == null ? null : json['dimensionX'].toDouble();
+    textSpace = json['textSpace'] == null ? null : json['textSpace'].toDouble();
+    units = new AvailableGraphicsUnit.fromJson(json['units']);
+    sizeMode = new AutoSizeMode.fromJson(json['sizeMode']);
+    barHeight = json['barHeight'] == null ? null : json['barHeight'].toDouble();
+    imageHeight =
+        json['imageHeight'] == null ? null : json['imageHeight'].toDouble();
+    imageWidth =
+        json['imageWidth'] == null ? null : json['imageWidth'].toDouble();
+    rotationAngle =
+        json['rotationAngle'] == null ? null : json['rotationAngle'].toDouble();
+    padding = new Padding.fromJson(json['padding']);
+    captionAbove = new CaptionParams.fromJson(json['captionAbove']);
+    captionBelow = new CaptionParams.fromJson(json['captionBelow']);
+    backColor = json['backColor'];
+    barColor = json['barColor'];
+    borderColor = json['borderColor'];
+    borderWidth =
+        json['borderWidth'] == null ? null : json['borderWidth'].toDouble();
+    borderDashStyle = new BorderDashStyle.fromJson(json['borderDashStyle']);
+    borderVisible = json['borderVisible'];
+    enableChecksum = new EnableChecksum.fromJson(json['enableChecksum']);
+    enableEscape = json['enableEscape'];
+    filledBars = json['filledBars'];
+    alwaysShowChecksum = json['alwaysShowChecksum'];
+    wideNarrowRatio = json['wideNarrowRatio'] == null
+        ? null
+        : json['wideNarrowRatio'].toDouble();
+    validateText = json['validateText'];
+    supplementData = json['supplementData'];
+    supplementSpace = json['supplementSpace'] == null
+        ? null
+        : json['supplementSpace'].toDouble();
+    barWidthReduction = json['barWidthReduction'] == null
+        ? null
+        : json['barWidthReduction'].toDouble();
+    australianPost = new AustralianPostParams.fromJson(json['australianPost']);
+    aztec = new AztecParams.fromJson(json['aztec']);
+    codabar = new CodabarParams.fromJson(json['codabar']);
+    codablock = new CodablockParams.fromJson(json['codablock']);
+    code16K = new Code16KParams.fromJson(json['code16K']);
+    coupon = new CouponParams.fromJson(json['coupon']);
+    dataBar = new DataBarParams.fromJson(json['dataBar']);
+    dataMatrix = new DataMatrixParams.fromJson(json['dataMatrix']);
+    dotCode = new DotCodeParams.fromJson(json['dotCode']);
+    ITF = new ITFParams.fromJson(json['ITF']);
+    maxiCode = new MaxiCodeParams.fromJson(json['maxiCode']);
+    pdf417 = new Pdf417Params.fromJson(json['pdf417']);
+    postal = new PostalParams.fromJson(json['postal']);
+    QR = new QrParams.fromJson(json['QR']);
+    patchCode = new PatchCodeParams.fromJson(json['patchCode']);
+  }
   /* Type of barcode to generate. */
   EncodeBarcodeType? typeOfBarcode = null;
 
@@ -160,148 +231,72 @@ class GeneratorParams {
 /* PatchCode params. */
   PatchCodeParams? patchCode = null;
 
-  GeneratorParams();
-
   @override
-  String toString() {
-    return 'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, ]';
-  }
+  String toString() =>
+      'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, ]';
 
-  GeneratorParams.fromJson(Map<String, dynamic> json) {
-    typeOfBarcode = new EncodeBarcodeType.fromJson(json['typeOfBarcode']);
-    text = json['text'];
-    twoDDisplayText = json['twoDDisplayText'];
-    textLocation = new CodeLocation.fromJson(json['textLocation']);
-    textAlignment = new TextAlignment.fromJson(json['textAlignment']);
-    textColor = json['textColor'];
-    font = new FontParams.fromJson(json['font']);
-    fontSizeMode = new FontMode.fromJson(json['fontSizeMode']);
-    noWrap = json['noWrap'];
-    resolution =
-        json['resolution'] == null ? null : json['resolution'].toDouble();
-    resolutionX =
-        json['resolutionX'] == null ? null : json['resolutionX'].toDouble();
-    resolutionY =
-        json['resolutionY'] == null ? null : json['resolutionY'].toDouble();
-    dimensionX =
-        json['dimensionX'] == null ? null : json['dimensionX'].toDouble();
-    textSpace = json['textSpace'] == null ? null : json['textSpace'].toDouble();
-    units = new AvailableGraphicsUnit.fromJson(json['units']);
-    sizeMode = new AutoSizeMode.fromJson(json['sizeMode']);
-    barHeight = json['barHeight'] == null ? null : json['barHeight'].toDouble();
-    imageHeight =
-        json['imageHeight'] == null ? null : json['imageHeight'].toDouble();
-    imageWidth =
-        json['imageWidth'] == null ? null : json['imageWidth'].toDouble();
-    rotationAngle =
-        json['rotationAngle'] == null ? null : json['rotationAngle'].toDouble();
-    padding = new Padding.fromJson(json['padding']);
-    captionAbove = new CaptionParams.fromJson(json['captionAbove']);
-    captionBelow = new CaptionParams.fromJson(json['captionBelow']);
-    backColor = json['backColor'];
-    barColor = json['barColor'];
-    borderColor = json['borderColor'];
-    borderWidth =
-        json['borderWidth'] == null ? null : json['borderWidth'].toDouble();
-    borderDashStyle = new BorderDashStyle.fromJson(json['borderDashStyle']);
-    borderVisible = json['borderVisible'];
-    enableChecksum = new EnableChecksum.fromJson(json['enableChecksum']);
-    enableEscape = json['enableEscape'];
-    filledBars = json['filledBars'];
-    alwaysShowChecksum = json['alwaysShowChecksum'];
-    wideNarrowRatio = json['wideNarrowRatio'] == null
-        ? null
-        : json['wideNarrowRatio'].toDouble();
-    validateText = json['validateText'];
-    supplementData = json['supplementData'];
-    supplementSpace = json['supplementSpace'] == null
-        ? null
-        : json['supplementSpace'].toDouble();
-    barWidthReduction = json['barWidthReduction'] == null
-        ? null
-        : json['barWidthReduction'].toDouble();
-    australianPost = new AustralianPostParams.fromJson(json['australianPost']);
-    aztec = new AztecParams.fromJson(json['aztec']);
-    codabar = new CodabarParams.fromJson(json['codabar']);
-    codablock = new CodablockParams.fromJson(json['codablock']);
-    code16K = new Code16KParams.fromJson(json['code16K']);
-    coupon = new CouponParams.fromJson(json['coupon']);
-    dataBar = new DataBarParams.fromJson(json['dataBar']);
-    dataMatrix = new DataMatrixParams.fromJson(json['dataMatrix']);
-    dotCode = new DotCodeParams.fromJson(json['dotCode']);
-    ITF = new ITFParams.fromJson(json['ITF']);
-    maxiCode = new MaxiCodeParams.fromJson(json['maxiCode']);
-    pdf417 = new Pdf417Params.fromJson(json['pdf417']);
-    postal = new PostalParams.fromJson(json['postal']);
-    QR = new QrParams.fromJson(json['QR']);
-    patchCode = new PatchCodeParams.fromJson(json['patchCode']);
-  }
+  Map<String, dynamic> toJson() => {
+        'TypeOfBarcode': typeOfBarcode,
+        'Text': text,
+        'TwoDDisplayText': twoDDisplayText,
+        'TextLocation': textLocation,
+        'TextAlignment': textAlignment,
+        'TextColor': textColor,
+        'Font': font,
+        'FontSizeMode': fontSizeMode,
+        'NoWrap': noWrap,
+        'Resolution': resolution,
+        'ResolutionX': resolutionX,
+        'ResolutionY': resolutionY,
+        'DimensionX': dimensionX,
+        'TextSpace': textSpace,
+        'Units': units,
+        'SizeMode': sizeMode,
+        'BarHeight': barHeight,
+        'ImageHeight': imageHeight,
+        'ImageWidth': imageWidth,
+        'RotationAngle': rotationAngle,
+        'Padding': padding,
+        'CaptionAbove': captionAbove,
+        'CaptionBelow': captionBelow,
+        'BackColor': backColor,
+        'BarColor': barColor,
+        'BorderColor': borderColor,
+        'BorderWidth': borderWidth,
+        'BorderDashStyle': borderDashStyle,
+        'BorderVisible': borderVisible,
+        'EnableChecksum': enableChecksum,
+        'EnableEscape': enableEscape,
+        'FilledBars': filledBars,
+        'AlwaysShowChecksum': alwaysShowChecksum,
+        'WideNarrowRatio': wideNarrowRatio,
+        'ValidateText': validateText,
+        'SupplementData': supplementData,
+        'SupplementSpace': supplementSpace,
+        'BarWidthReduction': barWidthReduction,
+        'AustralianPost': australianPost,
+        'Aztec': aztec,
+        'Codabar': codabar,
+        'Codablock': codablock,
+        'Code16K': code16K,
+        'Coupon': coupon,
+        'DataBar': dataBar,
+        'DataMatrix': dataMatrix,
+        'DotCode': dotCode,
+        'ITF': ITF,
+        'MaxiCode': maxiCode,
+        'Pdf417': pdf417,
+        'Postal': postal,
+        'QR': QR,
+        'PatchCode': patchCode
+      };
 
-  Map<String, dynamic> toJson() {
-    return {
-      'TypeOfBarcode': typeOfBarcode,
-      'Text': text,
-      'TwoDDisplayText': twoDDisplayText,
-      'TextLocation': textLocation,
-      'TextAlignment': textAlignment,
-      'TextColor': textColor,
-      'Font': font,
-      'FontSizeMode': fontSizeMode,
-      'NoWrap': noWrap,
-      'Resolution': resolution,
-      'ResolutionX': resolutionX,
-      'ResolutionY': resolutionY,
-      'DimensionX': dimensionX,
-      'TextSpace': textSpace,
-      'Units': units,
-      'SizeMode': sizeMode,
-      'BarHeight': barHeight,
-      'ImageHeight': imageHeight,
-      'ImageWidth': imageWidth,
-      'RotationAngle': rotationAngle,
-      'Padding': padding,
-      'CaptionAbove': captionAbove,
-      'CaptionBelow': captionBelow,
-      'BackColor': backColor,
-      'BarColor': barColor,
-      'BorderColor': borderColor,
-      'BorderWidth': borderWidth,
-      'BorderDashStyle': borderDashStyle,
-      'BorderVisible': borderVisible,
-      'EnableChecksum': enableChecksum,
-      'EnableEscape': enableEscape,
-      'FilledBars': filledBars,
-      'AlwaysShowChecksum': alwaysShowChecksum,
-      'WideNarrowRatio': wideNarrowRatio,
-      'ValidateText': validateText,
-      'SupplementData': supplementData,
-      'SupplementSpace': supplementSpace,
-      'BarWidthReduction': barWidthReduction,
-      'AustralianPost': australianPost,
-      'Aztec': aztec,
-      'Codabar': codabar,
-      'Codablock': codablock,
-      'Code16K': code16K,
-      'Coupon': coupon,
-      'DataBar': dataBar,
-      'DataMatrix': dataMatrix,
-      'DotCode': dotCode,
-      'ITF': ITF,
-      'MaxiCode': maxiCode,
-      'Pdf417': pdf417,
-      'Postal': postal,
-      'QR': QR,
-      'PatchCode': patchCode
-    };
-  }
-
-  static List<GeneratorParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new GeneratorParams.fromJson(value)).toList();
-  }
+  static List<GeneratorParams> listFromJson(List<dynamic> json) =>
+      json.map((value) => new GeneratorParams.fromJson(value)).toList();
 
   static Map<String, GeneratorParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, GeneratorParams>();
+    final map = new Map<String, GeneratorParams>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new GeneratorParams.fromJson(value));

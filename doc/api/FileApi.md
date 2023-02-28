@@ -27,12 +27,12 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FileApi();
-var srcPath = srcPath_example; // String | Source file path e.g. '/folder/file.ext'
-var destPath = destPath_example; // String | Destination file path
-var srcStorageName = srcStorageName_example; // String | Source storage name
-var destStorageName = destStorageName_example; // String | Destination storage name
-var versionId = versionId_example; // String | File version ID to copy
+final api_instance = new FileApi();
+final srcPath = srcPath_example; // String | Source file path e.g. '/folder/file.ext'
+final destPath = destPath_example; // String | Destination file path
+final srcStorageName = srcStorageName_example; // String | Source storage name
+final destStorageName = destStorageName_example; // String | Destination storage name
+final versionId = versionId_example; // String | File version ID to copy
 
 try {
     api_instance.copyFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
@@ -76,10 +76,10 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FileApi();
-var path = path_example; // String | File path e.g. '/folder/file.ext'
-var storageName = storageName_example; // String | Storage name
-var versionId = versionId_example; // String | File version ID to delete
+final api_instance = new FileApi();
+final path = path_example; // String | File path e.g. '/folder/file.ext'
+final storageName = storageName_example; // String | Storage name
+final versionId = versionId_example; // String | File version ID to delete
 
 try {
     api_instance.deleteFile(path, storageName, versionId);
@@ -121,13 +121,13 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FileApi();
-var path = path_example; // String | File path e.g. '/folder/file.ext'
-var storageName = storageName_example; // String | Storage name
-var versionId = versionId_example; // String | File version ID to download
+final api_instance = new FileApi();
+final path = path_example; // String | File path e.g. '/folder/file.ext'
+final storageName = storageName_example; // String | Storage name
+final versionId = versionId_example; // String | File version ID to download
 
 try {
-    var result = api_instance.downloadFile(path, storageName, versionId);
+    final result = api_instance.downloadFile(path, storageName, versionId);
     print(result);
 } catch (e) {
     print("Exception when calling FileApi->downloadFile: $e\n");
@@ -167,12 +167,12 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FileApi();
-var srcPath = srcPath_example; // String | Source file path e.g. '/src.ext'
-var destPath = destPath_example; // String | Destination file path e.g. '/dest.ext'
-var srcStorageName = srcStorageName_example; // String | Source storage name
-var destStorageName = destStorageName_example; // String | Destination storage name
-var versionId = versionId_example; // String | File version ID to move
+final api_instance = new FileApi();
+final srcPath = srcPath_example; // String | Source file path e.g. '/src.ext'
+final destPath = destPath_example; // String | Destination file path e.g. '/dest.ext'
+final srcStorageName = srcStorageName_example; // String | Source storage name
+final destStorageName = destStorageName_example; // String | Destination storage name
+final versionId = versionId_example; // String | File version ID to move
 
 try {
     api_instance.moveFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
@@ -216,13 +216,13 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-var api_instance = new FileApi();
-var path = path_example; // String | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
-var file = /path/to/file.txt; // MultipartFile | File to upload
-var storageName = storageName_example; // String | Storage name
+final api_instance = new FileApi();
+final path = path_example; // String | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
+final file = /path/to/file.txt; // MultipartFile | File to upload
+final storageName = storageName_example; // String | Storage name
 
 try {
-    var result = api_instance.uploadFile(path, file, storageName);
+    final result = api_instance.uploadFile(path, file, storageName);
     print(result);
 } catch (e) {
     print("Exception when calling FileApi->uploadFile: $e\n");

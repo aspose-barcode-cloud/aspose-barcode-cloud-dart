@@ -1,14 +1,18 @@
 # CHANGELOG
 
+## 0.23.2
+
+* Fixed issues with code style
+* Added linter
+
 ## 0.23.1
 
-* December 2022 release
+* January 2023 release
 * dotCodeMask deleted
 * DotCodeEncodeMode added
 * DotCode params added
 * MaxiCodeEncodeMode added
 * HIBC decode types added
-
 
 ## 0.22.12
 

@@ -1,22 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class CustomerInformationInterpretingType {
-  /// The underlying value of this enum member.
-  String? value;
-
   CustomerInformationInterpretingType._internal(this.value);
-
-  ///
-  static CustomerInformationInterpretingType cTable_ =
-      CustomerInformationInterpretingType._internal("CTable");
-
-  ///
-  static CustomerInformationInterpretingType nTable_ =
-      CustomerInformationInterpretingType._internal("NTable");
-
-  ///
-  static CustomerInformationInterpretingType other_ =
-      CustomerInformationInterpretingType._internal("Other");
 
   CustomerInformationInterpretingType.fromJson(dynamic data) {
     switch (data) {
@@ -30,19 +15,29 @@ class CustomerInformationInterpretingType {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CustomerInformationInterpretingType data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static CustomerInformationInterpretingType cTable_ =
+      CustomerInformationInterpretingType._internal("CTable");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static CustomerInformationInterpretingType nTable_ =
+      CustomerInformationInterpretingType._internal("NTable");
+
+  ///
+  static CustomerInformationInterpretingType other_ =
+      CustomerInformationInterpretingType._internal("Other");
+
+  static dynamic encode(CustomerInformationInterpretingType data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

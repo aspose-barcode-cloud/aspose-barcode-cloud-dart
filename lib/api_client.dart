@@ -1,22 +1,12 @@
 part of aspose_barcode_cloud.api;
 
 class QueryParam {
+  QueryParam(this.name, this.value);
   String name;
   String value;
-
-  QueryParam(this.name, this.value);
 }
 
 class ApiClient {
-  String basePath;
-  var client = new Client();
-
-  Map<String, String> _defaultHeaderMap = {};
-  late Authentication _authentication;
-
-  final _RegList = new RegExp(r'^List<(.*)>$');
-  final _RegMap = new RegExp(r'^Map<String,(.*)>$');
-
   ApiClient(
       {String? clientId,
       String? clientSecret,
@@ -29,6 +19,15 @@ class ApiClient {
         accessToken: accessToken,
         tokenUrl: tokenUrl);
   }
+
+  String basePath;
+  final client = new Client();
+
+  Map<String, String> _defaultHeaderMap = {};
+  late Authentication _authentication;
+
+  final _RegList = new RegExp(r'^List<(.*)>$');
+  final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
@@ -192,11 +191,11 @@ class ApiClient {
             RegExpMatch? match;
             if (value is List &&
                 (match = _RegList.firstMatch(targetType)) != null) {
-              var newTargetType = match![1];
+              final newTargetType = match![1];
               return value.map((v) => _deserialize(v, newTargetType!)).toList();
             } else if (value is Map &&
                 (match = _RegMap.firstMatch(targetType)) != null) {
-              var newTargetType = match![1];
+              final newTargetType = match![1];
               return new Map.fromIterables(value.keys,
                   value.values.map((v) => _deserialize(v, newTargetType!)));
             }
@@ -214,9 +213,11 @@ class ApiClient {
     // Remove all spaces.  Necessary for reg expressions as well.
     targetType = targetType.replaceAll(' ', '');
 
-    if (targetType == 'String') return jsonVal;
+    if (targetType == 'String') {
+      return jsonVal;
+    }
 
-    var decodedJson = json.decode(jsonVal);
+    final decodedJson = json.decode(jsonVal);
     return _deserialize(decodedJson, targetType);
   }
 
@@ -243,24 +244,24 @@ class ApiClient {
       List<String> authNames) async {
     await _updateParamsForAuth(queryParams, headerParams);
 
-    var ps = queryParams.map((p) => '${p.name}=${p.value}');
-    String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
+    final ps = queryParams.map((p) => '${p.name}=${p.value}');
+    final String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
 
-    String url = basePath + path + queryString;
+    final String url = basePath + path + queryString;
 
     headerParams.addAll(_defaultHeaderMap);
     headerParams['Content-Type'] = contentType;
 
     if (body is MultipartRequest) {
-      var request = new MultipartRequest(method, Uri.parse(url));
+      final request = new MultipartRequest(method, Uri.parse(url));
       request.fields.addAll(body.fields);
       request.files.addAll(body.files);
       request.headers.addAll(body.headers);
       request.headers.addAll(headerParams);
-      var response = await client.send(request);
+      final response = await client.send(request);
       return Response.fromStream(response);
     } else {
-      var msgBody = contentType == "application/x-www-form-urlencoded"
+      final msgBody = contentType == "application/x-www-form-urlencoded"
           ? formParams
           : serialize(body);
       switch (method) {

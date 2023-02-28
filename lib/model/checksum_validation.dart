@@ -1,19 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class ChecksumValidation {
-  /// The underlying value of this enum member.
-  String? value;
-
   ChecksumValidation._internal(this.value);
-
-  ///
-  static ChecksumValidation default_ = ChecksumValidation._internal("Default");
-
-  ///
-  static ChecksumValidation on_ = ChecksumValidation._internal("On");
-
-  ///
-  static ChecksumValidation off_ = ChecksumValidation._internal("Off");
 
   ChecksumValidation.fromJson(dynamic data) {
     switch (data) {
@@ -27,19 +15,26 @@ class ChecksumValidation {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(ChecksumValidation data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static ChecksumValidation default_ = ChecksumValidation._internal("Default");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static ChecksumValidation on_ = ChecksumValidation._internal("On");
+
+  ///
+  static ChecksumValidation off_ = ChecksumValidation._internal("Off");
+
+  static dynamic encode(ChecksumValidation data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

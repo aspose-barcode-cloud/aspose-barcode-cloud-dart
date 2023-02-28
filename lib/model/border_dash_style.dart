@@ -1,25 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class BorderDashStyle {
-  /// The underlying value of this enum member.
-  String? value;
-
   BorderDashStyle._internal(this.value);
-
-  ///
-  static BorderDashStyle solid_ = BorderDashStyle._internal("Solid");
-
-  ///
-  static BorderDashStyle dash_ = BorderDashStyle._internal("Dash");
-
-  ///
-  static BorderDashStyle dot_ = BorderDashStyle._internal("Dot");
-
-  ///
-  static BorderDashStyle dashDot_ = BorderDashStyle._internal("DashDot");
-
-  ///
-  static BorderDashStyle dashDotDot_ = BorderDashStyle._internal("DashDotDot");
 
   BorderDashStyle.fromJson(dynamic data) {
     switch (data) {
@@ -39,19 +21,32 @@ class BorderDashStyle {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(BorderDashStyle data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static BorderDashStyle solid_ = BorderDashStyle._internal("Solid");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static BorderDashStyle dash_ = BorderDashStyle._internal("Dash");
+
+  ///
+  static BorderDashStyle dot_ = BorderDashStyle._internal("Dot");
+
+  ///
+  static BorderDashStyle dashDot_ = BorderDashStyle._internal("DashDot");
+
+  ///
+  static BorderDashStyle dashDotDot_ = BorderDashStyle._internal("DashDotDot");
+
+  static dynamic encode(BorderDashStyle data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

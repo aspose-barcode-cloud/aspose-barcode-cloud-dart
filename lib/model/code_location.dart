@@ -1,19 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class CodeLocation {
-  /// The underlying value of this enum member.
-  String? value;
-
   CodeLocation._internal(this.value);
-
-  ///
-  static CodeLocation below_ = CodeLocation._internal("Below");
-
-  ///
-  static CodeLocation above_ = CodeLocation._internal("Above");
-
-  ///
-  static CodeLocation none_ = CodeLocation._internal("None");
 
   CodeLocation.fromJson(dynamic data) {
     switch (data) {
@@ -27,19 +15,26 @@ class CodeLocation {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodeLocation data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static CodeLocation below_ = CodeLocation._internal("Below");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static CodeLocation above_ = CodeLocation._internal("Above");
+
+  ///
+  static CodeLocation none_ = CodeLocation._internal("None");
+
+  static dynamic encode(CodeLocation data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }

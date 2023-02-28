@@ -1,31 +1,25 @@
 part of aspose_barcode_cloud.api;
 
 class StorageExist {
-  /* Shows that the storage exists. */
-  bool? exists = null;
-
   StorageExist();
-
-  @override
-  String toString() {
-    return 'StorageExist[exists=$exists, ]';
-  }
 
   StorageExist.fromJson(Map<String, dynamic> json) {
     exists = json['exists'];
   }
+  /* Shows that the storage exists. */
+  bool? exists = null;
 
-  Map<String, dynamic> toJson() {
-    return {'Exists': exists};
-  }
+  @override
+  String toString() => 'StorageExist[exists=$exists, ]';
 
-  static List<StorageExist> listFromJson(List<dynamic> json) {
-    return json.map((value) => new StorageExist.fromJson(value)).toList();
-  }
+  Map<String, dynamic> toJson() => {'Exists': exists};
+
+  static List<StorageExist> listFromJson(List<dynamic> json) =>
+      json.map((value) => new StorageExist.fromJson(value)).toList();
 
   static Map<String, StorageExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, StorageExist>();
+    final map = new Map<String, StorageExist>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new StorageExist.fromJson(value));

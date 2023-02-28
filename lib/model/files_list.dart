@@ -1,31 +1,25 @@
 part of aspose_barcode_cloud.api;
 
 class FilesList {
-  /* Files and folders contained by folder StorageFile. */
-  List<StorageFile>? value = [];
-
   FilesList();
-
-  @override
-  String toString() {
-    return 'FilesList[value=$value, ]';
-  }
 
   FilesList.fromJson(Map<String, dynamic> json) {
     value = StorageFile.listFromJson(json['value']);
   }
+  /* Files and folders contained by folder StorageFile. */
+  List<StorageFile>? value = [];
 
-  Map<String, dynamic> toJson() {
-    return {'Value': value};
-  }
+  @override
+  String toString() => 'FilesList[value=$value, ]';
 
-  static List<FilesList> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FilesList.fromJson(value)).toList();
-  }
+  Map<String, dynamic> toJson() => {'Value': value};
+
+  static List<FilesList> listFromJson(List<dynamic> json) =>
+      json.map((value) => new FilesList.fromJson(value)).toList();
 
   static Map<String, FilesList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, FilesList>();
+    final map = new Map<String, FilesList>();
     if (json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new FilesList.fromJson(value));

@@ -1,19 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 class MacroCharacter {
-  /// The underlying value of this enum member.
-  String? value;
-
   MacroCharacter._internal(this.value);
-
-  ///
-  static MacroCharacter none_ = MacroCharacter._internal("None");
-
-  ///
-  static MacroCharacter macro05_ = MacroCharacter._internal("Macro05");
-
-  ///
-  static MacroCharacter macro06_ = MacroCharacter._internal("Macro06");
 
   MacroCharacter.fromJson(dynamic data) {
     switch (data) {
@@ -27,19 +15,26 @@ class MacroCharacter {
         value = data;
         break;
       default:
-        throw ('Unknown enum value to decode: $data');
+        throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(MacroCharacter data) {
-    return data.value;
-  }
+  /// The underlying value of this enum member.
+  String? value;
 
-  String? toJson() {
-    return value;
-  }
+  ///
+  static MacroCharacter none_ = MacroCharacter._internal("None");
 
-  String toString() {
-    return value == null ? "null" : value.toString();
-  }
+  ///
+  static MacroCharacter macro05_ = MacroCharacter._internal("Macro05");
+
+  ///
+  static MacroCharacter macro06_ = MacroCharacter._internal("Macro06");
+
+  static dynamic encode(MacroCharacter data) => data.value;
+
+  String? toJson() => value;
+
+  @override
+  String toString() => value == null ? "null" : value.toString();
 }
