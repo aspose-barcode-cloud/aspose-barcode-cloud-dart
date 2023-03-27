@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.3
+
+* Added test with Timeout
+
 ## 0.23.2
 
 * Fixed issues with code style
