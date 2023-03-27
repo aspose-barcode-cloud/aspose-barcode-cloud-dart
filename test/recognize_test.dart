@@ -9,7 +9,8 @@ void main() {
 
   test('.postBarcodeRecognizeFromUrlOrContent', () async {
     final barcode = await MultipartFile.fromPath("image", fileToRecognize);
-    final BarcodeResponseList recognized = await TestConfiguration.BarcodeApi.postBarcodeRecognizeFromUrlOrContent(
+    final BarcodeResponseList recognized =
+        await TestConfiguration.BarcodeApi.postBarcodeRecognizeFromUrlOrContent(
       image: barcode,
       preset: PresetType.highPerformance_.toString(),
     );
