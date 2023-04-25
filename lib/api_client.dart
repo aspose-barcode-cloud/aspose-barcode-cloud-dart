@@ -112,6 +112,8 @@ class ApiClient {
           return new Error.fromJson(value);
         case 'ErrorDetails':
           return new ErrorDetails.fromJson(value);
+        case 'FileVersion':
+          return new FileVersion.fromJson(value);
         case 'FileVersions':
           return new FileVersions.fromJson(value);
         case 'FilesList':
@@ -184,8 +186,6 @@ class ApiClient {
           return new StructuredAppend.fromJson(value);
         case 'TextAlignment':
           return new TextAlignment.fromJson(value);
-        case 'FileVersion':
-          return new FileVersion.fromJson(value);
         default:
           {
             RegExpMatch? match;

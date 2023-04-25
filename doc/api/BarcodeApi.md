@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **getBarcodeGenerate**
-> MultipartFile getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, format)
+> MultipartFile getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format)
 
 Generate barcode.
 
@@ -64,10 +64,11 @@ final validateText = true; // bool | Only for 1D barcodes. If codetext is incorr
 final supplementData = supplementData_example; // String | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
 final supplementSpace = 1.2; // double | Space between main the BarCode and supplement BarCode.
 final barWidthReduction = 1.2; // double | Bars reduction value that is used to compensate ink spread while printing.
+final useAntiAlias = true; // bool | Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
 final format = format_example; // String | Result image format.
 
 try {
-    final result = api_instance.getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, format);
+    final result = api_instance.getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->getBarcodeGenerate: $e\n");
@@ -112,6 +113,7 @@ Name | Type | Description  | Notes
  **supplementData** | **String**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional] 
  **supplementSpace** | **double**| Space between main the BarCode and supplement BarCode. | [optional] 
  **barWidthReduction** | **double**| Bars reduction value that is used to compensate ink spread while printing. | [optional] 
+ **useAntiAlias** | **bool**| Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. | [optional] 
  **format** | **String**| Result image format. | [optional] 
 
 ### Return type
@@ -129,7 +131,7 @@ Name | Type | Description  | Notes
 
 
 # **getBarcodeRecognize**
-> BarcodeResponseList getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, storage, folder)
+> BarcodeResponseList getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, storage, folder)
 
 Recognize barcode from a file on server.
 
@@ -145,8 +147,8 @@ final type = type_example; // String | The type of barcode to read.
 final checksumValidation = checksumValidation_example; // String | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
 final detectEncoding = true; // bool | A flag which force engine to detect codetext encoding for Unicode.
 final preset = preset_example; // String | Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
-final rectX = 56; // int | Set X for area for recognition.
-final rectY = 56; // int | Set Y for area for recognition.
+final rectX = 56; // int | Set X of top left corner of area for recognition.
+final rectY = 56; // int | Set Y of top left corner of area for recognition.
 final rectWidth = 56; // int | Set Width of area for recognition.
 final rectHeight = 56; // int | Set Height of area for recognition.
 final stripFNC = true; // bool | Value indicating whether FNC symbol strip must be done.
@@ -175,12 +177,11 @@ final skipDiagonalSearch = true; // bool | Allows detector to skip search for di
 final readTinyBarcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 final australianPostEncodingTable = australianPostEncodingTable_example; // String | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
 final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
-final rectangleRegion = rectangleRegion_example; // String | 
 final storage = storage_example; // String | The image storage.
 final folder = folder_example; // String | The image folder.
 
 try {
-    final result = api_instance.getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, storage, folder);
+    final result = api_instance.getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, storage, folder);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->getBarcodeRecognize: $e\n");
@@ -196,8 +197,8 @@ Name | Type | Description  | Notes
  **checksumValidation** | **String**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional] 
  **detectEncoding** | **bool**| A flag which force engine to detect codetext encoding for Unicode. | [optional] 
  **preset** | **String**| Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality. | [optional] 
- **rectX** | **int**| Set X for area for recognition. | [optional] 
- **rectY** | **int**| Set Y for area for recognition. | [optional] 
+ **rectX** | **int**| Set X of top left corner of area for recognition. | [optional] 
+ **rectY** | **int**| Set Y of top left corner of area for recognition. | [optional] 
  **rectWidth** | **int**| Set Width of area for recognition. | [optional] 
  **rectHeight** | **int**| Set Height of area for recognition. | [optional] 
  **stripFNC** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional] 
@@ -226,7 +227,6 @@ Name | Type | Description  | Notes
  **readTinyBarcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional] 
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] 
  **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional] 
- **rectangleRegion** | **String**|  | [optional] 
  **storage** | **String**| The image storage. | [optional] 
  **folder** | **String**| The image folder. | [optional] 
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 
 # **postBarcodeRecognizeFromUrlOrContent**
-> BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, url, image)
+> BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, url, image)
 
 Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
 
@@ -260,8 +260,8 @@ final type = type_example; // String | The type of barcode to read.
 final checksumValidation = checksumValidation_example; // String | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
 final detectEncoding = true; // bool | A flag which force engine to detect codetext encoding for Unicode.
 final preset = preset_example; // String | Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
-final rectX = 56; // int | Set X for area for recognition.
-final rectY = 56; // int | Set Y for area for recognition.
+final rectX = 56; // int | Set X of top left corner of area for recognition.
+final rectY = 56; // int | Set Y of top left corner of area for recognition.
 final rectWidth = 56; // int | Set Width of area for recognition.
 final rectHeight = 56; // int | Set Height of area for recognition.
 final stripFNC = true; // bool | Value indicating whether FNC symbol strip must be done.
@@ -290,12 +290,11 @@ final skipDiagonalSearch = true; // bool | Allows detector to skip search for di
 final readTinyBarcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 final australianPostEncodingTable = australianPostEncodingTable_example; // String | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
 final ignoreEndingFillingPatternsForCTable = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
-final rectangleRegion = rectangleRegion_example; // String | 
 final url = url_example; // String | The image file url.
 final image = /path/to/file.txt; // MultipartFile | Image data
 
 try {
-    final result = api_instance.postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, rectangleRegion, url, image);
+    final result = api_instance.postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, checkMore1DVariants, fastScanOnly, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, ignoreEndingFillingPatternsForCTable, url, image);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->postBarcodeRecognizeFromUrlOrContent: $e\n");
@@ -310,8 +309,8 @@ Name | Type | Description  | Notes
  **checksumValidation** | **String**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional] 
  **detectEncoding** | **bool**| A flag which force engine to detect codetext encoding for Unicode. | [optional] 
  **preset** | **String**| Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality. | [optional] 
- **rectX** | **int**| Set X for area for recognition. | [optional] 
- **rectY** | **int**| Set Y for area for recognition. | [optional] 
+ **rectX** | **int**| Set X of top left corner of area for recognition. | [optional] 
+ **rectY** | **int**| Set Y of top left corner of area for recognition. | [optional] 
  **rectWidth** | **int**| Set Width of area for recognition. | [optional] 
  **rectHeight** | **int**| Set Height of area for recognition. | [optional] 
  **stripFNC** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional] 
@@ -340,7 +339,6 @@ Name | Type | Description  | Notes
  **readTinyBarcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional] 
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] 
  **ignoreEndingFillingPatternsForCTable** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional] 
- **rectangleRegion** | **String**|  | [optional] 
  **url** | **String**| The image file url. | [optional] 
  **image** | **MultipartFile**| Image data | [optional] 
 
@@ -403,7 +401,7 @@ Name | Type | Description  | Notes
 
 
 # **putBarcodeGenerateFile**
-> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, storage, folder, format)
+> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format)
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
@@ -449,12 +447,13 @@ final validateText = true; // bool | Only for 1D barcodes. If codetext is incorr
 final supplementData = supplementData_example; // String | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
 final supplementSpace = 1.2; // double | Space between main the BarCode and supplement BarCode.
 final barWidthReduction = 1.2; // double | Bars reduction value that is used to compensate ink spread while printing.
+final useAntiAlias = true; // bool | Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
 final storage = storage_example; // String | Image's storage.
 final folder = folder_example; // String | Image's folder.
 final format = format_example; // String | The image format.
 
 try {
-    final result = api_instance.putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, storage, folder, format);
+    final result = api_instance.putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->putBarcodeGenerateFile: $e\n");
@@ -500,6 +499,7 @@ Name | Type | Description  | Notes
  **supplementData** | **String**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional] 
  **supplementSpace** | **double**| Space between main the BarCode and supplement BarCode. | [optional] 
  **barWidthReduction** | **double**| Bars reduction value that is used to compensate ink spread while printing. | [optional] 
+ **useAntiAlias** | **bool**| Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. | [optional] 
  **storage** | **String**| Image&#39;s storage. | [optional] 
  **folder** | **String**| Image&#39;s folder. | [optional] 
  **format** | **String**| The image format. | [optional] 
