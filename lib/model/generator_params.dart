@@ -56,6 +56,7 @@ class GeneratorParams {
     barWidthReduction = json['barWidthReduction'] == null
         ? null
         : json['barWidthReduction'].toDouble();
+    useAntiAlias = json['useAntiAlias'];
     australianPost = new AustralianPostParams.fromJson(json['australianPost']);
     aztec = new AztecParams.fromJson(json['aztec']);
     codabar = new CodabarParams.fromJson(json['codabar']);
@@ -186,6 +187,9 @@ class GeneratorParams {
 /* Bars reduction value that is used to compensate ink spread while printing. */
   double? barWidthReduction = null;
 
+/* Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. */
+  bool? useAntiAlias = null;
+
 /* AustralianPost params. */
   AustralianPostParams? australianPost = null;
 
@@ -233,7 +237,7 @@ class GeneratorParams {
 
   @override
   String toString() =>
-      'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, ]';
+      'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, useAntiAlias=$useAntiAlias, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, ]';
 
   Map<String, dynamic> toJson() => {
         'TypeOfBarcode': typeOfBarcode,
@@ -274,6 +278,7 @@ class GeneratorParams {
         'SupplementData': supplementData,
         'SupplementSpace': supplementSpace,
         'BarWidthReduction': barWidthReduction,
+        'UseAntiAlias': useAntiAlias,
         'AustralianPost': australianPost,
         'Aztec': aztec,
         'Codabar': codabar,

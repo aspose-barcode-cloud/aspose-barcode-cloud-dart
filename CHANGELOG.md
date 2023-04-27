@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.23.4
+
+* Add useAntiAlias generate parameter
+* Remove useless  rectangleRegion recognize parameter
+
 ## 0.23.3
 
 * Added test with Timeout

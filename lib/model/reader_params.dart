@@ -61,10 +61,10 @@ class ReaderParams {
 /* Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality. */
   PresetType? preset = null;
 
-/* Set X for area for recognition. */
+/* Set X of top left corner of area for recognition. */
   int? rectX = null;
 
-/* Set Y for area for recognition. */
+/* Set Y of top left corner of area for recognition. */
   int? rectY = null;
 
 /* Set Width of area for recognition. */

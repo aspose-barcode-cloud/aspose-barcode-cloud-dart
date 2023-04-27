@@ -41,6 +41,7 @@ class BarcodeApi {
       String? supplementData,
       double? supplementSpace,
       double? barWidthReduction,
+      bool? useAntiAlias,
       String? format}) async {
     // ignore: prefer_final_locals
     Object? postBody = null;
@@ -183,6 +184,10 @@ class BarcodeApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "BarWidthReduction", barWidthReduction));
     }
+    if (useAntiAlias != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "UseAntiAlias", useAntiAlias));
+    }
     if (format != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "format", format));
@@ -242,7 +247,6 @@ class BarcodeApi {
       bool? readTinyBarcodes,
       String? australianPostEncodingTable,
       bool? ignoreEndingFillingPatternsForCTable,
-      String? rectangleRegion,
       String? storage,
       String? folder}) async {
     // ignore: prefer_final_locals
@@ -399,10 +403,6 @@ class BarcodeApi {
           "IgnoreEndingFillingPatternsForCTable",
           ignoreEndingFillingPatternsForCTable));
     }
-    if (rectangleRegion != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "RectangleRegion", rectangleRegion));
-    }
     if (storage != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "storage", storage));
@@ -467,7 +467,6 @@ class BarcodeApi {
       bool? readTinyBarcodes,
       String? australianPostEncodingTable,
       bool? ignoreEndingFillingPatternsForCTable,
-      String? rectangleRegion,
       String? url,
       MultipartFile? image}) async {
     // ignore: prefer_final_locals
@@ -623,10 +622,6 @@ class BarcodeApi {
           "IgnoreEndingFillingPatternsForCTable",
           ignoreEndingFillingPatternsForCTable));
     }
-    if (rectangleRegion != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "RectangleRegion", rectangleRegion));
-    }
     if (url != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "url", url));
     }
@@ -744,6 +739,7 @@ class BarcodeApi {
       String? supplementData,
       double? supplementSpace,
       double? barWidthReduction,
+      bool? useAntiAlias,
       String? storage,
       String? folder,
       String? format}) async {
@@ -888,6 +884,10 @@ class BarcodeApi {
     if (barWidthReduction != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "BarWidthReduction", barWidthReduction));
+    }
+    if (useAntiAlias != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "UseAntiAlias", useAntiAlias));
     }
     if (storage != null) {
       queryParams.addAll(
