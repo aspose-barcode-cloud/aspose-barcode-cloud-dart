@@ -33,6 +33,8 @@ part 'model/codabar_params.dart';
 part 'model/codabar_symbol.dart';
 part 'model/codablock_params.dart';
 part 'model/code128_emulation.dart';
+part 'model/code128_encode_mode.dart';
+part 'model/code128_params.dart';
 part 'model/code16_k_params.dart';
 part 'model/code_location.dart';
 part 'model/coupon_params.dart';

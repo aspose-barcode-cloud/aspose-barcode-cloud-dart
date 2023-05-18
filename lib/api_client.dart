@@ -78,6 +78,10 @@ class ApiClient {
           return new CodablockParams.fromJson(value);
         case 'Code128Emulation':
           return new Code128Emulation.fromJson(value);
+        case 'Code128EncodeMode':
+          return new Code128EncodeMode.fromJson(value);
+        case 'Code128Params':
+          return new Code128Params.fromJson(value);
         case 'Code16KParams':
           return new Code16KParams.fromJson(value);
         case 'CodeLocation':

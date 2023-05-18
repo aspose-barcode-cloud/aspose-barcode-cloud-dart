@@ -56,6 +56,8 @@ String parameterToString(dynamic value) {
     return CodabarSymbol.encode(value).toString();
   } else if (value is Code128Emulation) {
     return Code128Emulation.encode(value).toString();
+  } else if (value is Code128EncodeMode) {
+    return Code128EncodeMode.encode(value).toString();
   } else if (value is CodeLocation) {
     return CodeLocation.encode(value).toString();
   } else if (value is CustomerInformationInterpretingType) {

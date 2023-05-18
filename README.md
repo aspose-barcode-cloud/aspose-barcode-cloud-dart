@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Dart
 
 - API version: 3.0
-- SDK version: 0.23.4
+- SDK version: 0.23.5
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -32,7 +32,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 0.23.4
+  aspose_barcode_cloud: 0.23.5
 ```
 
 ## Sample usage
@@ -141,6 +141,8 @@ Class | Method | HTTP request | Description
 - [CodabarSymbol](doc/models/CodabarSymbol.md)
 - [CodablockParams](doc/models/CodablockParams.md)
 - [Code128Emulation](doc/models/Code128Emulation.md)
+- [Code128EncodeMode](doc/models/Code128EncodeMode.md)
+- [Code128Params](doc/models/Code128Params.md)
 - [Code16KParams](doc/models/Code16KParams.md)
 - [CodeLocation](doc/models/CodeLocation.md)
 - [CouponParams](doc/models/CouponParams.md)

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.5
+
+* Add Code128Params.Code128EncodeMode generator parameter
+
 ## 0.23.4
 
 * Add useAntiAlias generate parameter
