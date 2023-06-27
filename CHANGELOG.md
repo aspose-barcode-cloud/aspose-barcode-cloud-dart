@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.6
+
+* Add new code for HanXin
+
 ## 0.23.5
 
 * Add Code128Params.Code128EncodeMode generator parameter
