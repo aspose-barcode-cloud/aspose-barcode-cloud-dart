@@ -80,6 +80,12 @@ String parameterToString(dynamic value) {
     return FontMode.encode(value).toString();
   } else if (value is FontStyle) {
     return FontStyle.encode(value).toString();
+  } else if (value is HanXinEncodeMode) {
+    return HanXinEncodeMode.encode(value).toString();
+  } else if (value is HanXinErrorLevel) {
+    return HanXinErrorLevel.encode(value).toString();
+  } else if (value is HanXinVersion) {
+    return HanXinVersion.encode(value).toString();
   } else if (value is ITF14BorderType) {
     return ITF14BorderType.encode(value).toString();
   } else if (value is MacroCharacter) {

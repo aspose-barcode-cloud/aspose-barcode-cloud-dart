@@ -242,6 +242,12 @@ class DecodeBarcodeType {
       case "HIBCQRPAS":
         value = data;
         break;
+      case "HanXin":
+        value = data;
+        break;
+      case "GS1HanXin":
+        value = data;
+        break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
@@ -528,6 +534,13 @@ class DecodeBarcodeType {
   /// See DecodeType
   static DecodeBarcodeType hIBCQRPAS_ =
       DecodeBarcodeType._internal("HIBCQRPAS");
+
+  /// See DecodeType
+  static DecodeBarcodeType hanXin_ = DecodeBarcodeType._internal("HanXin");
+
+  /// See DecodeType
+  static DecodeBarcodeType gS1HanXin_ =
+      DecodeBarcodeType._internal("GS1HanXin");
 
   static dynamic encode(DecodeBarcodeType data) => data.value;
 

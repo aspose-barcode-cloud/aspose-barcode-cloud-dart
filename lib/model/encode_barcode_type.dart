@@ -209,6 +209,12 @@ class EncodeBarcodeType {
       case "GS1DotCode":
         value = data;
         break;
+      case "HanXin":
+        value = data;
+        break;
+      case "GS1HanXin":
+        value = data;
+        break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
@@ -454,6 +460,13 @@ class EncodeBarcodeType {
   /// See EncodeTypes
   static EncodeBarcodeType gS1DotCode_ =
       EncodeBarcodeType._internal("GS1DotCode");
+
+  /// See EncodeTypes
+  static EncodeBarcodeType hanXin_ = EncodeBarcodeType._internal("HanXin");
+
+  /// See EncodeTypes
+  static EncodeBarcodeType gS1HanXin_ =
+      EncodeBarcodeType._internal("GS1HanXin");
 
   static dynamic encode(EncodeBarcodeType data) => data.value;
 

@@ -73,6 +73,7 @@ class GeneratorParams {
     QR = new QrParams.fromJson(json['QR']);
     patchCode = new PatchCodeParams.fromJson(json['patchCode']);
     code128 = new Code128Params.fromJson(json['code128']);
+    hanXin = new HanXinParams.fromJson(json['hanXin']);
   }
   /* Type of barcode to generate. */
   EncodeBarcodeType? typeOfBarcode = null;
@@ -239,9 +240,12 @@ class GeneratorParams {
 /* Code128 params. */
   Code128Params? code128 = null;
 
+/* HanXin params. */
+  HanXinParams? hanXin = null;
+
   @override
   String toString() =>
-      'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, useAntiAlias=$useAntiAlias, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, code128=$code128, ]';
+      'GeneratorParams[typeOfBarcode=$typeOfBarcode, text=$text, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, textColor=$textColor, font=$font, fontSizeMode=$fontSizeMode, noWrap=$noWrap, resolution=$resolution, resolutionX=$resolutionX, resolutionY=$resolutionY, dimensionX=$dimensionX, textSpace=$textSpace, units=$units, sizeMode=$sizeMode, barHeight=$barHeight, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, padding=$padding, captionAbove=$captionAbove, captionBelow=$captionBelow, backColor=$backColor, barColor=$barColor, borderColor=$borderColor, borderWidth=$borderWidth, borderDashStyle=$borderDashStyle, borderVisible=$borderVisible, enableChecksum=$enableChecksum, enableEscape=$enableEscape, filledBars=$filledBars, alwaysShowChecksum=$alwaysShowChecksum, wideNarrowRatio=$wideNarrowRatio, validateText=$validateText, supplementData=$supplementData, supplementSpace=$supplementSpace, barWidthReduction=$barWidthReduction, useAntiAlias=$useAntiAlias, australianPost=$australianPost, aztec=$aztec, codabar=$codabar, codablock=$codablock, code16K=$code16K, coupon=$coupon, dataBar=$dataBar, dataMatrix=$dataMatrix, dotCode=$dotCode, ITF=$ITF, maxiCode=$maxiCode, pdf417=$pdf417, postal=$postal, QR=$QR, patchCode=$patchCode, code128=$code128, hanXin=$hanXin, ]';
 
   Map<String, dynamic> toJson() => {
         'TypeOfBarcode': typeOfBarcode,
@@ -298,7 +302,8 @@ class GeneratorParams {
         'Postal': postal,
         'QR': QR,
         'PatchCode': patchCode,
-        'Code128': code128
+        'Code128': code128,
+        'HanXin': hanXin
       };
 
   static List<GeneratorParams> listFromJson(List<dynamic> json) =>

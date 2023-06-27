@@ -132,6 +132,14 @@ class ApiClient {
           return new GeneratorParams.fromJson(value);
         case 'GeneratorParamsList':
           return new GeneratorParamsList.fromJson(value);
+        case 'HanXinEncodeMode':
+          return new HanXinEncodeMode.fromJson(value);
+        case 'HanXinErrorLevel':
+          return new HanXinErrorLevel.fromJson(value);
+        case 'HanXinParams':
+          return new HanXinParams.fromJson(value);
+        case 'HanXinVersion':
+          return new HanXinVersion.fromJson(value);
         case 'ITF14BorderType':
           return new ITF14BorderType.fromJson(value);
         case 'ITFParams':
