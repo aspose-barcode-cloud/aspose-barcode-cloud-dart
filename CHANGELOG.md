@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.6+1
+
+* Update http dependency version
+
 ## 0.23.6
 
 * Add new code for HanXin
