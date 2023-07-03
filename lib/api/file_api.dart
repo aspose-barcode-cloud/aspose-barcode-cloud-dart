@@ -42,7 +42,7 @@ class FileApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -84,7 +84,7 @@ class FileApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(
@@ -133,7 +133,7 @@ class FileApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -183,7 +183,7 @@ class FileApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
@@ -221,7 +221,7 @@ class FileApi {
     final List<String> contentTypes = ["multipart/form-data"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     if (contentType.startsWith("multipart/form-data")) {

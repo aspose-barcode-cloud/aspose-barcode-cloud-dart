@@ -1,7 +1,41 @@
 part of aspose_barcode_cloud.api;
 
 class DataMatrixEncodeMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   DataMatrixEncodeMode._internal(this.value);
+
+  ///
+  static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
+
+  ///
+  static DataMatrixEncodeMode aSCII_ = DataMatrixEncodeMode._internal("ASCII");
+
+  ///
+  static DataMatrixEncodeMode full_ = DataMatrixEncodeMode._internal("Full");
+
+  ///
+  static DataMatrixEncodeMode custom_ =
+      DataMatrixEncodeMode._internal("Custom");
+
+  ///
+  static DataMatrixEncodeMode c40_ = DataMatrixEncodeMode._internal("C40");
+
+  ///
+  static DataMatrixEncodeMode text_ = DataMatrixEncodeMode._internal("Text");
+
+  ///
+  static DataMatrixEncodeMode eDIFACT_ =
+      DataMatrixEncodeMode._internal("EDIFACT");
+
+  ///
+  static DataMatrixEncodeMode aNSIX12_ =
+      DataMatrixEncodeMode._internal("ANSIX12");
+
+  ///
+  static DataMatrixEncodeMode extendedCodetext_ =
+      DataMatrixEncodeMode._internal("ExtendedCodetext");
 
   DataMatrixEncodeMode.fromJson(dynamic data) {
     switch (data) {
@@ -37,44 +71,15 @@ class DataMatrixEncodeMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(DataMatrixEncodeMode data) {
+    return data.value;
+  }
 
-  ///
-  static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static DataMatrixEncodeMode aSCII_ = DataMatrixEncodeMode._internal("ASCII");
-
-  ///
-  static DataMatrixEncodeMode full_ = DataMatrixEncodeMode._internal("Full");
-
-  ///
-  static DataMatrixEncodeMode custom_ =
-      DataMatrixEncodeMode._internal("Custom");
-
-  ///
-  static DataMatrixEncodeMode c40_ = DataMatrixEncodeMode._internal("C40");
-
-  ///
-  static DataMatrixEncodeMode text_ = DataMatrixEncodeMode._internal("Text");
-
-  ///
-  static DataMatrixEncodeMode eDIFACT_ =
-      DataMatrixEncodeMode._internal("EDIFACT");
-
-  ///
-  static DataMatrixEncodeMode aNSIX12_ =
-      DataMatrixEncodeMode._internal("ANSIX12");
-
-  ///
-  static DataMatrixEncodeMode extendedCodetext_ =
-      DataMatrixEncodeMode._internal("ExtendedCodetext");
-
-  static dynamic encode(DataMatrixEncodeMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

@@ -1,7 +1,22 @@
 part of aspose_barcode_cloud.api;
 
 class QRErrorLevel {
+  /// The underlying value of this enum member.
+  String? value;
+
   QRErrorLevel._internal(this.value);
+
+  ///
+  static QRErrorLevel levelL_ = QRErrorLevel._internal("LevelL");
+
+  ///
+  static QRErrorLevel levelM_ = QRErrorLevel._internal("LevelM");
+
+  ///
+  static QRErrorLevel levelQ_ = QRErrorLevel._internal("LevelQ");
+
+  ///
+  static QRErrorLevel levelH_ = QRErrorLevel._internal("LevelH");
 
   QRErrorLevel.fromJson(dynamic data) {
     switch (data) {
@@ -22,25 +37,15 @@ class QRErrorLevel {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(QRErrorLevel data) {
+    return data.value;
+  }
 
-  ///
-  static QRErrorLevel levelL_ = QRErrorLevel._internal("LevelL");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static QRErrorLevel levelM_ = QRErrorLevel._internal("LevelM");
-
-  ///
-  static QRErrorLevel levelQ_ = QRErrorLevel._internal("LevelQ");
-
-  ///
-  static QRErrorLevel levelH_ = QRErrorLevel._internal("LevelH");
-
-  static dynamic encode(QRErrorLevel data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

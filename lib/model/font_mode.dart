@@ -1,7 +1,16 @@
 part of aspose_barcode_cloud.api;
 
 class FontMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   FontMode._internal(this.value);
+
+  ///
+  static FontMode auto_ = FontMode._internal("Auto");
+
+  ///
+  static FontMode manual_ = FontMode._internal("Manual");
 
   FontMode.fromJson(dynamic data) {
     switch (data) {
@@ -16,19 +25,15 @@ class FontMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(FontMode data) {
+    return data.value;
+  }
 
-  ///
-  static FontMode auto_ = FontMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static FontMode manual_ = FontMode._internal("Manual");
-
-  static dynamic encode(FontMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

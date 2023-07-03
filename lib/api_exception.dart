@@ -1,16 +1,16 @@
 part of aspose_barcode_cloud.api;
 
 class ApiException implements Exception {
-  ApiException(this.code, this.message);
-
-  ApiException.withInner(
-      this.code, this.message, this.innerException, this.stackTrace);
   int code = 0;
   String? message = null;
   Exception? innerException = null;
   StackTrace? stackTrace = null;
 
-  @override
+  ApiException(this.code, this.message);
+
+  ApiException.withInner(
+      this.code, this.message, this.innerException, this.stackTrace);
+
   String toString() {
     if (message == null) {
       return "ApiException";

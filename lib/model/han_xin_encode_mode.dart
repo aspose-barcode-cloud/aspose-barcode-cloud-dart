@@ -1,7 +1,28 @@
 part of aspose_barcode_cloud.api;
 
 class HanXinEncodeMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   HanXinEncodeMode._internal(this.value);
+
+  ///
+  static HanXinEncodeMode auto_ = HanXinEncodeMode._internal("Auto");
+
+  ///
+  static HanXinEncodeMode binary_ = HanXinEncodeMode._internal("Binary");
+
+  ///
+  static HanXinEncodeMode eCI_ = HanXinEncodeMode._internal("ECI");
+
+  ///
+  static HanXinEncodeMode unicode_ = HanXinEncodeMode._internal("Unicode");
+
+  ///
+  static HanXinEncodeMode uRI_ = HanXinEncodeMode._internal("URI");
+
+  ///
+  static HanXinEncodeMode extended_ = HanXinEncodeMode._internal("Extended");
 
   HanXinEncodeMode.fromJson(dynamic data) {
     switch (data) {
@@ -28,31 +49,15 @@ class HanXinEncodeMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(HanXinEncodeMode data) {
+    return data.value;
+  }
 
-  ///
-  static HanXinEncodeMode auto_ = HanXinEncodeMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static HanXinEncodeMode binary_ = HanXinEncodeMode._internal("Binary");
-
-  ///
-  static HanXinEncodeMode eCI_ = HanXinEncodeMode._internal("ECI");
-
-  ///
-  static HanXinEncodeMode unicode_ = HanXinEncodeMode._internal("Unicode");
-
-  ///
-  static HanXinEncodeMode uRI_ = HanXinEncodeMode._internal("URI");
-
-  ///
-  static HanXinEncodeMode extended_ = HanXinEncodeMode._internal("Extended");
-
-  static dynamic encode(HanXinEncodeMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

@@ -1,7 +1,20 @@
 part of aspose_barcode_cloud.api;
 
 class DotCodeEncodeMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   DotCodeEncodeMode._internal(this.value);
+
+  ///
+  static DotCodeEncodeMode auto_ = DotCodeEncodeMode._internal("Auto");
+
+  ///
+  static DotCodeEncodeMode bytes_ = DotCodeEncodeMode._internal("Bytes");
+
+  ///
+  static DotCodeEncodeMode extendedCodetext_ =
+      DotCodeEncodeMode._internal("ExtendedCodetext");
 
   DotCodeEncodeMode.fromJson(dynamic data) {
     switch (data) {
@@ -19,23 +32,15 @@ class DotCodeEncodeMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(DotCodeEncodeMode data) {
+    return data.value;
+  }
 
-  ///
-  static DotCodeEncodeMode auto_ = DotCodeEncodeMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static DotCodeEncodeMode bytes_ = DotCodeEncodeMode._internal("Bytes");
-
-  ///
-  static DotCodeEncodeMode extendedCodetext_ =
-      DotCodeEncodeMode._internal("ExtendedCodetext");
-
-  static dynamic encode(DotCodeEncodeMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

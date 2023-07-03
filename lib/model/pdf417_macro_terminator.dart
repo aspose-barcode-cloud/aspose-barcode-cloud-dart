@@ -1,7 +1,19 @@
 part of aspose_barcode_cloud.api;
 
 class Pdf417MacroTerminator {
+  /// The underlying value of this enum member.
+  String? value;
+
   Pdf417MacroTerminator._internal(this.value);
+
+  ///
+  static Pdf417MacroTerminator auto_ = Pdf417MacroTerminator._internal("Auto");
+
+  ///
+  static Pdf417MacroTerminator none_ = Pdf417MacroTerminator._internal("None");
+
+  ///
+  static Pdf417MacroTerminator set_ = Pdf417MacroTerminator._internal("Set");
 
   Pdf417MacroTerminator.fromJson(dynamic data) {
     switch (data) {
@@ -19,22 +31,15 @@ class Pdf417MacroTerminator {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(Pdf417MacroTerminator data) {
+    return data.value;
+  }
 
-  ///
-  static Pdf417MacroTerminator auto_ = Pdf417MacroTerminator._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static Pdf417MacroTerminator none_ = Pdf417MacroTerminator._internal("None");
-
-  ///
-  static Pdf417MacroTerminator set_ = Pdf417MacroTerminator._internal("Set");
-
-  static dynamic encode(Pdf417MacroTerminator data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

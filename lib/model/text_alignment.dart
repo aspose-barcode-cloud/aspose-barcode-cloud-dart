@@ -1,7 +1,19 @@
 part of aspose_barcode_cloud.api;
 
 class TextAlignment {
+  /// The underlying value of this enum member.
+  String? value;
+
   TextAlignment._internal(this.value);
+
+  ///
+  static TextAlignment left_ = TextAlignment._internal("Left");
+
+  ///
+  static TextAlignment center_ = TextAlignment._internal("Center");
+
+  ///
+  static TextAlignment right_ = TextAlignment._internal("Right");
 
   TextAlignment.fromJson(dynamic data) {
     switch (data) {
@@ -19,22 +31,15 @@ class TextAlignment {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(TextAlignment data) {
+    return data.value;
+  }
 
-  ///
-  static TextAlignment left_ = TextAlignment._internal("Left");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static TextAlignment center_ = TextAlignment._internal("Center");
-
-  ///
-  static TextAlignment right_ = TextAlignment._internal("Right");
-
-  static dynamic encode(TextAlignment data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

@@ -1,7 +1,20 @@
 part of aspose_barcode_cloud.api;
 
 class MaxiCodeEncodeMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   MaxiCodeEncodeMode._internal(this.value);
+
+  ///
+  static MaxiCodeEncodeMode auto_ = MaxiCodeEncodeMode._internal("Auto");
+
+  ///
+  static MaxiCodeEncodeMode bytes_ = MaxiCodeEncodeMode._internal("Bytes");
+
+  ///
+  static MaxiCodeEncodeMode extendedCodetext_ =
+      MaxiCodeEncodeMode._internal("ExtendedCodetext");
 
   MaxiCodeEncodeMode.fromJson(dynamic data) {
     switch (data) {
@@ -19,23 +32,15 @@ class MaxiCodeEncodeMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(MaxiCodeEncodeMode data) {
+    return data.value;
+  }
 
-  ///
-  static MaxiCodeEncodeMode auto_ = MaxiCodeEncodeMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static MaxiCodeEncodeMode bytes_ = MaxiCodeEncodeMode._internal("Bytes");
-
-  ///
-  static MaxiCodeEncodeMode extendedCodetext_ =
-      MaxiCodeEncodeMode._internal("ExtendedCodetext");
-
-  static dynamic encode(MaxiCodeEncodeMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }
