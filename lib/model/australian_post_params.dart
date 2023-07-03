@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class AustralianPostParams {
   /* Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\" */
   CustomerInformationInterpretingType? encodingTable = null;

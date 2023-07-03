@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class Code16KParams {
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;

@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class ITFParams {
   /* ITF border (bearer bar) thickness in Unit value. Default value: 12pt. */
   double? borderThickness = null;

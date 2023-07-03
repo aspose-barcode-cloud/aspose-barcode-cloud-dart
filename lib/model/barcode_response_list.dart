@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class BarcodeResponseList {
   /* List of barcodes which are present in image. */
   List<BarcodeResponse>? barcodes = [];

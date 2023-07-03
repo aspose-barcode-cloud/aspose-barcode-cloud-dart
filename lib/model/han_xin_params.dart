@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class HanXinParams {
   /* Encoding mode for XanXin barcodes. Default value: HanXinEncodeMode.Auto. */
   HanXinEncodeMode? encodeMode = null;

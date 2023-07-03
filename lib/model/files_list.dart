@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class FilesList {
   /* Files and folders contained by folder StorageFile. */
   List<StorageFile>? value = [];

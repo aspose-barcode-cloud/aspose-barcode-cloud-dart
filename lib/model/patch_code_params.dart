@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class PatchCodeParams {
   /* Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode. */
   String? extraBarcodeText = null;

@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class DataBarParams {
   /* Height/Width ratio of 2D BarCode module. Used for DataBar stacked. */
   double? aspectRatio = null;

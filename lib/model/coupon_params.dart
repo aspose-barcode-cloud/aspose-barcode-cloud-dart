@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class CouponParams {
   /* Space between main the BarCode and supplement BarCode in Unit value. */
   double? supplementSpace = null;

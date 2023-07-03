@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class StructuredAppend {
   /* The index of the QR structured append mode barcode. Index starts from 0. */
   int? sequenceIndicator = null;

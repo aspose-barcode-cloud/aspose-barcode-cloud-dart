@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class ObjectExist {
   /* Indicates that the file or folder exists. */
   bool? exists = null;

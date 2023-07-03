@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class GeneratorParams {
   /* Type of barcode to generate. */
   EncodeBarcodeType? typeOfBarcode = null;

@@ -1,5 +1,6 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
 class Code128Params {
   /* Encoding mode for Code128 barcodes. Code 128 specification Default value: Code128EncodeMode.Auto. */
   Code128EncodeMode? encodeMode = null;
