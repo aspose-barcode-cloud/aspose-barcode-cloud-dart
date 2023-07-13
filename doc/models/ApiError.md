@@ -14,4 +14,3 @@ Name | Type | Description | Notes
 **dateTime** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **innerError** | [**ApiError**](ApiError.md) |  | [optional] [default to null]
 
-

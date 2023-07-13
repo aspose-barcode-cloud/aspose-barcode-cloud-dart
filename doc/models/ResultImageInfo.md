@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **imageWidth** | **int** | Result image width. | [optional] [default to null]
 **imageHeight** | **int** | Result image height. | [optional] [default to null]
 
-

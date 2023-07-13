@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **columns** | **int** | Columns count. | [optional] [default to null]
 **rows** | **int** | Rows count. | [optional] [default to null]
 
-

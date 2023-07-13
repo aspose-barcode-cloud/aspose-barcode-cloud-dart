@@ -11,4 +11,3 @@ Name | Type | Description | Notes
 **requestId** | **String** |  | [optional] [default to null]
 **error** | [**ApiError**](ApiError.md) |  | [optional] [default to null]
 
-

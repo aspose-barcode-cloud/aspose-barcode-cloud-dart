@@ -33,9 +33,11 @@ class GeneratorParams {
   double? resolution = null;
 
 /* DEPRECATED: Use 'Resolution' instead. */
+  @Deprecated("Use 'Resolution' instead. ")
   double? resolutionX = null;
 
 /* DEPRECATED: Use 'Resolution' instead. */
+  @Deprecated("Use 'Resolution' instead. ")
   double? resolutionY = null;
 
 /* The smallest width of the unit of BarCode bars or spaces. Increase this will increase the whole barcode image width. Ignored if AutoSizeMode property is set to AutoSizeMode.Nearest or AutoSizeMode.Interpolation. */

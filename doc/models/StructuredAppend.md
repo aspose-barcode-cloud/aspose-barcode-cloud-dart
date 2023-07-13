@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **totalCount** | **int** | QR structured append mode barcodes quantity. Max value is 16. | [optional] [default to null]
 **parityByte** | **int** | QR structured append mode parity data. | [optional] [default to null]
 
-

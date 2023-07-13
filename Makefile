@@ -24,6 +24,7 @@ fix:
 
 .PHONY: after-gen
 after-gen: fix
+	./scripts/annotate-deprecated.bash
 	dart format . > /dev/null
 
 .PHONY: update

@@ -16,4 +16,3 @@ Name | Type | Description | Notes
 **padding** | [**Padding**](Padding.md) | Padding. | [optional] [default to null]
 **noWrap** | **bool** | Specify word wraps (line breaks) within text. Default value: false. | [optional] [default to null]
 
-

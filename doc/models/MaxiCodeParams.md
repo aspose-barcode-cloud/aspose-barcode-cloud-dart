@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **mode** | [**MaxiCodeMode**](MaxiCodeMode.md) | Mode for MaxiCode barcodes. | [optional] [default to null]
 **encodeMode** | [**MaxiCodeEncodeMode**](MaxiCodeEncodeMode.md) | Encoding mode for MaxiCode barcodes. | [optional] [default to null]
 
-

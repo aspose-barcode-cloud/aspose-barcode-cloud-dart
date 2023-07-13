@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **supplementSpace** | **double** | Space between main the BarCode and supplement BarCode in Unit value. | [optional] [default to null]
 
-
