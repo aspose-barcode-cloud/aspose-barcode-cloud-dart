@@ -1,7 +1,9 @@
 # CHANGELOG
 
-## 0.23.6+1
+## 0.23.7
 
+* Improved code quality
+* Added lints and additional checks
 * Update http dependency version
 
 ## 0.23.6
