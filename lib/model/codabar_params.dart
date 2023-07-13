@@ -1,6 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 // ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class CodabarParams {
   /* Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. */
   CodabarChecksumMode? checksumMode = null;

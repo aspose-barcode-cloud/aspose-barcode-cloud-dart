@@ -1,6 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 // ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class AustralianPostParams {
   /* Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\" */
   CustomerInformationInterpretingType? encodingTable = null;

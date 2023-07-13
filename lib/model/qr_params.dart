@@ -1,6 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 // ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class QrParams {
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;

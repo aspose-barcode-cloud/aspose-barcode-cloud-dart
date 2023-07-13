@@ -1,6 +1,7 @@
 part of aspose_barcode_cloud.api;
 
 // ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class StorageExist {
   /* Shows that the storage exists. */
   bool? exists = null;
