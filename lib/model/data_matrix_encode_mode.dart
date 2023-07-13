@@ -6,34 +6,34 @@ class DataMatrixEncodeMode {
 
   DataMatrixEncodeMode._internal(this.value);
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode aSCII_ = DataMatrixEncodeMode._internal("ASCII");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode full_ = DataMatrixEncodeMode._internal("Full");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode custom_ =
       DataMatrixEncodeMode._internal("Custom");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode c40_ = DataMatrixEncodeMode._internal("C40");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode text_ = DataMatrixEncodeMode._internal("Text");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode eDIFACT_ =
       DataMatrixEncodeMode._internal("EDIFACT");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode aNSIX12_ =
       DataMatrixEncodeMode._internal("ANSIX12");
 
-  ///
+  /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode extendedCodetext_ =
       DataMatrixEncodeMode._internal("ExtendedCodetext");
 

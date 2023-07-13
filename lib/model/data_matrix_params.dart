@@ -8,7 +8,7 @@ class DataMatrixParams {
 /* Encoding of codetext. */
   String? textEncoding = null;
 
-/* Columns count. */
+/* DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count. */
   int? columns = null;
 
 /* Datamatrix ECC type. Default value: DataMatrixEccType.Ecc200. */
@@ -17,7 +17,7 @@ class DataMatrixParams {
 /* Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto. */
   DataMatrixEncodeMode? dataMatrixEncodeMode = null;
 
-/* Rows count. */
+/* DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count. */
   int? rows = null;
 
 /* Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None. */
