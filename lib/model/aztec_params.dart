@@ -1,15 +1,8 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class AztecParams {
-  AztecParams();
-
-  AztecParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    errorLevel = json['errorLevel'];
-    symbolMode = new AztecSymbolMode.fromJson(json['symbolMode']);
-    textEncoding = json['textEncoding'];
-  }
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
@@ -22,24 +15,38 @@ class AztecParams {
 /* Sets the encoding of codetext. */
   String? textEncoding = null;
 
+  AztecParams();
+
   @override
-  String toString() =>
-      'AztecParams[aspectRatio=$aspectRatio, errorLevel=$errorLevel, symbolMode=$symbolMode, textEncoding=$textEncoding, ]';
+  String toString() {
+    return 'AztecParams[aspectRatio=$aspectRatio, errorLevel=$errorLevel, symbolMode=$symbolMode, textEncoding=$textEncoding, ]';
+  }
 
-  Map<String, dynamic> toJson() => {
-        'AspectRatio': aspectRatio,
-        'ErrorLevel': errorLevel,
-        'SymbolMode': symbolMode,
-        'TextEncoding': textEncoding
-      };
+  AztecParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    errorLevel = json['errorLevel'];
+    symbolMode = new AztecSymbolMode.fromJson(json['symbolMode']);
+    textEncoding = json['textEncoding'];
+  }
 
-  static List<AztecParams> listFromJson(List<dynamic> json) =>
-      json.map((value) => new AztecParams.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {
+      'AspectRatio': aspectRatio,
+      'ErrorLevel': errorLevel,
+      'SymbolMode': symbolMode,
+      'TextEncoding': textEncoding
+    };
+  }
+
+  static List<AztecParams> listFromJson(List<dynamic> json) {
+    return json.map((value) => new AztecParams.fromJson(value)).toList();
+  }
 
   static Map<String, AztecParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, AztecParams>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new AztecParams.fromJson(value));
     }

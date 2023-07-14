@@ -1,7 +1,25 @@
 part of aspose_barcode_cloud.api;
 
 class AvailableGraphicsUnit {
+  /// The underlying value of this enum member.
+  String? value;
+
   AvailableGraphicsUnit._internal(this.value);
+
+  /// Subset of GraphicsUnit.
+  static AvailableGraphicsUnit pixel_ =
+      AvailableGraphicsUnit._internal("Pixel");
+
+  /// Subset of GraphicsUnit.
+  static AvailableGraphicsUnit point_ =
+      AvailableGraphicsUnit._internal("Point");
+
+  /// Subset of GraphicsUnit.
+  static AvailableGraphicsUnit inch_ = AvailableGraphicsUnit._internal("Inch");
+
+  /// Subset of GraphicsUnit.
+  static AvailableGraphicsUnit millimeter_ =
+      AvailableGraphicsUnit._internal("Millimeter");
 
   AvailableGraphicsUnit.fromJson(dynamic data) {
     switch (data) {
@@ -22,28 +40,15 @@ class AvailableGraphicsUnit {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(AvailableGraphicsUnit data) {
+    return data.value;
+  }
 
-  /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit pixel_ =
-      AvailableGraphicsUnit._internal("Pixel");
+  String? toJson() {
+    return value;
+  }
 
-  /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit point_ =
-      AvailableGraphicsUnit._internal("Point");
-
-  /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit inch_ = AvailableGraphicsUnit._internal("Inch");
-
-  /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit millimeter_ =
-      AvailableGraphicsUnit._internal("Millimeter");
-
-  static dynamic encode(AvailableGraphicsUnit data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

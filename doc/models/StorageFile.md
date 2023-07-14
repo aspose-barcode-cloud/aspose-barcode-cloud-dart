@@ -14,4 +14,3 @@ Name | Type | Description | Notes
 **size** | **int** | File or folder size. | [default to null]
 **path** | **String** | File or folder path. | [optional] [default to null]
 
-

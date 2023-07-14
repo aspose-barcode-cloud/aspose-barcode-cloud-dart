@@ -1,7 +1,24 @@
 part of aspose_barcode_cloud.api;
 
 class Pdf417CompactionMode {
+  /// The underlying value of this enum member.
+  String? value;
+
   Pdf417CompactionMode._internal(this.value);
+
+  ///
+  static Pdf417CompactionMode auto_ = Pdf417CompactionMode._internal("Auto");
+
+  ///
+  static Pdf417CompactionMode text_ = Pdf417CompactionMode._internal("Text");
+
+  ///
+  static Pdf417CompactionMode numeric_ =
+      Pdf417CompactionMode._internal("Numeric");
+
+  ///
+  static Pdf417CompactionMode binary_ =
+      Pdf417CompactionMode._internal("Binary");
 
   Pdf417CompactionMode.fromJson(dynamic data) {
     switch (data) {
@@ -22,27 +39,15 @@ class Pdf417CompactionMode {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(Pdf417CompactionMode data) {
+    return data.value;
+  }
 
-  ///
-  static Pdf417CompactionMode auto_ = Pdf417CompactionMode._internal("Auto");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static Pdf417CompactionMode text_ = Pdf417CompactionMode._internal("Text");
-
-  ///
-  static Pdf417CompactionMode numeric_ =
-      Pdf417CompactionMode._internal("Numeric");
-
-  ///
-  static Pdf417CompactionMode binary_ =
-      Pdf417CompactionMode._internal("Binary");
-
-  static dynamic encode(Pdf417CompactionMode data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

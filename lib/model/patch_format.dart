@@ -1,7 +1,26 @@
 part of aspose_barcode_cloud.api;
 
 class PatchFormat {
+  /// The underlying value of this enum member.
+  String? value;
+
   PatchFormat._internal(this.value);
+
+  ///
+  static PatchFormat patchOnly_ = PatchFormat._internal("PatchOnly");
+
+  ///
+  static PatchFormat a4_ = PatchFormat._internal("A4");
+
+  ///
+  static PatchFormat a4LANDSCAPE_ = PatchFormat._internal("A4_LANDSCAPE");
+
+  ///
+  static PatchFormat uSLetter_ = PatchFormat._internal("US_Letter");
+
+  ///
+  static PatchFormat uSLetterLANDSCAPE_ =
+      PatchFormat._internal("US_Letter_LANDSCAPE");
 
   PatchFormat.fromJson(dynamic data) {
     switch (data) {
@@ -25,29 +44,15 @@ class PatchFormat {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(PatchFormat data) {
+    return data.value;
+  }
 
-  ///
-  static PatchFormat patchOnly_ = PatchFormat._internal("PatchOnly");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static PatchFormat a4_ = PatchFormat._internal("A4");
-
-  ///
-  static PatchFormat a4LANDSCAPE_ = PatchFormat._internal("A4_LANDSCAPE");
-
-  ///
-  static PatchFormat uSLetter_ = PatchFormat._internal("US_Letter");
-
-  ///
-  static PatchFormat uSLetterLANDSCAPE_ =
-      PatchFormat._internal("US_Letter_LANDSCAPE");
-
-  static dynamic encode(PatchFormat data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

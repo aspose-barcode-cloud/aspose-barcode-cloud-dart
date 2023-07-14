@@ -1,17 +1,8 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class CaptionParams {
-  CaptionParams();
-
-  CaptionParams.fromJson(Map<String, dynamic> json) {
-    text = json['text'];
-    alignment = new TextAlignment.fromJson(json['alignment']);
-    color = json['color'];
-    visible = json['visible'];
-    font = new FontParams.fromJson(json['font']);
-    padding = new Padding.fromJson(json['padding']);
-    noWrap = json['noWrap'];
-  }
   /* Caption text. */
   String? text = null;
 
@@ -33,27 +24,43 @@ class CaptionParams {
 /* Specify word wraps (line breaks) within text. Default value: false. */
   bool? noWrap = null;
 
+  CaptionParams();
+
   @override
-  String toString() =>
-      'CaptionParams[text=$text, alignment=$alignment, color=$color, visible=$visible, font=$font, padding=$padding, noWrap=$noWrap, ]';
+  String toString() {
+    return 'CaptionParams[text=$text, alignment=$alignment, color=$color, visible=$visible, font=$font, padding=$padding, noWrap=$noWrap, ]';
+  }
 
-  Map<String, dynamic> toJson() => {
-        'Text': text,
-        'Alignment': alignment,
-        'Color': color,
-        'Visible': visible,
-        'Font': font,
-        'Padding': padding,
-        'NoWrap': noWrap
-      };
+  CaptionParams.fromJson(Map<String, dynamic> json) {
+    text = json['text'];
+    alignment = new TextAlignment.fromJson(json['alignment']);
+    color = json['color'];
+    visible = json['visible'];
+    font = new FontParams.fromJson(json['font']);
+    padding = new Padding.fromJson(json['padding']);
+    noWrap = json['noWrap'];
+  }
 
-  static List<CaptionParams> listFromJson(List<dynamic> json) =>
-      json.map((value) => new CaptionParams.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {
+      'Text': text,
+      'Alignment': alignment,
+      'Color': color,
+      'Visible': visible,
+      'Font': font,
+      'Padding': padding,
+      'NoWrap': noWrap
+    };
+  }
+
+  static List<CaptionParams> listFromJson(List<dynamic> json) {
+    return json.map((value) => new CaptionParams.fromJson(value)).toList();
+  }
 
   static Map<String, CaptionParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, CaptionParams>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CaptionParams.fromJson(value));
     }

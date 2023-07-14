@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **size** | **double** | Font size in units. | [optional] [default to null]
 **style** | [**FontStyle**](FontStyle.md) | Font style. | [optional] [default to null]
 
-

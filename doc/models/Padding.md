@@ -13,4 +13,3 @@ Name | Type | Description | Notes
 **top** | **double** | Top padding. | [optional] [default to null]
 **bottom** | **double** | Bottom padding. | [optional] [default to null]
 
-

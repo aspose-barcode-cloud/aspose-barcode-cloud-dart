@@ -65,4 +65,3 @@ Name | Type | Description | Notes
 **code128** | [**Code128Params**](Code128Params.md) | Code128 params. | [optional] [default to null]
 **hanXin** | [**HanXinParams**](HanXinParams.md) | HanXin params. | [optional] [default to null]
 
-

@@ -10,4 +10,3 @@ Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **exists** | **bool** | Shows that the storage exists. | [default to null]
 
-

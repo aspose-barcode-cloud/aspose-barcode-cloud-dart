@@ -1,33 +1,41 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class ErrorDetails {
-  ErrorDetails();
-
-  ErrorDetails.fromJson(Map<String, dynamic> json) {
-    requestId = json['requestId'];
-    date = json['date'] == null ? null : DateTime.parse(json['date']);
-  }
   /* The request id */
   String? requestId = null;
 
 /* Date */
   DateTime? date = null;
 
+  ErrorDetails();
+
   @override
-  String toString() => 'ErrorDetails[requestId=$requestId, date=$date, ]';
+  String toString() {
+    return 'ErrorDetails[requestId=$requestId, date=$date, ]';
+  }
 
-  Map<String, dynamic> toJson() => {
-        'RequestId': requestId,
-        'Date': date == null ? '' : date!.toUtc().toIso8601String()
-      };
+  ErrorDetails.fromJson(Map<String, dynamic> json) {
+    requestId = json['requestId'];
+    date = json['date'] == null ? null : DateTime.parse(json['date']);
+  }
 
-  static List<ErrorDetails> listFromJson(List<dynamic> json) =>
-      json.map((value) => new ErrorDetails.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {
+      'RequestId': requestId,
+      'Date': date == null ? '' : date!.toUtc().toIso8601String()
+    };
+  }
+
+  static List<ErrorDetails> listFromJson(List<dynamic> json) {
+    return json.map((value) => new ErrorDetails.fromJson(value)).toList();
+  }
 
   static Map<String, ErrorDetails> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, ErrorDetails>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new ErrorDetails.fromJson(value));
     }

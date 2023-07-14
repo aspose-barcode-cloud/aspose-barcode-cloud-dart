@@ -1,7 +1,19 @@
 part of aspose_barcode_cloud.api;
 
 class EnableChecksum {
+  /// The underlying value of this enum member.
+  String? value;
+
   EnableChecksum._internal(this.value);
+
+  ///
+  static EnableChecksum default_ = EnableChecksum._internal("Default");
+
+  ///
+  static EnableChecksum yes_ = EnableChecksum._internal("Yes");
+
+  ///
+  static EnableChecksum no_ = EnableChecksum._internal("No");
 
   EnableChecksum.fromJson(dynamic data) {
     switch (data) {
@@ -19,22 +31,15 @@ class EnableChecksum {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(EnableChecksum data) {
+    return data.value;
+  }
 
-  ///
-  static EnableChecksum default_ = EnableChecksum._internal("Default");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static EnableChecksum yes_ = EnableChecksum._internal("Yes");
-
-  ///
-  static EnableChecksum no_ = EnableChecksum._internal("No");
-
-  static dynamic encode(EnableChecksum data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

@@ -28,7 +28,7 @@ Future<void> main() async {
   final BarcodeResponseList recognized =
       await api.postBarcodeRecognizeFromUrlOrContent(image: formFile);
 
-  if (recognized.barcodes != null && recognized.barcodes!.length > 0) {
+  if (recognized.barcodes != null && recognized.barcodes!.isNotEmpty) {
     print("Recognized Type: " + recognized.barcodes![0].type!);
     print("Recognized Value: " + recognized.barcodes![0].barcodeValue!);
   } else {

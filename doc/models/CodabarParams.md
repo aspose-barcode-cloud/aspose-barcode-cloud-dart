@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **startSymbol** | [**CodabarSymbol**](CodabarSymbol.md) | Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A | [optional] [default to null]
 **stopSymbol** | [**CodabarSymbol**](CodabarSymbol.md) | Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A | [optional] [default to null]
 
-

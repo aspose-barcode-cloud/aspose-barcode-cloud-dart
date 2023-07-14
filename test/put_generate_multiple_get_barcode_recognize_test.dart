@@ -6,10 +6,16 @@ import 'test_configuration.dart';
 void main() {
   final remoteFileName = TestConfiguration.generateRandomString(16) + ".png";
 
-  test('.putBarcodeGenerateFile', () async {
-    final ResultImageInfo generated =
-        await TestConfiguration.BarcodeApi.putBarcodeGenerateFile(
-            remoteFileName, EncodeBarcodeType.qR_.toString(), remoteFileName,
+  test('.putGenerateMultiple', () async {
+    final barcode = GeneratorParams()
+      ..typeOfBarcode = EncodeBarcodeType.qR_
+      ..text = "test";
+
+    final generatorParamsList = GeneratorParamsList()
+      ..barcodeBuilders!.add(barcode);
+
+    final ResultImageInfo generated = await TestConfiguration.barcodeApi
+        .putGenerateMultiple(remoteFileName, generatorParamsList,
             folder: TestConfiguration.folder);
 
     expect(generated, isNotNull);
@@ -18,19 +24,19 @@ void main() {
     expect(generated.imageWidth, greaterThan(0));
   });
 
-  test('.putBarcodeRecognizeFromBody', () async {
+  test('.getBarcodeRecognize', () async {
     final BarcodeResponseList recognized =
-        await TestConfiguration.BarcodeApi.putBarcodeRecognizeFromBody(
+        await TestConfiguration.barcodeApi.getBarcodeRecognize(
       remoteFileName,
-      ReaderParams()..preset = PresetType.highPerformance_,
       folder: TestConfiguration.folder,
+      preset: PresetType.highPerformance_.value,
     );
 
     expect(recognized.barcodes, isNotNull);
     expect(recognized.barcodes, isNotEmpty);
 
     final first = recognized.barcodes![0];
-    expect(first.type, equals("QR"));
-    expect(first.barcodeValue, equals(remoteFileName));
+    expect(first.type, equals(DecodeBarcodeType.qR_.toString()));
+    expect(first.barcodeValue, "test");
   });
 }

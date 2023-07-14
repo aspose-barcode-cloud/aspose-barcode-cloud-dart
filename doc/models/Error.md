@@ -13,4 +13,3 @@ Name | Type | Description | Notes
 **description** | **String** | Description | [optional] [default to null]
 **innerError** | [**ErrorDetails**](ErrorDetails.md) | Inner Error | [optional] [default to null]
 
-

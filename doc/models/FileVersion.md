@@ -16,4 +16,3 @@ Name | Type | Description | Notes
 **versionId** | **String** | File Version ID. | [optional] [default to null]
 **isLatest** | **bool** | Specifies whether the file is (true) or is not (false) the latest version of an file. | [default to null]
 
-

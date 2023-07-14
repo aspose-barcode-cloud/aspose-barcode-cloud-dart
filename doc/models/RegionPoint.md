@@ -11,4 +11,3 @@ Name | Type | Description | Notes
 **X** | **int** | X-coordinate | [default to null]
 **Y** | **int** | Y-coordinate | [default to null]
 
-

@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **xStep** | **int** | Shift step according to X axis | [default to null]
 **yStep** | **int** | Shift step according to Y axis | [default to null]
 
-

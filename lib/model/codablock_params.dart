@@ -1,14 +1,8 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class CodablockParams {
-  CodablockParams();
-
-  CodablockParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    columns = json['columns'];
-    rows = json['rows'];
-  }
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
@@ -18,20 +12,32 @@ class CodablockParams {
 /* Rows count. */
   int? rows = null;
 
+  CodablockParams();
+
   @override
-  String toString() =>
-      'CodablockParams[aspectRatio=$aspectRatio, columns=$columns, rows=$rows, ]';
+  String toString() {
+    return 'CodablockParams[aspectRatio=$aspectRatio, columns=$columns, rows=$rows, ]';
+  }
 
-  Map<String, dynamic> toJson() =>
-      {'AspectRatio': aspectRatio, 'Columns': columns, 'Rows': rows};
+  CodablockParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    columns = json['columns'];
+    rows = json['rows'];
+  }
 
-  static List<CodablockParams> listFromJson(List<dynamic> json) =>
-      json.map((value) => new CodablockParams.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {'AspectRatio': aspectRatio, 'Columns': columns, 'Rows': rows};
+  }
+
+  static List<CodablockParams> listFromJson(List<dynamic> json) {
+    return json.map((value) => new CodablockParams.fromJson(value)).toList();
+  }
 
   static Map<String, CodablockParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, CodablockParams>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new CodablockParams.fromJson(value));
     }

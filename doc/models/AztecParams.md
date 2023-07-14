@@ -13,4 +13,3 @@ Name | Type | Description | Notes
 **symbolMode** | [**AztecSymbolMode**](AztecSymbolMode.md) | Aztec Symbol mode. Default value: AztecSymbolMode.Auto. | [optional] [default to null]
 **textEncoding** | **String** | Sets the encoding of codetext. | [optional] [default to null]
 
-

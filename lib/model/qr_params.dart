@@ -1,19 +1,8 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class QrParams {
-  QrParams();
-
-  QrParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    textEncoding = json['textEncoding'];
-    encodeType = new QREncodeType.fromJson(json['encodeType']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
-    encodeMode = new QREncodeMode.fromJson(json['encodeMode']);
-    errorLevel = new QRErrorLevel.fromJson(json['errorLevel']);
-    version = new QRVersion.fromJson(json['version']);
-    structuredAppend = new StructuredAppend.fromJson(json['structuredAppend']);
-  }
   /* Height/Width ratio of 2D BarCode module. */
   double? aspectRatio = null;
 
@@ -38,28 +27,46 @@ class QrParams {
 /* QR structured append parameters. */
   StructuredAppend? structuredAppend = null;
 
+  QrParams();
+
   @override
-  String toString() =>
-      'QrParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, encodeType=$encodeType, eCIEncoding=$eCIEncoding, encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, structuredAppend=$structuredAppend, ]';
+  String toString() {
+    return 'QrParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, encodeType=$encodeType, eCIEncoding=$eCIEncoding, encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, structuredAppend=$structuredAppend, ]';
+  }
 
-  Map<String, dynamic> toJson() => {
-        'AspectRatio': aspectRatio,
-        'TextEncoding': textEncoding,
-        'EncodeType': encodeType,
-        'ECIEncoding': eCIEncoding,
-        'EncodeMode': encodeMode,
-        'ErrorLevel': errorLevel,
-        'Version': version,
-        'StructuredAppend': structuredAppend
-      };
+  QrParams.fromJson(Map<String, dynamic> json) {
+    aspectRatio =
+        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    textEncoding = json['textEncoding'];
+    encodeType = new QREncodeType.fromJson(json['encodeType']);
+    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
+    encodeMode = new QREncodeMode.fromJson(json['encodeMode']);
+    errorLevel = new QRErrorLevel.fromJson(json['errorLevel']);
+    version = new QRVersion.fromJson(json['version']);
+    structuredAppend = new StructuredAppend.fromJson(json['structuredAppend']);
+  }
 
-  static List<QrParams> listFromJson(List<dynamic> json) =>
-      json.map((value) => new QrParams.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {
+      'AspectRatio': aspectRatio,
+      'TextEncoding': textEncoding,
+      'EncodeType': encodeType,
+      'ECIEncoding': eCIEncoding,
+      'EncodeMode': encodeMode,
+      'ErrorLevel': errorLevel,
+      'Version': version,
+      'StructuredAppend': structuredAppend
+    };
+  }
+
+  static List<QrParams> listFromJson(List<dynamic> json) {
+    return json.map((value) => new QrParams.fromJson(value)).toList();
+  }
 
   static Map<String, QrParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, QrParams>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new QrParams.fromJson(value));
     }

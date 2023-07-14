@@ -28,7 +28,7 @@ class StorageApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -66,7 +66,7 @@ class StorageApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -109,7 +109,7 @@ class StorageApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
@@ -142,7 +142,7 @@ class StorageApi {
     final List<String> contentTypes = ["application/json"];
 
     final String contentType =
-        contentTypes.length > 0 ? contentTypes[0] : "application/json";
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
     final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,

@@ -13,4 +13,3 @@ Name | Type | Description | Notes
 **region** | [**List&lt;RegionPoint&gt;**](RegionPoint.md) | Region with barcode. | [optional] [default to []]
 **checksum** | **String** | Checksum of barcode. | [optional] [default to null]
 
-

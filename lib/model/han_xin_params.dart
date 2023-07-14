@@ -1,14 +1,8 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class HanXinParams {
-  HanXinParams();
-
-  HanXinParams.fromJson(Map<String, dynamic> json) {
-    encodeMode = new HanXinEncodeMode.fromJson(json['encodeMode']);
-    errorLevel = new HanXinErrorLevel.fromJson(json['errorLevel']);
-    version = new HanXinVersion.fromJson(json['version']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
-  }
   /* Encoding mode for XanXin barcodes. Default value: HanXinEncodeMode.Auto. */
   HanXinEncodeMode? encodeMode = null;
 
@@ -21,24 +15,37 @@ class HanXinParams {
 /* Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings. Default value: ECIEncodings.ISO_8859_1 */
   ECIEncodings? eCIEncoding = null;
 
+  HanXinParams();
+
   @override
-  String toString() =>
-      'HanXinParams[encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, eCIEncoding=$eCIEncoding, ]';
+  String toString() {
+    return 'HanXinParams[encodeMode=$encodeMode, errorLevel=$errorLevel, version=$version, eCIEncoding=$eCIEncoding, ]';
+  }
 
-  Map<String, dynamic> toJson() => {
-        'EncodeMode': encodeMode,
-        'ErrorLevel': errorLevel,
-        'Version': version,
-        'ECIEncoding': eCIEncoding
-      };
+  HanXinParams.fromJson(Map<String, dynamic> json) {
+    encodeMode = new HanXinEncodeMode.fromJson(json['encodeMode']);
+    errorLevel = new HanXinErrorLevel.fromJson(json['errorLevel']);
+    version = new HanXinVersion.fromJson(json['version']);
+    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
+  }
 
-  static List<HanXinParams> listFromJson(List<dynamic> json) =>
-      json.map((value) => new HanXinParams.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {
+      'EncodeMode': encodeMode,
+      'ErrorLevel': errorLevel,
+      'Version': version,
+      'ECIEncoding': eCIEncoding
+    };
+  }
+
+  static List<HanXinParams> listFromJson(List<dynamic> json) {
+    return json.map((value) => new HanXinParams.fromJson(value)).toList();
+  }
 
   static Map<String, HanXinParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, HanXinParams>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new HanXinParams.fromJson(value));
     }

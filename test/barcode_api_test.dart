@@ -12,7 +12,7 @@ void main() {
     () async {
       // Generate image with barcode
       final Uint8List generated =
-          await TestConfiguration.BarcodeApi.getBarcodeGenerate('QR', 'text');
+          await TestConfiguration.barcodeApi.getBarcodeGenerate('QR', 'text');
 
       expect(generated, isNotNull);
       expect(generated, isNotEmpty);
@@ -20,7 +20,7 @@ void main() {
       // Recognize generated image
       final barcode = MultipartFile.fromBytes('image', generated.toList(),
           filename: 'barcode.png');
-      final BarcodeResponseList recognized = await TestConfiguration.BarcodeApi
+      final BarcodeResponseList recognized = await TestConfiguration.barcodeApi
           .postBarcodeRecognizeFromUrlOrContent(
         image: barcode,
         preset: PresetType.highPerformance_.toString(),

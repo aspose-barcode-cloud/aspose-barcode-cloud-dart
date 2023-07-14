@@ -1,7 +1,22 @@
 part of aspose_barcode_cloud.api;
 
 class HanXinErrorLevel {
+  /// The underlying value of this enum member.
+  String? value;
+
   HanXinErrorLevel._internal(this.value);
+
+  ///
+  static HanXinErrorLevel l1_ = HanXinErrorLevel._internal("L1");
+
+  ///
+  static HanXinErrorLevel l2_ = HanXinErrorLevel._internal("L2");
+
+  ///
+  static HanXinErrorLevel l3_ = HanXinErrorLevel._internal("L3");
+
+  ///
+  static HanXinErrorLevel l4_ = HanXinErrorLevel._internal("L4");
 
   HanXinErrorLevel.fromJson(dynamic data) {
     switch (data) {
@@ -22,25 +37,15 @@ class HanXinErrorLevel {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
+  static dynamic encode(HanXinErrorLevel data) {
+    return data.value;
+  }
 
-  ///
-  static HanXinErrorLevel l1_ = HanXinErrorLevel._internal("L1");
+  String? toJson() {
+    return value;
+  }
 
-  ///
-  static HanXinErrorLevel l2_ = HanXinErrorLevel._internal("L2");
-
-  ///
-  static HanXinErrorLevel l3_ = HanXinErrorLevel._internal("L3");
-
-  ///
-  static HanXinErrorLevel l4_ = HanXinErrorLevel._internal("L4");
-
-  static dynamic encode(HanXinErrorLevel data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

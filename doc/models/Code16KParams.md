@@ -12,4 +12,3 @@ Name | Type | Description | Notes
 **quietZoneLeftCoef** | **int** | Size of the left quiet zone in xDimension. Default value: 10, meaning if xDimension &#x3D; 2px than left quiet zone will be 20px. | [optional] [default to null]
 **quietZoneRightCoef** | **int** | Size of the right quiet zone in xDimension. Default value: 1, meaning if xDimension &#x3D; 2px than right quiet zone will be 2px. | [optional] [default to null]
 
-

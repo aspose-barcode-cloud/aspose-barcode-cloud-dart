@@ -1,12 +1,22 @@
 part of aspose_barcode_cloud.api;
 
 class QueryParam {
-  QueryParam(this.name, this.value);
   String name;
   String value;
+
+  QueryParam(this.name, this.value);
 }
 
 class ApiClient {
+  String basePath;
+  final client = new Client();
+
+  Map<String, String> _defaultHeaderMap = {};
+  late Authentication _authentication;
+
+  final _regList = new RegExp(r'^List<(.*)>$');
+  final _regMap = new RegExp(r'^Map<String,(.*)>$');
+
   ApiClient(
       {String? clientId,
       String? clientSecret,
@@ -19,15 +29,6 @@ class ApiClient {
         accessToken: accessToken,
         tokenUrl: tokenUrl);
   }
-
-  String basePath;
-  final client = new Client();
-
-  Map<String, String> _defaultHeaderMap = {};
-  late Authentication _authentication;
-
-  final _RegList = new RegExp(r'^List<(.*)>$');
-  final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
@@ -202,11 +203,11 @@ class ApiClient {
           {
             RegExpMatch? match;
             if (value is List &&
-                (match = _RegList.firstMatch(targetType)) != null) {
+                (match = _regList.firstMatch(targetType)) != null) {
               final newTargetType = match![1];
               return value.map((v) => _deserialize(v, newTargetType!)).toList();
             } else if (value is Map &&
-                (match = _RegMap.firstMatch(targetType)) != null) {
+                (match = _regMap.firstMatch(targetType)) != null) {
               final newTargetType = match![1];
               return new Map.fromIterables(value.keys,
                   value.values.map((v) => _deserialize(v, newTargetType!)));

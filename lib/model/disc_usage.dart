@@ -1,31 +1,38 @@
 part of aspose_barcode_cloud.api;
 
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: deprecated_member_use_from_same_package
 class DiscUsage {
-  DiscUsage();
-
-  DiscUsage.fromJson(Map<String, dynamic> json) {
-    usedSize = json['usedSize'];
-    totalSize = json['totalSize'];
-  }
   /* Application used disc space. */
   int? usedSize = null;
 
 /* Total disc space. */
   int? totalSize = null;
 
+  DiscUsage();
+
   @override
-  String toString() => 'DiscUsage[usedSize=$usedSize, totalSize=$totalSize, ]';
+  String toString() {
+    return 'DiscUsage[usedSize=$usedSize, totalSize=$totalSize, ]';
+  }
 
-  Map<String, dynamic> toJson() =>
-      {'UsedSize': usedSize, 'TotalSize': totalSize};
+  DiscUsage.fromJson(Map<String, dynamic> json) {
+    usedSize = json['usedSize'];
+    totalSize = json['totalSize'];
+  }
 
-  static List<DiscUsage> listFromJson(List<dynamic> json) =>
-      json.map((value) => new DiscUsage.fromJson(value)).toList();
+  Map<String, dynamic> toJson() {
+    return {'UsedSize': usedSize, 'TotalSize': totalSize};
+  }
+
+  static List<DiscUsage> listFromJson(List<dynamic> json) {
+    return json.map((value) => new DiscUsage.fromJson(value)).toList();
+  }
 
   static Map<String, DiscUsage> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
     final map = new Map<String, DiscUsage>();
-    if (json.length > 0) {
+    if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = new DiscUsage.fromJson(value));
     }

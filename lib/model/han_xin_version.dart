@@ -1,7 +1,265 @@
 part of aspose_barcode_cloud.api;
 
 class HanXinVersion {
+  /// The underlying value of this enum member.
+  String? value;
+
   HanXinVersion._internal(this.value);
+
+  ///
+  static HanXinVersion auto_ = HanXinVersion._internal("Auto");
+
+  ///
+  static HanXinVersion version01_ = HanXinVersion._internal("Version01");
+
+  ///
+  static HanXinVersion version02_ = HanXinVersion._internal("Version02");
+
+  ///
+  static HanXinVersion version03_ = HanXinVersion._internal("Version03");
+
+  ///
+  static HanXinVersion version04_ = HanXinVersion._internal("Version04");
+
+  ///
+  static HanXinVersion version05_ = HanXinVersion._internal("Version05");
+
+  ///
+  static HanXinVersion version06_ = HanXinVersion._internal("Version06");
+
+  ///
+  static HanXinVersion version07_ = HanXinVersion._internal("Version07");
+
+  ///
+  static HanXinVersion version08_ = HanXinVersion._internal("Version08");
+
+  ///
+  static HanXinVersion version09_ = HanXinVersion._internal("Version09");
+
+  ///
+  static HanXinVersion version10_ = HanXinVersion._internal("Version10");
+
+  ///
+  static HanXinVersion version11_ = HanXinVersion._internal("Version11");
+
+  ///
+  static HanXinVersion version12_ = HanXinVersion._internal("Version12");
+
+  ///
+  static HanXinVersion version13_ = HanXinVersion._internal("Version13");
+
+  ///
+  static HanXinVersion version14_ = HanXinVersion._internal("Version14");
+
+  ///
+  static HanXinVersion version15_ = HanXinVersion._internal("Version15");
+
+  ///
+  static HanXinVersion version16_ = HanXinVersion._internal("Version16");
+
+  ///
+  static HanXinVersion version17_ = HanXinVersion._internal("Version17");
+
+  ///
+  static HanXinVersion version18_ = HanXinVersion._internal("Version18");
+
+  ///
+  static HanXinVersion version19_ = HanXinVersion._internal("Version19");
+
+  ///
+  static HanXinVersion version20_ = HanXinVersion._internal("Version20");
+
+  ///
+  static HanXinVersion version21_ = HanXinVersion._internal("Version21");
+
+  ///
+  static HanXinVersion version22_ = HanXinVersion._internal("Version22");
+
+  ///
+  static HanXinVersion version23_ = HanXinVersion._internal("Version23");
+
+  ///
+  static HanXinVersion version24_ = HanXinVersion._internal("Version24");
+
+  ///
+  static HanXinVersion version25_ = HanXinVersion._internal("Version25");
+
+  ///
+  static HanXinVersion version26_ = HanXinVersion._internal("Version26");
+
+  ///
+  static HanXinVersion version27_ = HanXinVersion._internal("Version27");
+
+  ///
+  static HanXinVersion version28_ = HanXinVersion._internal("Version28");
+
+  ///
+  static HanXinVersion version29_ = HanXinVersion._internal("Version29");
+
+  ///
+  static HanXinVersion version30_ = HanXinVersion._internal("Version30");
+
+  ///
+  static HanXinVersion version31_ = HanXinVersion._internal("Version31");
+
+  ///
+  static HanXinVersion version32_ = HanXinVersion._internal("Version32");
+
+  ///
+  static HanXinVersion version33_ = HanXinVersion._internal("Version33");
+
+  ///
+  static HanXinVersion version34_ = HanXinVersion._internal("Version34");
+
+  ///
+  static HanXinVersion version35_ = HanXinVersion._internal("Version35");
+
+  ///
+  static HanXinVersion version36_ = HanXinVersion._internal("Version36");
+
+  ///
+  static HanXinVersion version37_ = HanXinVersion._internal("Version37");
+
+  ///
+  static HanXinVersion version38_ = HanXinVersion._internal("Version38");
+
+  ///
+  static HanXinVersion version39_ = HanXinVersion._internal("Version39");
+
+  ///
+  static HanXinVersion version40_ = HanXinVersion._internal("Version40");
+
+  ///
+  static HanXinVersion version41_ = HanXinVersion._internal("Version41");
+
+  ///
+  static HanXinVersion version42_ = HanXinVersion._internal("Version42");
+
+  ///
+  static HanXinVersion version43_ = HanXinVersion._internal("Version43");
+
+  ///
+  static HanXinVersion version44_ = HanXinVersion._internal("Version44");
+
+  ///
+  static HanXinVersion version45_ = HanXinVersion._internal("Version45");
+
+  ///
+  static HanXinVersion version46_ = HanXinVersion._internal("Version46");
+
+  ///
+  static HanXinVersion version47_ = HanXinVersion._internal("Version47");
+
+  ///
+  static HanXinVersion version48_ = HanXinVersion._internal("Version48");
+
+  ///
+  static HanXinVersion version49_ = HanXinVersion._internal("Version49");
+
+  ///
+  static HanXinVersion version50_ = HanXinVersion._internal("Version50");
+
+  ///
+  static HanXinVersion version51_ = HanXinVersion._internal("Version51");
+
+  ///
+  static HanXinVersion version52_ = HanXinVersion._internal("Version52");
+
+  ///
+  static HanXinVersion version53_ = HanXinVersion._internal("Version53");
+
+  ///
+  static HanXinVersion version54_ = HanXinVersion._internal("Version54");
+
+  ///
+  static HanXinVersion version55_ = HanXinVersion._internal("Version55");
+
+  ///
+  static HanXinVersion version56_ = HanXinVersion._internal("Version56");
+
+  ///
+  static HanXinVersion version57_ = HanXinVersion._internal("Version57");
+
+  ///
+  static HanXinVersion version58_ = HanXinVersion._internal("Version58");
+
+  ///
+  static HanXinVersion version59_ = HanXinVersion._internal("Version59");
+
+  ///
+  static HanXinVersion version60_ = HanXinVersion._internal("Version60");
+
+  ///
+  static HanXinVersion version61_ = HanXinVersion._internal("Version61");
+
+  ///
+  static HanXinVersion version62_ = HanXinVersion._internal("Version62");
+
+  ///
+  static HanXinVersion version63_ = HanXinVersion._internal("Version63");
+
+  ///
+  static HanXinVersion version64_ = HanXinVersion._internal("Version64");
+
+  ///
+  static HanXinVersion version65_ = HanXinVersion._internal("Version65");
+
+  ///
+  static HanXinVersion version66_ = HanXinVersion._internal("Version66");
+
+  ///
+  static HanXinVersion version67_ = HanXinVersion._internal("Version67");
+
+  ///
+  static HanXinVersion version68_ = HanXinVersion._internal("Version68");
+
+  ///
+  static HanXinVersion version69_ = HanXinVersion._internal("Version69");
+
+  ///
+  static HanXinVersion version70_ = HanXinVersion._internal("Version70");
+
+  ///
+  static HanXinVersion version71_ = HanXinVersion._internal("Version71");
+
+  ///
+  static HanXinVersion version72_ = HanXinVersion._internal("Version72");
+
+  ///
+  static HanXinVersion version73_ = HanXinVersion._internal("Version73");
+
+  ///
+  static HanXinVersion version74_ = HanXinVersion._internal("Version74");
+
+  ///
+  static HanXinVersion version75_ = HanXinVersion._internal("Version75");
+
+  ///
+  static HanXinVersion version76_ = HanXinVersion._internal("Version76");
+
+  ///
+  static HanXinVersion version77_ = HanXinVersion._internal("Version77");
+
+  ///
+  static HanXinVersion version78_ = HanXinVersion._internal("Version78");
+
+  ///
+  static HanXinVersion version79_ = HanXinVersion._internal("Version79");
+
+  ///
+  static HanXinVersion version80_ = HanXinVersion._internal("Version80");
+
+  ///
+  static HanXinVersion version81_ = HanXinVersion._internal("Version81");
+
+  ///
+  static HanXinVersion version82_ = HanXinVersion._internal("Version82");
+
+  ///
+  static HanXinVersion version83_ = HanXinVersion._internal("Version83");
+
+  ///
+  static HanXinVersion version84_ = HanXinVersion._internal("Version84");
 
   HanXinVersion.fromJson(dynamic data) {
     switch (data) {
@@ -265,268 +523,15 @@ class HanXinVersion {
     }
   }
 
-  /// The underlying value of this enum member.
-  String? value;
-
-  ///
-  static HanXinVersion auto_ = HanXinVersion._internal("Auto");
-
-  ///
-  static HanXinVersion version01_ = HanXinVersion._internal("Version01");
-
-  ///
-  static HanXinVersion version02_ = HanXinVersion._internal("Version02");
-
-  ///
-  static HanXinVersion version03_ = HanXinVersion._internal("Version03");
-
-  ///
-  static HanXinVersion version04_ = HanXinVersion._internal("Version04");
-
-  ///
-  static HanXinVersion version05_ = HanXinVersion._internal("Version05");
-
-  ///
-  static HanXinVersion version06_ = HanXinVersion._internal("Version06");
-
-  ///
-  static HanXinVersion version07_ = HanXinVersion._internal("Version07");
-
-  ///
-  static HanXinVersion version08_ = HanXinVersion._internal("Version08");
-
-  ///
-  static HanXinVersion version09_ = HanXinVersion._internal("Version09");
-
-  ///
-  static HanXinVersion version10_ = HanXinVersion._internal("Version10");
-
-  ///
-  static HanXinVersion version11_ = HanXinVersion._internal("Version11");
-
-  ///
-  static HanXinVersion version12_ = HanXinVersion._internal("Version12");
-
-  ///
-  static HanXinVersion version13_ = HanXinVersion._internal("Version13");
-
-  ///
-  static HanXinVersion version14_ = HanXinVersion._internal("Version14");
-
-  ///
-  static HanXinVersion version15_ = HanXinVersion._internal("Version15");
-
-  ///
-  static HanXinVersion version16_ = HanXinVersion._internal("Version16");
-
-  ///
-  static HanXinVersion version17_ = HanXinVersion._internal("Version17");
-
-  ///
-  static HanXinVersion version18_ = HanXinVersion._internal("Version18");
-
-  ///
-  static HanXinVersion version19_ = HanXinVersion._internal("Version19");
-
-  ///
-  static HanXinVersion version20_ = HanXinVersion._internal("Version20");
-
-  ///
-  static HanXinVersion version21_ = HanXinVersion._internal("Version21");
-
-  ///
-  static HanXinVersion version22_ = HanXinVersion._internal("Version22");
-
-  ///
-  static HanXinVersion version23_ = HanXinVersion._internal("Version23");
-
-  ///
-  static HanXinVersion version24_ = HanXinVersion._internal("Version24");
-
-  ///
-  static HanXinVersion version25_ = HanXinVersion._internal("Version25");
-
-  ///
-  static HanXinVersion version26_ = HanXinVersion._internal("Version26");
-
-  ///
-  static HanXinVersion version27_ = HanXinVersion._internal("Version27");
-
-  ///
-  static HanXinVersion version28_ = HanXinVersion._internal("Version28");
-
-  ///
-  static HanXinVersion version29_ = HanXinVersion._internal("Version29");
-
-  ///
-  static HanXinVersion version30_ = HanXinVersion._internal("Version30");
-
-  ///
-  static HanXinVersion version31_ = HanXinVersion._internal("Version31");
-
-  ///
-  static HanXinVersion version32_ = HanXinVersion._internal("Version32");
-
-  ///
-  static HanXinVersion version33_ = HanXinVersion._internal("Version33");
-
-  ///
-  static HanXinVersion version34_ = HanXinVersion._internal("Version34");
-
-  ///
-  static HanXinVersion version35_ = HanXinVersion._internal("Version35");
-
-  ///
-  static HanXinVersion version36_ = HanXinVersion._internal("Version36");
-
-  ///
-  static HanXinVersion version37_ = HanXinVersion._internal("Version37");
-
-  ///
-  static HanXinVersion version38_ = HanXinVersion._internal("Version38");
-
-  ///
-  static HanXinVersion version39_ = HanXinVersion._internal("Version39");
-
-  ///
-  static HanXinVersion version40_ = HanXinVersion._internal("Version40");
-
-  ///
-  static HanXinVersion version41_ = HanXinVersion._internal("Version41");
-
-  ///
-  static HanXinVersion version42_ = HanXinVersion._internal("Version42");
-
-  ///
-  static HanXinVersion version43_ = HanXinVersion._internal("Version43");
-
-  ///
-  static HanXinVersion version44_ = HanXinVersion._internal("Version44");
-
-  ///
-  static HanXinVersion version45_ = HanXinVersion._internal("Version45");
-
-  ///
-  static HanXinVersion version46_ = HanXinVersion._internal("Version46");
-
-  ///
-  static HanXinVersion version47_ = HanXinVersion._internal("Version47");
-
-  ///
-  static HanXinVersion version48_ = HanXinVersion._internal("Version48");
-
-  ///
-  static HanXinVersion version49_ = HanXinVersion._internal("Version49");
-
-  ///
-  static HanXinVersion version50_ = HanXinVersion._internal("Version50");
-
-  ///
-  static HanXinVersion version51_ = HanXinVersion._internal("Version51");
-
-  ///
-  static HanXinVersion version52_ = HanXinVersion._internal("Version52");
-
-  ///
-  static HanXinVersion version53_ = HanXinVersion._internal("Version53");
-
-  ///
-  static HanXinVersion version54_ = HanXinVersion._internal("Version54");
-
-  ///
-  static HanXinVersion version55_ = HanXinVersion._internal("Version55");
-
-  ///
-  static HanXinVersion version56_ = HanXinVersion._internal("Version56");
-
-  ///
-  static HanXinVersion version57_ = HanXinVersion._internal("Version57");
-
-  ///
-  static HanXinVersion version58_ = HanXinVersion._internal("Version58");
-
-  ///
-  static HanXinVersion version59_ = HanXinVersion._internal("Version59");
-
-  ///
-  static HanXinVersion version60_ = HanXinVersion._internal("Version60");
-
-  ///
-  static HanXinVersion version61_ = HanXinVersion._internal("Version61");
-
-  ///
-  static HanXinVersion version62_ = HanXinVersion._internal("Version62");
-
-  ///
-  static HanXinVersion version63_ = HanXinVersion._internal("Version63");
-
-  ///
-  static HanXinVersion version64_ = HanXinVersion._internal("Version64");
-
-  ///
-  static HanXinVersion version65_ = HanXinVersion._internal("Version65");
-
-  ///
-  static HanXinVersion version66_ = HanXinVersion._internal("Version66");
-
-  ///
-  static HanXinVersion version67_ = HanXinVersion._internal("Version67");
-
-  ///
-  static HanXinVersion version68_ = HanXinVersion._internal("Version68");
-
-  ///
-  static HanXinVersion version69_ = HanXinVersion._internal("Version69");
-
-  ///
-  static HanXinVersion version70_ = HanXinVersion._internal("Version70");
-
-  ///
-  static HanXinVersion version71_ = HanXinVersion._internal("Version71");
-
-  ///
-  static HanXinVersion version72_ = HanXinVersion._internal("Version72");
-
-  ///
-  static HanXinVersion version73_ = HanXinVersion._internal("Version73");
-
-  ///
-  static HanXinVersion version74_ = HanXinVersion._internal("Version74");
-
-  ///
-  static HanXinVersion version75_ = HanXinVersion._internal("Version75");
-
-  ///
-  static HanXinVersion version76_ = HanXinVersion._internal("Version76");
-
-  ///
-  static HanXinVersion version77_ = HanXinVersion._internal("Version77");
-
-  ///
-  static HanXinVersion version78_ = HanXinVersion._internal("Version78");
-
-  ///
-  static HanXinVersion version79_ = HanXinVersion._internal("Version79");
-
-  ///
-  static HanXinVersion version80_ = HanXinVersion._internal("Version80");
-
-  ///
-  static HanXinVersion version81_ = HanXinVersion._internal("Version81");
-
-  ///
-  static HanXinVersion version82_ = HanXinVersion._internal("Version82");
-
-  ///
-  static HanXinVersion version83_ = HanXinVersion._internal("Version83");
-
-  ///
-  static HanXinVersion version84_ = HanXinVersion._internal("Version84");
-
-  static dynamic encode(HanXinVersion data) => data.value;
-
-  String? toJson() => value;
-
-  @override
-  String toString() => value == null ? "null" : value.toString();
+  static dynamic encode(HanXinVersion data) {
+    return data.value;
+  }
+
+  String? toJson() {
+    return value;
+  }
+
+  String toString() {
+    return value == null ? "null" : value.toString();
+  }
 }

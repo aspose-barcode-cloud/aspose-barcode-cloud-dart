@@ -14,4 +14,3 @@ Name | Type | Description | Notes
 **is2DCompositeComponent** | **bool** | Enables flag of 2D composite component with DataBar barcode | [optional] [default to null]
 **isAllowOnlyGS1Encoding** | **bool** | If this flag is set, it allows only GS1 encoding standard for Databar barcode types | [optional] [default to null]
 
-

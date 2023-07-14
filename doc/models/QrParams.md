@@ -17,4 +17,3 @@ Name | Type | Description | Notes
 **version** | [**QRVersion**](QRVersion.md) | Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4 for MicroQr. Default value is QRVersion.Auto. | [optional] [default to null]
 **structuredAppend** | [**StructuredAppend**](StructuredAppend.md) | QR structured append parameters. | [optional] [default to null]
 
-

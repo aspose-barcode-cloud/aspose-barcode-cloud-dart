@@ -29,8 +29,8 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
 
   final String delimiter = _delimiters[collectionFormat] ?? ",";
 
-  params
-      .add(new QueryParam(name, values.map(parameterToString).join(delimiter)));
+  params.add(new QueryParam(
+      name, values.map((v) => parameterToString(v)).join(delimiter)));
   return params;
 }
 
