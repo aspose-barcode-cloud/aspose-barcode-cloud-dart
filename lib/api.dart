@@ -43,6 +43,7 @@ part 'model/data_bar_params.dart';
 part 'model/data_matrix_ecc_type.dart';
 part 'model/data_matrix_encode_mode.dart';
 part 'model/data_matrix_params.dart';
+part 'model/data_matrix_version.dart';
 part 'model/decode_barcode_type.dart';
 part 'model/disc_usage.dart';
 part 'model/dot_code_encode_mode.dart';

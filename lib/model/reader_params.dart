@@ -84,6 +84,9 @@ class ReaderParams {
 /* Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False. */
   bool? fastScanOnly = null;
 
+/* Allows engine using additional image restorations to recognize corrupted barcodes. At this time, it is used only in MicroPdf417 barcode type. Default value: False. */
+  bool? allowAdditionalRestorations = null;
+
 /* Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time. */
   double? regionLikelihoodThresholdPercent = null;
 
@@ -109,7 +112,7 @@ class ReaderParams {
 
   @override
   String toString() {
-    return 'ReaderParams[type=$type, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
+    return 'ReaderParams[type=$type, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, allowAdditionalRestorations=$allowAdditionalRestorations, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
   }
 
   ReaderParams.fromJson(Map<String, dynamic> json) {
@@ -142,6 +145,7 @@ class ReaderParams {
     allowWhiteSpotsRemoving = json['allowWhiteSpotsRemoving'];
     checkMore1DVariants = json['checkMore1DVariants'];
     fastScanOnly = json['fastScanOnly'];
+    allowAdditionalRestorations = json['allowAdditionalRestorations'];
     regionLikelihoodThresholdPercent =
         json['regionLikelihoodThresholdPercent'] == null
             ? null
@@ -188,6 +192,7 @@ class ReaderParams {
       'AllowWhiteSpotsRemoving': allowWhiteSpotsRemoving,
       'CheckMore1DVariants': checkMore1DVariants,
       'FastScanOnly': fastScanOnly,
+      'AllowAdditionalRestorations': allowAdditionalRestorations,
       'RegionLikelihoodThresholdPercent': regionLikelihoodThresholdPercent,
       'ScanWindowSizes': scanWindowSizes,
       'Similarity': similarity,
