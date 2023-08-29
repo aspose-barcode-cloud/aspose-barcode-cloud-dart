@@ -3,7 +3,7 @@
 ## 0.23.8
 
 * Added AllowAdditionalRestorations flag to reader params
-* Added  DataMatrixVersion enum and DataMatrixVersion param into DataMatrixParams
+* Added DataMatrixVersion enum and DataMatrixVersion param into DataMatrixParams
 
 ## 0.23.7
 
