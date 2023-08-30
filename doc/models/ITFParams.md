@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.ITFParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+ITF parameters.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **borderThickness** | **double** | ITF border (bearer bar) thickness in Unit value. Default value: 12pt. | [optional] [default to null]

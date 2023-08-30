@@ -1,11 +1,18 @@
 # aspose_barcode_cloud.model.DataMatrixEccType
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
 
-## Properties
-Name | Type | Description | Notes
----- | ---- | ----------- | -----
+## Allowable values
+
+* **DataMatrixEccType.eccAuto_**
+* DataMatrixEccType.ecc000_
+* DataMatrixEccType.ecc050_
+* DataMatrixEccType.ecc080_
+* DataMatrixEccType.ecc100_
+* DataMatrixEccType.ecc140_
+* DataMatrixEccType.ecc200_
 

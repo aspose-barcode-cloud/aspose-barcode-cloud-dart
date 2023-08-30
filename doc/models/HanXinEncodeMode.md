@@ -1,11 +1,17 @@
 # aspose_barcode_cloud.model.HanXinEncodeMode
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
 
-## Properties
-Name | Type | Description | Notes
----- | ---- | ----------- | -----
+## Allowable values
+
+* **HanXinEncodeMode.auto_**
+* HanXinEncodeMode.binary_
+* HanXinEncodeMode.eCI_
+* HanXinEncodeMode.unicode_
+* HanXinEncodeMode.uRI_
+* HanXinEncodeMode.extended_
 

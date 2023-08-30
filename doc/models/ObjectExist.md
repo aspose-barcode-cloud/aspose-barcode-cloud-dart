@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.ObjectExist
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Object exists
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **exists** | **bool** | Indicates that the file or folder exists. | [default to null]

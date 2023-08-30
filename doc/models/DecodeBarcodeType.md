@@ -1,11 +1,92 @@
 # aspose_barcode_cloud.model.DecodeBarcodeType
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+See DecodeType
+## Allowable values
 
-## Properties
-Name | Type | Description | Notes
----- | ---- | ----------- | -----
+* **DecodeBarcodeType.all_**
+* DecodeBarcodeType.australiaPost_
+* DecodeBarcodeType.aztec_
+* DecodeBarcodeType.iSBN_
+* DecodeBarcodeType.codabar_
+* DecodeBarcodeType.code11_
+* DecodeBarcodeType.code128_
+* DecodeBarcodeType.gS1Code128_
+* DecodeBarcodeType.code39Extended_
+* DecodeBarcodeType.code39Standard_
+* DecodeBarcodeType.code93Extended_
+* DecodeBarcodeType.code93Standard_
+* DecodeBarcodeType.dataMatrix_
+* DecodeBarcodeType.deutschePostIdentcode_
+* DecodeBarcodeType.deutschePostLeitcode_
+* DecodeBarcodeType.eAN13_
+* DecodeBarcodeType.eAN14_
+* DecodeBarcodeType.eAN8_
+* DecodeBarcodeType.iATA2of5_
+* DecodeBarcodeType.interleaved2of5_
+* DecodeBarcodeType.iSSN_
+* DecodeBarcodeType.iSMN_
+* DecodeBarcodeType.italianPost25_
+* DecodeBarcodeType.iTF14_
+* DecodeBarcodeType.iTF6_
+* DecodeBarcodeType.macroPdf417_
+* DecodeBarcodeType.matrix2of5_
+* DecodeBarcodeType.mSI_
+* DecodeBarcodeType.oneCode_
+* DecodeBarcodeType.oPC_
+* DecodeBarcodeType.patchCode_
+* DecodeBarcodeType.pdf417_
+* DecodeBarcodeType.microPdf417_
+* DecodeBarcodeType.planet_
+* DecodeBarcodeType.postnet_
+* DecodeBarcodeType.pZN_
+* DecodeBarcodeType.qR_
+* DecodeBarcodeType.microQR_
+* DecodeBarcodeType.rM4SCC_
+* DecodeBarcodeType.sCC14_
+* DecodeBarcodeType.sSCC18_
+* DecodeBarcodeType.standard2of5_
+* DecodeBarcodeType.supplement_
+* DecodeBarcodeType.uPCA_
+* DecodeBarcodeType.uPCE_
+* DecodeBarcodeType.vIN_
+* DecodeBarcodeType.pharmacode_
+* DecodeBarcodeType.gS1DataMatrix_
+* DecodeBarcodeType.databarOmniDirectional_
+* DecodeBarcodeType.databarTruncated_
+* DecodeBarcodeType.databarLimited_
+* DecodeBarcodeType.databarExpanded_
+* DecodeBarcodeType.swissPostParcel_
+* DecodeBarcodeType.australianPosteParcel_
+* DecodeBarcodeType.code16K_
+* DecodeBarcodeType.databarStackedOmniDirectional_
+* DecodeBarcodeType.databarStacked_
+* DecodeBarcodeType.databarExpandedStacked_
+* DecodeBarcodeType.compactPdf417_
+* DecodeBarcodeType.gS1QR_
+* DecodeBarcodeType.maxiCode_
+* DecodeBarcodeType.micrE13B_
+* DecodeBarcodeType.code32_
+* DecodeBarcodeType.dataLogic2of5_
+* DecodeBarcodeType.dotCode_
+* DecodeBarcodeType.dutchKIX_
+* DecodeBarcodeType.codablockF_
+* DecodeBarcodeType.mailmark_
+* DecodeBarcodeType.gS1DotCode_
+* DecodeBarcodeType.hIBCCode39LIC_
+* DecodeBarcodeType.hIBCCode128LIC_
+* DecodeBarcodeType.hIBCAztecLIC_
+* DecodeBarcodeType.hIBCDataMatrixLIC_
+* DecodeBarcodeType.hIBCQRLIC_
+* DecodeBarcodeType.hIBCCode39PAS_
+* DecodeBarcodeType.hIBCCode128PAS_
+* DecodeBarcodeType.hIBCAztecPAS_
+* DecodeBarcodeType.hIBCDataMatrixPAS_
+* DecodeBarcodeType.hIBCQRPAS_
+* DecodeBarcodeType.hanXin_
+* DecodeBarcodeType.gS1HanXin_
 

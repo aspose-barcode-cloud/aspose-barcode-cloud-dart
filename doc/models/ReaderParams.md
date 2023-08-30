@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.ReaderParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Represents BarcodeReader object.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **type** | [**DecodeBarcodeType**](DecodeBarcodeType.md) | The type of barcode to read. | [optional] [default to null]

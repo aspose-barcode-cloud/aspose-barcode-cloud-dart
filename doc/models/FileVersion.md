@@ -1,11 +1,13 @@
 # aspose_barcode_cloud.model.FileVersion
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **name** | **String** | File or folder name. | [optional] [default to null]

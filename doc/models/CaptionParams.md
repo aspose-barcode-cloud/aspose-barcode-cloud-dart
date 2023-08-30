@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.CaptionParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Caption
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **text** | **String** | Caption text. | [optional] [default to null]

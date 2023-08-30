@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.PatchCodeParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+PatchCode parameters.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **extraBarcodeText** | **String** | Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode. | [optional] [default to null]

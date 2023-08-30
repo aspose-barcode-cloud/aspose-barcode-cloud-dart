@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.HanXinParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+HanXin params.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **encodeMode** | [**HanXinEncodeMode**](HanXinEncodeMode.md) | Encoding mode for XanXin barcodes. Default value: HanXinEncodeMode.Auto. | [optional] [default to null]
