@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.BarcodeResponse
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Represents information about barcode.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **barcodeValue** | **String** | Barcode data. | [optional] [default to null]

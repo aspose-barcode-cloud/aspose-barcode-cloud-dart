@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.GeneratorParamsList
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Represents list of barcode generators
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **barcodeBuilders** | [**List&lt;GeneratorParams&gt;**](GeneratorParams.md) | List of barcode generators | [optional] [default to []]

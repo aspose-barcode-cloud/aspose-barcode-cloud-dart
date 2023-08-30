@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.CodabarParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Codabar parameters.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **checksumMode** | [**CodabarChecksumMode**](CodabarChecksumMode.md) | Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. | [optional] [default to null]

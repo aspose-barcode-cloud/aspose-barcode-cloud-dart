@@ -66,6 +66,8 @@ String parameterToString(dynamic value) {
     return DataMatrixEccType.encode(value).toString();
   } else if (value is DataMatrixEncodeMode) {
     return DataMatrixEncodeMode.encode(value).toString();
+  } else if (value is DataMatrixVersion) {
+    return DataMatrixVersion.encode(value).toString();
   } else if (value is DecodeBarcodeType) {
     return DecodeBarcodeType.encode(value).toString();
   } else if (value is DotCodeEncodeMode) {

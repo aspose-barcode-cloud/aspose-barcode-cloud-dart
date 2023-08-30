@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.Error
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Error
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **code** | **String** | Code | [optional] [default to null]

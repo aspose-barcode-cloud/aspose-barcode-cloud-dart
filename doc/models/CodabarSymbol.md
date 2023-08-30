@@ -1,11 +1,15 @@
 # aspose_barcode_cloud.model.CodabarSymbol
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
 
-## Properties
-Name | Type | Description | Notes
----- | ---- | ----------- | -----
+## Allowable values
+
+* **CodabarSymbol.a_**
+* CodabarSymbol.b_
+* CodabarSymbol.c_
+* CodabarSymbol.d_
 

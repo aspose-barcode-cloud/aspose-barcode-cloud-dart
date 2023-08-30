@@ -240,6 +240,7 @@ class BarcodeApi {
       bool? allowWhiteSpotsRemoving,
       bool? checkMore1DVariants,
       bool? fastScanOnly,
+      bool? allowAdditionalRestorations,
       double? regionLikelihoodThresholdPercent,
       List<int>? scanWindowSizes,
       double? similarity,
@@ -371,6 +372,10 @@ class BarcodeApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "FastScanOnly", fastScanOnly));
     }
+    if (allowAdditionalRestorations != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "AllowAdditionalRestorations", allowAdditionalRestorations));
+    }
     if (regionLikelihoodThresholdPercent != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "",
@@ -460,6 +465,7 @@ class BarcodeApi {
       bool? allowWhiteSpotsRemoving,
       bool? checkMore1DVariants,
       bool? fastScanOnly,
+      bool? allowAdditionalRestorations,
       double? regionLikelihoodThresholdPercent,
       List<int>? scanWindowSizes,
       double? similarity,
@@ -589,6 +595,10 @@ class BarcodeApi {
     if (fastScanOnly != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "FastScanOnly", fastScanOnly));
+    }
+    if (allowAdditionalRestorations != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "AllowAdditionalRestorations", allowAdditionalRestorations));
     }
     if (regionLikelihoodThresholdPercent != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

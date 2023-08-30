@@ -99,6 +99,8 @@ class ApiClient {
           return new DataMatrixEncodeMode.fromJson(value);
         case 'DataMatrixParams':
           return new DataMatrixParams.fromJson(value);
+        case 'DataMatrixVersion':
+          return new DataMatrixVersion.fromJson(value);
         case 'DecodeBarcodeType':
           return new DecodeBarcodeType.fromJson(value);
         case 'DiscUsage':

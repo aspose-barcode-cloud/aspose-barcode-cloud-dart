@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.ResultImageInfo
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Created image info.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **fileSize** | **int** | Result file size. | [default to null]

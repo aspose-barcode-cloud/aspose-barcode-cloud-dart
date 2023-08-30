@@ -1,11 +1,14 @@
 # aspose_barcode_cloud.model.GeneratorParams
 
 ## Load the model package
+
 ```dart
 import 'package:aspose_barcode_cloud/api.dart';
 ```
+Represents extended BarcodeGenerator params.
 
 ## Properties
+
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **typeOfBarcode** | [**EncodeBarcodeType**](EncodeBarcodeType.md) | Type of barcode to generate. | [default to null]

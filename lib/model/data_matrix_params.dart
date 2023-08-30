@@ -28,11 +28,14 @@ class DataMatrixParams {
 /* Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None. */
   MacroCharacter? macroCharacters = null;
 
+/* Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto. */
+  DataMatrixVersion? version = null;
+
   DataMatrixParams();
 
   @override
   String toString() {
-    return 'DataMatrixParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, dataMatrixEcc=$dataMatrixEcc, dataMatrixEncodeMode=$dataMatrixEncodeMode, rows=$rows, macroCharacters=$macroCharacters, ]';
+    return 'DataMatrixParams[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, dataMatrixEcc=$dataMatrixEcc, dataMatrixEncodeMode=$dataMatrixEncodeMode, rows=$rows, macroCharacters=$macroCharacters, version=$version, ]';
   }
 
   DataMatrixParams.fromJson(Map<String, dynamic> json) {
@@ -45,6 +48,7 @@ class DataMatrixParams {
         new DataMatrixEncodeMode.fromJson(json['dataMatrixEncodeMode']);
     rows = json['rows'];
     macroCharacters = new MacroCharacter.fromJson(json['macroCharacters']);
+    version = new DataMatrixVersion.fromJson(json['version']);
   }
 
   Map<String, dynamic> toJson() {
@@ -55,7 +59,8 @@ class DataMatrixParams {
       'DataMatrixEcc': dataMatrixEcc,
       'DataMatrixEncodeMode': dataMatrixEncodeMode,
       'Rows': rows,
-      'MacroCharacters': macroCharacters
+      'MacroCharacters': macroCharacters,
+      'Version': version
     };
   }
 

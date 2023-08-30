@@ -3,7 +3,7 @@
 [![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart-compile.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart-compile.yml)
 
 - API version: 3.0
-- SDK version: 0.23.7
+- SDK version: 0.23.8
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -34,7 +34,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 0.23.7
+  aspose_barcode_cloud: 0.23.8
 ```
 
 ## Sample usage
@@ -153,6 +153,7 @@ Class | Method | HTTP request | Description
 - [DataMatrixEccType](doc/models/DataMatrixEccType.md)
 - [DataMatrixEncodeMode](doc/models/DataMatrixEncodeMode.md)
 - [DataMatrixParams](doc/models/DataMatrixParams.md)
+- [DataMatrixVersion](doc/models/DataMatrixVersion.md)
 - [DecodeBarcodeType](doc/models/DecodeBarcodeType.md)
 - [DiscUsage](doc/models/DiscUsage.md)
 - [DotCodeEncodeMode](doc/models/DotCodeEncodeMode.md)
