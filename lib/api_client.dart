@@ -1,5 +1,7 @@
 part of aspose_barcode_cloud.api;
 
+const String SDK_VERSION = "0.23.8";
+
 class QueryParam {
   String name;
   String value;
@@ -11,7 +13,15 @@ class ApiClient {
   String basePath;
   final client = new Client();
 
-  Map<String, String> _defaultHeaderMap = {};
+  static const String API_SDK_HEADER = "x-aspose-client";
+  static const String SDK_NAME = "dart sdk";
+  static const String API_CLIENT_VERSION_HEADER = "x-aspose-client-version";
+
+  Map<String, String> _defaultHeaderMap = {
+    API_SDK_HEADER: SDK_NAME,
+    API_CLIENT_VERSION_HEADER: SDK_VERSION,
+  };
+
   late Authentication _authentication;
 
   final _regList = new RegExp(r'^List<(.*)>$');
