@@ -1,4 +1,4 @@
-import '../api.dart';
+import '../aspose_barcode_cloud.dart';
 
 const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:aspose_barcode_cloud/src/configuration.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 import 'package:test/test.dart';
 
 void main() {

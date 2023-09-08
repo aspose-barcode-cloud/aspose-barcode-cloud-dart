@@ -44,7 +44,7 @@ dependencies:
 The examples below show how you can generate QR barcode and save it into a local file and then recognize using **aspose_barcode_cloud**:
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart' as barcode;
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart' as barcode;
 
 import 'dart:typed_data';
 import 'dart:io';

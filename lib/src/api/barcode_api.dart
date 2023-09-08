@@ -2,7 +2,7 @@ import 'dart:typed_data' show Uint8List;
 
 import 'package:http/http.dart' show MultipartFile, MultipartRequest;
 
-import '../../api.dart';
+import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
 class BarcodeApi {

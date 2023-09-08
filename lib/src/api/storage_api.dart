@@ -1,4 +1,4 @@
-import '../../api.dart';
+import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
 class StorageApi {

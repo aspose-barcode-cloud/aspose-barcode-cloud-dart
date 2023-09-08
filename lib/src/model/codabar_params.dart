@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
-import '../../api.dart';
+import '../../aspose_barcode_cloud.dart';
 
 class CodabarParams {
   /* Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. */

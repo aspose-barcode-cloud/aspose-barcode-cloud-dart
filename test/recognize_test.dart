@@ -1,4 +1,4 @@
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 import 'package:http/http.dart' show MultipartFile;
 import 'package:test/test.dart';
 

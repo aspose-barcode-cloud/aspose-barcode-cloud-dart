@@ -2,7 +2,7 @@ import 'dart:convert' show json;
 
 import 'package:http/http.dart' as Http show Client, MultipartRequest, Response;
 
-import '../api.dart';
+import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
 import 'auth/oauth.dart';
