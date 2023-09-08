@@ -181,14 +181,14 @@ class GeneratorParams {
   }
 
   GeneratorParams.fromJson(Map<String, dynamic> json) {
-    typeOfBarcode = new EncodeBarcodeType.fromJson(json['typeOfBarcode']);
+    typeOfBarcode = EncodeBarcodeType.fromJson(json['typeOfBarcode']);
     text = json['text'];
     twoDDisplayText = json['twoDDisplayText'];
-    textLocation = new CodeLocation.fromJson(json['textLocation']);
-    textAlignment = new TextAlignment.fromJson(json['textAlignment']);
+    textLocation = CodeLocation.fromJson(json['textLocation']);
+    textAlignment = TextAlignment.fromJson(json['textAlignment']);
     textColor = json['textColor'];
-    font = new FontParams.fromJson(json['font']);
-    fontSizeMode = new FontMode.fromJson(json['fontSizeMode']);
+    font = FontParams.fromJson(json['font']);
+    fontSizeMode = FontMode.fromJson(json['fontSizeMode']);
     noWrap = json['noWrap'];
     resolution =
         json['resolution'] == null ? null : json['resolution'].toDouble();
@@ -199,8 +199,8 @@ class GeneratorParams {
     dimensionX =
         json['dimensionX'] == null ? null : json['dimensionX'].toDouble();
     textSpace = json['textSpace'] == null ? null : json['textSpace'].toDouble();
-    units = new AvailableGraphicsUnit.fromJson(json['units']);
-    sizeMode = new AutoSizeMode.fromJson(json['sizeMode']);
+    units = AvailableGraphicsUnit.fromJson(json['units']);
+    sizeMode = AutoSizeMode.fromJson(json['sizeMode']);
     barHeight = json['barHeight'] == null ? null : json['barHeight'].toDouble();
     imageHeight =
         json['imageHeight'] == null ? null : json['imageHeight'].toDouble();
@@ -208,17 +208,17 @@ class GeneratorParams {
         json['imageWidth'] == null ? null : json['imageWidth'].toDouble();
     rotationAngle =
         json['rotationAngle'] == null ? null : json['rotationAngle'].toDouble();
-    padding = new Padding.fromJson(json['padding']);
-    captionAbove = new CaptionParams.fromJson(json['captionAbove']);
-    captionBelow = new CaptionParams.fromJson(json['captionBelow']);
+    padding = Padding.fromJson(json['padding']);
+    captionAbove = CaptionParams.fromJson(json['captionAbove']);
+    captionBelow = CaptionParams.fromJson(json['captionBelow']);
     backColor = json['backColor'];
     barColor = json['barColor'];
     borderColor = json['borderColor'];
     borderWidth =
         json['borderWidth'] == null ? null : json['borderWidth'].toDouble();
-    borderDashStyle = new BorderDashStyle.fromJson(json['borderDashStyle']);
+    borderDashStyle = BorderDashStyle.fromJson(json['borderDashStyle']);
     borderVisible = json['borderVisible'];
-    enableChecksum = new EnableChecksum.fromJson(json['enableChecksum']);
+    enableChecksum = EnableChecksum.fromJson(json['enableChecksum']);
     enableEscape = json['enableEscape'];
     filledBars = json['filledBars'];
     alwaysShowChecksum = json['alwaysShowChecksum'];
@@ -234,23 +234,23 @@ class GeneratorParams {
         ? null
         : json['barWidthReduction'].toDouble();
     useAntiAlias = json['useAntiAlias'];
-    australianPost = new AustralianPostParams.fromJson(json['australianPost']);
-    aztec = new AztecParams.fromJson(json['aztec']);
-    codabar = new CodabarParams.fromJson(json['codabar']);
-    codablock = new CodablockParams.fromJson(json['codablock']);
-    code16K = new Code16KParams.fromJson(json['code16K']);
-    coupon = new CouponParams.fromJson(json['coupon']);
-    dataBar = new DataBarParams.fromJson(json['dataBar']);
-    dataMatrix = new DataMatrixParams.fromJson(json['dataMatrix']);
-    dotCode = new DotCodeParams.fromJson(json['dotCode']);
-    ITF = new ITFParams.fromJson(json['ITF']);
-    maxiCode = new MaxiCodeParams.fromJson(json['maxiCode']);
-    pdf417 = new Pdf417Params.fromJson(json['pdf417']);
-    postal = new PostalParams.fromJson(json['postal']);
-    QR = new QrParams.fromJson(json['QR']);
-    patchCode = new PatchCodeParams.fromJson(json['patchCode']);
-    code128 = new Code128Params.fromJson(json['code128']);
-    hanXin = new HanXinParams.fromJson(json['hanXin']);
+    australianPost = AustralianPostParams.fromJson(json['australianPost']);
+    aztec = AztecParams.fromJson(json['aztec']);
+    codabar = CodabarParams.fromJson(json['codabar']);
+    codablock = CodablockParams.fromJson(json['codablock']);
+    code16K = Code16KParams.fromJson(json['code16K']);
+    coupon = CouponParams.fromJson(json['coupon']);
+    dataBar = DataBarParams.fromJson(json['dataBar']);
+    dataMatrix = DataMatrixParams.fromJson(json['dataMatrix']);
+    dotCode = DotCodeParams.fromJson(json['dotCode']);
+    ITF = ITFParams.fromJson(json['ITF']);
+    maxiCode = MaxiCodeParams.fromJson(json['maxiCode']);
+    pdf417 = Pdf417Params.fromJson(json['pdf417']);
+    postal = PostalParams.fromJson(json['postal']);
+    QR = QrParams.fromJson(json['QR']);
+    patchCode = PatchCodeParams.fromJson(json['patchCode']);
+    code128 = Code128Params.fromJson(json['code128']);
+    hanXin = HanXinParams.fromJson(json['hanXin']);
   }
 
   Map<String, dynamic> toJson() {
@@ -315,15 +315,15 @@ class GeneratorParams {
   }
 
   static List<GeneratorParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new GeneratorParams.fromJson(value)).toList();
+    return json.map((value) => GeneratorParams.fromJson(value)).toList();
   }
 
   static Map<String, GeneratorParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, GeneratorParams>();
+    final map = Map<String, GeneratorParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new GeneratorParams.fromJson(value));
+          map[key] = GeneratorParams.fromJson(value));
     }
     return map;
   }

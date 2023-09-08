@@ -32,8 +32,8 @@ class DotCodeParams {
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     columns = json['columns'];
-    encodeMode = new DotCodeEncodeMode.fromJson(json['encodeMode']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
+    encodeMode = DotCodeEncodeMode.fromJson(json['encodeMode']);
+    eCIEncoding = ECIEncodings.fromJson(json['eCIEncoding']);
     isReaderInitialization = json['isReaderInitialization'];
     rows = json['rows'];
   }
@@ -50,15 +50,15 @@ class DotCodeParams {
   }
 
   static List<DotCodeParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new DotCodeParams.fromJson(value)).toList();
+    return json.map((value) => DotCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, DotCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, DotCodeParams>();
+    final map = Map<String, DotCodeParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new DotCodeParams.fromJson(value));
+          map[key] = DotCodeParams.fromJson(value));
     }
     return map;
   }

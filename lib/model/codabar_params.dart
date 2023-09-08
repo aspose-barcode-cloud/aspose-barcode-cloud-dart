@@ -20,9 +20,9 @@ class CodabarParams {
   }
 
   CodabarParams.fromJson(Map<String, dynamic> json) {
-    checksumMode = new CodabarChecksumMode.fromJson(json['checksumMode']);
-    startSymbol = new CodabarSymbol.fromJson(json['startSymbol']);
-    stopSymbol = new CodabarSymbol.fromJson(json['stopSymbol']);
+    checksumMode = CodabarChecksumMode.fromJson(json['checksumMode']);
+    startSymbol = CodabarSymbol.fromJson(json['startSymbol']);
+    stopSymbol = CodabarSymbol.fromJson(json['stopSymbol']);
   }
 
   Map<String, dynamic> toJson() {
@@ -34,15 +34,15 @@ class CodabarParams {
   }
 
   static List<CodabarParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new CodabarParams.fromJson(value)).toList();
+    return json.map((value) => CodabarParams.fromJson(value)).toList();
   }
 
   static Map<String, CodabarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, CodabarParams>();
+    final map = Map<String, CodabarParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new CodabarParams.fromJson(value));
+          map[key] = CodabarParams.fromJson(value));
     }
     return map;
   }

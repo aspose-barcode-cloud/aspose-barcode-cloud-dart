@@ -45,15 +45,15 @@ class DataBarParams {
   }
 
   static List<DataBarParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new DataBarParams.fromJson(value)).toList();
+    return json.map((value) => DataBarParams.fromJson(value)).toList();
   }
 
   static Map<String, DataBarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, DataBarParams>();
+    final map = Map<String, DataBarParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new DataBarParams.fromJson(value));
+          map[key] = DataBarParams.fromJson(value));
     }
     return map;
   }

@@ -26,15 +26,15 @@ class ObjectExist {
   }
 
   static List<ObjectExist> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ObjectExist.fromJson(value)).toList();
+    return json.map((value) => ObjectExist.fromJson(value)).toList();
   }
 
   static Map<String, ObjectExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ObjectExist>();
+    final map = Map<String, ObjectExist>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ObjectExist.fromJson(value));
+          map[key] = ObjectExist.fromJson(value));
     }
     return map;
   }

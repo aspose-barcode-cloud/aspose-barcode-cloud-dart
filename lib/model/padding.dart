@@ -34,15 +34,15 @@ class Padding {
   }
 
   static List<Padding> listFromJson(List<dynamic> json) {
-    return json.map((value) => new Padding.fromJson(value)).toList();
+    return json.map((value) => Padding.fromJson(value)).toList();
   }
 
   static Map<String, Padding> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, Padding>();
+    final map = Map<String, Padding>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new Padding.fromJson(value));
+          map[key] = Padding.fromJson(value));
     }
     return map;
   }

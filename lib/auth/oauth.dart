@@ -25,12 +25,12 @@ class OAuth implements Authentication {
       if (clientId != null && clientSecret != null) {
         await fetchToken(clientId!, clientSecret!);
       } else {
-        throw new ApiException(0, "clientId or clientSecret not defined");
+        throw ApiException(0, "clientId or clientSecret not defined");
       }
     }
 
     if (accessToken == null) {
-      throw new ApiException(0, "accessToken is null");
+      throw ApiException(0, "accessToken is null");
     }
     headerParams["Authorization"] = "Bearer " + accessToken!;
   }

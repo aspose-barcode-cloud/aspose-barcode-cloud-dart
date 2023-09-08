@@ -26,15 +26,15 @@ class DiscUsage {
   }
 
   static List<DiscUsage> listFromJson(List<dynamic> json) {
-    return json.map((value) => new DiscUsage.fromJson(value)).toList();
+    return json.map((value) => DiscUsage.fromJson(value)).toList();
   }
 
   static Map<String, DiscUsage> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, DiscUsage>();
+    final map = Map<String, DiscUsage>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new DiscUsage.fromJson(value));
+          map[key] = DiscUsage.fromJson(value));
     }
     return map;
   }

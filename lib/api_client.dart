@@ -11,7 +11,7 @@ class QueryParam {
 
 class ApiClient {
   String basePath;
-  final client = new Client();
+  final client = Client();
 
   static const String API_SDK_HEADER = "x-aspose-client";
   static const String SDK_NAME = "dart sdk";
@@ -24,8 +24,8 @@ class ApiClient {
 
   late Authentication _authentication;
 
-  final _regList = new RegExp(r'^List<(.*)>$');
-  final _regMap = new RegExp(r'^Map<String,(.*)>$');
+  final _regList = RegExp(r'^List<(.*)>$');
+  final _regMap = RegExp(r'^Map<String,(.*)>$');
 
   ApiClient(
       {String? clientId,
@@ -33,7 +33,7 @@ class ApiClient {
       String? accessToken,
       tokenUrl = "https://api.aspose.cloud/connect/token",
       this.basePath = "https://api.aspose.cloud/v3.0"}) {
-    _authentication = new OAuth(
+    _authentication = OAuth(
         clientId: clientId,
         clientSecret: clientSecret,
         accessToken: accessToken,
@@ -56,161 +56,161 @@ class ApiClient {
         case 'double':
           return value is double ? value : double.parse('$value');
         case 'ApiError':
-          return new ApiError.fromJson(value);
+          return ApiError.fromJson(value);
         case 'ApiErrorResponse':
-          return new ApiErrorResponse.fromJson(value);
+          return ApiErrorResponse.fromJson(value);
         case 'AustralianPostParams':
-          return new AustralianPostParams.fromJson(value);
+          return AustralianPostParams.fromJson(value);
         case 'AutoSizeMode':
-          return new AutoSizeMode.fromJson(value);
+          return AutoSizeMode.fromJson(value);
         case 'AvailableGraphicsUnit':
-          return new AvailableGraphicsUnit.fromJson(value);
+          return AvailableGraphicsUnit.fromJson(value);
         case 'AztecParams':
-          return new AztecParams.fromJson(value);
+          return AztecParams.fromJson(value);
         case 'AztecSymbolMode':
-          return new AztecSymbolMode.fromJson(value);
+          return AztecSymbolMode.fromJson(value);
         case 'BarcodeResponse':
-          return new BarcodeResponse.fromJson(value);
+          return BarcodeResponse.fromJson(value);
         case 'BarcodeResponseList':
-          return new BarcodeResponseList.fromJson(value);
+          return BarcodeResponseList.fromJson(value);
         case 'BorderDashStyle':
-          return new BorderDashStyle.fromJson(value);
+          return BorderDashStyle.fromJson(value);
         case 'CaptionParams':
-          return new CaptionParams.fromJson(value);
+          return CaptionParams.fromJson(value);
         case 'ChecksumValidation':
-          return new ChecksumValidation.fromJson(value);
+          return ChecksumValidation.fromJson(value);
         case 'CodabarChecksumMode':
-          return new CodabarChecksumMode.fromJson(value);
+          return CodabarChecksumMode.fromJson(value);
         case 'CodabarParams':
-          return new CodabarParams.fromJson(value);
+          return CodabarParams.fromJson(value);
         case 'CodabarSymbol':
-          return new CodabarSymbol.fromJson(value);
+          return CodabarSymbol.fromJson(value);
         case 'CodablockParams':
-          return new CodablockParams.fromJson(value);
+          return CodablockParams.fromJson(value);
         case 'Code128Emulation':
-          return new Code128Emulation.fromJson(value);
+          return Code128Emulation.fromJson(value);
         case 'Code128EncodeMode':
-          return new Code128EncodeMode.fromJson(value);
+          return Code128EncodeMode.fromJson(value);
         case 'Code128Params':
-          return new Code128Params.fromJson(value);
+          return Code128Params.fromJson(value);
         case 'Code16KParams':
-          return new Code16KParams.fromJson(value);
+          return Code16KParams.fromJson(value);
         case 'CodeLocation':
-          return new CodeLocation.fromJson(value);
+          return CodeLocation.fromJson(value);
         case 'CouponParams':
-          return new CouponParams.fromJson(value);
+          return CouponParams.fromJson(value);
         case 'CustomerInformationInterpretingType':
-          return new CustomerInformationInterpretingType.fromJson(value);
+          return CustomerInformationInterpretingType.fromJson(value);
         case 'DataBarParams':
-          return new DataBarParams.fromJson(value);
+          return DataBarParams.fromJson(value);
         case 'DataMatrixEccType':
-          return new DataMatrixEccType.fromJson(value);
+          return DataMatrixEccType.fromJson(value);
         case 'DataMatrixEncodeMode':
-          return new DataMatrixEncodeMode.fromJson(value);
+          return DataMatrixEncodeMode.fromJson(value);
         case 'DataMatrixParams':
-          return new DataMatrixParams.fromJson(value);
+          return DataMatrixParams.fromJson(value);
         case 'DataMatrixVersion':
-          return new DataMatrixVersion.fromJson(value);
+          return DataMatrixVersion.fromJson(value);
         case 'DecodeBarcodeType':
-          return new DecodeBarcodeType.fromJson(value);
+          return DecodeBarcodeType.fromJson(value);
         case 'DiscUsage':
-          return new DiscUsage.fromJson(value);
+          return DiscUsage.fromJson(value);
         case 'DotCodeEncodeMode':
-          return new DotCodeEncodeMode.fromJson(value);
+          return DotCodeEncodeMode.fromJson(value);
         case 'DotCodeParams':
-          return new DotCodeParams.fromJson(value);
+          return DotCodeParams.fromJson(value);
         case 'ECIEncodings':
-          return new ECIEncodings.fromJson(value);
+          return ECIEncodings.fromJson(value);
         case 'EnableChecksum':
-          return new EnableChecksum.fromJson(value);
+          return EnableChecksum.fromJson(value);
         case 'EncodeBarcodeType':
-          return new EncodeBarcodeType.fromJson(value);
+          return EncodeBarcodeType.fromJson(value);
         case 'Error':
-          return new Error.fromJson(value);
+          return Error.fromJson(value);
         case 'ErrorDetails':
-          return new ErrorDetails.fromJson(value);
+          return ErrorDetails.fromJson(value);
         case 'FileVersions':
-          return new FileVersions.fromJson(value);
+          return FileVersions.fromJson(value);
         case 'FilesList':
-          return new FilesList.fromJson(value);
+          return FilesList.fromJson(value);
         case 'FilesUploadResult':
-          return new FilesUploadResult.fromJson(value);
+          return FilesUploadResult.fromJson(value);
         case 'FontMode':
-          return new FontMode.fromJson(value);
+          return FontMode.fromJson(value);
         case 'FontParams':
-          return new FontParams.fromJson(value);
+          return FontParams.fromJson(value);
         case 'FontStyle':
-          return new FontStyle.fromJson(value);
+          return FontStyle.fromJson(value);
         case 'GeneratorParams':
-          return new GeneratorParams.fromJson(value);
+          return GeneratorParams.fromJson(value);
         case 'GeneratorParamsList':
-          return new GeneratorParamsList.fromJson(value);
+          return GeneratorParamsList.fromJson(value);
         case 'HanXinEncodeMode':
-          return new HanXinEncodeMode.fromJson(value);
+          return HanXinEncodeMode.fromJson(value);
         case 'HanXinErrorLevel':
-          return new HanXinErrorLevel.fromJson(value);
+          return HanXinErrorLevel.fromJson(value);
         case 'HanXinParams':
-          return new HanXinParams.fromJson(value);
+          return HanXinParams.fromJson(value);
         case 'HanXinVersion':
-          return new HanXinVersion.fromJson(value);
+          return HanXinVersion.fromJson(value);
         case 'ITF14BorderType':
-          return new ITF14BorderType.fromJson(value);
+          return ITF14BorderType.fromJson(value);
         case 'ITFParams':
-          return new ITFParams.fromJson(value);
+          return ITFParams.fromJson(value);
         case 'MacroCharacter':
-          return new MacroCharacter.fromJson(value);
+          return MacroCharacter.fromJson(value);
         case 'MaxiCodeEncodeMode':
-          return new MaxiCodeEncodeMode.fromJson(value);
+          return MaxiCodeEncodeMode.fromJson(value);
         case 'MaxiCodeMode':
-          return new MaxiCodeMode.fromJson(value);
+          return MaxiCodeMode.fromJson(value);
         case 'MaxiCodeParams':
-          return new MaxiCodeParams.fromJson(value);
+          return MaxiCodeParams.fromJson(value);
         case 'ObjectExist':
-          return new ObjectExist.fromJson(value);
+          return ObjectExist.fromJson(value);
         case 'Padding':
-          return new Padding.fromJson(value);
+          return Padding.fromJson(value);
         case 'PatchCodeParams':
-          return new PatchCodeParams.fromJson(value);
+          return PatchCodeParams.fromJson(value);
         case 'PatchFormat':
-          return new PatchFormat.fromJson(value);
+          return PatchFormat.fromJson(value);
         case 'Pdf417CompactionMode':
-          return new Pdf417CompactionMode.fromJson(value);
+          return Pdf417CompactionMode.fromJson(value);
         case 'Pdf417ErrorLevel':
-          return new Pdf417ErrorLevel.fromJson(value);
+          return Pdf417ErrorLevel.fromJson(value);
         case 'Pdf417MacroTerminator':
-          return new Pdf417MacroTerminator.fromJson(value);
+          return Pdf417MacroTerminator.fromJson(value);
         case 'Pdf417Params':
-          return new Pdf417Params.fromJson(value);
+          return Pdf417Params.fromJson(value);
         case 'PostalParams':
-          return new PostalParams.fromJson(value);
+          return PostalParams.fromJson(value);
         case 'PresetType':
-          return new PresetType.fromJson(value);
+          return PresetType.fromJson(value);
         case 'QREncodeMode':
-          return new QREncodeMode.fromJson(value);
+          return QREncodeMode.fromJson(value);
         case 'QREncodeType':
-          return new QREncodeType.fromJson(value);
+          return QREncodeType.fromJson(value);
         case 'QRErrorLevel':
-          return new QRErrorLevel.fromJson(value);
+          return QRErrorLevel.fromJson(value);
         case 'QRVersion':
-          return new QRVersion.fromJson(value);
+          return QRVersion.fromJson(value);
         case 'QrParams':
-          return new QrParams.fromJson(value);
+          return QrParams.fromJson(value);
         case 'ReaderParams':
-          return new ReaderParams.fromJson(value);
+          return ReaderParams.fromJson(value);
         case 'RegionPoint':
-          return new RegionPoint.fromJson(value);
+          return RegionPoint.fromJson(value);
         case 'ResultImageInfo':
-          return new ResultImageInfo.fromJson(value);
+          return ResultImageInfo.fromJson(value);
         case 'StorageExist':
-          return new StorageExist.fromJson(value);
+          return StorageExist.fromJson(value);
         case 'StorageFile':
-          return new StorageFile.fromJson(value);
+          return StorageFile.fromJson(value);
         case 'StructuredAppend':
-          return new StructuredAppend.fromJson(value);
+          return StructuredAppend.fromJson(value);
         case 'TextAlignment':
-          return new TextAlignment.fromJson(value);
+          return TextAlignment.fromJson(value);
         case 'FileVersion':
-          return new FileVersion.fromJson(value);
+          return FileVersion.fromJson(value);
         default:
           {
             RegExpMatch? match;
@@ -221,16 +221,16 @@ class ApiClient {
             } else if (value is Map &&
                 (match = _regMap.firstMatch(targetType)) != null) {
               final newTargetType = match![1];
-              return new Map.fromIterables(value.keys,
+              return Map.fromIterables(value.keys,
                   value.values.map((v) => _deserialize(v, newTargetType!)));
             }
           }
       }
     } on Exception catch (e, stack) {
-      throw new ApiException.withInner(
+      throw ApiException.withInner(
           0, 'Exception during deserialization.', e, stack);
     }
-    throw new ApiException(
+    throw ApiException(
         0, 'Could not find a suitable class for deserialization');
   }
 
@@ -278,7 +278,7 @@ class ApiClient {
     headerParams['Content-Type'] = contentType;
 
     if (body is MultipartRequest) {
-      final request = new MultipartRequest(method, Uri.parse(url));
+      final request = MultipartRequest(method, Uri.parse(url));
       request.fields.addAll(body.fields);
       request.files.addAll(body.files);
       request.headers.addAll(body.headers);
@@ -314,14 +314,14 @@ class ApiClient {
 
   static ApiClient fromConfig(Configuration config) {
     return config.basePath != null
-        ? new ApiClient(
+        ? ApiClient(
             clientId: config.clientId,
             clientSecret: config.clientSecret,
             accessToken: config.accessToken,
             tokenUrl: config.tokenUrl,
             basePath: config.basePath!,
           )
-        : new ApiClient(
+        : ApiClient(
             clientId: config.clientId,
             clientSecret: config.clientSecret,
             accessToken: config.accessToken,

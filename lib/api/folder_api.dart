@@ -43,7 +43,7 @@ class FolderApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -80,7 +80,7 @@ class FolderApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -129,7 +129,7 @@ class FolderApi {
         authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -166,7 +166,7 @@ class FolderApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'FilesList') as FilesList;
     }
@@ -210,7 +210,7 @@ class FolderApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }

@@ -18,7 +18,7 @@ class AustralianPostParams {
 
   AustralianPostParams.fromJson(Map<String, dynamic> json) {
     encodingTable =
-        new CustomerInformationInterpretingType.fromJson(json['encodingTable']);
+        CustomerInformationInterpretingType.fromJson(json['encodingTable']);
     shortBarHeight = json['shortBarHeight'] == null
         ? null
         : json['shortBarHeight'].toDouble();
@@ -29,17 +29,15 @@ class AustralianPostParams {
   }
 
   static List<AustralianPostParams> listFromJson(List<dynamic> json) {
-    return json
-        .map((value) => new AustralianPostParams.fromJson(value))
-        .toList();
+    return json.map((value) => AustralianPostParams.fromJson(value)).toList();
   }
 
   static Map<String, AustralianPostParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, AustralianPostParams>();
+    final map = Map<String, AustralianPostParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new AustralianPostParams.fromJson(value));
+          map[key] = AustralianPostParams.fromJson(value));
     }
     return map;
   }

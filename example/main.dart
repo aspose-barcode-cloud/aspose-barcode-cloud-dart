@@ -19,7 +19,7 @@ Future<void> main() async {
   final Uint8List generated =
       await api.getBarcodeGenerate("QR", "text", textLocation: "None");
   // Save generated image to file
-  new File(fileName).writeAsBytesSync(generated);
+  File(fileName).writeAsBytesSync(generated);
   print("Generated image saved to " + fileName);
 
   // Recognize generated image

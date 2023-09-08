@@ -22,15 +22,15 @@ class FilesList {
   }
 
   static List<FilesList> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FilesList.fromJson(value)).toList();
+    return json.map((value) => FilesList.fromJson(value)).toList();
   }
 
   static Map<String, FilesList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, FilesList>();
+    final map = Map<String, FilesList>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new FilesList.fromJson(value));
+          map[key] = FilesList.fromJson(value));
     }
     return map;
   }

@@ -116,11 +116,11 @@ class ReaderParams {
   }
 
   ReaderParams.fromJson(Map<String, dynamic> json) {
-    type = new DecodeBarcodeType.fromJson(json['type']);
+    type = DecodeBarcodeType.fromJson(json['type']);
     checksumValidation =
-        new ChecksumValidation.fromJson(json['checksumValidation']);
+        ChecksumValidation.fromJson(json['checksumValidation']);
     detectEncoding = json['detectEncoding'];
-    preset = new PresetType.fromJson(json['preset']);
+    preset = PresetType.fromJson(json['preset']);
     rectX = json['rectX'];
     rectY = json['rectY'];
     rectWidth = json['rectWidth'];
@@ -156,9 +156,8 @@ class ReaderParams {
         json['similarity'] == null ? null : json['similarity'].toDouble();
     skipDiagonalSearch = json['skipDiagonalSearch'];
     readTinyBarcodes = json['readTinyBarcodes'];
-    australianPostEncodingTable =
-        new CustomerInformationInterpretingType.fromJson(
-            json['australianPostEncodingTable']);
+    australianPostEncodingTable = CustomerInformationInterpretingType.fromJson(
+        json['australianPostEncodingTable']);
     ignoreEndingFillingPatternsForCTable =
         json['ignoreEndingFillingPatternsForCTable'];
   }
@@ -205,15 +204,15 @@ class ReaderParams {
   }
 
   static List<ReaderParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ReaderParams.fromJson(value)).toList();
+    return json.map((value) => ReaderParams.fromJson(value)).toList();
   }
 
   static Map<String, ReaderParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ReaderParams>();
+    final map = Map<String, ReaderParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ReaderParams.fromJson(value));
+          map[key] = ReaderParams.fromJson(value));
     }
     return map;
   }

@@ -33,11 +33,11 @@ class CaptionParams {
 
   CaptionParams.fromJson(Map<String, dynamic> json) {
     text = json['text'];
-    alignment = new TextAlignment.fromJson(json['alignment']);
+    alignment = TextAlignment.fromJson(json['alignment']);
     color = json['color'];
     visible = json['visible'];
-    font = new FontParams.fromJson(json['font']);
-    padding = new Padding.fromJson(json['padding']);
+    font = FontParams.fromJson(json['font']);
+    padding = Padding.fromJson(json['padding']);
     noWrap = json['noWrap'];
   }
 
@@ -54,15 +54,15 @@ class CaptionParams {
   }
 
   static List<CaptionParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new CaptionParams.fromJson(value)).toList();
+    return json.map((value) => CaptionParams.fromJson(value)).toList();
   }
 
   static Map<String, CaptionParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, CaptionParams>();
+    final map = Map<String, CaptionParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new CaptionParams.fromJson(value));
+          map[key] = CaptionParams.fromJson(value));
     }
     return map;
   }

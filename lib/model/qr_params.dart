@@ -38,12 +38,12 @@ class QrParams {
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     textEncoding = json['textEncoding'];
-    encodeType = new QREncodeType.fromJson(json['encodeType']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
-    encodeMode = new QREncodeMode.fromJson(json['encodeMode']);
-    errorLevel = new QRErrorLevel.fromJson(json['errorLevel']);
-    version = new QRVersion.fromJson(json['version']);
-    structuredAppend = new StructuredAppend.fromJson(json['structuredAppend']);
+    encodeType = QREncodeType.fromJson(json['encodeType']);
+    eCIEncoding = ECIEncodings.fromJson(json['eCIEncoding']);
+    encodeMode = QREncodeMode.fromJson(json['encodeMode']);
+    errorLevel = QRErrorLevel.fromJson(json['errorLevel']);
+    version = QRVersion.fromJson(json['version']);
+    structuredAppend = StructuredAppend.fromJson(json['structuredAppend']);
   }
 
   Map<String, dynamic> toJson() {
@@ -60,15 +60,15 @@ class QrParams {
   }
 
   static List<QrParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new QrParams.fromJson(value)).toList();
+    return json.map((value) => QrParams.fromJson(value)).toList();
   }
 
   static Map<String, QrParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, QrParams>();
+    final map = Map<String, QrParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new QrParams.fromJson(value));
+          map[key] = QrParams.fromJson(value));
     }
     return map;
   }

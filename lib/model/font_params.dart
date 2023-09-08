@@ -22,7 +22,7 @@ class FontParams {
   FontParams.fromJson(Map<String, dynamic> json) {
     family = json['family'];
     size = json['size'] == null ? null : json['size'].toDouble();
-    style = new FontStyle.fromJson(json['style']);
+    style = FontStyle.fromJson(json['style']);
   }
 
   Map<String, dynamic> toJson() {
@@ -30,15 +30,15 @@ class FontParams {
   }
 
   static List<FontParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FontParams.fromJson(value)).toList();
+    return json.map((value) => FontParams.fromJson(value)).toList();
   }
 
   static Map<String, FontParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, FontParams>();
+    final map = Map<String, FontParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new FontParams.fromJson(value));
+          map[key] = FontParams.fromJson(value));
     }
     return map;
   }

@@ -39,15 +39,15 @@ class BarcodeResponse {
   }
 
   static List<BarcodeResponse> listFromJson(List<dynamic> json) {
-    return json.map((value) => new BarcodeResponse.fromJson(value)).toList();
+    return json.map((value) => BarcodeResponse.fromJson(value)).toList();
   }
 
   static Map<String, BarcodeResponse> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, BarcodeResponse>();
+    final map = Map<String, BarcodeResponse>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new BarcodeResponse.fromJson(value));
+          map[key] = BarcodeResponse.fromJson(value));
     }
     return map;
   }

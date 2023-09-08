@@ -203,7 +203,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return response.bodyBytes;
     }
@@ -427,7 +427,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
@@ -650,7 +650,7 @@ class BarcodeApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      mp = new MultipartRequest('POST', Uri.parse(requestPath));
+      mp = MultipartRequest('POST', Uri.parse(requestPath));
       // ignore: unnecessary_null_comparison
       if (image != null) {
         hasFields = true;
@@ -667,7 +667,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
@@ -706,7 +706,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return response.bodyBytes;
     }
@@ -927,7 +927,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
@@ -975,7 +975,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
@@ -983,7 +983,7 @@ class BarcodeApi {
   }
 
   ///
-  /// Generate image with multiple barcodes and put new file on server
+  /// Generate image with multiple barcodes and put file on server
   ///
   Future<ResultImageInfo> putGenerateMultiple(
       String name, GeneratorParamsList generatorParamsList,
@@ -1023,7 +1023,7 @@ class BarcodeApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;

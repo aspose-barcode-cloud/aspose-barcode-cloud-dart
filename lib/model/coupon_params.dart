@@ -24,15 +24,15 @@ class CouponParams {
   }
 
   static List<CouponParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new CouponParams.fromJson(value)).toList();
+    return json.map((value) => CouponParams.fromJson(value)).toList();
   }
 
   static Map<String, CouponParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, CouponParams>();
+    final map = Map<String, CouponParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new CouponParams.fromJson(value));
+          map[key] = CouponParams.fromJson(value));
     }
     return map;
   }

@@ -31,15 +31,15 @@ class CodablockParams {
   }
 
   static List<CodablockParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new CodablockParams.fromJson(value)).toList();
+    return json.map((value) => CodablockParams.fromJson(value)).toList();
   }
 
   static Map<String, CodablockParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, CodablockParams>();
+    final map = Map<String, CodablockParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new CodablockParams.fromJson(value));
+          map[key] = CodablockParams.fromJson(value));
     }
     return map;
   }

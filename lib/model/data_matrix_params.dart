@@ -43,12 +43,12 @@ class DataMatrixParams {
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     textEncoding = json['textEncoding'];
     columns = json['columns'];
-    dataMatrixEcc = new DataMatrixEccType.fromJson(json['dataMatrixEcc']);
+    dataMatrixEcc = DataMatrixEccType.fromJson(json['dataMatrixEcc']);
     dataMatrixEncodeMode =
-        new DataMatrixEncodeMode.fromJson(json['dataMatrixEncodeMode']);
+        DataMatrixEncodeMode.fromJson(json['dataMatrixEncodeMode']);
     rows = json['rows'];
-    macroCharacters = new MacroCharacter.fromJson(json['macroCharacters']);
-    version = new DataMatrixVersion.fromJson(json['version']);
+    macroCharacters = MacroCharacter.fromJson(json['macroCharacters']);
+    version = DataMatrixVersion.fromJson(json['version']);
   }
 
   Map<String, dynamic> toJson() {
@@ -65,15 +65,15 @@ class DataMatrixParams {
   }
 
   static List<DataMatrixParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new DataMatrixParams.fromJson(value)).toList();
+    return json.map((value) => DataMatrixParams.fromJson(value)).toList();
   }
 
   static Map<String, DataMatrixParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, DataMatrixParams>();
+    final map = Map<String, DataMatrixParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new DataMatrixParams.fromJson(value));
+          map[key] = DataMatrixParams.fromJson(value));
     }
     return map;
   }

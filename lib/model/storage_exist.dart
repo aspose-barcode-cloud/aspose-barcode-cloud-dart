@@ -22,15 +22,15 @@ class StorageExist {
   }
 
   static List<StorageExist> listFromJson(List<dynamic> json) {
-    return json.map((value) => new StorageExist.fromJson(value)).toList();
+    return json.map((value) => StorageExist.fromJson(value)).toList();
   }
 
   static Map<String, StorageExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, StorageExist>();
+    final map = Map<String, StorageExist>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new StorageExist.fromJson(value));
+          map[key] = StorageExist.fromJson(value));
     }
     return map;
   }

@@ -78,14 +78,14 @@ class Pdf417Params {
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     textEncoding = json['textEncoding'];
     columns = json['columns'];
-    compactionMode = new Pdf417CompactionMode.fromJson(json['compactionMode']);
-    errorLevel = new Pdf417ErrorLevel.fromJson(json['errorLevel']);
+    compactionMode = Pdf417CompactionMode.fromJson(json['compactionMode']);
+    errorLevel = Pdf417ErrorLevel.fromJson(json['errorLevel']);
     macroFileID = json['macroFileID'];
     macroSegmentID = json['macroSegmentID'];
     macroSegmentsCount = json['macroSegmentsCount'];
     rows = json['rows'];
     truncate = json['truncate'];
-    pdf417ECIEncoding = new ECIEncodings.fromJson(json['pdf417ECIEncoding']);
+    pdf417ECIEncoding = ECIEncodings.fromJson(json['pdf417ECIEncoding']);
     isReaderInitialization = json['isReaderInitialization'];
     macroTimeStamp = json['macroTimeStamp'] == null
         ? null
@@ -95,10 +95,10 @@ class Pdf417Params {
     macroChecksum = json['macroChecksum'];
     macroFileName = json['macroFileName'];
     macroAddressee = json['macroAddressee'];
-    macroECIEncoding = new ECIEncodings.fromJson(json['macroECIEncoding']);
-    code128Emulation = new Code128Emulation.fromJson(json['code128Emulation']);
+    macroECIEncoding = ECIEncodings.fromJson(json['macroECIEncoding']);
+    code128Emulation = Code128Emulation.fromJson(json['code128Emulation']);
     pdf417MacroTerminator =
-        new Pdf417MacroTerminator.fromJson(json['pdf417MacroTerminator']);
+        Pdf417MacroTerminator.fromJson(json['pdf417MacroTerminator']);
   }
 
   Map<String, dynamic> toJson() {
@@ -130,15 +130,15 @@ class Pdf417Params {
   }
 
   static List<Pdf417Params> listFromJson(List<dynamic> json) {
-    return json.map((value) => new Pdf417Params.fromJson(value)).toList();
+    return json.map((value) => Pdf417Params.fromJson(value)).toList();
   }
 
   static Map<String, Pdf417Params> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, Pdf417Params>();
+    final map = Map<String, Pdf417Params>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new Pdf417Params.fromJson(value));
+          map[key] = Pdf417Params.fromJson(value));
     }
     return map;
   }

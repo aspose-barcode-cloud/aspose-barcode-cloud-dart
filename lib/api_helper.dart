@@ -13,7 +13,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
   }
 
   if (value is! List) {
-    params.add(new QueryParam(name, parameterToString(value)));
+    params.add(QueryParam(name, parameterToString(value)));
     return params;
   }
 
@@ -24,12 +24,12 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
       collectionFormat.isEmpty ? "csv" : collectionFormat; // default: csv
 
   if (collectionFormat == "multi") {
-    return values.map((v) => new QueryParam(name, parameterToString(v)));
+    return values.map((v) => QueryParam(name, parameterToString(v)));
   }
 
   final String delimiter = _delimiters[collectionFormat] ?? ",";
 
-  params.add(new QueryParam(
+  params.add(QueryParam(
       name, values.map((v) => parameterToString(v)).join(delimiter)));
   return params;
 }

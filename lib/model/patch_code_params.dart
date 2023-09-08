@@ -18,7 +18,7 @@ class PatchCodeParams {
 
   PatchCodeParams.fromJson(Map<String, dynamic> json) {
     extraBarcodeText = json['extraBarcodeText'];
-    patchFormat = new PatchFormat.fromJson(json['patchFormat']);
+    patchFormat = PatchFormat.fromJson(json['patchFormat']);
   }
 
   Map<String, dynamic> toJson() {
@@ -26,15 +26,15 @@ class PatchCodeParams {
   }
 
   static List<PatchCodeParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new PatchCodeParams.fromJson(value)).toList();
+    return json.map((value) => PatchCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, PatchCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, PatchCodeParams>();
+    final map = Map<String, PatchCodeParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new PatchCodeParams.fromJson(value));
+          map[key] = PatchCodeParams.fromJson(value));
     }
     return map;
   }

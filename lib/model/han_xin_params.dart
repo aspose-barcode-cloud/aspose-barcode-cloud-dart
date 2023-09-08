@@ -23,10 +23,10 @@ class HanXinParams {
   }
 
   HanXinParams.fromJson(Map<String, dynamic> json) {
-    encodeMode = new HanXinEncodeMode.fromJson(json['encodeMode']);
-    errorLevel = new HanXinErrorLevel.fromJson(json['errorLevel']);
-    version = new HanXinVersion.fromJson(json['version']);
-    eCIEncoding = new ECIEncodings.fromJson(json['eCIEncoding']);
+    encodeMode = HanXinEncodeMode.fromJson(json['encodeMode']);
+    errorLevel = HanXinErrorLevel.fromJson(json['errorLevel']);
+    version = HanXinVersion.fromJson(json['version']);
+    eCIEncoding = ECIEncodings.fromJson(json['eCIEncoding']);
   }
 
   Map<String, dynamic> toJson() {
@@ -39,15 +39,15 @@ class HanXinParams {
   }
 
   static List<HanXinParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new HanXinParams.fromJson(value)).toList();
+    return json.map((value) => HanXinParams.fromJson(value)).toList();
   }
 
   static Map<String, HanXinParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, HanXinParams>();
+    final map = Map<String, HanXinParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new HanXinParams.fromJson(value));
+          map[key] = HanXinParams.fromJson(value));
     }
     return map;
   }

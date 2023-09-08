@@ -49,7 +49,7 @@ class FileApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -98,7 +98,7 @@ class FileApi {
         authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -140,7 +140,7 @@ class FileApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return response.bodyBytes;
     }
@@ -190,7 +190,7 @@ class FileApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return;
     }
@@ -228,7 +228,7 @@ class FileApi {
       bool hasFields = false;
       MultipartRequest? mp;
 
-      mp = new MultipartRequest('PUT', Uri.parse(requestPath));
+      mp = MultipartRequest('PUT', Uri.parse(requestPath));
       // ignore: unnecessary_null_comparison
       if (file != null) {
         hasFields = true;
@@ -245,7 +245,7 @@ class FileApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'FilesUploadResult')
           as FilesUploadResult;

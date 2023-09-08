@@ -26,7 +26,7 @@ class Error {
     code = json['code'];
     message = json['message'];
     description = json['description'];
-    innerError = new ErrorDetails.fromJson(json['innerError']);
+    innerError = ErrorDetails.fromJson(json['innerError']);
   }
 
   Map<String, dynamic> toJson() {
@@ -39,15 +39,15 @@ class Error {
   }
 
   static List<Error> listFromJson(List<dynamic> json) {
-    return json.map((value) => new Error.fromJson(value)).toList();
+    return json.map((value) => Error.fromJson(value)).toList();
   }
 
   static Map<String, Error> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, Error>();
+    final map = Map<String, Error>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new Error.fromJson(value));
+          map[key] = Error.fromJson(value));
     }
     return map;
   }

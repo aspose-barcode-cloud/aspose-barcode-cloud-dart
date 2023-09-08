@@ -22,8 +22,8 @@ class MaxiCodeParams {
   MaxiCodeParams.fromJson(Map<String, dynamic> json) {
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
-    mode = new MaxiCodeMode.fromJson(json['mode']);
-    encodeMode = new MaxiCodeEncodeMode.fromJson(json['encodeMode']);
+    mode = MaxiCodeMode.fromJson(json['mode']);
+    encodeMode = MaxiCodeEncodeMode.fromJson(json['encodeMode']);
   }
 
   Map<String, dynamic> toJson() {
@@ -31,15 +31,15 @@ class MaxiCodeParams {
   }
 
   static List<MaxiCodeParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new MaxiCodeParams.fromJson(value)).toList();
+    return json.map((value) => MaxiCodeParams.fromJson(value)).toList();
   }
 
   static Map<String, MaxiCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, MaxiCodeParams>();
+    final map = Map<String, MaxiCodeParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new MaxiCodeParams.fromJson(value));
+          map[key] = MaxiCodeParams.fromJson(value));
     }
     return map;
   }

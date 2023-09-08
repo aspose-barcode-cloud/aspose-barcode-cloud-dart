@@ -26,7 +26,7 @@ class AztecParams {
     aspectRatio =
         json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
     errorLevel = json['errorLevel'];
-    symbolMode = new AztecSymbolMode.fromJson(json['symbolMode']);
+    symbolMode = AztecSymbolMode.fromJson(json['symbolMode']);
     textEncoding = json['textEncoding'];
   }
 
@@ -40,15 +40,15 @@ class AztecParams {
   }
 
   static List<AztecParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new AztecParams.fromJson(value)).toList();
+    return json.map((value) => AztecParams.fromJson(value)).toList();
   }
 
   static Map<String, AztecParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, AztecParams>();
+    final map = Map<String, AztecParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new AztecParams.fromJson(value));
+          map[key] = AztecParams.fromJson(value));
     }
     return map;
   }

@@ -26,15 +26,15 @@ class RegionPoint {
   }
 
   static List<RegionPoint> listFromJson(List<dynamic> json) {
-    return json.map((value) => new RegionPoint.fromJson(value)).toList();
+    return json.map((value) => RegionPoint.fromJson(value)).toList();
   }
 
   static Map<String, RegionPoint> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, RegionPoint>();
+    final map = Map<String, RegionPoint>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new RegionPoint.fromJson(value));
+          map[key] = RegionPoint.fromJson(value));
     }
     return map;
   }

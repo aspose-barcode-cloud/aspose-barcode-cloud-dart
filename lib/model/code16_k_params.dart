@@ -35,15 +35,15 @@ class Code16KParams {
   }
 
   static List<Code16KParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new Code16KParams.fromJson(value)).toList();
+    return json.map((value) => Code16KParams.fromJson(value)).toList();
   }
 
   static Map<String, Code16KParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, Code16KParams>();
+    final map = Map<String, Code16KParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new Code16KParams.fromJson(value));
+          map[key] = Code16KParams.fromJson(value));
     }
     return map;
   }

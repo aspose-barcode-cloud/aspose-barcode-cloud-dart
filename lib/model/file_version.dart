@@ -57,15 +57,15 @@ class FileVersion {
   }
 
   static List<FileVersion> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FileVersion.fromJson(value)).toList();
+    return json.map((value) => FileVersion.fromJson(value)).toList();
   }
 
   static Map<String, FileVersion> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, FileVersion>();
+    final map = Map<String, FileVersion>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new FileVersion.fromJson(value));
+          map[key] = FileVersion.fromJson(value));
     }
     return map;
   }

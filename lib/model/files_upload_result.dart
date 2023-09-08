@@ -27,15 +27,15 @@ class FilesUploadResult {
   }
 
   static List<FilesUploadResult> listFromJson(List<dynamic> json) {
-    return json.map((value) => new FilesUploadResult.fromJson(value)).toList();
+    return json.map((value) => FilesUploadResult.fromJson(value)).toList();
   }
 
   static Map<String, FilesUploadResult> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, FilesUploadResult>();
+    final map = Map<String, FilesUploadResult>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new FilesUploadResult.fromJson(value));
+          map[key] = FilesUploadResult.fromJson(value));
     }
     return map;
   }

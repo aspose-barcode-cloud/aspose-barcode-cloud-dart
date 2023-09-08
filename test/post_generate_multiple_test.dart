@@ -22,6 +22,6 @@ void main() {
     expect(generated, isNotNull);
     expect(generated, isNotEmpty);
     expect(generated.length, greaterThan(0));
-    new File("qr.png").writeAsBytesSync(generated);
+    File("qr.png").writeAsBytesSync(generated);
   });
 }

@@ -34,15 +34,15 @@ class StructuredAppend {
   }
 
   static List<StructuredAppend> listFromJson(List<dynamic> json) {
-    return json.map((value) => new StructuredAppend.fromJson(value)).toList();
+    return json.map((value) => StructuredAppend.fromJson(value)).toList();
   }
 
   static Map<String, StructuredAppend> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, StructuredAppend>();
+    final map = Map<String, StructuredAppend>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new StructuredAppend.fromJson(value));
+          map[key] = StructuredAppend.fromJson(value));
     }
     return map;
   }

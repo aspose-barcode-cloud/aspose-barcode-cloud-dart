@@ -16,7 +16,7 @@ class ApiErrorResponse {
 
   ApiErrorResponse.fromJson(Map<String, dynamic> json) {
     requestId = json['requestId'];
-    error = new ApiError.fromJson(json['error']);
+    error = ApiError.fromJson(json['error']);
   }
 
   Map<String, dynamic> toJson() {
@@ -24,15 +24,15 @@ class ApiErrorResponse {
   }
 
   static List<ApiErrorResponse> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ApiErrorResponse.fromJson(value)).toList();
+    return json.map((value) => ApiErrorResponse.fromJson(value)).toList();
   }
 
   static Map<String, ApiErrorResponse> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ApiErrorResponse>();
+    final map = Map<String, ApiErrorResponse>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ApiErrorResponse.fromJson(value));
+          map[key] = ApiErrorResponse.fromJson(value));
     }
     return map;
   }

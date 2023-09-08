@@ -35,7 +35,7 @@ class StorageApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'DiscUsage') as DiscUsage;
     }
@@ -73,7 +73,7 @@ class StorageApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'FileVersions')
           as FileVersions;
@@ -116,7 +116,7 @@ class StorageApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'ObjectExist') as ObjectExist;
     }
@@ -149,7 +149,7 @@ class StorageApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else {
       return apiClient.deserialize(response.body, 'StorageExist')
           as StorageExist;

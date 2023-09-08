@@ -29,15 +29,15 @@ class ErrorDetails {
   }
 
   static List<ErrorDetails> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ErrorDetails.fromJson(value)).toList();
+    return json.map((value) => ErrorDetails.fromJson(value)).toList();
   }
 
   static Map<String, ErrorDetails> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ErrorDetails>();
+    final map = Map<String, ErrorDetails>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ErrorDetails.fromJson(value));
+          map[key] = ErrorDetails.fromJson(value));
     }
     return map;
   }

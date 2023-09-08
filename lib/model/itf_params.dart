@@ -23,7 +23,7 @@ class ITFParams {
     borderThickness = json['borderThickness'] == null
         ? null
         : json['borderThickness'].toDouble();
-    borderType = new ITF14BorderType.fromJson(json['borderType']);
+    borderType = ITF14BorderType.fromJson(json['borderType']);
     quietZoneCoef = json['quietZoneCoef'];
   }
 
@@ -36,15 +36,15 @@ class ITFParams {
   }
 
   static List<ITFParams> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ITFParams.fromJson(value)).toList();
+    return json.map((value) => ITFParams.fromJson(value)).toList();
   }
 
   static Map<String, ITFParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ITFParams>();
+    final map = Map<String, ITFParams>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ITFParams.fromJson(value));
+          map[key] = ITFParams.fromJson(value));
     }
     return map;
   }

@@ -47,15 +47,15 @@ class StorageFile {
   }
 
   static List<StorageFile> listFromJson(List<dynamic> json) {
-    return json.map((value) => new StorageFile.fromJson(value)).toList();
+    return json.map((value) => StorageFile.fromJson(value)).toList();
   }
 
   static Map<String, StorageFile> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, StorageFile>();
+    final map = Map<String, StorageFile>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new StorageFile.fromJson(value));
+          map[key] = StorageFile.fromJson(value));
     }
     return map;
   }

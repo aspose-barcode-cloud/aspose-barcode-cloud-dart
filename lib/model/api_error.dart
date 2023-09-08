@@ -26,7 +26,7 @@ class ApiError {
     description = json['description'];
     dateTime =
         json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
-    innerError = new ApiError.fromJson(json['innerError']);
+    innerError = ApiError.fromJson(json['innerError']);
   }
 
   Map<String, dynamic> toJson() {
@@ -40,15 +40,15 @@ class ApiError {
   }
 
   static List<ApiError> listFromJson(List<dynamic> json) {
-    return json.map((value) => new ApiError.fromJson(value)).toList();
+    return json.map((value) => ApiError.fromJson(value)).toList();
   }
 
   static Map<String, ApiError> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, ApiError>();
+    final map = Map<String, ApiError>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new ApiError.fromJson(value));
+          map[key] = ApiError.fromJson(value));
     }
     return map;
   }

@@ -30,17 +30,15 @@ class GeneratorParamsList {
   }
 
   static List<GeneratorParamsList> listFromJson(List<dynamic> json) {
-    return json
-        .map((value) => new GeneratorParamsList.fromJson(value))
-        .toList();
+    return json.map((value) => GeneratorParamsList.fromJson(value)).toList();
   }
 
   static Map<String, GeneratorParamsList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = new Map<String, GeneratorParamsList>();
+    final map = Map<String, GeneratorParamsList>();
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = new GeneratorParamsList.fromJson(value));
+          map[key] = GeneratorParamsList.fromJson(value));
     }
     return map;
   }
