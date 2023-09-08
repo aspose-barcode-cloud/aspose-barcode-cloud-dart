@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:aspose_barcode_cloud/api.dart';
-import 'package:aspose_barcode_cloud/configuration.dart';
 import 'package:http/http.dart';
 
 Future<void> main() async {
