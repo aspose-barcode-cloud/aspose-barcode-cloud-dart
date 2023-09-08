@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.8+1
+
+* ApiClient parameters moved to Configuration
+
 ## 0.23.8
 
 * Added AllowAdditionalRestorations flag to reader params
