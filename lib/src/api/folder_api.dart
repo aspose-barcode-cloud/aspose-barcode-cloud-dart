@@ -1,27 +1,21 @@
-import 'dart:typed_data' show Uint8List;
+import '../../api.dart';
+import '../api_helper.dart';
 
-import 'package:http/http.dart' show MultipartFile, MultipartRequest;
-
-import '../api.dart';
-import '../src/api_helper.dart';
-
-class FileApi {
-  FileApi(this.apiClient) {}
+class FolderApi {
+  FolderApi(this.apiClient) {}
 
   final ApiClient apiClient;
 
   ///
-  /// Copy file
+  /// Copy folder
   ///
-  Future copyFile(String srcPath, String destPath,
-      {String? srcStorageName,
-      String? destStorageName,
-      String? versionId}) async {
+  Future copyFolder(String srcPath, String destPath,
+      {String? srcStorageName, String? destStorageName}) async {
     // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    final String requestPath = "/barcode/storage/file/copy/{srcPath}"
+    final String requestPath = "/barcode/storage/folder/copy/{srcPath}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "srcPath" + "}", srcPath);
 
@@ -38,10 +32,6 @@ class FileApi {
     if (destStorageName != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
-    }
-    if (versionId != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -61,15 +51,14 @@ class FileApi {
   }
 
   ///
-  /// Delete file
+  /// Create the folder
   ///
-  Future deleteFile(String path,
-      {String? storageName, String? versionId}) async {
+  Future createFolder(String path, {String? storageName}) async {
     // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    final String requestPath = "/barcode/storage/file/{path}"
+    final String requestPath = "/barcode/storage/folder/{path}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "path" + "}", path);
 
@@ -81,9 +70,47 @@ class FileApi {
       queryParams.addAll(
           convertParametersForCollectionFormat("", "storageName", storageName));
     }
-    if (versionId != null) {
+
+    final List<String> contentTypes = ["application/json"];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    } else {
+      return;
+    }
+  }
+
+  ///
+  /// Delete folder
+  ///
+  Future deleteFolder(String path,
+      {String? storageName, bool? recursive}) async {
+    // ignore: prefer_final_locals
+    Object? postBody = null;
+
+    // create path and map variables
+    final String requestPath = "/barcode/storage/folder/{path}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "path" + "}", path);
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+    if (storageName != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "storageName", storageName));
+    }
+    if (recursive != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "recursive", recursive));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -110,15 +137,14 @@ class FileApi {
   }
 
   ///
-  /// Download file
+  /// Get all files and folders within a folder
   ///
-  Future<Uint8List> downloadFile(String path,
-      {String? storageName, String? versionId}) async {
+  Future<FilesList> getFilesList(String path, {String? storageName}) async {
     // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    final String requestPath = "/barcode/storage/file/{path}"
+    final String requestPath = "/barcode/storage/folder/{path}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "path" + "}", path);
 
@@ -129,10 +155,6 @@ class FileApi {
     if (storageName != null) {
       queryParams.addAll(
           convertParametersForCollectionFormat("", "storageName", storageName));
-    }
-    if (versionId != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -147,22 +169,20 @@ class FileApi {
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return response.bodyBytes;
+      return apiClient.deserialize(response.body, 'FilesList') as FilesList;
     }
   }
 
   ///
-  /// Move file
+  /// Move folder
   ///
-  Future moveFile(String srcPath, String destPath,
-      {String? srcStorageName,
-      String? destStorageName,
-      String? versionId}) async {
+  Future moveFolder(String srcPath, String destPath,
+      {String? srcStorageName, String? destStorageName}) async {
     // ignore: prefer_final_locals
     Object? postBody = null;
 
     // create path and map variables
-    final String requestPath = "/barcode/storage/file/move/{srcPath}"
+    final String requestPath = "/barcode/storage/folder/move/{srcPath}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "srcPath" + "}", srcPath);
 
@@ -180,10 +200,6 @@ class FileApi {
       queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
     }
-    if (versionId != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "versionId", versionId));
-    }
 
     final List<String> contentTypes = ["application/json"];
 
@@ -198,62 +214,6 @@ class FileApi {
       throw ApiException(response.statusCode, response.body);
     } else {
       return;
-    }
-  }
-
-  ///
-  /// Upload file
-  ///
-  Future<FilesUploadResult> uploadFile(String path, MultipartFile file,
-      {String? storageName}) async {
-    // ignore: prefer_final_locals
-    Object? postBody = null;
-
-    // create path and map variables
-    final String requestPath = "/barcode/storage/file/{path}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
-
-    // query params
-    final List<QueryParam> queryParams = [];
-    final Map<String, String> headerParams = {};
-    final Map<String, String> formParams = {};
-    if (storageName != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "storageName", storageName));
-    }
-
-    final List<String> contentTypes = ["multipart/form-data"];
-
-    final String contentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = ["JWT"];
-
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest? mp;
-
-      mp = MultipartRequest('PUT', Uri.parse(requestPath));
-      // ignore: unnecessary_null_comparison
-      if (file != null) {
-        hasFields = true;
-        mp.fields['File'] = file.field;
-        mp.files.add(file);
-      }
-
-      if (hasFields) {
-        postBody = mp;
-      }
-    } else {}
-
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
-
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
-    } else {
-      return apiClient.deserialize(response.body, 'FilesUploadResult')
-          as FilesUploadResult;
     }
   }
 }

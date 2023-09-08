@@ -2,8 +2,8 @@ import 'dart:typed_data' show Uint8List;
 
 import 'package:http/http.dart' show MultipartFile, MultipartRequest;
 
-import '../api.dart';
-import '../src/api_helper.dart';
+import '../../api.dart';
+import '../api_helper.dart';
 
 class BarcodeApi {
   BarcodeApi(this.apiClient) {}

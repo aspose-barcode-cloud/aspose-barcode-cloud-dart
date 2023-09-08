@@ -1,5 +1,5 @@
-import '../api.dart';
-import '../src/api_helper.dart';
+import '../../api.dart';
+import '../api_helper.dart';
 
 class StorageApi {
   StorageApi(this.apiClient) {}

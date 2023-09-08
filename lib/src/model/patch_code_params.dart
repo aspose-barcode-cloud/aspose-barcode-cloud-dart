@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
-import '../api.dart';
+import '../../api.dart';
 
 class PatchCodeParams {
   /* Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode. */
