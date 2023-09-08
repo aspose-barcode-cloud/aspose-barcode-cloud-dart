@@ -1,5 +1,5 @@
 import '../api.dart';
-import '../api_helper.dart';
+import '../src/api_helper.dart';
 
 class FolderApi {
   FolderApi(this.apiClient) {}

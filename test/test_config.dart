@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:aspose_barcode_cloud/api.dart' as barcode_api;
-import 'package:aspose_barcode_cloud/configuration.dart';
+import 'package:aspose_barcode_cloud/src/configuration.dart';
 
 class TestConfig {
   static final configuration = Configuration.load(
