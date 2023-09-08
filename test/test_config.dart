@@ -1,10 +1,12 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:aspose_barcode_cloud/api.dart' as barcode_api;
 import 'package:aspose_barcode_cloud/configuration.dart';
 
 class TestConfig {
-  static final configuration = Configuration.load("configuration.json") ??
+  static final configuration = Configuration.load(
+          "test" + Platform.pathSeparator + "configuration.json") ??
       Configuration.fromEnv(prefix: "TEST_CONFIGURATION_");
   static final apiClient = barcode_api.ApiClient.fromConfig(configuration);
 

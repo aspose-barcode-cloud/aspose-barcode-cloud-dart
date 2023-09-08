@@ -27,3 +27,4 @@ pubspec.lock
 !.vscode/launch.json
 
 coverage/
+test/configuration*.json
