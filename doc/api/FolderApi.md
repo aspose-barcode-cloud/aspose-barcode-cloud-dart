@@ -27,7 +27,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FolderApi();
+final api_instance = FolderApi();
 final srcPath = srcPath_example; // String | Source folder path e.g. '/src'
 final destPath = destPath_example; // String | Destination folder path e.g. '/dst'
 final srcStorageName = srcStorageName_example; // String | Source storage name
@@ -74,7 +74,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FolderApi();
+final api_instance = FolderApi();
 final path = path_example; // String | Folder path to create e.g. 'folder_1/folder_2/'
 final storageName = storageName_example; // String | Storage name
 
@@ -117,7 +117,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FolderApi();
+final api_instance = FolderApi();
 final path = path_example; // String | Folder path e.g. '/folder'
 final storageName = storageName_example; // String | Storage name
 final recursive = true; // bool | Enable to delete folders, subfolders and files
@@ -162,7 +162,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FolderApi();
+final api_instance = FolderApi();
 final path = path_example; // String | Folder path e.g. '/folder'
 final storageName = storageName_example; // String | Storage name
 
@@ -206,7 +206,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FolderApi();
+final api_instance = FolderApi();
 final srcPath = srcPath_example; // String | Folder path to move e.g. '/folder'
 final destPath = destPath_example; // String | Destination folder path to move to e.g '/dst'
 final srcStorageName = srcStorageName_example; // String | Source storage name

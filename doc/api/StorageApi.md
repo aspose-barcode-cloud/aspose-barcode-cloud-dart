@@ -26,7 +26,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final storageName = storageName_example; // String | Storage name
 
 try {
@@ -68,7 +68,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final path = path_example; // String | File path e.g. '/file.ext'
 final storageName = storageName_example; // String | Storage name
 
@@ -112,7 +112,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final path = path_example; // String | File or folder path e.g. '/file.ext' or '/folder'
 final storageName = storageName_example; // String | Storage name
 final versionId = versionId_example; // String | File version ID
@@ -158,7 +158,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final storageName = storageName_example; // String | Storage name
 
 try {

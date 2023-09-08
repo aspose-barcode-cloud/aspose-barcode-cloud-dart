@@ -983,7 +983,7 @@ class BarcodeApi {
   }
 
   ///
-  /// Generate image with multiple barcodes and put file on server
+  /// Generate image with multiple barcodes and put new file on server
   ///
   Future<ResultImageInfo> putGenerateMultiple(
       String name, GeneratorParamsList generatorParamsList,

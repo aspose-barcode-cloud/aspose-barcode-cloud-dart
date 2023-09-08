@@ -29,7 +29,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final type = type_example; // String | Type of barcode to generate.
 final text = text_example; // String | Text to encode.
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
@@ -141,7 +141,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final name = name_example; // String | The image file name.
 final type = type_example; // String | The type of barcode to read.
 final checksumValidation = checksumValidation_example; // String | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
@@ -257,7 +257,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final type = type_example; // String | The type of barcode to read.
 final checksumValidation = checksumValidation_example; // String | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
 final detectEncoding = true; // bool | A flag which force engine to detect codetext encoding for Unicode.
@@ -371,8 +371,8 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
-final generatorParamsList = new GeneratorParamsList(); // GeneratorParamsList | List of barcodes
+final api_instance = BarcodeApi();
+final generatorParamsList = GeneratorParamsList(); // GeneratorParamsList | List of barcodes
 final format = format_example; // String | Format to return stream in
 
 try {
@@ -415,7 +415,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final name = name_example; // String | The image file name.
 final type = type_example; // String | Type of barcode to generate.
 final text = text_example; // String | Text to encode.
@@ -533,9 +533,9 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final name = name_example; // String | The image file name.
-final readerParams = new ReaderParams(); // ReaderParams | BarcodeReader object with parameters.
+final readerParams = ReaderParams(); // ReaderParams | BarcodeReader object with parameters.
 final type = type_example; // String | 
 final storage = storage_example; // String | The storage name
 final folder = folder_example; // String | The image folder.
@@ -583,9 +583,9 @@ import 'package:aspose_barcode_cloud/api.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new BarcodeApi();
+final api_instance = BarcodeApi();
 final name = name_example; // String | New filename
-final generatorParamsList = new GeneratorParamsList(); // GeneratorParamsList | List of barcodes
+final generatorParamsList = GeneratorParamsList(); // GeneratorParamsList | List of barcodes
 final format = format_example; // String | Format of file
 final folder = folder_example; // String | Folder to place file to
 final storage = storage_example; // String | The storage name
