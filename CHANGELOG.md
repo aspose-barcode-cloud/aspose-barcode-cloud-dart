@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.8+2
+
+* Improve package structure by removing 'part' directive and 'part of'
+
 ## 0.23.8+1
 
 * ApiClient parameters moved to Configuration
