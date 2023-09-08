@@ -1,6 +1,6 @@
 part of aspose_barcode_cloud.api;
 
-const String SDK_VERSION = "0.23.8";
+const String SDK_VERSION = "0.23.8+1";
 
 class QueryParam {
   String name;
