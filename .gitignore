@@ -28,3 +28,4 @@ pubspec.lock
 
 coverage/
 test/configuration*.json
+!test/configuration.example.json
