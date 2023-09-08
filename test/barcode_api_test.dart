@@ -4,7 +4,7 @@ import 'package:aspose_barcode_cloud/api.dart';
 import 'package:http/http.dart';
 import 'package:test/test.dart';
 
-import 'test_configuration.dart';
+import 'test_config.dart';
 
 void main() {
   test(
@@ -12,7 +12,7 @@ void main() {
     () async {
       // Generate image with barcode
       final Uint8List generated =
-          await TestConfiguration.barcodeApi.getBarcodeGenerate('QR', 'text');
+          await TestConfig.barcodeApi.getBarcodeGenerate('QR', 'text');
 
       expect(generated, isNotNull);
       expect(generated, isNotEmpty);
@@ -20,8 +20,8 @@ void main() {
       // Recognize generated image
       final barcode = MultipartFile.fromBytes('image', generated.toList(),
           filename: 'barcode.png');
-      final BarcodeResponseList recognized = await TestConfiguration.barcodeApi
-          .postBarcodeRecognizeFromUrlOrContent(
+      final BarcodeResponseList recognized =
+          await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
         image: barcode,
         preset: PresetType.highPerformance_.toString(),
       );

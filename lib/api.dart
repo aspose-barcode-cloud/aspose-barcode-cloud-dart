@@ -3,6 +3,7 @@ library aspose_barcode_cloud.api;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
+import 'package:aspose_barcode_cloud/configuration.dart';
 import 'package:http/http.dart';
 
 part 'api_client.dart';

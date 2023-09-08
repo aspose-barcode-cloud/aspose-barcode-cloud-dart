@@ -311,4 +311,20 @@ class ApiClient {
       List<QueryParam> queryParams, Map<String, String> headerParams) async {
     await _authentication.applyToParams(queryParams, headerParams);
   }
+
+  static ApiClient fromConfig(Configuration config) {
+    return config.basePath != null
+        ? new ApiClient(
+            clientId: config.clientId,
+            clientSecret: config.clientSecret,
+            accessToken: config.accessToken,
+            tokenUrl: config.tokenUrl,
+            basePath: config.basePath!,
+          )
+        : new ApiClient(
+            clientId: config.clientId,
+            clientSecret: config.clientSecret,
+            accessToken: config.accessToken,
+            tokenUrl: config.tokenUrl);
+  }
 }

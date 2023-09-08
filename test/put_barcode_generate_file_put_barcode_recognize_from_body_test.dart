@@ -1,16 +1,16 @@
 import 'package:aspose_barcode_cloud/api.dart';
 import 'package:test/test.dart';
 
-import 'test_configuration.dart';
+import 'test_config.dart';
 
 void main() {
-  final remoteFileName = TestConfiguration.generateRandomString(16) + ".png";
+  final remoteFileName = TestConfig.generateRandomString(16) + ".png";
 
   test('.putBarcodeGenerateFile', () async {
-    final ResultImageInfo generated = await TestConfiguration.barcodeApi
+    final ResultImageInfo generated = await TestConfig.barcodeApi
         .putBarcodeGenerateFile(
             remoteFileName, EncodeBarcodeType.qR_.toString(), remoteFileName,
-            folder: TestConfiguration.folder);
+            folder: TestConfig.folder);
 
     expect(generated, isNotNull);
     expect(generated.fileSize, greaterThan(0));
@@ -20,10 +20,10 @@ void main() {
 
   test('.putBarcodeRecognizeFromBody', () async {
     final BarcodeResponseList recognized =
-        await TestConfiguration.barcodeApi.putBarcodeRecognizeFromBody(
+        await TestConfig.barcodeApi.putBarcodeRecognizeFromBody(
       remoteFileName,
       ReaderParams()..preset = PresetType.highPerformance_,
-      folder: TestConfiguration.folder,
+      folder: TestConfig.folder,
     );
 
     expect(recognized.barcodes, isNotNull);

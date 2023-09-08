@@ -1,10 +1,10 @@
 import 'package:aspose_barcode_cloud/api.dart';
 import 'package:test/test.dart';
 
-import 'test_configuration.dart';
+import 'test_config.dart';
 
 void main() {
-  final remoteFileName = TestConfiguration.generateRandomString(16) + ".png";
+  final remoteFileName = TestConfig.generateRandomString(16) + ".png";
 
   test('.putGenerateMultiple', () async {
     final barcode = GeneratorParams()
@@ -14,9 +14,9 @@ void main() {
     final generatorParamsList = GeneratorParamsList()
       ..barcodeBuilders!.add(barcode);
 
-    final ResultImageInfo generated = await TestConfiguration.barcodeApi
+    final ResultImageInfo generated = await TestConfig.barcodeApi
         .putGenerateMultiple(remoteFileName, generatorParamsList,
-            folder: TestConfiguration.folder);
+            folder: TestConfig.folder);
 
     expect(generated, isNotNull);
     expect(generated.fileSize, greaterThan(0));
@@ -26,9 +26,9 @@ void main() {
 
   test('.getBarcodeRecognize', () async {
     final BarcodeResponseList recognized =
-        await TestConfiguration.barcodeApi.getBarcodeRecognize(
+        await TestConfig.barcodeApi.getBarcodeRecognize(
       remoteFileName,
-      folder: TestConfiguration.folder,
+      folder: TestConfig.folder,
       preset: PresetType.highPerformance_.value,
     );
 
