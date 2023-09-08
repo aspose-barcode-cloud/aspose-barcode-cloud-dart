@@ -4,7 +4,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:http/http.dart';
+import 'package:http/http.dart'
+    show Client, MultipartFile, MultipartRequest, Response;
 
 import './configuration.dart';
 

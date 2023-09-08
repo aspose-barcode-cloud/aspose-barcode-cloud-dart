@@ -11,7 +11,7 @@ class QueryParam {
 
 class ApiClient {
   late final String basePath;
-  final client = Client();
+  final httpClient = Client();
 
   static const String API_SDK_HEADER = "x-aspose-client";
   static const String SDK_NAME = "dart sdk";
@@ -279,7 +279,7 @@ class ApiClient {
       request.files.addAll(body.files);
       request.headers.addAll(body.headers);
       request.headers.addAll(headerParams);
-      final response = await client.send(request);
+      final response = await httpClient.send(request);
       return Response.fromStream(response);
     } else {
       final msgBody = contentType == "application/x-www-form-urlencoded"
@@ -287,18 +287,18 @@ class ApiClient {
           : serialize(body);
       switch (method) {
         case "POST":
-          return client.post(Uri.parse(url),
+          return httpClient.post(Uri.parse(url),
               headers: headerParams, body: msgBody);
         case "PUT":
-          return client.put(Uri.parse(url),
+          return httpClient.put(Uri.parse(url),
               headers: headerParams, body: msgBody);
         case "DELETE":
-          return client.delete(Uri.parse(url), headers: headerParams);
+          return httpClient.delete(Uri.parse(url), headers: headerParams);
         case "PATCH":
-          return client.patch(Uri.parse(url),
+          return httpClient.patch(Uri.parse(url),
               headers: headerParams, body: msgBody);
         default:
-          return client.get(Uri.parse(url), headers: headerParams);
+          return httpClient.get(Uri.parse(url), headers: headerParams);
       }
     }
   }
