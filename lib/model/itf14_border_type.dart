@@ -1,5 +1,3 @@
-part of aspose_barcode_cloud.api;
-
 class ITF14BorderType {
   /// The underlying value of this enum member.
   String? value;

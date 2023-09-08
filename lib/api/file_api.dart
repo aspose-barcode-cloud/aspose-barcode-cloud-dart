@@ -1,4 +1,9 @@
-part of aspose_barcode_cloud.api;
+import 'dart:typed_data' show Uint8List;
+
+import 'package:http/http.dart' show MultipartFile, MultipartRequest;
+
+import '../api.dart';
+import '../api_helper.dart';
 
 class FileApi {
   FileApi(this.apiClient) {}
@@ -24,19 +29,19 @@ class FileApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(
-        _convertParametersForCollectionFormat("", "destPath", destPath));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "destPath", destPath));
     if (srcStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "srcStorageName", srcStorageName));
     }
     if (destStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
     }
     if (versionId != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -73,12 +78,12 @@ class FileApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
     if (versionId != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -122,12 +127,12 @@ class FileApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
     if (versionId != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -165,19 +170,19 @@ class FileApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(
-        _convertParametersForCollectionFormat("", "destPath", destPath));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "destPath", destPath));
     if (srcStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "srcStorageName", srcStorageName));
     }
     if (destStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
     }
     if (versionId != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -214,8 +219,8 @@ class FileApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
 
     final List<String> contentTypes = ["multipart/form-data"];

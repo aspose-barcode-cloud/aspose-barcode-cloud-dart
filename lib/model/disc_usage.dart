@@ -1,7 +1,6 @@
-part of aspose_barcode_cloud.api;
-
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
+
 class DiscUsage {
   /* Application used disc space. */
   int? usedSize = null;

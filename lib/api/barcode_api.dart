@@ -1,4 +1,9 @@
-part of aspose_barcode_cloud.api;
+import 'dart:typed_data' show Uint8List;
+
+import 'package:http/http.dart' show MultipartFile, MultipartRequest;
+
+import '../api.dart';
+import '../api_helper.dart';
 
 class BarcodeApi {
   BarcodeApi(this.apiClient) {}
@@ -54,143 +59,143 @@ class BarcodeApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(_convertParametersForCollectionFormat("", "Type", type));
-    queryParams.addAll(_convertParametersForCollectionFormat("", "Text", text));
+    queryParams.addAll(convertParametersForCollectionFormat("", "Type", type));
+    queryParams.addAll(convertParametersForCollectionFormat("", "Text", text));
     if (twoDDisplayText != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TwoDDisplayText", twoDDisplayText));
     }
     if (textLocation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TextLocation", textLocation));
     }
     if (textAlignment != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TextAlignment", textAlignment));
     }
     if (textColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "TextColor", textColor));
+          convertParametersForCollectionFormat("", "TextColor", textColor));
     }
     if (fontSizeMode != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "FontSizeMode", fontSizeMode));
     }
     if (noWrap != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "NoWrap", noWrap));
+          .addAll(convertParametersForCollectionFormat("", "NoWrap", noWrap));
     }
     if (resolution != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Resolution", resolution));
+          convertParametersForCollectionFormat("", "Resolution", resolution));
     }
     if (resolutionX != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ResolutionX", resolutionX));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ResolutionX", resolutionX));
     }
     if (resolutionY != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ResolutionY", resolutionY));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ResolutionY", resolutionY));
     }
     if (dimensionX != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "DimensionX", dimensionX));
+          convertParametersForCollectionFormat("", "DimensionX", dimensionX));
     }
     if (textSpace != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "TextSpace", textSpace));
+          convertParametersForCollectionFormat("", "TextSpace", textSpace));
     }
     if (units != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Units", units));
+          .addAll(convertParametersForCollectionFormat("", "Units", units));
     }
     if (sizeMode != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "SizeMode", sizeMode));
+          convertParametersForCollectionFormat("", "SizeMode", sizeMode));
     }
     if (barHeight != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BarHeight", barHeight));
+          convertParametersForCollectionFormat("", "BarHeight", barHeight));
     }
     if (imageHeight != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ImageHeight", imageHeight));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ImageHeight", imageHeight));
     }
     if (imageWidth != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "ImageWidth", imageWidth));
+          convertParametersForCollectionFormat("", "ImageWidth", imageWidth));
     }
     if (rotationAngle != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "RotationAngle", rotationAngle));
     }
     if (backColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BackColor", backColor));
+          convertParametersForCollectionFormat("", "BackColor", backColor));
     }
     if (barColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BarColor", barColor));
+          convertParametersForCollectionFormat("", "BarColor", barColor));
     }
     if (borderColor != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "BorderColor", borderColor));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "BorderColor", borderColor));
     }
     if (borderWidth != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "BorderWidth", borderWidth));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "BorderWidth", borderWidth));
     }
     if (borderDashStyle != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BorderDashStyle", borderDashStyle));
     }
     if (borderVisible != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BorderVisible", borderVisible));
     }
     if (enableChecksum != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "EnableChecksum", enableChecksum));
     }
     if (enableEscape != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "EnableEscape", enableEscape));
     }
     if (filledBars != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "FilledBars", filledBars));
+          convertParametersForCollectionFormat("", "FilledBars", filledBars));
     }
     if (alwaysShowChecksum != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AlwaysShowChecksum", alwaysShowChecksum));
     }
     if (wideNarrowRatio != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "WideNarrowRatio", wideNarrowRatio));
     }
     if (validateText != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ValidateText", validateText));
     }
     if (supplementData != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SupplementData", supplementData));
     }
     if (supplementSpace != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SupplementSpace", supplementSpace));
     }
     if (barWidthReduction != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BarWidthReduction", barWidthReduction));
     }
     if (useAntiAlias != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "UseAntiAlias", useAntiAlias));
     }
     if (format != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "format", format));
+          .addAll(convertParametersForCollectionFormat("", "format", format));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -264,157 +269,157 @@ class BarcodeApi {
     final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Type", type));
+          .addAll(convertParametersForCollectionFormat("", "Type", type));
     }
     if (checksumValidation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ChecksumValidation", checksumValidation));
     }
     if (detectEncoding != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "DetectEncoding", detectEncoding));
     }
     if (preset != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Preset", preset));
+          .addAll(convertParametersForCollectionFormat("", "Preset", preset));
     }
     if (rectX != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "RectX", rectX));
+          .addAll(convertParametersForCollectionFormat("", "RectX", rectX));
     }
     if (rectY != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "RectY", rectY));
+          .addAll(convertParametersForCollectionFormat("", "RectY", rectY));
     }
     if (rectWidth != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "RectWidth", rectWidth));
+          convertParametersForCollectionFormat("", "RectWidth", rectWidth));
     }
     if (rectHeight != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "RectHeight", rectHeight));
+          convertParametersForCollectionFormat("", "RectHeight", rectHeight));
     }
     if (stripFNC != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "StripFNC", stripFNC));
+          convertParametersForCollectionFormat("", "StripFNC", stripFNC));
     }
     if (timeout != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Timeout", timeout));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "Timeout", timeout));
     }
     if (medianSmoothingWindowSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "MedianSmoothingWindowSize", medianSmoothingWindowSize));
     }
     if (allowMedianSmoothing != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowMedianSmoothing", allowMedianSmoothing));
     }
     if (allowComplexBackground != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowComplexBackground", allowComplexBackground));
     }
     if (allowDatamatrixIndustrialBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "AllowDatamatrixIndustrialBarcodes",
           allowDatamatrixIndustrialBarcodes));
     }
     if (allowDecreasedImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowDecreasedImage", allowDecreasedImage));
     }
     if (allowDetectScanGap != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowDetectScanGap", allowDetectScanGap));
     }
     if (allowIncorrectBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowIncorrectBarcodes", allowIncorrectBarcodes));
     }
     if (allowInvertImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowInvertImage", allowInvertImage));
     }
     if (allowMicroWhiteSpotsRemoving != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowMicroWhiteSpotsRemoving", allowMicroWhiteSpotsRemoving));
     }
     if (allowOneDFastBarcodesDetector != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowOneDFastBarcodesDetector", allowOneDFastBarcodesDetector));
     }
     if (allowOneDWipedBarsRestoration != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowOneDWipedBarsRestoration", allowOneDWipedBarsRestoration));
     }
     if (allowQRMicroQrRestoration != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowQRMicroQrRestoration", allowQRMicroQrRestoration));
     }
     if (allowRegularImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowRegularImage", allowRegularImage));
     }
     if (allowSaltAndPepperFiltering != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowSaltAndPepperFiltering", allowSaltAndPepperFiltering));
     }
     if (allowWhiteSpotsRemoving != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
     }
     if (checkMore1DVariants != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "CheckMore1DVariants", checkMore1DVariants));
     }
     if (fastScanOnly != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "FastScanOnly", fastScanOnly));
     }
     if (allowAdditionalRestorations != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowAdditionalRestorations", allowAdditionalRestorations));
     }
     if (regionLikelihoodThresholdPercent != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "RegionLikelihoodThresholdPercent",
           regionLikelihoodThresholdPercent));
     }
     if (scanWindowSizes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "multi", "ScanWindowSizes", scanWindowSizes));
     }
     if (similarity != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Similarity", similarity));
+          convertParametersForCollectionFormat("", "Similarity", similarity));
     }
     if (skipDiagonalSearch != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SkipDiagonalSearch", skipDiagonalSearch));
     }
     if (readTinyBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ReadTinyBarcodes", readTinyBarcodes));
     }
     if (australianPostEncodingTable != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AustralianPostEncodingTable", australianPostEncodingTable));
     }
     if (ignoreEndingFillingPatternsForCTable != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "IgnoreEndingFillingPatternsForCTable",
           ignoreEndingFillingPatternsForCTable));
     }
     if (storage != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "storage", storage));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "storage", storage));
     }
     if (folder != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "folder", folder));
+          .addAll(convertParametersForCollectionFormat("", "folder", folder));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -488,152 +493,152 @@ class BarcodeApi {
     final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Type", type));
+          .addAll(convertParametersForCollectionFormat("", "Type", type));
     }
     if (checksumValidation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ChecksumValidation", checksumValidation));
     }
     if (detectEncoding != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "DetectEncoding", detectEncoding));
     }
     if (preset != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Preset", preset));
+          .addAll(convertParametersForCollectionFormat("", "Preset", preset));
     }
     if (rectX != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "RectX", rectX));
+          .addAll(convertParametersForCollectionFormat("", "RectX", rectX));
     }
     if (rectY != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "RectY", rectY));
+          .addAll(convertParametersForCollectionFormat("", "RectY", rectY));
     }
     if (rectWidth != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "RectWidth", rectWidth));
+          convertParametersForCollectionFormat("", "RectWidth", rectWidth));
     }
     if (rectHeight != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "RectHeight", rectHeight));
+          convertParametersForCollectionFormat("", "RectHeight", rectHeight));
     }
     if (stripFNC != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "StripFNC", stripFNC));
+          convertParametersForCollectionFormat("", "StripFNC", stripFNC));
     }
     if (timeout != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Timeout", timeout));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "Timeout", timeout));
     }
     if (medianSmoothingWindowSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "MedianSmoothingWindowSize", medianSmoothingWindowSize));
     }
     if (allowMedianSmoothing != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowMedianSmoothing", allowMedianSmoothing));
     }
     if (allowComplexBackground != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowComplexBackground", allowComplexBackground));
     }
     if (allowDatamatrixIndustrialBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "AllowDatamatrixIndustrialBarcodes",
           allowDatamatrixIndustrialBarcodes));
     }
     if (allowDecreasedImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowDecreasedImage", allowDecreasedImage));
     }
     if (allowDetectScanGap != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowDetectScanGap", allowDetectScanGap));
     }
     if (allowIncorrectBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowIncorrectBarcodes", allowIncorrectBarcodes));
     }
     if (allowInvertImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowInvertImage", allowInvertImage));
     }
     if (allowMicroWhiteSpotsRemoving != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowMicroWhiteSpotsRemoving", allowMicroWhiteSpotsRemoving));
     }
     if (allowOneDFastBarcodesDetector != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowOneDFastBarcodesDetector", allowOneDFastBarcodesDetector));
     }
     if (allowOneDWipedBarsRestoration != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowOneDWipedBarsRestoration", allowOneDWipedBarsRestoration));
     }
     if (allowQRMicroQrRestoration != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowQRMicroQrRestoration", allowQRMicroQrRestoration));
     }
     if (allowRegularImage != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowRegularImage", allowRegularImage));
     }
     if (allowSaltAndPepperFiltering != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowSaltAndPepperFiltering", allowSaltAndPepperFiltering));
     }
     if (allowWhiteSpotsRemoving != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
     }
     if (checkMore1DVariants != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "CheckMore1DVariants", checkMore1DVariants));
     }
     if (fastScanOnly != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "FastScanOnly", fastScanOnly));
     }
     if (allowAdditionalRestorations != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AllowAdditionalRestorations", allowAdditionalRestorations));
     }
     if (regionLikelihoodThresholdPercent != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "RegionLikelihoodThresholdPercent",
           regionLikelihoodThresholdPercent));
     }
     if (scanWindowSizes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "multi", "ScanWindowSizes", scanWindowSizes));
     }
     if (similarity != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Similarity", similarity));
+          convertParametersForCollectionFormat("", "Similarity", similarity));
     }
     if (skipDiagonalSearch != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SkipDiagonalSearch", skipDiagonalSearch));
     }
     if (readTinyBarcodes != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ReadTinyBarcodes", readTinyBarcodes));
     }
     if (australianPostEncodingTable != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AustralianPostEncodingTable", australianPostEncodingTable));
     }
     if (ignoreEndingFillingPatternsForCTable != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "",
           "IgnoreEndingFillingPatternsForCTable",
           ignoreEndingFillingPatternsForCTable));
     }
     if (url != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "url", url));
+      queryParams.addAll(convertParametersForCollectionFormat("", "url", url));
     }
 
     final List<String> contentTypes = [
@@ -693,7 +698,7 @@ class BarcodeApi {
     final Map<String, String> formParams = {};
     if (format != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "format", format));
+          .addAll(convertParametersForCollectionFormat("", "format", format));
     }
 
     final List<String> contentTypes = ["application/json", "application/xml"];
@@ -765,151 +770,151 @@ class BarcodeApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(_convertParametersForCollectionFormat("", "Type", type));
-    queryParams.addAll(_convertParametersForCollectionFormat("", "Text", text));
+    queryParams.addAll(convertParametersForCollectionFormat("", "Type", type));
+    queryParams.addAll(convertParametersForCollectionFormat("", "Text", text));
     if (twoDDisplayText != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TwoDDisplayText", twoDDisplayText));
     }
     if (textLocation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TextLocation", textLocation));
     }
     if (textAlignment != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "TextAlignment", textAlignment));
     }
     if (textColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "TextColor", textColor));
+          convertParametersForCollectionFormat("", "TextColor", textColor));
     }
     if (fontSizeMode != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "FontSizeMode", fontSizeMode));
     }
     if (noWrap != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "NoWrap", noWrap));
+          .addAll(convertParametersForCollectionFormat("", "NoWrap", noWrap));
     }
     if (resolution != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "Resolution", resolution));
+          convertParametersForCollectionFormat("", "Resolution", resolution));
     }
     if (resolutionX != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ResolutionX", resolutionX));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ResolutionX", resolutionX));
     }
     if (resolutionY != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ResolutionY", resolutionY));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ResolutionY", resolutionY));
     }
     if (dimensionX != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "DimensionX", dimensionX));
+          convertParametersForCollectionFormat("", "DimensionX", dimensionX));
     }
     if (textSpace != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "TextSpace", textSpace));
+          convertParametersForCollectionFormat("", "TextSpace", textSpace));
     }
     if (units != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "Units", units));
+          .addAll(convertParametersForCollectionFormat("", "Units", units));
     }
     if (sizeMode != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "SizeMode", sizeMode));
+          convertParametersForCollectionFormat("", "SizeMode", sizeMode));
     }
     if (barHeight != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BarHeight", barHeight));
+          convertParametersForCollectionFormat("", "BarHeight", barHeight));
     }
     if (imageHeight != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "ImageHeight", imageHeight));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "ImageHeight", imageHeight));
     }
     if (imageWidth != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "ImageWidth", imageWidth));
+          convertParametersForCollectionFormat("", "ImageWidth", imageWidth));
     }
     if (rotationAngle != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "RotationAngle", rotationAngle));
     }
     if (backColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BackColor", backColor));
+          convertParametersForCollectionFormat("", "BackColor", backColor));
     }
     if (barColor != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "BarColor", barColor));
+          convertParametersForCollectionFormat("", "BarColor", barColor));
     }
     if (borderColor != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "BorderColor", borderColor));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "BorderColor", borderColor));
     }
     if (borderWidth != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "BorderWidth", borderWidth));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "BorderWidth", borderWidth));
     }
     if (borderDashStyle != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BorderDashStyle", borderDashStyle));
     }
     if (borderVisible != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BorderVisible", borderVisible));
     }
     if (enableChecksum != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "EnableChecksum", enableChecksum));
     }
     if (enableEscape != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "EnableEscape", enableEscape));
     }
     if (filledBars != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "FilledBars", filledBars));
+          convertParametersForCollectionFormat("", "FilledBars", filledBars));
     }
     if (alwaysShowChecksum != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "AlwaysShowChecksum", alwaysShowChecksum));
     }
     if (wideNarrowRatio != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "WideNarrowRatio", wideNarrowRatio));
     }
     if (validateText != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "ValidateText", validateText));
     }
     if (supplementData != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SupplementData", supplementData));
     }
     if (supplementSpace != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "SupplementSpace", supplementSpace));
     }
     if (barWidthReduction != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "BarWidthReduction", barWidthReduction));
     }
     if (useAntiAlias != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "UseAntiAlias", useAntiAlias));
     }
     if (storage != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "storage", storage));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "storage", storage));
     }
     if (folder != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "folder", folder));
+          .addAll(convertParametersForCollectionFormat("", "folder", folder));
     }
     if (format != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "format", format));
+          .addAll(convertParametersForCollectionFormat("", "format", format));
     }
 
     final List<String> contentTypes = [
@@ -954,15 +959,15 @@ class BarcodeApi {
     final Map<String, String> formParams = {};
     if (type != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "type", type));
+          .addAll(convertParametersForCollectionFormat("", "type", type));
     }
     if (storage != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "storage", storage));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "storage", storage));
     }
     if (folder != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "folder", folder));
+          .addAll(convertParametersForCollectionFormat("", "folder", folder));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -1002,15 +1007,15 @@ class BarcodeApi {
     final Map<String, String> formParams = {};
     if (format != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "format", format));
+          .addAll(convertParametersForCollectionFormat("", "format", format));
     }
     if (folder != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "folder", folder));
+          .addAll(convertParametersForCollectionFormat("", "folder", folder));
     }
     if (storage != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "storage", storage));
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "storage", storage));
     }
 
     final List<String> contentTypes = ["application/json", "application/xml"];

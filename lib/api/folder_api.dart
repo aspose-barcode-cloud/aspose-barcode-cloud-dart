@@ -1,4 +1,5 @@
-part of aspose_barcode_cloud.api;
+import '../api.dart';
+import '../api_helper.dart';
 
 class FolderApi {
   FolderApi(this.apiClient) {}
@@ -22,14 +23,14 @@ class FolderApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(
-        _convertParametersForCollectionFormat("", "destPath", destPath));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "destPath", destPath));
     if (srcStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "srcStorageName", srcStorageName));
     }
     if (destStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
     }
 
@@ -66,8 +67,8 @@ class FolderApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -104,12 +105,12 @@ class FolderApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
     if (recursive != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "recursive", recursive));
+          convertParametersForCollectionFormat("", "recursive", recursive));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -152,8 +153,8 @@ class FolderApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -189,14 +190,14 @@ class FolderApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(
-        _convertParametersForCollectionFormat("", "destPath", destPath));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "destPath", destPath));
     if (srcStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "srcStorageName", srcStorageName));
     }
     if (destStorageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
+      queryParams.addAll(convertParametersForCollectionFormat(
           "", "destStorageName", destStorageName));
     }
 

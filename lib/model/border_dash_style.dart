@@ -1,5 +1,3 @@
-part of aspose_barcode_cloud.api;
-
 class BorderDashStyle {
   /// The underlying value of this enum member.
   String? value;

@@ -1,4 +1,4 @@
-part of aspose_barcode_cloud.api;
+import '../api_helper.dart';
 
 abstract class Authentication {
   /// Apply authentication settings to header and query params.

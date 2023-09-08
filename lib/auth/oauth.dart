@@ -1,4 +1,10 @@
-part of aspose_barcode_cloud.api;
+import 'dart:convert' show jsonDecode;
+
+import 'package:http/http.dart' show MultipartRequest;
+
+import '../api_exception.dart';
+import '../api_helper.dart';
+import 'authentication.dart';
 
 class OAuth implements Authentication {
   String? clientId;

@@ -1,4 +1,5 @@
-part of aspose_barcode_cloud.api;
+import '../api.dart';
+import '../api_helper.dart';
 
 class StorageApi {
   StorageApi(this.apiClient) {}
@@ -21,8 +22,8 @@ class StorageApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -59,8 +60,8 @@ class StorageApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
 
     final List<String> contentTypes = ["application/json"];
@@ -98,12 +99,12 @@ class StorageApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
     if (storageName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "storageName", storageName));
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "storageName", storageName));
     }
     if (versionId != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "versionId", versionId));
+          convertParametersForCollectionFormat("", "versionId", versionId));
     }
 
     final List<String> contentTypes = ["application/json"];

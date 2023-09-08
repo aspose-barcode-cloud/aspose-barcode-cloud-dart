@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:aspose_barcode_cloud/api.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' show MultipartFile;
 import 'package:test/test.dart';
 
 import 'test_config.dart';

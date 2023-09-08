@@ -1,5 +1,3 @@
-part of aspose_barcode_cloud.api;
-
 class AutoSizeMode {
   /// The underlying value of this enum member.
   String? value;
