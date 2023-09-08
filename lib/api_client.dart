@@ -10,7 +10,7 @@ class QueryParam {
 }
 
 class ApiClient {
-  String basePath;
+  late final String basePath;
   final client = Client();
 
   static const String API_SDK_HEADER = "x-aspose-client";
@@ -27,17 +27,13 @@ class ApiClient {
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient(
-      {String? clientId,
-      String? clientSecret,
-      String? accessToken,
-      tokenUrl = "https://api.aspose.cloud/connect/token",
-      this.basePath = "https://api.aspose.cloud/v3.0"}) {
+  ApiClient(Configuration config) {
+    this.basePath = config.basePath;
     _authentication = OAuth(
-        clientId: clientId,
-        clientSecret: clientSecret,
-        accessToken: accessToken,
-        tokenUrl: tokenUrl);
+        clientId: config.clientId,
+        clientSecret: config.clientSecret,
+        accessToken: config.accessToken,
+        tokenUrl: config.tokenUrl);
   }
 
   void addDefaultHeader(String key, String value) {
@@ -310,21 +306,5 @@ class ApiClient {
   Future<void> _updateParamsForAuth(
       List<QueryParam> queryParams, Map<String, String> headerParams) async {
     await _authentication.applyToParams(queryParams, headerParams);
-  }
-
-  static ApiClient fromConfig(Configuration config) {
-    return config.basePath != null
-        ? ApiClient(
-            clientId: config.clientId,
-            clientSecret: config.clientSecret,
-            accessToken: config.accessToken,
-            tokenUrl: config.tokenUrl,
-            basePath: config.basePath!,
-          )
-        : ApiClient(
-            clientId: config.clientId,
-            clientSecret: config.clientSecret,
-            accessToken: config.accessToken,
-            tokenUrl: config.tokenUrl);
   }
 }

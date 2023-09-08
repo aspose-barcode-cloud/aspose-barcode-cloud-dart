@@ -2,18 +2,19 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/configuration.dart';
 import 'package:http/http.dart';
 
 Future<void> main() async {
   const fileName = "qr.png";
 
-  final api = BarcodeApi(ApiClient(
+  final api = BarcodeApi(ApiClient(Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
     clientSecret:
         "Client Secret from https://dashboard.aspose.cloud/applications",
     // For testing only
     accessToken: Platform.environment["TEST_CONFIGURATION_ACCESS_TOKEN"],
-  ));
+  )));
 
   // Generate image with barcode
   final Uint8List generated =

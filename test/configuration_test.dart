@@ -12,8 +12,6 @@ void main() {
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
       clientSecret:
           "Client Secret from https://dashboard.aspose.cloud/applications",
-      basePath: "https://api.aspose.cloud/v3.0",
-      tokenUrl: "https://api.aspose.cloud/connect/token",
     );
 
     await config.save(configFileName);

@@ -8,7 +8,7 @@ class TestConfig {
   static final configuration = Configuration.load(
           "test" + Platform.pathSeparator + "configuration.json") ??
       Configuration.fromEnv(prefix: "TEST_CONFIGURATION_");
-  static final apiClient = barcode_api.ApiClient.fromConfig(configuration);
+  static final apiClient = barcode_api.ApiClient(configuration);
 
   static final barcodeApi = barcode_api.BarcodeApi(apiClient);
 
