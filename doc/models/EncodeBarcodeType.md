@@ -78,4 +78,5 @@ See EncodeTypes
 * EncodeBarcodeType.gS1DotCode_
 * EncodeBarcodeType.hanXin_
 * EncodeBarcodeType.gS1HanXin_
+* EncodeBarcodeType.gS1Aztec_
 

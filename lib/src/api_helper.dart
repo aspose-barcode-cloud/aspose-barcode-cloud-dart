@@ -51,6 +51,8 @@ String parameterToString(dynamic value) {
     return AutoSizeMode.encode(value).toString();
   } else if (value is AvailableGraphicsUnit) {
     return AvailableGraphicsUnit.encode(value).toString();
+  } else if (value is AztecEncodeMode) {
+    return AztecEncodeMode.encode(value).toString();
   } else if (value is AztecSymbolMode) {
     return AztecSymbolMode.encode(value).toString();
   } else if (value is BorderDashStyle) {

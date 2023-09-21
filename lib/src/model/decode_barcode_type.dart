@@ -290,6 +290,13 @@ class DecodeBarcodeType {
   static DecodeBarcodeType gS1HanXin_ =
       DecodeBarcodeType._internal("GS1HanXin");
 
+  /// See DecodeType
+  static DecodeBarcodeType gS1Aztec_ = DecodeBarcodeType._internal("GS1Aztec");
+
+  /// See DecodeType
+  static DecodeBarcodeType gS1CompositeBar_ =
+      DecodeBarcodeType._internal("GS1CompositeBar");
+
   DecodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "all":
@@ -533,6 +540,12 @@ class DecodeBarcodeType {
         value = data;
         break;
       case "GS1HanXin":
+        value = data;
+        break;
+      case "GS1Aztec":
+        value = data;
+        break;
+      case "GS1CompositeBar":
         value = data;
         break;
       default:

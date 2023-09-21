@@ -6,7 +6,9 @@ class DataMatrixParams {
   /* Height/Width ratio of 2D BarCode module */
   double? aspectRatio = null;
 
-/* Encoding of codetext. */
+/* DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. */
+  @Deprecated(
+      "This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. ")
   String? textEncoding = null;
 
 /* DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count. */

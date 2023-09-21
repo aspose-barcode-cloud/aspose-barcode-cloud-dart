@@ -14,6 +14,7 @@ export 'src/model/api_error_response.dart' show ApiErrorResponse;
 export 'src/model/australian_post_params.dart' show AustralianPostParams;
 export 'src/model/auto_size_mode.dart' show AutoSizeMode;
 export 'src/model/available_graphics_unit.dart' show AvailableGraphicsUnit;
+export 'src/model/aztec_encode_mode.dart' show AztecEncodeMode;
 export 'src/model/aztec_params.dart' show AztecParams;
 export 'src/model/aztec_symbol_mode.dart' show AztecSymbolMode;
 export 'src/model/barcode_response.dart' show BarcodeResponse;

@@ -7,7 +7,7 @@ import 'api_helper.dart';
 import 'auth/authentication.dart';
 import 'auth/oauth.dart';
 
-const String SDK_VERSION = "0.23.8+2";
+const String SDK_VERSION = "0.23.9";
 
 class ApiClient {
   late final String basePath;
@@ -61,6 +61,8 @@ class ApiClient {
           return AutoSizeMode.fromJson(value);
         case 'AvailableGraphicsUnit':
           return AvailableGraphicsUnit.fromJson(value);
+        case 'AztecEncodeMode':
+          return AztecEncodeMode.fromJson(value);
         case 'AztecParams':
           return AztecParams.fromJson(value);
         case 'AztecSymbolMode':

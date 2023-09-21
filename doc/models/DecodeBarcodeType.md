@@ -89,4 +89,6 @@ See DecodeType
 * DecodeBarcodeType.hIBCQRPAS_
 * DecodeBarcodeType.hanXin_
 * DecodeBarcodeType.gS1HanXin_
+* DecodeBarcodeType.gS1Aztec_
+* DecodeBarcodeType.gS1CompositeBar_
 

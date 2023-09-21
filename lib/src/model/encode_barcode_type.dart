@@ -249,6 +249,9 @@ class EncodeBarcodeType {
   static EncodeBarcodeType gS1HanXin_ =
       EncodeBarcodeType._internal("GS1HanXin");
 
+  /// See EncodeTypes
+  static EncodeBarcodeType gS1Aztec_ = EncodeBarcodeType._internal("GS1Aztec");
+
   EncodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "Codabar":
@@ -459,6 +462,9 @@ class EncodeBarcodeType {
         value = data;
         break;
       case "GS1HanXin":
+        value = data;
+        break;
+      case "GS1Aztec":
         value = data;
         break;
       default:
