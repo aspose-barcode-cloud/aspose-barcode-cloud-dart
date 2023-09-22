@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 See DecodeType
 ## Allowable values
@@ -89,4 +89,6 @@ See DecodeType
 * DecodeBarcodeType.hIBCQRPAS_
 * DecodeBarcodeType.hanXin_
 * DecodeBarcodeType.gS1HanXin_
+* DecodeBarcodeType.gS1Aztec_
+* DecodeBarcodeType.gS1CompositeBar_
 

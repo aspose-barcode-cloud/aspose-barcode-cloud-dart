@@ -1,8 +1,8 @@
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 import 'package:http/http.dart' show MultipartFile;
 import 'package:test/test.dart';
 
-import 'test_configuration.dart';
+import 'test_config.dart';
 
 void main() {
   final fileToRecognize = "qr.png";
@@ -10,7 +10,7 @@ void main() {
   test('.postBarcodeRecognizeFromUrlOrContent', () async {
     final barcode = await MultipartFile.fromPath("image", fileToRecognize);
     final BarcodeResponseList recognized =
-        await TestConfiguration.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
+        await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
       image: barcode,
       preset: PresetType.highPerformance_.toString(),
     );
@@ -25,7 +25,7 @@ void main() {
     final barcode = await MultipartFile.fromPath("image", fileToRecognize);
     expect(
       () async => {
-        await TestConfiguration.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
+        await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
           image: barcode,
           preset: PresetType.highPerformance_.toString(),
           timeout: 1,

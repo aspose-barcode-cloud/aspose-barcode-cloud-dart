@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 DataMatrix encoder&#39;s encoding mode, default to Auto
 ## Allowable values

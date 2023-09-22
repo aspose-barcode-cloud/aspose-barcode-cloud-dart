@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 Coupon parameters. Used for UpcaGs1DatabarCoupon, UpcaGs1Code128Coupon.
 

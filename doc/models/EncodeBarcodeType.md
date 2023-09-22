@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 See EncodeTypes
 ## Allowable values
@@ -78,4 +78,5 @@ See EncodeTypes
 * EncodeBarcodeType.gS1DotCode_
 * EncodeBarcodeType.hanXin_
 * EncodeBarcodeType.gS1HanXin_
+* EncodeBarcodeType.gS1Aztec_
 

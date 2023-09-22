@@ -1,9 +1,9 @@
 # Aspose.BarCode Cloud SDK for Dart
 
-[![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart-compile.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart-compile.yml)
+[![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml)
 
 - API version: 3.0
-- SDK version: 0.23.8
+- SDK version: 0.23.9
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -34,7 +34,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 0.23.8
+  aspose_barcode_cloud: 0.23.9
 ```
 
 ## Sample usage
@@ -44,7 +44,7 @@ dependencies:
 The examples below show how you can generate QR barcode and save it into a local file and then recognize using **aspose_barcode_cloud**:
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart' as barcode;
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart' as barcode;
 
 import 'dart:typed_data';
 import 'dart:io';
@@ -65,7 +65,7 @@ Future<void> main() async {
   Uint8List? generated =
       await api.getBarcodeGenerate("QR", "text", textLocation: "None");
   // Save generated image to file
-  await new File(fileName).writeAsBytes(generated!);
+  await File(fileName).writeAsBytes(generated!);
   print("Generated image saved to " + fileName);
 
   // Recognize generated image
@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 - [AustralianPostParams](doc/models/AustralianPostParams.md)
 - [AutoSizeMode](doc/models/AutoSizeMode.md)
 - [AvailableGraphicsUnit](doc/models/AvailableGraphicsUnit.md)
+- [AztecEncodeMode](doc/models/AztecEncodeMode.md)
 - [AztecParams](doc/models/AztecParams.md)
 - [AztecSymbolMode](doc/models/AztecSymbolMode.md)
 - [BarcodeResponse](doc/models/BarcodeResponse.md)

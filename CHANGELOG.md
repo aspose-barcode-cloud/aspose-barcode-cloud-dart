@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.23.9
+
+* Improve package structure by removing 'part' directive and 'part of'
+* ApiClient parameters moved to Configuration
+
 ## 0.23.8
 
 * Added AllowAdditionalRestorations flag to reader params

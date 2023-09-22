@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
@@ -22,11 +22,11 @@ Get disc usage
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final storageName = storageName_example; // String | Storage name
 
 try {
@@ -64,11 +64,11 @@ Get file versions
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final path = path_example; // String | File path e.g. '/file.ext'
 final storageName = storageName_example; // String | Storage name
 
@@ -108,11 +108,11 @@ Check if file or folder exists
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final path = path_example; // String | File or folder path e.g. '/file.ext' or '/folder'
 final storageName = storageName_example; // String | Storage name
 final versionId = versionId_example; // String | File version ID
@@ -154,11 +154,11 @@ Check if storage exists
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new StorageApi();
+final api_instance = StorageApi();
 final storageName = storageName_example; // String | Storage name
 
 try {

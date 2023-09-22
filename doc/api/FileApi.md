@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
@@ -23,11 +23,11 @@ Copy file
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FileApi();
+final api_instance = FileApi();
 final srcPath = srcPath_example; // String | Source file path e.g. '/folder/file.ext'
 final destPath = destPath_example; // String | Destination file path
 final srcStorageName = srcStorageName_example; // String | Source storage name
@@ -72,11 +72,11 @@ Delete file
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FileApi();
+final api_instance = FileApi();
 final path = path_example; // String | File path e.g. '/folder/file.ext'
 final storageName = storageName_example; // String | Storage name
 final versionId = versionId_example; // String | File version ID to delete
@@ -117,11 +117,11 @@ Download file
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FileApi();
+final api_instance = FileApi();
 final path = path_example; // String | File path e.g. '/folder/file.ext'
 final storageName = storageName_example; // String | Storage name
 final versionId = versionId_example; // String | File version ID to download
@@ -163,11 +163,11 @@ Move file
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FileApi();
+final api_instance = FileApi();
 final srcPath = srcPath_example; // String | Source file path e.g. '/src.ext'
 final destPath = destPath_example; // String | Destination file path e.g. '/dest.ext'
 final srcStorageName = srcStorageName_example; // String | Source storage name
@@ -212,11 +212,11 @@ Upload file
 
 ### Example
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 // TODO Configure OAuth2 access token for authorization: JWT
 //aspose_barcode_cloud.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = new FileApi();
+final api_instance = FileApi();
 final path = path_example; // String | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
 final file = /path/to/file.txt; // MultipartFile | File to upload
 final storageName = storageName_example; // String | Storage name

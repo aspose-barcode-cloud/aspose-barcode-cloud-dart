@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 QR structured append parameters.
 

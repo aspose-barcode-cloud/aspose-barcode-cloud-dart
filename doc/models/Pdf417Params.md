@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:aspose_barcode_cloud/api.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 PDF417 parameters.
 
@@ -12,7 +12,7 @@ PDF417 parameters.
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **aspectRatio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] [default to null]
-**textEncoding** | **String** | Encoding of codetext. | [optional] [default to null]
+**textEncoding** | **String** | DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. | [optional] [default to null]
 **columns** | **int** | Columns count. | [optional] [default to null]
 **compactionMode** | [**Pdf417CompactionMode**](Pdf417CompactionMode.md) | Pdf417 symbology type of BarCode&#39;s compaction mode. Default value: Pdf417CompactionMode.Auto. | [optional] [default to null]
 **errorLevel** | [**Pdf417ErrorLevel**](Pdf417ErrorLevel.md) | Pdf417 symbology type of BarCode&#39;s error correction level ranging from level0 to level8, level0 means no error correction info, level8 means best error correction which means a larger picture. | [optional] [default to null]
