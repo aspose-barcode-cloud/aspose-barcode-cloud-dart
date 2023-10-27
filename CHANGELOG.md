@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.10
+
+* October 2023 release
+
 ## 0.23.9
 
 * Improve package structure by removing 'part' directive and 'part of'
