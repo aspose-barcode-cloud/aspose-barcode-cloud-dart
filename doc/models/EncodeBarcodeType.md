@@ -79,4 +79,5 @@ See EncodeTypes
 * EncodeBarcodeType.hanXin_
 * EncodeBarcodeType.gS1HanXin_
 * EncodeBarcodeType.gS1Aztec_
+* EncodeBarcodeType.gS1MicroPdf417_
 

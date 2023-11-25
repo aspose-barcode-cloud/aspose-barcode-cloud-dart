@@ -62,17 +62,28 @@ class Pdf417Params {
 /* Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields. */
   ECIEncodings? macroECIEncoding = null;
 
-/* Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes. */
+/* DEPRECATED: This property is obsolete and will be removed in future releases. See samples of using new parameters on https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes. */
+  @Deprecated(
+      "This property is obsolete and will be removed in future releases. See samples of using new parameters on https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes. ")
   Code128Emulation? code128Emulation = null;
+
+/* Can be used only with MicroPdf417 and encodes Code 128 emulation modes. Can encode FNC1 in second position modes 908 and 909, also can encode 910 and 911 which just indicate that recognized MicroPdf417 can be interpret as Code 128. */
+  bool? isCode128Emulation = null;
 
 /* Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the segment. Applied only for Macro PDF417. */
   Pdf417MacroTerminator? pdf417MacroTerminator = null;
+
+/* Defines linked modes with GS1MicroPdf417, MicroPdf417 and Pdf417 barcodes. With GS1MicroPdf417 symbology encodes 906, 907, 912, 913, 914, 915 “Linked” UCC/EAN-128 modes. With MicroPdf417 and Pdf417 symbologies encodes 918 linkage flag to associated linear component other than an EAN.UCC. */
+  bool? isLinked = null;
+
+/* Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with MicroPdf417 and encodes 916 and 917 MicroPdf417 modes. Default value: MacroCharacters.None. */
+  MacroCharacter? macroCharacters = null;
 
   Pdf417Params();
 
   @override
   String toString() {
-    return 'Pdf417Params[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, compactionMode=$compactionMode, errorLevel=$errorLevel, macroFileID=$macroFileID, macroSegmentID=$macroSegmentID, macroSegmentsCount=$macroSegmentsCount, rows=$rows, truncate=$truncate, pdf417ECIEncoding=$pdf417ECIEncoding, isReaderInitialization=$isReaderInitialization, macroTimeStamp=$macroTimeStamp, macroSender=$macroSender, macroFileSize=$macroFileSize, macroChecksum=$macroChecksum, macroFileName=$macroFileName, macroAddressee=$macroAddressee, macroECIEncoding=$macroECIEncoding, code128Emulation=$code128Emulation, pdf417MacroTerminator=$pdf417MacroTerminator, ]';
+    return 'Pdf417Params[aspectRatio=$aspectRatio, textEncoding=$textEncoding, columns=$columns, compactionMode=$compactionMode, errorLevel=$errorLevel, macroFileID=$macroFileID, macroSegmentID=$macroSegmentID, macroSegmentsCount=$macroSegmentsCount, rows=$rows, truncate=$truncate, pdf417ECIEncoding=$pdf417ECIEncoding, isReaderInitialization=$isReaderInitialization, macroTimeStamp=$macroTimeStamp, macroSender=$macroSender, macroFileSize=$macroFileSize, macroChecksum=$macroChecksum, macroFileName=$macroFileName, macroAddressee=$macroAddressee, macroECIEncoding=$macroECIEncoding, code128Emulation=$code128Emulation, isCode128Emulation=$isCode128Emulation, pdf417MacroTerminator=$pdf417MacroTerminator, isLinked=$isLinked, macroCharacters=$macroCharacters, ]';
   }
 
   Pdf417Params.fromJson(Map<String, dynamic> json) {
@@ -99,8 +110,11 @@ class Pdf417Params {
     macroAddressee = json['macroAddressee'];
     macroECIEncoding = ECIEncodings.fromJson(json['macroECIEncoding']);
     code128Emulation = Code128Emulation.fromJson(json['code128Emulation']);
+    isCode128Emulation = json['isCode128Emulation'];
     pdf417MacroTerminator =
         Pdf417MacroTerminator.fromJson(json['pdf417MacroTerminator']);
+    isLinked = json['isLinked'];
+    macroCharacters = MacroCharacter.fromJson(json['macroCharacters']);
   }
 
   Map<String, dynamic> toJson() {
@@ -127,7 +141,10 @@ class Pdf417Params {
       'MacroAddressee': macroAddressee,
       'MacroECIEncoding': macroECIEncoding,
       'Code128Emulation': code128Emulation,
-      'Pdf417MacroTerminator': pdf417MacroTerminator
+      'IsCode128Emulation': isCode128Emulation,
+      'Pdf417MacroTerminator': pdf417MacroTerminator,
+      'IsLinked': isLinked,
+      'MacroCharacters': macroCharacters
     };
   }
 

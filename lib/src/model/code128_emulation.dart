@@ -4,16 +4,16 @@ class Code128Emulation {
 
   Code128Emulation._internal(this.value);
 
-  ///
+  /// DEPRECATED. This enum will be removed in future releases Function codewords for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
   static Code128Emulation none_ = Code128Emulation._internal("None");
 
-  ///
+  /// DEPRECATED. This enum will be removed in future releases Function codewords for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
   static Code128Emulation code903_ = Code128Emulation._internal("Code903");
 
-  ///
+  /// DEPRECATED. This enum will be removed in future releases Function codewords for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
   static Code128Emulation code904_ = Code128Emulation._internal("Code904");
 
-  ///
+  /// DEPRECATED. This enum will be removed in future releases Function codewords for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
   static Code128Emulation code905_ = Code128Emulation._internal("Code905");
 
   Code128Emulation.fromJson(dynamic data) {
