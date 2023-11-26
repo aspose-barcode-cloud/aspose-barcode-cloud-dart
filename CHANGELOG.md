@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.23.11
+
+* Added new `GS1MicroPdf417` type
+* Added new properties for `Pdf417` generation:
+  * `IsCode128Emulation`. Can be used only with `MicroPdf417` and encodes Code 128 emulation modes
+  * `IsLinked`. Defines linked modes with `GS1MicroPdf417`, `MicroPdf417` and `Pdf417` barcodes
+  * `IsCode128Emulation`. Can be used only with `MicroPdf417` and encodes Code 128 emulation modes
+* `Code128Emulation` property was removed from `Pdf417` section of BarcodeGenerator parameters.
+
 ## 0.23.10
 
 * October 2023 release
