@@ -91,4 +91,5 @@ See DecodeType
 * DecodeBarcodeType.gS1HanXin_
 * DecodeBarcodeType.gS1Aztec_
 * DecodeBarcodeType.gS1CompositeBar_
+* DecodeBarcodeType.gS1MicroPdf417_
 

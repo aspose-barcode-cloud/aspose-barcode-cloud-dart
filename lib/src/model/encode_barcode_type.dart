@@ -252,6 +252,10 @@ class EncodeBarcodeType {
   /// See EncodeTypes
   static EncodeBarcodeType gS1Aztec_ = EncodeBarcodeType._internal("GS1Aztec");
 
+  /// See EncodeTypes
+  static EncodeBarcodeType gS1MicroPdf417_ =
+      EncodeBarcodeType._internal("GS1MicroPdf417");
+
   EncodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "Codabar":
@@ -465,6 +469,9 @@ class EncodeBarcodeType {
         value = data;
         break;
       case "GS1Aztec":
+        value = data;
+        break;
+      case "GS1MicroPdf417":
         value = data;
         break;
       default:
