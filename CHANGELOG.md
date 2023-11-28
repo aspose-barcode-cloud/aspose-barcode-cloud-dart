@@ -7,7 +7,6 @@
   * `IsCode128Emulation`. Can be used only with `MicroPdf417` and encodes Code 128 emulation modes
   * `IsLinked`. Defines linked modes with `GS1MicroPdf417`, `MicroPdf417` and `Pdf417` barcodes
   * `IsCode128Emulation`. Can be used only with `MicroPdf417` and encodes Code 128 emulation modes
-* `Code128Emulation` property was removed from `Pdf417` section of BarcodeGenerator parameters.
 
 ## 0.23.10
 
