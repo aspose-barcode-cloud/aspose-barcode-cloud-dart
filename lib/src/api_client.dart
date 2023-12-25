@@ -7,7 +7,7 @@ import 'api_helper.dart';
 import 'auth/authentication.dart';
 import 'auth/oauth.dart';
 
-const String SDK_VERSION = "0.23.11";
+const String SDK_VERSION = "0.23.12";
 
 class ApiClient {
   late final String basePath;

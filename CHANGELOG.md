@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.23.12
+
+* December 2023 release
+
 ## 0.23.11
 
 * Added new `GS1MicroPdf417` type
