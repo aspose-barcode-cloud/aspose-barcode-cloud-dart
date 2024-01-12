@@ -5,7 +5,6 @@ import 'package:http/http.dart' as Http show Client, MultipartRequest, Response;
 import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
-import 'auth/oauth.dart';
 
 const String SDK_VERSION = "0.23.12";
 

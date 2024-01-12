@@ -3,6 +3,7 @@ library aspose_barcode_cloud.api;
 export 'src/configuration.dart' show Configuration;
 export 'src/api_client.dart' show ApiClient, SDK_VERSION;
 export 'src/api_exception.dart' show ApiException;
+export 'src/auth/oauth.dart' show OAuth;
 
 export 'src/api/barcode_api.dart' show BarcodeApi;
 export 'src/api/file_api.dart' show FileApi;

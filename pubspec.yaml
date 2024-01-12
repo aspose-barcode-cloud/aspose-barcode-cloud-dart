@@ -1,6 +1,6 @@
 name: aspose_barcode_cloud
 description: This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
-version: 0.23.12
+version: 0.23.12+1
 homepage: https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart
 
 platforms:
@@ -17,4 +17,4 @@ dependencies:
   http: '>=0.13.0 <2.0.0'
 dev_dependencies:
   lints: ^3.0.0
-  test: ^1.19.2
+  test: ^1.25.1

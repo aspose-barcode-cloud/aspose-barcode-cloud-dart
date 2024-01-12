@@ -29,7 +29,7 @@ class OAuth implements Authentication {
       List<QueryParam> queryParams, Map<String, String> headerParams) async {
     if (accessToken == null && tokenExpiration == null) {
       if (clientId != null && clientSecret != null) {
-        await fetchToken(clientId!, clientSecret!);
+        accessToken = await fetchToken();
       } else {
         throw ApiException(0, "clientId or clientSecret not defined");
       }
@@ -41,11 +41,11 @@ class OAuth implements Authentication {
     headerParams["Authorization"] = "Bearer " + accessToken!;
   }
 
-  Future fetchToken(String clientId, String clientSecret) async {
+  Future<String> fetchToken() async {
     final request = MultipartRequest('POST', Uri.parse(tokenUrl))
       ..fields['grant_type'] = 'client_credentials'
-      ..fields['client_id'] = clientId
-      ..fields['client_secret'] = clientSecret;
+      ..fields['client_id'] = this.clientId!
+      ..fields['client_secret'] = this.clientSecret!;
 
     final response = await request.send();
     final responseText = await response.stream.bytesToString();
@@ -56,7 +56,7 @@ class OAuth implements Authentication {
     final data = jsonDecode(responseText);
     final int expiresIn = data['expires_in'];
 
-    accessToken = data['access_token'];
     tokenExpiration = DateTime.now().add(Duration(seconds: expiresIn));
+    return data['access_token'];
   }
 }
