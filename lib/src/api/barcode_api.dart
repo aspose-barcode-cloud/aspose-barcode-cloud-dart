@@ -219,6 +219,7 @@ class BarcodeApi {
   ///
   Future<BarcodeResponseList> getBarcodeRecognize(String name,
       {String? type,
+      List<DecodeBarcodeType>? types,
       String? checksumValidation,
       bool? detectEncoding,
       String? preset,
@@ -270,6 +271,10 @@ class BarcodeApi {
     if (type != null) {
       queryParams
           .addAll(convertParametersForCollectionFormat("", "Type", type));
+    }
+    if (types != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("multi", "Types", types));
     }
     if (checksumValidation != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
@@ -444,6 +449,7 @@ class BarcodeApi {
   ///
   Future<BarcodeResponseList> postBarcodeRecognizeFromUrlOrContent(
       {String? type,
+      List<DecodeBarcodeType>? types,
       String? checksumValidation,
       bool? detectEncoding,
       String? preset,
@@ -494,6 +500,10 @@ class BarcodeApi {
     if (type != null) {
       queryParams
           .addAll(convertParametersForCollectionFormat("", "Type", type));
+    }
+    if (types != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("multi", "Types", types));
     }
     if (checksumValidation != null) {
       queryParams.addAll(convertParametersForCollectionFormat(

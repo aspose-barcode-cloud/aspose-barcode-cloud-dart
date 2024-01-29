@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.24.1
+
+* "types" param for multiple barcode types to read added.
+* mostCommonlyUsed decode type added.
+
 ## 0.23.12
 
 * December 2023 release

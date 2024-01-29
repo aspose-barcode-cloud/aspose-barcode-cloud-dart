@@ -301,6 +301,10 @@ class DecodeBarcodeType {
   static DecodeBarcodeType gS1MicroPdf417_ =
       DecodeBarcodeType._internal("GS1MicroPdf417");
 
+  /// See DecodeType
+  static DecodeBarcodeType mostCommonlyUsed_ =
+      DecodeBarcodeType._internal("mostCommonlyUsed");
+
   DecodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "all":
@@ -553,6 +557,9 @@ class DecodeBarcodeType {
         value = data;
         break;
       case "GS1MicroPdf417":
+        value = data;
+        break;
+      case "mostCommonlyUsed":
         value = data;
         break;
       default:

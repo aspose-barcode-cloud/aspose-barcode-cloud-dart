@@ -6,6 +6,9 @@ class ReaderParams {
   /* The type of barcode to read. */
   DecodeBarcodeType? type = null;
 
+/* Multiple barcode types to read. */
+  List<DecodeBarcodeType>? types = [];
+
 /* Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies */
   ChecksumValidation? checksumValidation = null;
 
@@ -112,11 +115,12 @@ class ReaderParams {
 
   @override
   String toString() {
-    return 'ReaderParams[type=$type, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, allowAdditionalRestorations=$allowAdditionalRestorations, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
+    return 'ReaderParams[type=$type, types=$types, checksumValidation=$checksumValidation, detectEncoding=$detectEncoding, preset=$preset, rectX=$rectX, rectY=$rectY, rectWidth=$rectWidth, rectHeight=$rectHeight, stripFNC=$stripFNC, timeout=$timeout, medianSmoothingWindowSize=$medianSmoothingWindowSize, allowMedianSmoothing=$allowMedianSmoothing, allowComplexBackground=$allowComplexBackground, allowDatamatrixIndustrialBarcodes=$allowDatamatrixIndustrialBarcodes, allowDecreasedImage=$allowDecreasedImage, allowDetectScanGap=$allowDetectScanGap, allowIncorrectBarcodes=$allowIncorrectBarcodes, allowInvertImage=$allowInvertImage, allowMicroWhiteSpotsRemoving=$allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector=$allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration=$allowOneDWipedBarsRestoration, allowQRMicroQrRestoration=$allowQRMicroQrRestoration, allowRegularImage=$allowRegularImage, allowSaltAndPepperFiltering=$allowSaltAndPepperFiltering, allowWhiteSpotsRemoving=$allowWhiteSpotsRemoving, checkMore1DVariants=$checkMore1DVariants, fastScanOnly=$fastScanOnly, allowAdditionalRestorations=$allowAdditionalRestorations, regionLikelihoodThresholdPercent=$regionLikelihoodThresholdPercent, scanWindowSizes=$scanWindowSizes, similarity=$similarity, skipDiagonalSearch=$skipDiagonalSearch, readTinyBarcodes=$readTinyBarcodes, australianPostEncodingTable=$australianPostEncodingTable, ignoreEndingFillingPatternsForCTable=$ignoreEndingFillingPatternsForCTable, ]';
   }
 
   ReaderParams.fromJson(Map<String, dynamic> json) {
     type = DecodeBarcodeType.fromJson(json['type']);
+    types = DecodeBarcodeType.listFromJson(json['types']);
     checksumValidation =
         ChecksumValidation.fromJson(json['checksumValidation']);
     detectEncoding = json['detectEncoding'];
@@ -165,6 +169,7 @@ class ReaderParams {
   Map<String, dynamic> toJson() {
     return {
       'Type': type,
+      'Types': types,
       'ChecksumValidation': checksumValidation,
       'DetectEncoding': detectEncoding,
       'Preset': preset,
