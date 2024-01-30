@@ -578,4 +578,8 @@ class DecodeBarcodeType {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+    static List<DecodeBarcodeType> listFromJson(List<dynamic> json) {
+    return json.map((value) => DecodeBarcodeType.fromJson(value)).toList();
+  }
 }
