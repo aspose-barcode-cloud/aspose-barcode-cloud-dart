@@ -301,6 +301,10 @@ class DecodeBarcodeType {
   static DecodeBarcodeType gS1MicroPdf417_ =
       DecodeBarcodeType._internal("GS1MicroPdf417");
 
+  /// See DecodeType
+  static DecodeBarcodeType mostCommonlyUsed_ =
+      DecodeBarcodeType._internal("mostCommonlyUsed");
+
   DecodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "all":
@@ -555,6 +559,9 @@ class DecodeBarcodeType {
       case "GS1MicroPdf417":
         value = data;
         break;
+      case "mostCommonlyUsed":
+        value = data;
+        break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
@@ -570,5 +577,9 @@ class DecodeBarcodeType {
 
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<DecodeBarcodeType> listFromJson(List<dynamic> json) {
+    return json.map((value) => DecodeBarcodeType.fromJson(value)).toList();
   }
 }
