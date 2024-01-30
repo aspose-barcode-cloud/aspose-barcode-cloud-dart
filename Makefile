@@ -1,6 +1,10 @@
 .PHONY:	all
 all:	test	lint
 
+.PHONY: init
+init:
+	dart pub get
+
 .PHONY:	lint
 lint:
 	dart analyze lib example
