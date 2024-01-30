@@ -14,10 +14,6 @@ test:
 	dart test --chain-stack-traces
 	dart example/main.dart
 
-.PHONY: publish
-publish:
-	dart pub publish --dry-run
-
 .PHONY: format
 format:
 	dart format .
