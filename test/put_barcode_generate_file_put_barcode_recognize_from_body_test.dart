@@ -19,10 +19,14 @@ void main() {
   });
 
   test('.putBarcodeRecognizeFromBody', () async {
+    final params = ReaderParams();
+    params.preset = PresetType.highPerformance_;
+    params.types = [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_];
+
     final BarcodeResponseList recognized =
         await TestConfig.barcodeApi.putBarcodeRecognizeFromBody(
       remoteFileName,
-      ReaderParams()..preset = PresetType.highPerformance_,
+      params,
       folder: TestConfig.folder,
     );
 

@@ -30,6 +30,7 @@ void main() {
       remoteFileName,
       folder: TestConfig.folder,
       preset: PresetType.highPerformance_.value,
+      types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
     );
 
     expect(recognized.barcodes, isNotNull);
