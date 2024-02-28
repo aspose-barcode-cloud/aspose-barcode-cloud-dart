@@ -1,6 +1,6 @@
 import '../aspose_barcode_cloud.dart';
 
-const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
+const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 
 class QueryParam {
   String name;

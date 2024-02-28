@@ -4,13 +4,13 @@ import '../../aspose_barcode_cloud.dart';
 
 class FontParams {
   /* Font family. */
-  String? family = null;
+  String? family;
 
 /* Font size in units. */
-  double? size = null;
+  double? size;
 
 /* Font style. */
-  FontStyle? style = null;
+  FontStyle? style;
 
   FontParams();
 
@@ -21,7 +21,7 @@ class FontParams {
 
   FontParams.fromJson(Map<String, dynamic> json) {
     family = json['family'];
-    size = json['size'] == null ? null : json['size'].toDouble();
+    size = json['size']?.toDouble();
     style = FontStyle.fromJson(json['style']);
   }
 
@@ -35,7 +35,7 @@ class FontParams {
 
   static Map<String, FontParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, FontParams>();
+    final map = <String, FontParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = FontParams.fromJson(value));

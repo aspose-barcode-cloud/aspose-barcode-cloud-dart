@@ -38,14 +38,14 @@ class OAuth implements Authentication {
     if (accessToken == null) {
       throw ApiException(0, "accessToken is null");
     }
-    headerParams["Authorization"] = "Bearer " + accessToken!;
+    headerParams["Authorization"] = "Bearer ${accessToken!}";
   }
 
   Future<String> fetchToken() async {
     final request = MultipartRequest('POST', Uri.parse(tokenUrl))
       ..fields['grant_type'] = 'client_credentials'
-      ..fields['client_id'] = this.clientId!
-      ..fields['client_secret'] = this.clientSecret!;
+      ..fields['client_id'] = clientId!
+      ..fields['client_secret'] = clientSecret!;
 
     final response = await request.send();
     final responseText = await response.stream.bytesToString();

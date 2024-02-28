@@ -4,30 +4,30 @@ import '../../aspose_barcode_cloud.dart';
 
 class AztecParams {
   /* Height/Width ratio of 2D BarCode module. */
-  double? aspectRatio = null;
+  double? aspectRatio;
 
 /* Level of error correction of Aztec types of barcode. Value should between 10 to 95. */
-  int? errorLevel = null;
+  int? errorLevel;
 
 /* Aztec Symbol mode. Default value: AztecSymbolMode.Auto. */
-  AztecSymbolMode? symbolMode = null;
+  AztecSymbolMode? symbolMode;
 
 /* DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. */
   @Deprecated(
       "This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. ")
-  String? textEncoding = null;
+  String? textEncoding;
 
 /* Encoding mode for Aztec barcodes. Default value: Auto */
-  AztecEncodeMode? encodeMode = null;
+  AztecEncodeMode? encodeMode;
 
 /* Identifies ECI encoding. Used when AztecEncodeMode is Auto. Default value: ISO-8859-1. */
-  ECIEncodings? eCIEncoding = null;
+  ECIEncodings? eCIEncoding;
 
 /* Used to instruct the reader to interpret the data contained within the symbol as programming for reader initialization. */
-  bool? isReaderInitialization = null;
+  bool? isReaderInitialization;
 
 /* Gets or sets layers count of Aztec symbol. Layers count should be in range from 1 to 3 for Compact mode and in range from 1 to 32 for Full Range mode. Default value: 0 (auto). */
-  int? layersCount = null;
+  int? layersCount;
 
   AztecParams();
 
@@ -37,8 +37,7 @@ class AztecParams {
   }
 
   AztecParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    aspectRatio = json['aspectRatio']?.toDouble();
     errorLevel = json['errorLevel'];
     symbolMode = AztecSymbolMode.fromJson(json['symbolMode']);
     textEncoding = json['textEncoding'];
@@ -67,7 +66,7 @@ class AztecParams {
 
   static Map<String, AztecParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, AztecParams>();
+    final map = <String, AztecParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = AztecParams.fromJson(value));

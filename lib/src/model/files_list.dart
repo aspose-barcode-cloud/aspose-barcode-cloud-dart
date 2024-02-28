@@ -27,7 +27,7 @@ class FilesList {
 
   static Map<String, FilesList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, FilesList>();
+    final map = <String, FilesList>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = FilesList.fromJson(value));

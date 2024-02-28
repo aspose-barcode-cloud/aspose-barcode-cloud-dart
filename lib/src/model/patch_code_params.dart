@@ -4,10 +4,10 @@ import '../../aspose_barcode_cloud.dart';
 
 class PatchCodeParams {
   /* Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode. */
-  String? extraBarcodeText = null;
+  String? extraBarcodeText;
 
 /* PatchCode format. Choose PatchOnly to generate single PatchCode. Use page format to generate Patch page with PatchCodes as borders. Default value: PatchFormat.PatchOnly */
-  PatchFormat? patchFormat = null;
+  PatchFormat? patchFormat;
 
   PatchCodeParams();
 
@@ -31,7 +31,7 @@ class PatchCodeParams {
 
   static Map<String, PatchCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, PatchCodeParams>();
+    final map = <String, PatchCodeParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = PatchCodeParams.fromJson(value));

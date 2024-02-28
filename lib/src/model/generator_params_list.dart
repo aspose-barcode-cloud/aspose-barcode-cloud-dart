@@ -7,10 +7,10 @@ class GeneratorParamsList {
   List<GeneratorParams>? barcodeBuilders = [];
 
 /* Shift step according to X axis */
-  int? xStep = null;
+  int? xStep;
 
 /* Shift step according to Y axis */
-  int? yStep = null;
+  int? yStep;
 
   GeneratorParamsList();
 
@@ -35,7 +35,7 @@ class GeneratorParamsList {
 
   static Map<String, GeneratorParamsList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, GeneratorParamsList>();
+    final map = <String, GeneratorParamsList>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = GeneratorParamsList.fromJson(value));

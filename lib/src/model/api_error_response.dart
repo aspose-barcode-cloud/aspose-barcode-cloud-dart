@@ -3,9 +3,9 @@
 import '../../aspose_barcode_cloud.dart';
 
 class ApiErrorResponse {
-  String? requestId = null;
+  String? requestId;
 
-  ApiError? error = null;
+  ApiError? error;
 
   ApiErrorResponse();
 
@@ -29,7 +29,7 @@ class ApiErrorResponse {
 
   static Map<String, ApiErrorResponse> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ApiErrorResponse>();
+    final map = <String, ApiErrorResponse>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ApiErrorResponse.fromJson(value));

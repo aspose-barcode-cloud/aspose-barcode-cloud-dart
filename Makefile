@@ -6,7 +6,7 @@ init:
 	dart pub get
 
 .PHONY:	lint
-lint:
+lint: init
 	dart analyze lib example
 
 .PHONY:	test
@@ -19,7 +19,7 @@ format:
 	dart format .
 
 .PHONY: fix
-fix:
+fix: init
 	dart fix --apply
 
 .PHONY: after-gen

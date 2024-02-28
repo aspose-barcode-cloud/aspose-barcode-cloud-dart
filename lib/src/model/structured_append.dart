@@ -3,13 +3,13 @@
 
 class StructuredAppend {
   /* The index of the QR structured append mode barcode. Index starts from 0. */
-  int? sequenceIndicator = null;
+  int? sequenceIndicator;
 
 /* QR structured append mode barcodes quantity. Max value is 16. */
-  int? totalCount = null;
+  int? totalCount;
 
 /* QR structured append mode parity data. */
-  int? parityByte = null;
+  int? parityByte;
 
   StructuredAppend();
 
@@ -38,7 +38,7 @@ class StructuredAppend {
 
   static Map<String, StructuredAppend> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, StructuredAppend>();
+    final map = <String, StructuredAppend>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = StructuredAppend.fromJson(value));

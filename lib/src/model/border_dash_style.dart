@@ -49,6 +49,7 @@ class BorderDashStyle {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
   }

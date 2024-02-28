@@ -4,7 +4,7 @@ import '../../aspose_barcode_cloud.dart';
 
 class Code128Params {
   /* Encoding mode for Code128 barcodes. Code 128 specification Default value: Code128EncodeMode.Auto. */
-  Code128EncodeMode? encodeMode = null;
+  Code128EncodeMode? encodeMode;
 
   Code128Params();
 
@@ -27,7 +27,7 @@ class Code128Params {
 
   static Map<String, Code128Params> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, Code128Params>();
+    final map = <String, Code128Params>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = Code128Params.fromJson(value));

@@ -3,7 +3,7 @@
 
 class StorageExist {
   /* Shows that the storage exists. */
-  bool? exists = null;
+  bool? exists;
 
   StorageExist();
 
@@ -26,7 +26,7 @@ class StorageExist {
 
   static Map<String, StorageExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, StorageExist>();
+    final map = <String, StorageExist>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = StorageExist.fromJson(value));

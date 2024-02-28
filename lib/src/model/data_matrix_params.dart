@@ -4,34 +4,34 @@ import '../../aspose_barcode_cloud.dart';
 
 class DataMatrixParams {
   /* Height/Width ratio of 2D BarCode module */
-  double? aspectRatio = null;
+  double? aspectRatio;
 
 /* DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. */
   @Deprecated(
       "This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext. ")
-  String? textEncoding = null;
+  String? textEncoding;
 
 /* DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count. */
   @Deprecated(
       "Will be replaced with 'DataMatrix.Version' in the next release  Columns count. ")
-  int? columns = null;
+  int? columns;
 
 /* Datamatrix ECC type. Default value: DataMatrixEccType.Ecc200. */
-  DataMatrixEccType? dataMatrixEcc = null;
+  DataMatrixEccType? dataMatrixEcc;
 
 /* Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto. */
-  DataMatrixEncodeMode? dataMatrixEncodeMode = null;
+  DataMatrixEncodeMode? dataMatrixEncodeMode;
 
 /* DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count. */
   @Deprecated(
       "Will be replaced with 'DataMatrix.Version' in the next release  Rows count. ")
-  int? rows = null;
+  int? rows;
 
 /* Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None. */
-  MacroCharacter? macroCharacters = null;
+  MacroCharacter? macroCharacters;
 
 /* Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto. */
-  DataMatrixVersion? version = null;
+  DataMatrixVersion? version;
 
   DataMatrixParams();
 
@@ -41,8 +41,7 @@ class DataMatrixParams {
   }
 
   DataMatrixParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    aspectRatio = json['aspectRatio']?.toDouble();
     textEncoding = json['textEncoding'];
     columns = json['columns'];
     dataMatrixEcc = DataMatrixEccType.fromJson(json['dataMatrixEcc']);
@@ -72,7 +71,7 @@ class DataMatrixParams {
 
   static Map<String, DataMatrixParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, DataMatrixParams>();
+    final map = <String, DataMatrixParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = DataMatrixParams.fromJson(value));

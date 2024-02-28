@@ -37,6 +37,7 @@ class Pdf417MacroTerminator {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
   }

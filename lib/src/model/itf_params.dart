@@ -4,13 +4,13 @@ import '../../aspose_barcode_cloud.dart';
 
 class ITFParams {
   /* ITF border (bearer bar) thickness in Unit value. Default value: 12pt. */
-  double? borderThickness = null;
+  double? borderThickness;
 
 /* Border type of ITF barcode. Default value: ITF14BorderType.Bar. */
-  ITF14BorderType? borderType = null;
+  ITF14BorderType? borderType;
 
 /* Size of the quiet zones in xDimension. Default value: 10, meaning if xDimension = 2px than quiet zones will be 20px. */
-  int? quietZoneCoef = null;
+  int? quietZoneCoef;
 
   ITFParams();
 
@@ -20,9 +20,7 @@ class ITFParams {
   }
 
   ITFParams.fromJson(Map<String, dynamic> json) {
-    borderThickness = json['borderThickness'] == null
-        ? null
-        : json['borderThickness'].toDouble();
+    borderThickness = json['borderThickness']?.toDouble();
     borderType = ITF14BorderType.fromJson(json['borderType']);
     quietZoneCoef = json['quietZoneCoef'];
   }
@@ -41,7 +39,7 @@ class ITFParams {
 
   static Map<String, ITFParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ITFParams>();
+    final map = <String, ITFParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ITFParams.fromJson(value));

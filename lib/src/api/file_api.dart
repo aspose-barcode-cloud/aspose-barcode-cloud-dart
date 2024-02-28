@@ -6,7 +6,7 @@ import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
 class FileApi {
-  FileApi(this.apiClient) {}
+  FileApi(this.apiClient);
 
   final ApiClient apiClient;
 
@@ -18,12 +18,12 @@ class FileApi {
       String? destStorageName,
       String? versionId}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/file/copy/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "srcPath" + "}", srcPath);
+        .replaceAll("{srcPath}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -66,12 +66,12 @@ class FileApi {
   Future deleteFile(String path,
       {String? storageName, String? versionId}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
+        .replaceAll("{path}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -115,12 +115,12 @@ class FileApi {
   Future<Uint8List> downloadFile(String path,
       {String? storageName, String? versionId}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
+        .replaceAll("{path}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -159,12 +159,12 @@ class FileApi {
       String? destStorageName,
       String? versionId}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/file/move/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "srcPath" + "}", srcPath);
+        .replaceAll("{srcPath}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -207,12 +207,12 @@ class FileApi {
   Future<FilesUploadResult> uploadFile(String path, MultipartFile file,
       {String? storageName}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
+        .replaceAll("{path}", path);
 
     // query params
     final List<QueryParam> queryParams = [];

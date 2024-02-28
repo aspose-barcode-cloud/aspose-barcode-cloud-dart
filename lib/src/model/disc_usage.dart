@@ -3,10 +3,10 @@
 
 class DiscUsage {
   /* Application used disc space. */
-  int? usedSize = null;
+  int? usedSize;
 
 /* Total disc space. */
-  int? totalSize = null;
+  int? totalSize;
 
   DiscUsage();
 
@@ -30,7 +30,7 @@ class DiscUsage {
 
   static Map<String, DiscUsage> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, DiscUsage>();
+    final map = <String, DiscUsage>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = DiscUsage.fromJson(value));
