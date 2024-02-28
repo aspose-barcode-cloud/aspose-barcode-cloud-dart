@@ -6,7 +6,7 @@ import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
 
-const String SDK_VERSION = "1.24.1";
+const String SDK_VERSION = "1.24.2";
 
 class ApiClient {
   late final String basePath;
