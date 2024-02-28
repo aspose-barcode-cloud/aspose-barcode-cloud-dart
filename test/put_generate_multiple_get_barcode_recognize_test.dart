@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 import 'test_config.dart';
 
 void main() {
-  final remoteFileName = TestConfig.generateRandomString(16) + ".png";
+  final remoteFileName = "${TestConfig.generateRandomString(16)}.png";
 
   test('.putGenerateMultiple', () async {
     final barcode = GeneratorParams()
