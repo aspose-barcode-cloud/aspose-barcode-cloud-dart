@@ -76,4 +76,8 @@ class Pdf417ErrorLevel {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<Pdf417ErrorLevel> listFromJson(List<dynamic> json) {
+    return json.map((value) => Pdf417ErrorLevel.fromJson(value)).toList();
+  }
 }

@@ -184,4 +184,8 @@ class ECIEncodings {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<ECIEncodings> listFromJson(List<dynamic> json) {
+    return json.map((value) => ECIEncodings.fromJson(value)).toList();
+  }
 }

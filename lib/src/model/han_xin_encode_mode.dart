@@ -58,4 +58,8 @@ class HanXinEncodeMode {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<HanXinEncodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => HanXinEncodeMode.fromJson(value)).toList();
+  }
 }

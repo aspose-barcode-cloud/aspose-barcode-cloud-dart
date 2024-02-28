@@ -40,4 +40,8 @@ class TextAlignment {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<TextAlignment> listFromJson(List<dynamic> json) {
+    return json.map((value) => TextAlignment.fromJson(value)).toList();
+  }
 }

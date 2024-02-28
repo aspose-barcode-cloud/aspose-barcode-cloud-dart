@@ -34,4 +34,8 @@ class CodabarChecksumMode {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<CodabarChecksumMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => CodabarChecksumMode.fromJson(value)).toList();
+  }
 }

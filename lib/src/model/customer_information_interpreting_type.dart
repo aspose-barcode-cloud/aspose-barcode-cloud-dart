@@ -43,4 +43,11 @@ class CustomerInformationInterpretingType {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<CustomerInformationInterpretingType> listFromJson(
+      List<dynamic> json) {
+    return json
+        .map((value) => CustomerInformationInterpretingType.fromJson(value))
+        .toList();
+  }
 }

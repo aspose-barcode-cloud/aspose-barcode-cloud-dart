@@ -532,4 +532,8 @@ class HanXinVersion {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<HanXinVersion> listFromJson(List<dynamic> json) {
+    return json.map((value) => HanXinVersion.fromJson(value)).toList();
+  }
 }

@@ -46,4 +46,8 @@ class CodabarSymbol {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<CodabarSymbol> listFromJson(List<dynamic> json) {
+    return json.map((value) => CodabarSymbol.fromJson(value)).toList();
+  }
 }

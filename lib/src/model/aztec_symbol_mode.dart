@@ -46,4 +46,8 @@ class AztecSymbolMode {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<AztecSymbolMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => AztecSymbolMode.fromJson(value)).toList();
+  }
 }

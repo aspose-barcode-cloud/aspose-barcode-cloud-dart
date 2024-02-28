@@ -40,4 +40,8 @@ class ChecksumValidation {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<ChecksumValidation> listFromJson(List<dynamic> json) {
+    return json.map((value) => ChecksumValidation.fromJson(value)).toList();
+  }
 }

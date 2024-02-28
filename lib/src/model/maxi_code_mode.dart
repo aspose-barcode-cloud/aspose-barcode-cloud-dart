@@ -52,4 +52,8 @@ class MaxiCodeMode {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<MaxiCodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => MaxiCodeMode.fromJson(value)).toList();
+  }
 }

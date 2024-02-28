@@ -292,4 +292,8 @@ class QRVersion {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<QRVersion> listFromJson(List<dynamic> json) {
+    return json.map((value) => QRVersion.fromJson(value)).toList();
+  }
 }

@@ -52,4 +52,8 @@ class ITF14BorderType {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<ITF14BorderType> listFromJson(List<dynamic> json) {
+    return json.map((value) => ITF14BorderType.fromJson(value)).toList();
+  }
 }

@@ -52,4 +52,8 @@ class BorderDashStyle {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<BorderDashStyle> listFromJson(List<dynamic> json) {
+    return json.map((value) => BorderDashStyle.fromJson(value)).toList();
+  }
 }

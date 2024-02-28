@@ -40,4 +40,8 @@ class MacroCharacter {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<MacroCharacter> listFromJson(List<dynamic> json) {
+    return json.map((value) => MacroCharacter.fromJson(value)).toList();
+  }
 }

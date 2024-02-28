@@ -46,4 +46,8 @@ class QRErrorLevel {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<QRErrorLevel> listFromJson(List<dynamic> json) {
+    return json.map((value) => QRErrorLevel.fromJson(value)).toList();
+  }
 }

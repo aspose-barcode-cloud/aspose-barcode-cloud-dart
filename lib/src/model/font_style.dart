@@ -52,4 +52,8 @@ class FontStyle {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<FontStyle> listFromJson(List<dynamic> json) {
+    return json.map((value) => FontStyle.fromJson(value)).toList();
+  }
 }

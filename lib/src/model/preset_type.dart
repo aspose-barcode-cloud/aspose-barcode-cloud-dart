@@ -60,4 +60,8 @@ class PresetType {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<PresetType> listFromJson(List<dynamic> json) {
+    return json.map((value) => PresetType.fromJson(value)).toList();
+  }
 }

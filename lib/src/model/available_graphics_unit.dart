@@ -49,4 +49,8 @@ class AvailableGraphicsUnit {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<AvailableGraphicsUnit> listFromJson(List<dynamic> json) {
+    return json.map((value) => AvailableGraphicsUnit.fromJson(value)).toList();
+  }
 }

@@ -64,4 +64,8 @@ class Code128EncodeMode {
   String toString() {
     return value == null ? "null" : value.toString();
   }
+
+  static List<Code128EncodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => Code128EncodeMode.fromJson(value)).toList();
+  }
 }
