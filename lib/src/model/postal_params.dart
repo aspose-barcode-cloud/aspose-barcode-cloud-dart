@@ -3,7 +3,7 @@
 
 class PostalParams {
   /* Short bar's height of Postal barcodes. */
-  double? shortBarHeight = null;
+  double? shortBarHeight;
 
   PostalParams();
 
@@ -13,9 +13,7 @@ class PostalParams {
   }
 
   PostalParams.fromJson(Map<String, dynamic> json) {
-    shortBarHeight = json['shortBarHeight'] == null
-        ? null
-        : json['shortBarHeight'].toDouble();
+    shortBarHeight = json['shortBarHeight']?.toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -28,7 +26,7 @@ class PostalParams {
 
   static Map<String, PostalParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, PostalParams>();
+    final map = <String, PostalParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = PostalParams.fromJson(value));

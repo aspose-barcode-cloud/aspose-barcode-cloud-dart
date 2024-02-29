@@ -27,7 +27,7 @@ class BarcodeResponseList {
 
   static Map<String, BarcodeResponseList> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, BarcodeResponseList>();
+    final map = <String, BarcodeResponseList>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = BarcodeResponseList.fromJson(value));

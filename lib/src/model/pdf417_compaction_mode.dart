@@ -45,7 +45,12 @@ class Pdf417CompactionMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<Pdf417CompactionMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => Pdf417CompactionMode.fromJson(value)).toList();
   }
 }

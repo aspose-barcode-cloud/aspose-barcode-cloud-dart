@@ -2,15 +2,15 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 class ApiError {
-  String? code = null;
+  String? code;
 
-  String? message = null;
+  String? message;
 
-  String? description = null;
+  String? description;
 
-  DateTime? dateTime = null;
+  DateTime? dateTime;
 
-  ApiError? innerError = null;
+  ApiError? innerError;
 
   ApiError();
 
@@ -44,7 +44,7 @@ class ApiError {
 
   static Map<String, ApiError> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ApiError>();
+    final map = <String, ApiError>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ApiError.fromJson(value));

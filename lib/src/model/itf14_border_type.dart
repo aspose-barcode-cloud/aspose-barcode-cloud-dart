@@ -49,7 +49,12 @@ class ITF14BorderType {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<ITF14BorderType> listFromJson(List<dynamic> json) {
+    return json.map((value) => ITF14BorderType.fromJson(value)).toList();
   }
 }

@@ -1,3 +1,2 @@
-include: package:lints/core.yaml
-# More strict
-# include: package:lints/recommended.yaml
+# More strict than package:lints/core.yaml
+include: package:lints/recommended.yaml

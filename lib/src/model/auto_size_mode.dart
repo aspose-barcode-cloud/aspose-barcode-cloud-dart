@@ -37,7 +37,12 @@ class AutoSizeMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<AutoSizeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => AutoSizeMode.fromJson(value)).toList();
   }
 }

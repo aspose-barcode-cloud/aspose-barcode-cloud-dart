@@ -37,7 +37,12 @@ class Pdf417MacroTerminator {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<Pdf417MacroTerminator> listFromJson(List<dynamic> json) {
+    return json.map((value) => Pdf417MacroTerminator.fromJson(value)).toList();
   }
 }

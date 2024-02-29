@@ -37,7 +37,12 @@ class QREncodeType {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<QREncodeType> listFromJson(List<dynamic> json) {
+    return json.map((value) => QREncodeType.fromJson(value)).toList();
   }
 }

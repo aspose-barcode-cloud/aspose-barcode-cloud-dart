@@ -43,7 +43,12 @@ class HanXinErrorLevel {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<HanXinErrorLevel> listFromJson(List<dynamic> json) {
+    return json.map((value) => HanXinErrorLevel.fromJson(value)).toList();
   }
 }

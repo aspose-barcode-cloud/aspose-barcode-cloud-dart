@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.2
+* Improve code quality
+* Use lints/recommended.yaml instead of lints/core.yaml
+
 ## 1.24.1
 
 * "types" param for multiple barcode types to read added.

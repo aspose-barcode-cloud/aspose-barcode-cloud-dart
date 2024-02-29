@@ -4,16 +4,16 @@ import '../../aspose_barcode_cloud.dart';
 
 class BarcodeResponse {
   /* Barcode data. */
-  String? barcodeValue = null;
+  String? barcodeValue;
 
 /* Type of the barcode. */
-  String? type = null;
+  String? type;
 
 /* Region with barcode. */
   List<RegionPoint>? region = [];
 
 /* Checksum of barcode. */
-  String? checksum = null;
+  String? checksum;
 
   BarcodeResponse();
 
@@ -44,7 +44,7 @@ class BarcodeResponse {
 
   static Map<String, BarcodeResponse> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, BarcodeResponse>();
+    final map = <String, BarcodeResponse>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = BarcodeResponse.fromJson(value));

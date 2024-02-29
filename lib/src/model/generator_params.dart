@@ -4,174 +4,174 @@ import '../../aspose_barcode_cloud.dart';
 
 class GeneratorParams {
   /* Type of barcode to generate. */
-  EncodeBarcodeType? typeOfBarcode = null;
+  EncodeBarcodeType? typeOfBarcode;
 
 /* Text to encode. */
-  String? text = null;
+  String? text;
 
 /* Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode */
-  String? twoDDisplayText = null;
+  String? twoDDisplayText;
 
 /* Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below. */
-  CodeLocation? textLocation = null;
+  CodeLocation? textLocation;
 
 /* Text alignment. */
-  TextAlignment? textAlignment = null;
+  TextAlignment? textAlignment;
 
 /* Specify the displaying CodeText's Color. Default value: Color.Black. */
-  String? textColor = null;
+  String? textColor;
 
 /* Specify the displaying Text's font. Default value: Arial 5pt regular. Ignored if FontSizeMode is set to FontSizeMode.Auto. */
-  FontParams? font = null;
+  FontParams? font;
 
 /* Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto. */
-  FontMode? fontSizeMode = null;
+  FontMode? fontSizeMode;
 
 /* Specify word wraps (line breaks) within text. Default value: false. */
-  bool? noWrap = null;
+  bool? noWrap;
 
 /* Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. */
-  double? resolution = null;
+  double? resolution;
 
 /* DEPRECATED: Use 'Resolution' instead. */
   @Deprecated("Use 'Resolution' instead. ")
-  double? resolutionX = null;
+  double? resolutionX;
 
 /* DEPRECATED: Use 'Resolution' instead. */
   @Deprecated("Use 'Resolution' instead. ")
-  double? resolutionY = null;
+  double? resolutionY;
 
 /* The smallest width of the unit of BarCode bars or spaces. Increase this will increase the whole barcode image width. Ignored if AutoSizeMode property is set to AutoSizeMode.Nearest or AutoSizeMode.Interpolation. */
-  double? dimensionX = null;
+  double? dimensionX;
 
 /* Space between the CodeText and the BarCode in Unit value. Default value: 2pt. Ignored for EAN8, EAN13, UPCE, UPCA, ISBN, ISMN, ISSN, UpcaGs1DatabarCoupon. */
-  double? textSpace = null;
+  double? textSpace;
 
 /* Common Units for all measuring in query. Default units: pixel. */
-  AvailableGraphicsUnit? units = null;
+  AvailableGraphicsUnit? units;
 
 /* Specifies the different types of automatic sizing modes. Default value: AutoSizeMode.None. */
-  AutoSizeMode? sizeMode = null;
+  AutoSizeMode? sizeMode;
 
 /* Height of the barcode in given units. Default units: pixel. */
-  double? barHeight = null;
+  double? barHeight;
 
 /* Height of the barcode image in given units. Default units: pixel. */
-  double? imageHeight = null;
+  double? imageHeight;
 
 /* Width of the barcode image in given units. Default units: pixel. */
-  double? imageWidth = null;
+  double? imageWidth;
 
 /* BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. */
-  double? rotationAngle = null;
+  double? rotationAngle;
 
 /* Barcode paddings. Default value: 5pt 5pt 5pt 5pt. */
-  Padding? padding = null;
+  Padding? padding;
 
 /* Additional caption above barcode. */
-  CaptionParams? captionAbove = null;
+  CaptionParams? captionAbove;
 
 /* Additional caption below barcode. */
-  CaptionParams? captionBelow = null;
+  CaptionParams? captionBelow;
 
 /* Background color of the barcode image. Default value: Color.White. */
-  String? backColor = null;
+  String? backColor;
 
 /* Bars color. Default value: Color.Black. */
-  String? barColor = null;
+  String? barColor;
 
 /* Border color. Default value: Color.Black. */
-  String? borderColor = null;
+  String? borderColor;
 
 /* Border width. Default value: 0. Ignored if Visible is set to false. */
-  double? borderWidth = null;
+  double? borderWidth;
 
 /* Border dash style. Default value: BorderDashStyle.Solid. */
-  BorderDashStyle? borderDashStyle = null;
+  BorderDashStyle? borderDashStyle;
 
 /* Border visibility. If false than parameter Width is always ignored (0). Default value: false. */
-  bool? borderVisible = null;
+  bool? borderVisible;
 
 /* Enable checksum during generation 1D barcodes. Default is treated as Yes for symbology which must contain checksum, as No where checksum only possible. Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN, Codabar Checksum always used: Rest symbology */
-  EnableChecksum? enableChecksum = null;
+  EnableChecksum? enableChecksum;
 
 /* Indicates whether explains the character \"\\\" as an escape character in CodeText property. Used for Pdf417, DataMatrix, Code128 only If the EnableEscape is true, \"\\\" will be explained as a special escape character. Otherwise, \"\\\" acts as normal characters. Aspose.BarCode supports input decimal ascii code and mnemonic for ASCII control-code characters. For example, \\013 and \\\\CR stands for CR. */
-  bool? enableEscape = null;
+  bool? enableEscape;
 
 /* Value indicating whether bars are filled. Only for 1D barcodes. Default value: true. */
-  bool? filledBars = null;
+  bool? filledBars;
 
 /* Always display checksum digit in the human readable text for Code128 and GS1Code128 barcodes. */
-  bool? alwaysShowChecksum = null;
+  bool? alwaysShowChecksum;
 
 /* Wide bars to Narrow bars ratio. Default value: 3, that is, wide bars are 3 times as wide as narrow bars. Used for ITF, PZN, PharmaCode, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, VIN, DeutschePost, OPC, Code32, DataLogic2of5, PatchCode, Code39Extended, Code39Standard */
-  double? wideNarrowRatio = null;
+  double? wideNarrowRatio;
 
 /* Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode's specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. */
-  bool? validateText = null;
+  bool? validateText;
 
 /* Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. */
-  String? supplementData = null;
+  String? supplementData;
 
 /* Space between main the BarCode and supplement BarCode. */
-  double? supplementSpace = null;
+  double? supplementSpace;
 
 /* Bars reduction value that is used to compensate ink spread while printing. */
-  double? barWidthReduction = null;
+  double? barWidthReduction;
 
 /* Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. */
-  bool? useAntiAlias = null;
+  bool? useAntiAlias;
 
 /* AustralianPost params. */
-  AustralianPostParams? australianPost = null;
+  AustralianPostParams? australianPost;
 
 /* Aztec params. */
-  AztecParams? aztec = null;
+  AztecParams? aztec;
 
 /* Codabar params. */
-  CodabarParams? codabar = null;
+  CodabarParams? codabar;
 
 /* Codablock params. */
-  CodablockParams? codablock = null;
+  CodablockParams? codablock;
 
 /* Code16K params. */
-  Code16KParams? code16K = null;
+  Code16KParams? code16K;
 
 /* Coupon params. */
-  CouponParams? coupon = null;
+  CouponParams? coupon;
 
 /* DataBar params. */
-  DataBarParams? dataBar = null;
+  DataBarParams? dataBar;
 
 /* DataMatrix params. */
-  DataMatrixParams? dataMatrix = null;
+  DataMatrixParams? dataMatrix;
 
 /* DotCode params. */
-  DotCodeParams? dotCode = null;
+  DotCodeParams? dotCode;
 
 /* ITF params. */
-  ITFParams? ITF = null;
+  ITFParams? ITF;
 
 /* MaxiCode params. */
-  MaxiCodeParams? maxiCode = null;
+  MaxiCodeParams? maxiCode;
 
 /* Pdf417 params. */
-  Pdf417Params? pdf417 = null;
+  Pdf417Params? pdf417;
 
 /* Postal params. */
-  PostalParams? postal = null;
+  PostalParams? postal;
 
 /* QR params. */
-  QrParams? QR = null;
+  QrParams? QR;
 
 /* PatchCode params. */
-  PatchCodeParams? patchCode = null;
+  PatchCodeParams? patchCode;
 
 /* Code128 params. */
-  Code128Params? code128 = null;
+  Code128Params? code128;
 
 /* HanXin params. */
-  HanXinParams? hanXin = null;
+  HanXinParams? hanXin;
 
   GeneratorParams();
 
@@ -190,49 +190,35 @@ class GeneratorParams {
     font = FontParams.fromJson(json['font']);
     fontSizeMode = FontMode.fromJson(json['fontSizeMode']);
     noWrap = json['noWrap'];
-    resolution =
-        json['resolution'] == null ? null : json['resolution'].toDouble();
-    resolutionX =
-        json['resolutionX'] == null ? null : json['resolutionX'].toDouble();
-    resolutionY =
-        json['resolutionY'] == null ? null : json['resolutionY'].toDouble();
-    dimensionX =
-        json['dimensionX'] == null ? null : json['dimensionX'].toDouble();
-    textSpace = json['textSpace'] == null ? null : json['textSpace'].toDouble();
+    resolution = json['resolution']?.toDouble();
+    resolutionX = json['resolutionX']?.toDouble();
+    resolutionY = json['resolutionY']?.toDouble();
+    dimensionX = json['dimensionX']?.toDouble();
+    textSpace = json['textSpace']?.toDouble();
     units = AvailableGraphicsUnit.fromJson(json['units']);
     sizeMode = AutoSizeMode.fromJson(json['sizeMode']);
-    barHeight = json['barHeight'] == null ? null : json['barHeight'].toDouble();
-    imageHeight =
-        json['imageHeight'] == null ? null : json['imageHeight'].toDouble();
-    imageWidth =
-        json['imageWidth'] == null ? null : json['imageWidth'].toDouble();
-    rotationAngle =
-        json['rotationAngle'] == null ? null : json['rotationAngle'].toDouble();
+    barHeight = json['barHeight']?.toDouble();
+    imageHeight = json['imageHeight']?.toDouble();
+    imageWidth = json['imageWidth']?.toDouble();
+    rotationAngle = json['rotationAngle']?.toDouble();
     padding = Padding.fromJson(json['padding']);
     captionAbove = CaptionParams.fromJson(json['captionAbove']);
     captionBelow = CaptionParams.fromJson(json['captionBelow']);
     backColor = json['backColor'];
     barColor = json['barColor'];
     borderColor = json['borderColor'];
-    borderWidth =
-        json['borderWidth'] == null ? null : json['borderWidth'].toDouble();
+    borderWidth = json['borderWidth']?.toDouble();
     borderDashStyle = BorderDashStyle.fromJson(json['borderDashStyle']);
     borderVisible = json['borderVisible'];
     enableChecksum = EnableChecksum.fromJson(json['enableChecksum']);
     enableEscape = json['enableEscape'];
     filledBars = json['filledBars'];
     alwaysShowChecksum = json['alwaysShowChecksum'];
-    wideNarrowRatio = json['wideNarrowRatio'] == null
-        ? null
-        : json['wideNarrowRatio'].toDouble();
+    wideNarrowRatio = json['wideNarrowRatio']?.toDouble();
     validateText = json['validateText'];
     supplementData = json['supplementData'];
-    supplementSpace = json['supplementSpace'] == null
-        ? null
-        : json['supplementSpace'].toDouble();
-    barWidthReduction = json['barWidthReduction'] == null
-        ? null
-        : json['barWidthReduction'].toDouble();
+    supplementSpace = json['supplementSpace']?.toDouble();
+    barWidthReduction = json['barWidthReduction']?.toDouble();
     useAntiAlias = json['useAntiAlias'];
     australianPost = AustralianPostParams.fromJson(json['australianPost']);
     aztec = AztecParams.fromJson(json['aztec']);
@@ -320,7 +306,7 @@ class GeneratorParams {
 
   static Map<String, GeneratorParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, GeneratorParams>();
+    final map = <String, GeneratorParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = GeneratorParams.fromJson(value));

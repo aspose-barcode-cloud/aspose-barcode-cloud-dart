@@ -3,7 +3,7 @@
 
 class CouponParams {
   /* Space between main the BarCode and supplement BarCode in Unit value. */
-  double? supplementSpace = null;
+  double? supplementSpace;
 
   CouponParams();
 
@@ -13,9 +13,7 @@ class CouponParams {
   }
 
   CouponParams.fromJson(Map<String, dynamic> json) {
-    supplementSpace = json['supplementSpace'] == null
-        ? null
-        : json['supplementSpace'].toDouble();
+    supplementSpace = json['supplementSpace']?.toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -28,7 +26,7 @@ class CouponParams {
 
   static Map<String, CouponParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, CouponParams>();
+    final map = <String, CouponParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = CouponParams.fromJson(value));

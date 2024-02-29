@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert' show JsonEncoder, jsonDecode;
 import 'dart:io';
 
@@ -58,7 +60,7 @@ class Configuration {
   }
 
   static fromEnv({String prefix = ""}) {
-    final accessToken = Platform.environment[prefix + "ACCESS_TOKEN"];
+    final accessToken = Platform.environment["${prefix}ACCESS_TOKEN"];
     return Configuration(
       accessToken: accessToken,
     );

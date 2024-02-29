@@ -38,7 +38,12 @@ class DotCodeEncodeMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<DotCodeEncodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => DotCodeEncodeMode.fromJson(value)).toList();
   }
 }

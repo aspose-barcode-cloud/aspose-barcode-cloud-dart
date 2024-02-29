@@ -3,19 +3,19 @@
 
 class DataBarParams {
   /* Height/Width ratio of 2D BarCode module. Used for DataBar stacked. */
-  double? aspectRatio = null;
+  double? aspectRatio;
 
 /* Columns count. */
-  int? columns = null;
+  int? columns;
 
 /* Rows count. */
-  int? rows = null;
+  int? rows;
 
 /* Enables flag of 2D composite component with DataBar barcode */
-  bool? is2DCompositeComponent = null;
+  bool? is2DCompositeComponent;
 
 /* If this flag is set, it allows only GS1 encoding standard for Databar barcode types */
-  bool? isAllowOnlyGS1Encoding = null;
+  bool? isAllowOnlyGS1Encoding;
 
   DataBarParams();
 
@@ -25,8 +25,7 @@ class DataBarParams {
   }
 
   DataBarParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    aspectRatio = json['aspectRatio']?.toDouble();
     columns = json['columns'];
     rows = json['rows'];
     is2DCompositeComponent = json['is2DCompositeComponent'];
@@ -49,7 +48,7 @@ class DataBarParams {
 
   static Map<String, DataBarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, DataBarParams>();
+    final map = <String, DataBarParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = DataBarParams.fromJson(value));

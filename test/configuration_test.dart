@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   final configFileName =
-      "test" + Platform.pathSeparator + "configuration.example.json";
+      "test${Platform.pathSeparator}configuration.example.json";
 
   test('Save default Configuration', () async {
     final config = Configuration(

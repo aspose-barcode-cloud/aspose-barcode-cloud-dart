@@ -50,7 +50,12 @@ class PatchFormat {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<PatchFormat> listFromJson(List<dynamic> json) {
+    return json.map((value) => PatchFormat.fromJson(value)).toList();
   }
 }

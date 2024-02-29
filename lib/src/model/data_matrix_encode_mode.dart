@@ -77,7 +77,12 @@ class DataMatrixEncodeMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<DataMatrixEncodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => DataMatrixEncodeMode.fromJson(value)).toList();
   }
 }

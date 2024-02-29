@@ -6,7 +6,7 @@ import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
 class BarcodeApi {
-  BarcodeApi(this.apiClient) {}
+  BarcodeApi(this.apiClient);
 
   final ApiClient apiClient;
 
@@ -49,7 +49,7 @@ class BarcodeApi {
       bool? useAntiAlias,
       String? format}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath =
@@ -257,12 +257,12 @@ class BarcodeApi {
       String? storage,
       String? folder}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name);
+        .replaceAll("{name}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -487,7 +487,7 @@ class BarcodeApi {
       String? url,
       MultipartFile? image}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath =
@@ -769,12 +769,12 @@ class BarcodeApi {
       String? folder,
       String? format}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/{name}/generate"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name);
+        .replaceAll("{name}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -961,7 +961,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name);
+        .replaceAll("{name}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -1009,7 +1009,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/generateMultiple"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "name" + "}", name);
+        .replaceAll("{name}", name);
 
     // query params
     final List<QueryParam> queryParams = [];

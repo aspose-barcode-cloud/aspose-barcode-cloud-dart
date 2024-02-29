@@ -13,6 +13,7 @@ void main() {
         await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
       image: barcode,
       preset: PresetType.highPerformance_.toString(),
+      types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
     );
 
     expect(recognized, isNotNull);
@@ -27,7 +28,6 @@ void main() {
       () async => {
         await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
           image: barcode,
-          preset: PresetType.highPerformance_.toString(),
           timeout: 1,
         )
       },

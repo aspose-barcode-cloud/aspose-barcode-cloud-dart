@@ -1,3 +1,5 @@
+// ignore_for_file: library_prefixes, constant_identifier_names
+
 import 'dart:convert' show json;
 
 import 'package:http/http.dart' as Http show Client, MultipartRequest, Response;
@@ -6,7 +8,7 @@ import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
 
-const String SDK_VERSION = "1.24.1";
+const SDK_VERSION = "1.24.2";
 
 class ApiClient {
   late final String basePath;
@@ -16,7 +18,7 @@ class ApiClient {
   static const String SDK_NAME = "dart sdk";
   static const String API_CLIENT_VERSION_HEADER = "x-aspose-client-version";
 
-  Map<String, String> _defaultHeaderMap = {
+  final Map<String, String> _defaultHeaderMap = {
     API_SDK_HEADER: SDK_NAME,
     API_CLIENT_VERSION_HEADER: SDK_VERSION,
   };
@@ -27,7 +29,7 @@ class ApiClient {
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
   ApiClient(Configuration config) {
-    this.basePath = config.basePath;
+    basePath = config.basePath;
     _authentication = OAuth(
         clientId: config.clientId,
         clientSecret: config.clientSecret,
@@ -267,7 +269,7 @@ class ApiClient {
     await _updateParamsForAuth(queryParams, headerParams);
 
     final ps = queryParams.map((p) => '${p.name}=${p.value}');
-    final String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
+    final String queryString = ps.isNotEmpty ? '?${ps.join('&')}' : '';
 
     final String url = basePath + path + queryString;
 

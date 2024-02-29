@@ -61,7 +61,12 @@ class DataMatrixEccType {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<DataMatrixEccType> listFromJson(List<dynamic> json) {
+    return json.map((value) => DataMatrixEccType.fromJson(value)).toList();
   }
 }

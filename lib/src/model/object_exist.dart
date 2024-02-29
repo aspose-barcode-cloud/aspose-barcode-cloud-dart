@@ -3,10 +3,10 @@
 
 class ObjectExist {
   /* Indicates that the file or folder exists. */
-  bool? exists = null;
+  bool? exists;
 
 /* True if it is a folder, false if it is a file. */
-  bool? isFolder = null;
+  bool? isFolder;
 
   ObjectExist();
 
@@ -30,7 +30,7 @@ class ObjectExist {
 
   static Map<String, ObjectExist> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ObjectExist>();
+    final map = <String, ObjectExist>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ObjectExist.fromJson(value));

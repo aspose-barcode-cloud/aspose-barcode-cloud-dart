@@ -4,13 +4,13 @@ import '../../aspose_barcode_cloud.dart';
 
 class MaxiCodeParams {
   /* Height/Width ratio of 2D BarCode module. */
-  double? aspectRatio = null;
+  double? aspectRatio;
 
 /* Mode for MaxiCode barcodes. */
-  MaxiCodeMode? mode = null;
+  MaxiCodeMode? mode;
 
 /* Encoding mode for MaxiCode barcodes. */
-  MaxiCodeEncodeMode? encodeMode = null;
+  MaxiCodeEncodeMode? encodeMode;
 
   MaxiCodeParams();
 
@@ -20,8 +20,7 @@ class MaxiCodeParams {
   }
 
   MaxiCodeParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    aspectRatio = json['aspectRatio']?.toDouble();
     mode = MaxiCodeMode.fromJson(json['mode']);
     encodeMode = MaxiCodeEncodeMode.fromJson(json['encodeMode']);
   }
@@ -36,7 +35,7 @@ class MaxiCodeParams {
 
   static Map<String, MaxiCodeParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, MaxiCodeParams>();
+    final map = <String, MaxiCodeParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = MaxiCodeParams.fromJson(value));

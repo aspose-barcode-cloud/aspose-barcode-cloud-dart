@@ -21,7 +21,7 @@ Future<void> main() async {
 
   // Save generated image to file
   File(fileName).writeAsBytesSync(generated);
-  print("Generated image saved to " + fileName);
+  print("Generated image saved to '$fileName'");
 
   // Recognize generated image
   final formFile = MultipartFile.fromBytes("image", generated.toList(),
@@ -33,8 +33,8 @@ Future<void> main() async {
   );
 
   if (recognized.barcodes != null && recognized.barcodes!.isNotEmpty) {
-    print("Recognized Type: " + recognized.barcodes![0].type!);
-    print("Recognized Value: " + recognized.barcodes![0].barcodeValue!);
+    print("Recognized Type: ${recognized.barcodes![0].type!}");
+    print("Recognized Value: ${recognized.barcodes![0].barcodeValue!}");
   } else {
     print("No barcode found");
   }

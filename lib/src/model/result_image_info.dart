@@ -3,13 +3,13 @@
 
 class ResultImageInfo {
   /* Result file size. */
-  int? fileSize = null;
+  int? fileSize;
 
 /* Result image width. */
-  int? imageWidth = null;
+  int? imageWidth;
 
 /* Result image height. */
-  int? imageHeight = null;
+  int? imageHeight;
 
   ResultImageInfo();
 
@@ -38,7 +38,7 @@ class ResultImageInfo {
 
   static Map<String, ResultImageInfo> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ResultImageInfo>();
+    final map = <String, ResultImageInfo>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ResultImageInfo.fromJson(value));

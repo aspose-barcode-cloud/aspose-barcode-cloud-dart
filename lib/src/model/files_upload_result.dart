@@ -32,7 +32,7 @@ class FilesUploadResult {
 
   static Map<String, FilesUploadResult> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, FilesUploadResult>();
+    final map = <String, FilesUploadResult>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = FilesUploadResult.fromJson(value));

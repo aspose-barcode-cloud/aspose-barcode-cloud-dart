@@ -43,7 +43,12 @@ class Code128Emulation {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<Code128Emulation> listFromJson(List<dynamic> json) {
+    return json.map((value) => Code128Emulation.fromJson(value)).toList();
   }
 }

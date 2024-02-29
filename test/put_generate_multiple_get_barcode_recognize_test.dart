@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 import 'test_config.dart';
 
 void main() {
-  final remoteFileName = TestConfig.generateRandomString(16) + ".png";
+  final remoteFileName = "${TestConfig.generateRandomString(16)}.png";
 
   test('.putGenerateMultiple', () async {
     final barcode = GeneratorParams()
@@ -30,6 +30,7 @@ void main() {
       remoteFileName,
       folder: TestConfig.folder,
       preset: PresetType.highPerformance_.value,
+      types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
     );
 
     expect(recognized.barcodes, isNotNull);

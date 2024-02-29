@@ -2,7 +2,7 @@ import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
 class StorageApi {
-  StorageApi(this.apiClient) {}
+  StorageApi(this.apiClient);
 
   final ApiClient apiClient;
 
@@ -11,7 +11,7 @@ class StorageApi {
   ///
   Future<DiscUsage> getDiscUsage({String? storageName}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath =
@@ -48,12 +48,12 @@ class StorageApi {
   Future<FileVersions> getFileVersions(String path,
       {String? storageName}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/version/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
+        .replaceAll("{path}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -87,12 +87,12 @@ class StorageApi {
   Future<ObjectExist> objectExists(String path,
       {String? storageName, String? versionId}) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/exist/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "path" + "}", path);
+        .replaceAll("{path}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -128,12 +128,12 @@ class StorageApi {
   ///
   Future<StorageExist> storageExists(String storageName) async {
     // ignore: prefer_final_locals
-    Object? postBody = null;
+    Object? postBody;
 
     // create path and map variables
     final String requestPath = "/barcode/storage/{storageName}/exist"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "storageName" + "}", storageName);
+        .replaceAll("{storageName}", storageName);
 
     // query params
     final List<QueryParam> queryParams = [];

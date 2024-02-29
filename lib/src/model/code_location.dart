@@ -37,7 +37,12 @@ class CodeLocation {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<CodeLocation> listFromJson(List<dynamic> json) {
+    return json.map((value) => CodeLocation.fromJson(value)).toList();
   }
 }

@@ -31,7 +31,12 @@ class FontMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<FontMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => FontMode.fromJson(value)).toList();
   }
 }

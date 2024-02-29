@@ -3,13 +3,13 @@
 
 class CodablockParams {
   /* Height/Width ratio of 2D BarCode module. */
-  double? aspectRatio = null;
+  double? aspectRatio;
 
 /* Columns count. */
-  int? columns = null;
+  int? columns;
 
 /* Rows count. */
-  int? rows = null;
+  int? rows;
 
   CodablockParams();
 
@@ -19,8 +19,7 @@ class CodablockParams {
   }
 
   CodablockParams.fromJson(Map<String, dynamic> json) {
-    aspectRatio =
-        json['aspectRatio'] == null ? null : json['aspectRatio'].toDouble();
+    aspectRatio = json['aspectRatio']?.toDouble();
     columns = json['columns'];
     rows = json['rows'];
   }
@@ -35,7 +34,7 @@ class CodablockParams {
 
   static Map<String, CodablockParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, CodablockParams>();
+    final map = <String, CodablockParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = CodablockParams.fromJson(value));

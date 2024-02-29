@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 import 'test_config.dart';
 
 void main() {
-  final remoteFileName = TestConfig.generateRandomString(16) + ".png";
+  final remoteFileName = "${TestConfig.generateRandomString(16)}.png";
 
   test('.putBarcodeGenerateFile', () async {
     final ResultImageInfo generated = await TestConfig.barcodeApi
@@ -19,10 +19,14 @@ void main() {
   });
 
   test('.putBarcodeRecognizeFromBody', () async {
+    final params = ReaderParams();
+    params.preset = PresetType.highPerformance_;
+    params.types = [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_];
+
     final BarcodeResponseList recognized =
         await TestConfig.barcodeApi.putBarcodeRecognizeFromBody(
       remoteFileName,
-      ReaderParams()..preset = PresetType.highPerformance_,
+      params,
       folder: TestConfig.folder,
     );
 

@@ -38,7 +38,12 @@ class AztecEncodeMode {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<AztecEncodeMode> listFromJson(List<dynamic> json) {
+    return json.map((value) => AztecEncodeMode.fromJson(value)).toList();
   }
 }

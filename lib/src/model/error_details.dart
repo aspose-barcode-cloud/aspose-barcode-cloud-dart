@@ -3,10 +3,10 @@
 
 class ErrorDetails {
   /* The request id */
-  String? requestId = null;
+  String? requestId;
 
 /* Date */
-  DateTime? date = null;
+  DateTime? date;
 
   ErrorDetails();
 
@@ -33,7 +33,7 @@ class ErrorDetails {
 
   static Map<String, ErrorDetails> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, ErrorDetails>();
+    final map = <String, ErrorDetails>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = ErrorDetails.fromJson(value));

@@ -3,25 +3,25 @@
 
 class FileVersion {
   /* File or folder name. */
-  String? name = null;
+  String? name;
 
 /* True if it is a folder. */
-  bool? isFolder = null;
+  bool? isFolder;
 
 /* File or folder last modified DateTime. */
-  DateTime? modifiedDate = null;
+  DateTime? modifiedDate;
 
 /* File or folder size. */
-  int? size = null;
+  int? size;
 
 /* File or folder path. */
-  String? path = null;
+  String? path;
 
 /* File Version ID. */
-  String? versionId = null;
+  String? versionId;
 
 /* Specifies whether the file is (true) or is not (false) the latest version of an file. */
-  bool? isLatest = null;
+  bool? isLatest;
 
   FileVersion();
 
@@ -61,7 +61,7 @@ class FileVersion {
 
   static Map<String, FileVersion> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, FileVersion>();
+    final map = <String, FileVersion>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = FileVersion.fromJson(value));

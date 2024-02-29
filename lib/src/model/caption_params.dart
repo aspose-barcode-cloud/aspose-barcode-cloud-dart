@@ -4,25 +4,25 @@ import '../../aspose_barcode_cloud.dart';
 
 class CaptionParams {
   /* Caption text. */
-  String? text = null;
+  String? text;
 
 /* Text alignment. */
-  TextAlignment? alignment = null;
+  TextAlignment? alignment;
 
 /* Text color. */
-  String? color = null;
+  String? color;
 
 /* Is caption visible. */
-  bool? visible = null;
+  bool? visible;
 
 /* Font. */
-  FontParams? font = null;
+  FontParams? font;
 
 /* Padding. */
-  Padding? padding = null;
+  Padding? padding;
 
 /* Specify word wraps (line breaks) within text. Default value: false. */
-  bool? noWrap = null;
+  bool? noWrap;
 
   CaptionParams();
 
@@ -59,7 +59,7 @@ class CaptionParams {
 
   static Map<String, CaptionParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, CaptionParams>();
+    final map = <String, CaptionParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = CaptionParams.fromJson(value));

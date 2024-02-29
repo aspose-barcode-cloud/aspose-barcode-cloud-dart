@@ -3,19 +3,19 @@
 
 class StorageFile {
   /* File or folder name. */
-  String? name = null;
+  String? name;
 
 /* True if it is a folder. */
-  bool? isFolder = null;
+  bool? isFolder;
 
 /* File or folder last modified DateTime. */
-  DateTime? modifiedDate = null;
+  DateTime? modifiedDate;
 
 /* File or folder size. */
-  int? size = null;
+  int? size;
 
 /* File or folder path. */
-  String? path = null;
+  String? path;
 
   StorageFile();
 
@@ -51,7 +51,7 @@ class StorageFile {
 
   static Map<String, StorageFile> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, StorageFile>();
+    final map = <String, StorageFile>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = StorageFile.fromJson(value));

@@ -4,16 +4,16 @@ import '../../aspose_barcode_cloud.dart';
 
 class Error {
   /* Code */
-  String? code = null;
+  String? code;
 
 /* Message */
-  String? message = null;
+  String? message;
 
 /* Description */
-  String? description = null;
+  String? description;
 
 /* Inner Error */
-  ErrorDetails? innerError = null;
+  ErrorDetails? innerError;
 
   Error();
 
@@ -44,7 +44,7 @@ class Error {
 
   static Map<String, Error> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, Error>();
+    final map = <String, Error>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = Error.fromJson(value));

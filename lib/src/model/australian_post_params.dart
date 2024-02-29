@@ -4,10 +4,10 @@ import '../../aspose_barcode_cloud.dart';
 
 class AustralianPostParams {
   /* Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\" */
-  CustomerInformationInterpretingType? encodingTable = null;
+  CustomerInformationInterpretingType? encodingTable;
 
 /* Short bar's height of AustralianPost barcode. */
-  double? shortBarHeight = null;
+  double? shortBarHeight;
 
   AustralianPostParams();
 
@@ -19,9 +19,7 @@ class AustralianPostParams {
   AustralianPostParams.fromJson(Map<String, dynamic> json) {
     encodingTable =
         CustomerInformationInterpretingType.fromJson(json['encodingTable']);
-    shortBarHeight = json['shortBarHeight'] == null
-        ? null
-        : json['shortBarHeight'].toDouble();
+    shortBarHeight = json['shortBarHeight']?.toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -34,7 +32,7 @@ class AustralianPostParams {
 
   static Map<String, AustralianPostParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, AustralianPostParams>();
+    final map = <String, AustralianPostParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = AustralianPostParams.fromJson(value));

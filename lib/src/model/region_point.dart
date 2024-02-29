@@ -3,10 +3,10 @@
 
 class RegionPoint {
   /* X-coordinate */
-  int? X = null;
+  int? X;
 
 /* Y-coordinate */
-  int? Y = null;
+  int? Y;
 
   RegionPoint();
 
@@ -30,7 +30,7 @@ class RegionPoint {
 
   static Map<String, RegionPoint> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, RegionPoint>();
+    final map = <String, RegionPoint>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = RegionPoint.fromJson(value));

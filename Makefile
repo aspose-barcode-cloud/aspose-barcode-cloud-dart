@@ -6,7 +6,7 @@ init:
 	dart pub get
 
 .PHONY:	lint
-lint:
+lint: init
 	dart analyze lib example
 
 .PHONY:	test
@@ -19,7 +19,7 @@ format:
 	dart format .
 
 .PHONY: fix
-fix:
+fix: init
 	dart fix --apply
 
 .PHONY: after-gen
@@ -37,7 +37,7 @@ cover:
 	# dart pub global activate coverage
 
 	# Run Dart tests and output them at directory `./coverage`:
-	dart pub global run coverage:test_with_coverage
+	dart run coverage:test_with_coverage
 
 	# Generate HTML from LCOV report:
 	# Install lcov with `brew install lcov` or `apt-get install lcov`

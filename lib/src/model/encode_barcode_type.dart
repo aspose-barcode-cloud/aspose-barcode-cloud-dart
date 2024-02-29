@@ -487,7 +487,12 @@ class EncodeBarcodeType {
     return value;
   }
 
+  @override
   String toString() {
     return value == null ? "null" : value.toString();
+  }
+
+  static List<EncodeBarcodeType> listFromJson(List<dynamic> json) {
+    return json.map((value) => EncodeBarcodeType.fromJson(value)).toList();
   }
 }

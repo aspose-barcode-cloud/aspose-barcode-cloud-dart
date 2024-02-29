@@ -4,13 +4,13 @@ import '../../aspose_barcode_cloud.dart';
 
 class CodabarParams {
   /* Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. */
-  CodabarChecksumMode? checksumMode = null;
+  CodabarChecksumMode? checksumMode;
 
 /* Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A */
-  CodabarSymbol? startSymbol = null;
+  CodabarSymbol? startSymbol;
 
 /* Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A */
-  CodabarSymbol? stopSymbol = null;
+  CodabarSymbol? stopSymbol;
 
   CodabarParams();
 
@@ -39,7 +39,7 @@ class CodabarParams {
 
   static Map<String, CodabarParams> mapFromJson(
       Map<String, Map<String, dynamic>> json) {
-    final map = Map<String, CodabarParams>();
+    final map = <String, CodabarParams>{};
     if (json.isNotEmpty) {
       json.forEach((String key, Map<String, dynamic> value) =>
           map[key] = CodabarParams.fromJson(value));
