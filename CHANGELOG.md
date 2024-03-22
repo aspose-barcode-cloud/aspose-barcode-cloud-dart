@@ -1,6 +1,11 @@
 # CHANGELOG
 
+## 1.24.3
+
+* March 2024 Release
+
 ## 1.24.2
+
 * Improve code quality
 * Use lints/recommended.yaml instead of lints/core.yaml
 
