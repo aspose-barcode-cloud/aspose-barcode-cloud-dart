@@ -1,8 +1,10 @@
+///
+/// CodabarSymbol: [A, B, C, D]
 class CodabarSymbol {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of CodabarSymbol enum.
+  late final String _value;
 
-  CodabarSymbol._internal(this.value);
+  CodabarSymbol._internal(this._value);
 
   ///
   static CodabarSymbol a_ = CodabarSymbol._internal("A");
@@ -16,38 +18,34 @@ class CodabarSymbol {
   ///
   static CodabarSymbol d_ = CodabarSymbol._internal("D");
 
+  /// Creates a CodabarSymbol instance from a JSON representation.
   CodabarSymbol.fromJson(dynamic data) {
     switch (data) {
       case "A":
-        value = data;
-        break;
       case "B":
-        value = data;
-        break;
       case "C":
-        value = data;
-        break;
       case "D":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodabarSymbol data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of CodabarSymbol.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of CodabarSymbol instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CodabarSymbol instances.
   static List<CodabarSymbol> listFromJson(List<dynamic> json) {
     return json.map((value) => CodabarSymbol.fromJson(value)).toList();
   }

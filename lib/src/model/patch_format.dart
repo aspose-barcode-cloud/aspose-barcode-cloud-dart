@@ -1,8 +1,10 @@
+///
+/// PatchFormat: [PatchOnly, A4, A4_LANDSCAPE, US_Letter, US_Letter_LANDSCAPE]
 class PatchFormat {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of PatchFormat enum.
+  late final String _value;
 
-  PatchFormat._internal(this.value);
+  PatchFormat._internal(this._value);
 
   ///
   static PatchFormat patchOnly_ = PatchFormat._internal("PatchOnly");
@@ -20,41 +22,35 @@ class PatchFormat {
   static PatchFormat uSLetterLANDSCAPE_ =
       PatchFormat._internal("US_Letter_LANDSCAPE");
 
+  /// Creates a PatchFormat instance from a JSON representation.
   PatchFormat.fromJson(dynamic data) {
     switch (data) {
       case "PatchOnly":
-        value = data;
-        break;
       case "A4":
-        value = data;
-        break;
       case "A4_LANDSCAPE":
-        value = data;
-        break;
       case "US_Letter":
-        value = data;
-        break;
       case "US_Letter_LANDSCAPE":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(PatchFormat data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of PatchFormat.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of PatchFormat instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of PatchFormat instances.
   static List<PatchFormat> listFromJson(List<dynamic> json) {
     return json.map((value) => PatchFormat.fromJson(value)).toList();
   }

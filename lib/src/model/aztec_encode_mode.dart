@@ -1,8 +1,10 @@
+///
+/// AztecEncodeMode: [Auto, Bytes, ExtendedCodetext]
 class AztecEncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of AztecEncodeMode enum.
+  late final String _value;
 
-  AztecEncodeMode._internal(this.value);
+  AztecEncodeMode._internal(this._value);
 
   ///
   static AztecEncodeMode auto_ = AztecEncodeMode._internal("Auto");
@@ -14,35 +16,33 @@ class AztecEncodeMode {
   static AztecEncodeMode extendedCodetext_ =
       AztecEncodeMode._internal("ExtendedCodetext");
 
+  /// Creates a AztecEncodeMode instance from a JSON representation.
   AztecEncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Bytes":
-        value = data;
-        break;
       case "ExtendedCodetext":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(AztecEncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of AztecEncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of AztecEncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of AztecEncodeMode instances.
   static List<AztecEncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => AztecEncodeMode.fromJson(value)).toList();
   }

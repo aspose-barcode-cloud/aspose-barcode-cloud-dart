@@ -2,28 +2,30 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 import '../../aspose_barcode_cloud.dart';
 
+/// Caption
 class CaptionParams {
-  /* Caption text. */
+  /// Caption text.
   String? text;
 
-/* Text alignment. */
+  /// Text alignment.
   TextAlignment? alignment;
 
-/* Text color. */
+  /// Text color.
   String? color;
 
-/* Is caption visible. */
+  /// Is caption visible.
   bool? visible;
 
-/* Font. */
+  /// Font.
   FontParams? font;
 
-/* Padding. */
+  /// Padding.
   Padding? padding;
 
-/* Specify word wraps (line breaks) within text. Default value: false. */
+  /// Specify word wraps (line breaks) within text. Default value: false.
   bool? noWrap;
 
+  /// Constructor
   CaptionParams();
 
   @override
@@ -31,6 +33,7 @@ class CaptionParams {
     return 'CaptionParams[text=$text, alignment=$alignment, color=$color, visible=$visible, font=$font, padding=$padding, noWrap=$noWrap, ]';
   }
 
+  /// Creates a CaptionParams instance from a JSON representation.
   CaptionParams.fromJson(Map<String, dynamic> json) {
     text = json['text'];
     alignment = TextAlignment.fromJson(json['alignment']);
@@ -41,6 +44,7 @@ class CaptionParams {
     noWrap = json['noWrap'];
   }
 
+  /// Returns a JSON representation of CaptionParams.
   Map<String, dynamic> toJson() {
     return {
       'Text': text,
@@ -53,17 +57,11 @@ class CaptionParams {
     };
   }
 
+  /// Converts a list of JSON objects to a list of CaptionParams instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CaptionParams instances.
   static List<CaptionParams> listFromJson(List<dynamic> json) {
     return json.map((value) => CaptionParams.fromJson(value)).toList();
-  }
-
-  static Map<String, CaptionParams> mapFromJson(
-      Map<String, Map<String, dynamic>> json) {
-    final map = <String, CaptionParams>{};
-    if (json.isNotEmpty) {
-      json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = CaptionParams.fromJson(value));
-    }
-    return map;
   }
 }

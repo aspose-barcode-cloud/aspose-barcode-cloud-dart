@@ -1,13 +1,15 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
 
+/// The error details
 class ErrorDetails {
-  /* The request id */
+  /// The request id
   String? requestId;
 
-/* Date */
+  /// Date
   DateTime? date;
 
+  /// Constructor
   ErrorDetails();
 
   @override
@@ -15,11 +17,13 @@ class ErrorDetails {
     return 'ErrorDetails[requestId=$requestId, date=$date, ]';
   }
 
+  /// Creates a ErrorDetails instance from a JSON representation.
   ErrorDetails.fromJson(Map<String, dynamic> json) {
     requestId = json['requestId'];
     date = json['date'] == null ? null : DateTime.parse(json['date']);
   }
 
+  /// Returns a JSON representation of ErrorDetails.
   Map<String, dynamic> toJson() {
     return {
       'RequestId': requestId,
@@ -27,17 +31,11 @@ class ErrorDetails {
     };
   }
 
+  /// Converts a list of JSON objects to a list of ErrorDetails instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of ErrorDetails instances.
   static List<ErrorDetails> listFromJson(List<dynamic> json) {
     return json.map((value) => ErrorDetails.fromJson(value)).toList();
-  }
-
-  static Map<String, ErrorDetails> mapFromJson(
-      Map<String, Map<String, dynamic>> json) {
-    final map = <String, ErrorDetails>{};
-    if (json.isNotEmpty) {
-      json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = ErrorDetails.fromJson(value));
-    }
-    return map;
   }
 }

@@ -1,8 +1,10 @@
+///
+/// MacroCharacter: [None, Macro05, Macro06]
 class MacroCharacter {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of MacroCharacter enum.
+  late final String _value;
 
-  MacroCharacter._internal(this.value);
+  MacroCharacter._internal(this._value);
 
   ///
   static MacroCharacter none_ = MacroCharacter._internal("None");
@@ -13,35 +15,33 @@ class MacroCharacter {
   ///
   static MacroCharacter macro06_ = MacroCharacter._internal("Macro06");
 
+  /// Creates a MacroCharacter instance from a JSON representation.
   MacroCharacter.fromJson(dynamic data) {
     switch (data) {
       case "None":
-        value = data;
-        break;
       case "Macro05":
-        value = data;
-        break;
       case "Macro06":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(MacroCharacter data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of MacroCharacter.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of MacroCharacter instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of MacroCharacter instances.
   static List<MacroCharacter> listFromJson(List<dynamic> json) {
     return json.map((value) => MacroCharacter.fromJson(value)).toList();
   }

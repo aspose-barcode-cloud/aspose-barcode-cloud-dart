@@ -1,8 +1,10 @@
+///
+/// Code128EncodeMode: [Auto, CodeA, CodeB, CodeAB, CodeC, CodeAC, CodeBC]
 class Code128EncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of Code128EncodeMode enum.
+  late final String _value;
 
-  Code128EncodeMode._internal(this.value);
+  Code128EncodeMode._internal(this._value);
 
   ///
   static Code128EncodeMode auto_ = Code128EncodeMode._internal("Auto");
@@ -25,47 +27,37 @@ class Code128EncodeMode {
   ///
   static Code128EncodeMode codeBC_ = Code128EncodeMode._internal("CodeBC");
 
+  /// Creates a Code128EncodeMode instance from a JSON representation.
   Code128EncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "CodeA":
-        value = data;
-        break;
       case "CodeB":
-        value = data;
-        break;
       case "CodeAB":
-        value = data;
-        break;
       case "CodeC":
-        value = data;
-        break;
       case "CodeAC":
-        value = data;
-        break;
       case "CodeBC":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(Code128EncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of Code128EncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of Code128EncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of Code128EncodeMode instances.
   static List<Code128EncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => Code128EncodeMode.fromJson(value)).toList();
   }

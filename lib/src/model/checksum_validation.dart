@@ -1,8 +1,10 @@
+///
+/// ChecksumValidation: [Default, On, Off]
 class ChecksumValidation {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of ChecksumValidation enum.
+  late final String _value;
 
-  ChecksumValidation._internal(this.value);
+  ChecksumValidation._internal(this._value);
 
   ///
   static ChecksumValidation default_ = ChecksumValidation._internal("Default");
@@ -13,35 +15,33 @@ class ChecksumValidation {
   ///
   static ChecksumValidation off_ = ChecksumValidation._internal("Off");
 
+  /// Creates a ChecksumValidation instance from a JSON representation.
   ChecksumValidation.fromJson(dynamic data) {
     switch (data) {
       case "Default":
-        value = data;
-        break;
       case "On":
-        value = data;
-        break;
       case "Off":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(ChecksumValidation data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of ChecksumValidation.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of ChecksumValidation instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of ChecksumValidation instances.
   static List<ChecksumValidation> listFromJson(List<dynamic> json) {
     return json.map((value) => ChecksumValidation.fromJson(value)).toList();
   }

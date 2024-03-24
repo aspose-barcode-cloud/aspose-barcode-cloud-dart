@@ -1,8 +1,10 @@
+///
+/// QREncodeMode: [Auto, Bytes, Utf8BOM, Utf16BEBOM, ECIEncoding, ExtendedCodetext]
 class QREncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of QREncodeMode enum.
+  late final String _value;
 
-  QREncodeMode._internal(this.value);
+  QREncodeMode._internal(this._value);
 
   ///
   static QREncodeMode auto_ = QREncodeMode._internal("Auto");
@@ -23,44 +25,36 @@ class QREncodeMode {
   static QREncodeMode extendedCodetext_ =
       QREncodeMode._internal("ExtendedCodetext");
 
+  /// Creates a QREncodeMode instance from a JSON representation.
   QREncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Bytes":
-        value = data;
-        break;
       case "Utf8BOM":
-        value = data;
-        break;
       case "Utf16BEBOM":
-        value = data;
-        break;
       case "ECIEncoding":
-        value = data;
-        break;
       case "ExtendedCodetext":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QREncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of QREncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of QREncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of QREncodeMode instances.
   static List<QREncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => QREncodeMode.fromJson(value)).toList();
   }

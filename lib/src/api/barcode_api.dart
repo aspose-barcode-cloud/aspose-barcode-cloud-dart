@@ -5,10 +5,12 @@ import 'package:http/http.dart' show MultipartFile, MultipartRequest;
 import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
+/// BarcodeApi
 class BarcodeApi {
-  BarcodeApi(this.apiClient);
+  /// Constructor
+  BarcodeApi(this._apiClient);
 
-  final ApiClient apiClient;
+  final ApiClient _apiClient;
 
   ///
   /// Generate barcode.
@@ -204,7 +206,7 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -433,13 +435,13 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'BarcodeResponseList')
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
     }
   }
@@ -678,13 +680,20 @@ class BarcodeApi {
       }
     } else {}
 
-    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    final response = await _apiClient.invokeAPI(
+        requestPath,
+        'POST',
+        queryParams,
+        postBody,
+        headerParams,
+        formParams,
+        contentType,
+        authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'BarcodeResponseList')
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
     }
   }
@@ -717,8 +726,15 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    final response = await _apiClient.invokeAPI(
+        requestPath,
+        'POST',
+        queryParams,
+        postBody,
+        headerParams,
+        formParams,
+        contentType,
+        authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -938,13 +954,13 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'ResultImageInfo')
+      return _apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
     }
   }
@@ -986,13 +1002,13 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'BarcodeResponseList')
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
     }
   }
@@ -1034,13 +1050,13 @@ class BarcodeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'ResultImageInfo')
+      return _apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
     }
   }

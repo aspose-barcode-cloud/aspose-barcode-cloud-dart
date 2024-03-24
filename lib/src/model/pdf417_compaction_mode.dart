@@ -1,8 +1,10 @@
+///
+/// Pdf417CompactionMode: [Auto, Text, Numeric, Binary]
 class Pdf417CompactionMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of Pdf417CompactionMode enum.
+  late final String _value;
 
-  Pdf417CompactionMode._internal(this.value);
+  Pdf417CompactionMode._internal(this._value);
 
   ///
   static Pdf417CompactionMode auto_ = Pdf417CompactionMode._internal("Auto");
@@ -18,38 +20,34 @@ class Pdf417CompactionMode {
   static Pdf417CompactionMode binary_ =
       Pdf417CompactionMode._internal("Binary");
 
+  /// Creates a Pdf417CompactionMode instance from a JSON representation.
   Pdf417CompactionMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Text":
-        value = data;
-        break;
       case "Numeric":
-        value = data;
-        break;
       case "Binary":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(Pdf417CompactionMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of Pdf417CompactionMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of Pdf417CompactionMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of Pdf417CompactionMode instances.
   static List<Pdf417CompactionMode> listFromJson(List<dynamic> json) {
     return json.map((value) => Pdf417CompactionMode.fromJson(value)).toList();
   }

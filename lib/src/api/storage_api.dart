@@ -1,10 +1,12 @@
 import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
+/// StorageApi
 class StorageApi {
-  StorageApi(this.apiClient);
+  /// Constructor
+  StorageApi(this._apiClient);
 
-  final ApiClient apiClient;
+  final ApiClient _apiClient;
 
   ///
   /// Get disc usage
@@ -32,13 +34,13 @@ class StorageApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'DiscUsage') as DiscUsage;
+      return _apiClient.deserialize(response.body, 'DiscUsage') as DiscUsage;
     }
   }
 
@@ -70,13 +72,13 @@ class StorageApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'FileVersions')
+      return _apiClient.deserialize(response.body, 'FileVersions')
           as FileVersions;
     }
   }
@@ -113,13 +115,14 @@ class StorageApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'ObjectExist') as ObjectExist;
+      return _apiClient.deserialize(response.body, 'ObjectExist')
+          as ObjectExist;
     }
   }
 
@@ -146,13 +149,13 @@ class StorageApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'StorageExist')
+      return _apiClient.deserialize(response.body, 'StorageExist')
           as StorageExist;
     }
   }

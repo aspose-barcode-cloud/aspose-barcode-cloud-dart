@@ -1,8 +1,10 @@
+/// Subset of GraphicsUnit.
+/// AvailableGraphicsUnit: [Pixel, Point, Inch, Millimeter]
 class AvailableGraphicsUnit {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of AvailableGraphicsUnit enum.
+  late final String _value;
 
-  AvailableGraphicsUnit._internal(this.value);
+  AvailableGraphicsUnit._internal(this._value);
 
   /// Subset of GraphicsUnit.
   static AvailableGraphicsUnit pixel_ =
@@ -19,38 +21,34 @@ class AvailableGraphicsUnit {
   static AvailableGraphicsUnit millimeter_ =
       AvailableGraphicsUnit._internal("Millimeter");
 
+  /// Creates a AvailableGraphicsUnit instance from a JSON representation.
   AvailableGraphicsUnit.fromJson(dynamic data) {
     switch (data) {
       case "Pixel":
-        value = data;
-        break;
       case "Point":
-        value = data;
-        break;
       case "Inch":
-        value = data;
-        break;
       case "Millimeter":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(AvailableGraphicsUnit data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of AvailableGraphicsUnit.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of AvailableGraphicsUnit instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of AvailableGraphicsUnit instances.
   static List<AvailableGraphicsUnit> listFromJson(List<dynamic> json) {
     return json.map((value) => AvailableGraphicsUnit.fromJson(value)).toList();
   }

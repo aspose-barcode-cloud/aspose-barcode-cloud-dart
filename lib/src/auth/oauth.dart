@@ -6,13 +6,24 @@ import '../api_exception.dart';
 import '../api_helper.dart';
 import 'authentication.dart';
 
+/// OAuth 2.0 authentication
 class OAuth implements Authentication {
-  String? clientId;
-  String? clientSecret;
-  String tokenUrl;
+  /// Client Id from https://dashboard.aspose.cloud/applications
+  final String? clientId;
+
+  /// Client Secret from https://dashboard.aspose.cloud/applications
+  final String? clientSecret;
+
+  /// URL to get the token
+  final String tokenUrl;
+
+  /// Access token value
   String? accessToken;
+
+  /// Token expiration date
   DateTime? tokenExpiration;
 
+  /// Constructor
   OAuth(
       {this.clientId,
       this.clientSecret,
@@ -41,6 +52,7 @@ class OAuth implements Authentication {
     headerParams["Authorization"] = "Bearer ${accessToken!}";
   }
 
+  /// Fetches the token from the OAuth server
   Future<String> fetchToken() async {
     final request = MultipartRequest('POST', Uri.parse(tokenUrl))
       ..fields['grant_type'] = 'client_credentials'

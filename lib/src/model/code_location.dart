@@ -1,8 +1,10 @@
+///
+/// CodeLocation: [Below, Above, None]
 class CodeLocation {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of CodeLocation enum.
+  late final String _value;
 
-  CodeLocation._internal(this.value);
+  CodeLocation._internal(this._value);
 
   ///
   static CodeLocation below_ = CodeLocation._internal("Below");
@@ -13,35 +15,33 @@ class CodeLocation {
   ///
   static CodeLocation none_ = CodeLocation._internal("None");
 
+  /// Creates a CodeLocation instance from a JSON representation.
   CodeLocation.fromJson(dynamic data) {
     switch (data) {
       case "Below":
-        value = data;
-        break;
       case "Above":
-        value = data;
-        break;
       case "None":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodeLocation data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of CodeLocation.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of CodeLocation instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CodeLocation instances.
   static List<CodeLocation> listFromJson(List<dynamic> json) {
     return json.map((value) => CodeLocation.fromJson(value)).toList();
   }

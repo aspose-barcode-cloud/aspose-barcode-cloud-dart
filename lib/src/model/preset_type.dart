@@ -1,8 +1,10 @@
+/// See QualitySettings allows to configure recognition quality and speed manually.
+/// PresetType: [HighPerformance, NormalQuality, HighQualityDetection, MaxQualityDetection, HighQuality, MaxBarCodes]
 class PresetType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of PresetType enum.
+  late final String _value;
 
-  PresetType._internal(this.value);
+  PresetType._internal(this._value);
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
   static PresetType highPerformance_ = PresetType._internal("HighPerformance");
@@ -24,44 +26,36 @@ class PresetType {
   /// See QualitySettings allows to configure recognition quality and speed manually.
   static PresetType maxBarCodes_ = PresetType._internal("MaxBarCodes");
 
+  /// Creates a PresetType instance from a JSON representation.
   PresetType.fromJson(dynamic data) {
     switch (data) {
       case "HighPerformance":
-        value = data;
-        break;
       case "NormalQuality":
-        value = data;
-        break;
       case "HighQualityDetection":
-        value = data;
-        break;
       case "MaxQualityDetection":
-        value = data;
-        break;
       case "HighQuality":
-        value = data;
-        break;
       case "MaxBarCodes":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(PresetType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of PresetType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of PresetType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of PresetType instances.
   static List<PresetType> listFromJson(List<dynamic> json) {
     return json.map((value) => PresetType.fromJson(value)).toList();
   }

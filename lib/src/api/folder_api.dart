@@ -1,10 +1,12 @@
 import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
+/// FolderApi
 class FolderApi {
-  FolderApi(this.apiClient);
+  /// Constructor
+  FolderApi(this._apiClient);
 
-  final ApiClient apiClient;
+  final ApiClient _apiClient;
 
   ///
   /// Copy folder
@@ -40,7 +42,7 @@ class FolderApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -77,7 +79,7 @@ class FolderApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
@@ -119,7 +121,7 @@ class FolderApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(
+    final response = await _apiClient.invokeAPI(
         requestPath,
         'DELETE',
         queryParams,
@@ -163,13 +165,13 @@ class FolderApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'GET', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else {
-      return apiClient.deserialize(response.body, 'FilesList') as FilesList;
+      return _apiClient.deserialize(response.body, 'FilesList') as FilesList;
     }
   }
 
@@ -207,7 +209,7 @@ class FolderApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = ["JWT"];
 
-    final response = await apiClient.invokeAPI(requestPath, 'PUT', queryParams,
+    final response = await _apiClient.invokeAPI(requestPath, 'PUT', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
