@@ -2,16 +2,18 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 import '../../aspose_barcode_cloud.dart';
 
+/// Codabar parameters.
 class CodabarParams {
-  /* Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum. */
+  /// Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.
   CodabarChecksumMode? checksumMode;
 
-/* Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A */
+  /// Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
   CodabarSymbol? startSymbol;
 
-/* Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A */
+  /// Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
   CodabarSymbol? stopSymbol;
 
+  /// Constructor
   CodabarParams();
 
   @override
@@ -19,12 +21,14 @@ class CodabarParams {
     return 'CodabarParams[checksumMode=$checksumMode, startSymbol=$startSymbol, stopSymbol=$stopSymbol, ]';
   }
 
+  /// Creates a CodabarParams instance from a JSON representation.
   CodabarParams.fromJson(Map<String, dynamic> json) {
     checksumMode = CodabarChecksumMode.fromJson(json['checksumMode']);
     startSymbol = CodabarSymbol.fromJson(json['startSymbol']);
     stopSymbol = CodabarSymbol.fromJson(json['stopSymbol']);
   }
 
+  /// Returns a JSON representation of CodabarParams.
   Map<String, dynamic> toJson() {
     return {
       'ChecksumMode': checksumMode,
@@ -33,17 +37,11 @@ class CodabarParams {
     };
   }
 
+  /// Converts a list of JSON objects to a list of CodabarParams instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CodabarParams instances.
   static List<CodabarParams> listFromJson(List<dynamic> json) {
     return json.map((value) => CodabarParams.fromJson(value)).toList();
-  }
-
-  static Map<String, CodabarParams> mapFromJson(
-      Map<String, Map<String, dynamic>> json) {
-    final map = <String, CodabarParams>{};
-    if (json.isNotEmpty) {
-      json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = CodabarParams.fromJson(value));
-    }
-    return map;
   }
 }

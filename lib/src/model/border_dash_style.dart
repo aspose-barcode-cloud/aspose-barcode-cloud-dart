@@ -1,8 +1,10 @@
+///
+/// BorderDashStyle: [Solid, Dash, Dot, DashDot, DashDotDot]
 class BorderDashStyle {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of BorderDashStyle enum.
+  late final String _value;
 
-  BorderDashStyle._internal(this.value);
+  BorderDashStyle._internal(this._value);
 
   ///
   static BorderDashStyle solid_ = BorderDashStyle._internal("Solid");
@@ -19,41 +21,35 @@ class BorderDashStyle {
   ///
   static BorderDashStyle dashDotDot_ = BorderDashStyle._internal("DashDotDot");
 
+  /// Creates a BorderDashStyle instance from a JSON representation.
   BorderDashStyle.fromJson(dynamic data) {
     switch (data) {
       case "Solid":
-        value = data;
-        break;
       case "Dash":
-        value = data;
-        break;
       case "Dot":
-        value = data;
-        break;
       case "DashDot":
-        value = data;
-        break;
       case "DashDotDot":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(BorderDashStyle data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of BorderDashStyle.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of BorderDashStyle instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of BorderDashStyle instances.
   static List<BorderDashStyle> listFromJson(List<dynamic> json) {
     return json.map((value) => BorderDashStyle.fromJson(value)).toList();
   }

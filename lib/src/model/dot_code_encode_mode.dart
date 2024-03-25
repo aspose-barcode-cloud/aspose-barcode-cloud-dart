@@ -1,8 +1,10 @@
+///
+/// DotCodeEncodeMode: [Auto, Bytes, ExtendedCodetext]
 class DotCodeEncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of DotCodeEncodeMode enum.
+  late final String _value;
 
-  DotCodeEncodeMode._internal(this.value);
+  DotCodeEncodeMode._internal(this._value);
 
   ///
   static DotCodeEncodeMode auto_ = DotCodeEncodeMode._internal("Auto");
@@ -14,35 +16,33 @@ class DotCodeEncodeMode {
   static DotCodeEncodeMode extendedCodetext_ =
       DotCodeEncodeMode._internal("ExtendedCodetext");
 
+  /// Creates a DotCodeEncodeMode instance from a JSON representation.
   DotCodeEncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Bytes":
-        value = data;
-        break;
       case "ExtendedCodetext":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(DotCodeEncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of DotCodeEncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of DotCodeEncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of DotCodeEncodeMode instances.
   static List<DotCodeEncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => DotCodeEncodeMode.fromJson(value)).toList();
   }

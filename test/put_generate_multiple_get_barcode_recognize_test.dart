@@ -29,7 +29,7 @@ void main() {
         await TestConfig.barcodeApi.getBarcodeRecognize(
       remoteFileName,
       folder: TestConfig.folder,
-      preset: PresetType.highPerformance_.value,
+      preset: PresetType.highPerformance_.toString(),
       types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
     );
 

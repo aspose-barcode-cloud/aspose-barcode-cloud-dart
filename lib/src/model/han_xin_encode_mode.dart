@@ -1,8 +1,10 @@
+///
+/// HanXinEncodeMode: [Auto, Binary, ECI, Unicode, URI, Extended]
 class HanXinEncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of HanXinEncodeMode enum.
+  late final String _value;
 
-  HanXinEncodeMode._internal(this.value);
+  HanXinEncodeMode._internal(this._value);
 
   ///
   static HanXinEncodeMode auto_ = HanXinEncodeMode._internal("Auto");
@@ -22,44 +24,36 @@ class HanXinEncodeMode {
   ///
   static HanXinEncodeMode extended_ = HanXinEncodeMode._internal("Extended");
 
+  /// Creates a HanXinEncodeMode instance from a JSON representation.
   HanXinEncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Binary":
-        value = data;
-        break;
       case "ECI":
-        value = data;
-        break;
       case "Unicode":
-        value = data;
-        break;
       case "URI":
-        value = data;
-        break;
       case "Extended":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(HanXinEncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of HanXinEncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of HanXinEncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of HanXinEncodeMode instances.
   static List<HanXinEncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => HanXinEncodeMode.fromJson(value)).toList();
   }

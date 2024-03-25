@@ -1,8 +1,10 @@
+///
+/// Pdf417ErrorLevel: [Level0, Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8]
 class Pdf417ErrorLevel {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of Pdf417ErrorLevel enum.
+  late final String _value;
 
-  Pdf417ErrorLevel._internal(this.value);
+  Pdf417ErrorLevel._internal(this._value);
 
   ///
   static Pdf417ErrorLevel level0_ = Pdf417ErrorLevel._internal("Level0");
@@ -31,53 +33,39 @@ class Pdf417ErrorLevel {
   ///
   static Pdf417ErrorLevel level8_ = Pdf417ErrorLevel._internal("Level8");
 
+  /// Creates a Pdf417ErrorLevel instance from a JSON representation.
   Pdf417ErrorLevel.fromJson(dynamic data) {
     switch (data) {
       case "Level0":
-        value = data;
-        break;
       case "Level1":
-        value = data;
-        break;
       case "Level2":
-        value = data;
-        break;
       case "Level3":
-        value = data;
-        break;
       case "Level4":
-        value = data;
-        break;
       case "Level5":
-        value = data;
-        break;
       case "Level6":
-        value = data;
-        break;
       case "Level7":
-        value = data;
-        break;
       case "Level8":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(Pdf417ErrorLevel data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of Pdf417ErrorLevel.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of Pdf417ErrorLevel instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of Pdf417ErrorLevel instances.
   static List<Pdf417ErrorLevel> listFromJson(List<dynamic> json) {
     return json.map((value) => Pdf417ErrorLevel.fromJson(value)).toList();
   }

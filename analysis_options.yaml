@@ -1,2 +1,8 @@
 # More strict than package:lints/core.yaml
+# See https://dart.dev/tools/analysis for details
 include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    package_api_docs: true
+    public_member_api_docs: true

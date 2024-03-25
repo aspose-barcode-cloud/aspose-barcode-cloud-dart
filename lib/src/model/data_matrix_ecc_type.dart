@@ -1,8 +1,10 @@
+///
+/// DataMatrixEccType: [EccAuto, Ecc000, Ecc050, Ecc080, Ecc100, Ecc140, Ecc200]
 class DataMatrixEccType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of DataMatrixEccType enum.
+  late final String _value;
 
-  DataMatrixEccType._internal(this.value);
+  DataMatrixEccType._internal(this._value);
 
   ///
   static DataMatrixEccType eccAuto_ = DataMatrixEccType._internal("EccAuto");
@@ -25,47 +27,37 @@ class DataMatrixEccType {
   ///
   static DataMatrixEccType ecc200_ = DataMatrixEccType._internal("Ecc200");
 
+  /// Creates a DataMatrixEccType instance from a JSON representation.
   DataMatrixEccType.fromJson(dynamic data) {
     switch (data) {
       case "EccAuto":
-        value = data;
-        break;
       case "Ecc000":
-        value = data;
-        break;
       case "Ecc050":
-        value = data;
-        break;
       case "Ecc080":
-        value = data;
-        break;
       case "Ecc100":
-        value = data;
-        break;
       case "Ecc140":
-        value = data;
-        break;
       case "Ecc200":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(DataMatrixEccType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of DataMatrixEccType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of DataMatrixEccType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of DataMatrixEccType instances.
   static List<DataMatrixEccType> listFromJson(List<dynamic> json) {
     return json.map((value) => DataMatrixEccType.fromJson(value)).toList();
   }

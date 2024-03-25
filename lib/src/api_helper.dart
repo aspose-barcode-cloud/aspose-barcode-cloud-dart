@@ -1,15 +1,18 @@
-import '../aspose_barcode_cloud.dart';
-
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 
+/// Represents a query parameter.
 class QueryParam {
-  String name;
-  String value;
+  /// The name of the parameter.
+  final String name;
 
+  /// The value of the parameter.
+  final String value;
+
+  /// Constructor
   QueryParam(this.name, this.value);
 }
 
-// port from Java version
+/// port from Java version
 Iterable<QueryParam> convertParametersForCollectionFormat(
     String collectionFormat, String name, dynamic value) {
   final params = <QueryParam>[];
@@ -47,84 +50,6 @@ String parameterToString(dynamic value) {
     return '';
   } else if (value is DateTime) {
     return value.toUtc().toIso8601String();
-  } else if (value is AutoSizeMode) {
-    return AutoSizeMode.encode(value).toString();
-  } else if (value is AvailableGraphicsUnit) {
-    return AvailableGraphicsUnit.encode(value).toString();
-  } else if (value is AztecEncodeMode) {
-    return AztecEncodeMode.encode(value).toString();
-  } else if (value is AztecSymbolMode) {
-    return AztecSymbolMode.encode(value).toString();
-  } else if (value is BorderDashStyle) {
-    return BorderDashStyle.encode(value).toString();
-  } else if (value is ChecksumValidation) {
-    return ChecksumValidation.encode(value).toString();
-  } else if (value is CodabarChecksumMode) {
-    return CodabarChecksumMode.encode(value).toString();
-  } else if (value is CodabarSymbol) {
-    return CodabarSymbol.encode(value).toString();
-  } else if (value is Code128Emulation) {
-    return Code128Emulation.encode(value).toString();
-  } else if (value is Code128EncodeMode) {
-    return Code128EncodeMode.encode(value).toString();
-  } else if (value is CodeLocation) {
-    return CodeLocation.encode(value).toString();
-  } else if (value is CustomerInformationInterpretingType) {
-    return CustomerInformationInterpretingType.encode(value).toString();
-  } else if (value is DataMatrixEccType) {
-    return DataMatrixEccType.encode(value).toString();
-  } else if (value is DataMatrixEncodeMode) {
-    return DataMatrixEncodeMode.encode(value).toString();
-  } else if (value is DataMatrixVersion) {
-    return DataMatrixVersion.encode(value).toString();
-  } else if (value is DecodeBarcodeType) {
-    return DecodeBarcodeType.encode(value).toString();
-  } else if (value is DotCodeEncodeMode) {
-    return DotCodeEncodeMode.encode(value).toString();
-  } else if (value is ECIEncodings) {
-    return ECIEncodings.encode(value).toString();
-  } else if (value is EnableChecksum) {
-    return EnableChecksum.encode(value).toString();
-  } else if (value is EncodeBarcodeType) {
-    return EncodeBarcodeType.encode(value).toString();
-  } else if (value is FontMode) {
-    return FontMode.encode(value).toString();
-  } else if (value is FontStyle) {
-    return FontStyle.encode(value).toString();
-  } else if (value is HanXinEncodeMode) {
-    return HanXinEncodeMode.encode(value).toString();
-  } else if (value is HanXinErrorLevel) {
-    return HanXinErrorLevel.encode(value).toString();
-  } else if (value is HanXinVersion) {
-    return HanXinVersion.encode(value).toString();
-  } else if (value is ITF14BorderType) {
-    return ITF14BorderType.encode(value).toString();
-  } else if (value is MacroCharacter) {
-    return MacroCharacter.encode(value).toString();
-  } else if (value is MaxiCodeEncodeMode) {
-    return MaxiCodeEncodeMode.encode(value).toString();
-  } else if (value is MaxiCodeMode) {
-    return MaxiCodeMode.encode(value).toString();
-  } else if (value is PatchFormat) {
-    return PatchFormat.encode(value).toString();
-  } else if (value is Pdf417CompactionMode) {
-    return Pdf417CompactionMode.encode(value).toString();
-  } else if (value is Pdf417ErrorLevel) {
-    return Pdf417ErrorLevel.encode(value).toString();
-  } else if (value is Pdf417MacroTerminator) {
-    return Pdf417MacroTerminator.encode(value).toString();
-  } else if (value is PresetType) {
-    return PresetType.encode(value).toString();
-  } else if (value is QREncodeMode) {
-    return QREncodeMode.encode(value).toString();
-  } else if (value is QREncodeType) {
-    return QREncodeType.encode(value).toString();
-  } else if (value is QRErrorLevel) {
-    return QRErrorLevel.encode(value).toString();
-  } else if (value is QRVersion) {
-    return QRVersion.encode(value).toString();
-  } else if (value is TextAlignment) {
-    return TextAlignment.encode(value).toString();
   } else {
     return value.toString();
   }

@@ -1,8 +1,10 @@
+///
+/// QREncodeType: [Auto, ForceQR, ForceMicroQR]
 class QREncodeType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of QREncodeType enum.
+  late final String _value;
 
-  QREncodeType._internal(this.value);
+  QREncodeType._internal(this._value);
 
   ///
   static QREncodeType auto_ = QREncodeType._internal("Auto");
@@ -13,35 +15,33 @@ class QREncodeType {
   ///
   static QREncodeType forceMicroQR_ = QREncodeType._internal("ForceMicroQR");
 
+  /// Creates a QREncodeType instance from a JSON representation.
   QREncodeType.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "ForceQR":
-        value = data;
-        break;
       case "ForceMicroQR":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QREncodeType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of QREncodeType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of QREncodeType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of QREncodeType instances.
   static List<QREncodeType> listFromJson(List<dynamic> json) {
     return json.map((value) => QREncodeType.fromJson(value)).toList();
   }

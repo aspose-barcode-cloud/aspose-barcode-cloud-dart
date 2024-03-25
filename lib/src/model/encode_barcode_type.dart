@@ -1,8 +1,10 @@
+/// See EncodeTypes
+/// EncodeBarcodeType: [Codabar, Code11, Code39Standard, Code39Extended, Code93Standard, Code93Extended, Code128, GS1Code128, EAN8, EAN13, EAN14, SCC14, SSCC18, UPCA, UPCE, ISBN, ISSN, ISMN, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, ITF14, ITF6, MSI, VIN, DeutschePostIdentcode, DeutschePostLeitcode, OPC, PZN, Code16K, Pharmacode, DataMatrix, QR, Aztec, Pdf417, MacroPdf417, AustraliaPost, Postnet, Planet, OneCode, RM4SCC, DatabarOmniDirectional, DatabarTruncated, DatabarLimited, DatabarExpanded, SingaporePost, GS1DataMatrix, AustralianPosteParcel, SwissPostParcel, PatchCode, DatabarExpandedStacked, DatabarStacked, DatabarStackedOmniDirectional, MicroPdf417, GS1QR, MaxiCode, Code32, DataLogic2of5, DotCode, DutchKIX, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, CodablockF, GS1CodablockF, Mailmark, GS1DotCode, HanXin, GS1HanXin, GS1Aztec, GS1MicroPdf417]
 class EncodeBarcodeType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of EncodeBarcodeType enum.
+  late final String _value;
 
-  EncodeBarcodeType._internal(this.value);
+  EncodeBarcodeType._internal(this._value);
 
   /// See EncodeTypes
   static EncodeBarcodeType codabar_ = EncodeBarcodeType._internal("Codabar");
@@ -256,242 +258,102 @@ class EncodeBarcodeType {
   static EncodeBarcodeType gS1MicroPdf417_ =
       EncodeBarcodeType._internal("GS1MicroPdf417");
 
+  /// Creates a EncodeBarcodeType instance from a JSON representation.
   EncodeBarcodeType.fromJson(dynamic data) {
     switch (data) {
       case "Codabar":
-        value = data;
-        break;
       case "Code11":
-        value = data;
-        break;
       case "Code39Standard":
-        value = data;
-        break;
       case "Code39Extended":
-        value = data;
-        break;
       case "Code93Standard":
-        value = data;
-        break;
       case "Code93Extended":
-        value = data;
-        break;
       case "Code128":
-        value = data;
-        break;
       case "GS1Code128":
-        value = data;
-        break;
       case "EAN8":
-        value = data;
-        break;
       case "EAN13":
-        value = data;
-        break;
       case "EAN14":
-        value = data;
-        break;
       case "SCC14":
-        value = data;
-        break;
       case "SSCC18":
-        value = data;
-        break;
       case "UPCA":
-        value = data;
-        break;
       case "UPCE":
-        value = data;
-        break;
       case "ISBN":
-        value = data;
-        break;
       case "ISSN":
-        value = data;
-        break;
       case "ISMN":
-        value = data;
-        break;
       case "Standard2of5":
-        value = data;
-        break;
       case "Interleaved2of5":
-        value = data;
-        break;
       case "Matrix2of5":
-        value = data;
-        break;
       case "ItalianPost25":
-        value = data;
-        break;
       case "IATA2of5":
-        value = data;
-        break;
       case "ITF14":
-        value = data;
-        break;
       case "ITF6":
-        value = data;
-        break;
       case "MSI":
-        value = data;
-        break;
       case "VIN":
-        value = data;
-        break;
       case "DeutschePostIdentcode":
-        value = data;
-        break;
       case "DeutschePostLeitcode":
-        value = data;
-        break;
       case "OPC":
-        value = data;
-        break;
       case "PZN":
-        value = data;
-        break;
       case "Code16K":
-        value = data;
-        break;
       case "Pharmacode":
-        value = data;
-        break;
       case "DataMatrix":
-        value = data;
-        break;
       case "QR":
-        value = data;
-        break;
       case "Aztec":
-        value = data;
-        break;
       case "Pdf417":
-        value = data;
-        break;
       case "MacroPdf417":
-        value = data;
-        break;
       case "AustraliaPost":
-        value = data;
-        break;
       case "Postnet":
-        value = data;
-        break;
       case "Planet":
-        value = data;
-        break;
       case "OneCode":
-        value = data;
-        break;
       case "RM4SCC":
-        value = data;
-        break;
       case "DatabarOmniDirectional":
-        value = data;
-        break;
       case "DatabarTruncated":
-        value = data;
-        break;
       case "DatabarLimited":
-        value = data;
-        break;
       case "DatabarExpanded":
-        value = data;
-        break;
       case "SingaporePost":
-        value = data;
-        break;
       case "GS1DataMatrix":
-        value = data;
-        break;
       case "AustralianPosteParcel":
-        value = data;
-        break;
       case "SwissPostParcel":
-        value = data;
-        break;
       case "PatchCode":
-        value = data;
-        break;
       case "DatabarExpandedStacked":
-        value = data;
-        break;
       case "DatabarStacked":
-        value = data;
-        break;
       case "DatabarStackedOmniDirectional":
-        value = data;
-        break;
       case "MicroPdf417":
-        value = data;
-        break;
       case "GS1QR":
-        value = data;
-        break;
       case "MaxiCode":
-        value = data;
-        break;
       case "Code32":
-        value = data;
-        break;
       case "DataLogic2of5":
-        value = data;
-        break;
       case "DotCode":
-        value = data;
-        break;
       case "DutchKIX":
-        value = data;
-        break;
       case "UpcaGs1Code128Coupon":
-        value = data;
-        break;
       case "UpcaGs1DatabarCoupon":
-        value = data;
-        break;
       case "CodablockF":
-        value = data;
-        break;
       case "GS1CodablockF":
-        value = data;
-        break;
       case "Mailmark":
-        value = data;
-        break;
       case "GS1DotCode":
-        value = data;
-        break;
       case "HanXin":
-        value = data;
-        break;
       case "GS1HanXin":
-        value = data;
-        break;
       case "GS1Aztec":
-        value = data;
-        break;
       case "GS1MicroPdf417":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(EncodeBarcodeType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of EncodeBarcodeType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of EncodeBarcodeType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of EncodeBarcodeType instances.
   static List<EncodeBarcodeType> listFromJson(List<dynamic> json) {
     return json.map((value) => EncodeBarcodeType.fromJson(value)).toList();
   }

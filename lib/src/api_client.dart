@@ -8,14 +8,21 @@ import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
 
-const SDK_VERSION = "1.24.2";
+/// Current SDK Version
+const SDK_VERSION = "1.24.3";
 
+/// ApiClient is responsible for making HTTP requests to the API.
 class ApiClient {
-  late final String basePath;
-  final httpClient = Http.Client();
+  late final String _basePath;
+  final _httpClient = Http.Client();
 
+  /// SDK header name
   static const String API_SDK_HEADER = "x-aspose-client";
+
+  /// SDK name
   static const String SDK_NAME = "dart sdk";
+
+  /// Aspose client version header name
   static const String API_CLIENT_VERSION_HEADER = "x-aspose-client-version";
 
   final Map<String, String> _defaultHeaderMap = {
@@ -28,8 +35,9 @@ class ApiClient {
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
+  /// Constructor
   ApiClient(Configuration config) {
-    basePath = config.basePath;
+    _basePath = config.basePath;
     _authentication = OAuth(
         clientId: config.clientId,
         clientSecret: config.clientSecret,
@@ -37,6 +45,7 @@ class ApiClient {
         tokenUrl: config.tokenUrl);
   }
 
+  /// Add default header value by key
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
   }
@@ -233,6 +242,7 @@ class ApiClient {
         0, 'Could not find a suitable class for deserialization');
   }
 
+  /// Deserialize the response into the target type.
   dynamic deserialize(String jsonVal, String targetType) {
     // Remove all spaces.  Necessary for reg expressions as well.
     targetType = targetType.replaceAll(' ', '');
@@ -245,6 +255,7 @@ class ApiClient {
     return _deserialize(decodedJson, targetType);
   }
 
+  /// Serialize the object into a JSON string.
   String serialize(Object? obj) {
     String serialized = '';
     if (obj == null) {
@@ -255,8 +266,9 @@ class ApiClient {
     return serialized;
   }
 
-  // We don't use a Map<String, String> for queryParams.
-  // If collectionFormat is 'multi' a key might appear multiple times.
+  /// Invoke HTTP request
+  /// We don't use a Map<String, String> for queryParams.
+  /// If collectionFormat is 'multi' a key might appear multiple times.
   Future<Http.Response> invokeAPI(
       String path,
       String method,
@@ -271,7 +283,7 @@ class ApiClient {
     final ps = queryParams.map((p) => '${p.name}=${p.value}');
     final String queryString = ps.isNotEmpty ? '?${ps.join('&')}' : '';
 
-    final String url = basePath + path + queryString;
+    final String url = _basePath + path + queryString;
 
     headerParams.addAll(_defaultHeaderMap);
     headerParams['Content-Type'] = contentType;
@@ -282,7 +294,7 @@ class ApiClient {
       request.files.addAll(body.files);
       request.headers.addAll(body.headers);
       request.headers.addAll(headerParams);
-      final response = await httpClient.send(request);
+      final response = await _httpClient.send(request);
       return Http.Response.fromStream(response);
     } else {
       final msgBody = contentType == "application/x-www-form-urlencoded"
@@ -290,18 +302,18 @@ class ApiClient {
           : serialize(body);
       switch (method) {
         case "POST":
-          return httpClient.post(Uri.parse(url),
+          return _httpClient.post(Uri.parse(url),
               headers: headerParams, body: msgBody);
         case "PUT":
-          return httpClient.put(Uri.parse(url),
+          return _httpClient.put(Uri.parse(url),
               headers: headerParams, body: msgBody);
         case "DELETE":
-          return httpClient.delete(Uri.parse(url), headers: headerParams);
+          return _httpClient.delete(Uri.parse(url), headers: headerParams);
         case "PATCH":
-          return httpClient.patch(Uri.parse(url),
+          return _httpClient.patch(Uri.parse(url),
               headers: headerParams, body: msgBody);
         default:
-          return httpClient.get(Uri.parse(url), headers: headerParams);
+          return _httpClient.get(Uri.parse(url), headers: headerParams);
       }
     }
   }

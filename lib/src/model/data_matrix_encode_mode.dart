@@ -1,8 +1,10 @@
+/// DataMatrix encoder's encoding mode, default to Auto
+/// DataMatrixEncodeMode: [Auto, ASCII, Full, Custom, C40, Text, EDIFACT, ANSIX12, ExtendedCodetext]
 class DataMatrixEncodeMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of DataMatrixEncodeMode enum.
+  late final String _value;
 
-  DataMatrixEncodeMode._internal(this.value);
+  DataMatrixEncodeMode._internal(this._value);
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
   static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
@@ -35,53 +37,39 @@ class DataMatrixEncodeMode {
   static DataMatrixEncodeMode extendedCodetext_ =
       DataMatrixEncodeMode._internal("ExtendedCodetext");
 
+  /// Creates a DataMatrixEncodeMode instance from a JSON representation.
   DataMatrixEncodeMode.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "ASCII":
-        value = data;
-        break;
       case "Full":
-        value = data;
-        break;
       case "Custom":
-        value = data;
-        break;
       case "C40":
-        value = data;
-        break;
       case "Text":
-        value = data;
-        break;
       case "EDIFACT":
-        value = data;
-        break;
       case "ANSIX12":
-        value = data;
-        break;
       case "ExtendedCodetext":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(DataMatrixEncodeMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of DataMatrixEncodeMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of DataMatrixEncodeMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of DataMatrixEncodeMode instances.
   static List<DataMatrixEncodeMode> listFromJson(List<dynamic> json) {
     return json.map((value) => DataMatrixEncodeMode.fromJson(value)).toList();
   }

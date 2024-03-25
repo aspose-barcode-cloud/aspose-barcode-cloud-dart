@@ -1,8 +1,10 @@
+///
+/// ITF14BorderType: [None, Frame, Bar, FrameOut, BarOut]
 class ITF14BorderType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of ITF14BorderType enum.
+  late final String _value;
 
-  ITF14BorderType._internal(this.value);
+  ITF14BorderType._internal(this._value);
 
   ///
   static ITF14BorderType none_ = ITF14BorderType._internal("None");
@@ -19,41 +21,35 @@ class ITF14BorderType {
   ///
   static ITF14BorderType barOut_ = ITF14BorderType._internal("BarOut");
 
+  /// Creates a ITF14BorderType instance from a JSON representation.
   ITF14BorderType.fromJson(dynamic data) {
     switch (data) {
       case "None":
-        value = data;
-        break;
       case "Frame":
-        value = data;
-        break;
       case "Bar":
-        value = data;
-        break;
       case "FrameOut":
-        value = data;
-        break;
       case "BarOut":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(ITF14BorderType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of ITF14BorderType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of ITF14BorderType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of ITF14BorderType instances.
   static List<ITF14BorderType> listFromJson(List<dynamic> json) {
     return json.map((value) => ITF14BorderType.fromJson(value)).toList();
   }

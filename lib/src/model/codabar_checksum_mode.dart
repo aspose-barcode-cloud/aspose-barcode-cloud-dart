@@ -1,8 +1,10 @@
+///
+/// CodabarChecksumMode: [Mod10, Mod16]
 class CodabarChecksumMode {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of CodabarChecksumMode enum.
+  late final String _value;
 
-  CodabarChecksumMode._internal(this.value);
+  CodabarChecksumMode._internal(this._value);
 
   ///
   static CodabarChecksumMode mod10_ = CodabarChecksumMode._internal("Mod10");
@@ -10,32 +12,32 @@ class CodabarChecksumMode {
   ///
   static CodabarChecksumMode mod16_ = CodabarChecksumMode._internal("Mod16");
 
+  /// Creates a CodabarChecksumMode instance from a JSON representation.
   CodabarChecksumMode.fromJson(dynamic data) {
     switch (data) {
       case "Mod10":
-        value = data;
-        break;
       case "Mod16":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CodabarChecksumMode data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of CodabarChecksumMode.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of CodabarChecksumMode instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CodabarChecksumMode instances.
   static List<CodabarChecksumMode> listFromJson(List<dynamic> json) {
     return json.map((value) => CodabarChecksumMode.fromJson(value)).toList();
   }

@@ -1,8 +1,10 @@
+///
+/// FontStyle: [Regular, Bold, Italic, Underline, Strikeout]
 class FontStyle {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of FontStyle enum.
+  late final String _value;
 
-  FontStyle._internal(this.value);
+  FontStyle._internal(this._value);
 
   ///
   static FontStyle regular_ = FontStyle._internal("Regular");
@@ -19,41 +21,35 @@ class FontStyle {
   ///
   static FontStyle strikeout_ = FontStyle._internal("Strikeout");
 
+  /// Creates a FontStyle instance from a JSON representation.
   FontStyle.fromJson(dynamic data) {
     switch (data) {
       case "Regular":
-        value = data;
-        break;
       case "Bold":
-        value = data;
-        break;
       case "Italic":
-        value = data;
-        break;
       case "Underline":
-        value = data;
-        break;
       case "Strikeout":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(FontStyle data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of FontStyle.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of FontStyle instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of FontStyle instances.
   static List<FontStyle> listFromJson(List<dynamic> json) {
     return json.map((value) => FontStyle.fromJson(value)).toList();
   }
