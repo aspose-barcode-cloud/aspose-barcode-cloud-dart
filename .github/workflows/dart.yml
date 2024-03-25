@@ -23,7 +23,7 @@ jobs:
           TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 
       - name: Dart analyze
-        run: dart analyze --fatal-infos lib
+        run: dart analyze --fatal-infos lib example
 
       - name: Dart check format
         run: dart format --output=none --set-exit-if-changed .

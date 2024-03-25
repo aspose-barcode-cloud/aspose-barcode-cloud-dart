@@ -1,8 +1,10 @@
+///
+/// ECIEncodings: [NONE, ISO_8859_1, ISO_8859_2, ISO_8859_3, ISO_8859_4, ISO_8859_5, ISO_8859_6, ISO_8859_7, ISO_8859_8, ISO_8859_9, ISO_8859_10, ISO_8859_11, ISO_8859_13, ISO_8859_14, ISO_8859_15, ISO_8859_16, Shift_JIS, Win1250, Win1251, Win1252, Win1256, UTF16BE, UTF8, US_ASCII, Big5, GB18030, EUC_KR]
 class ECIEncodings {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of ECIEncodings enum.
+  late final String _value;
 
-  ECIEncodings._internal(this.value);
+  ECIEncodings._internal(this._value);
 
   ///
   static ECIEncodings nONE_ = ECIEncodings._internal("NONE");
@@ -85,107 +87,57 @@ class ECIEncodings {
   ///
   static ECIEncodings eUCKR_ = ECIEncodings._internal("EUC_KR");
 
+  /// Creates a ECIEncodings instance from a JSON representation.
   ECIEncodings.fromJson(dynamic data) {
     switch (data) {
       case "NONE":
-        value = data;
-        break;
       case "ISO_8859_1":
-        value = data;
-        break;
       case "ISO_8859_2":
-        value = data;
-        break;
       case "ISO_8859_3":
-        value = data;
-        break;
       case "ISO_8859_4":
-        value = data;
-        break;
       case "ISO_8859_5":
-        value = data;
-        break;
       case "ISO_8859_6":
-        value = data;
-        break;
       case "ISO_8859_7":
-        value = data;
-        break;
       case "ISO_8859_8":
-        value = data;
-        break;
       case "ISO_8859_9":
-        value = data;
-        break;
       case "ISO_8859_10":
-        value = data;
-        break;
       case "ISO_8859_11":
-        value = data;
-        break;
       case "ISO_8859_13":
-        value = data;
-        break;
       case "ISO_8859_14":
-        value = data;
-        break;
       case "ISO_8859_15":
-        value = data;
-        break;
       case "ISO_8859_16":
-        value = data;
-        break;
       case "Shift_JIS":
-        value = data;
-        break;
       case "Win1250":
-        value = data;
-        break;
       case "Win1251":
-        value = data;
-        break;
       case "Win1252":
-        value = data;
-        break;
       case "Win1256":
-        value = data;
-        break;
       case "UTF16BE":
-        value = data;
-        break;
       case "UTF8":
-        value = data;
-        break;
       case "US_ASCII":
-        value = data;
-        break;
       case "Big5":
-        value = data;
-        break;
       case "GB18030":
-        value = data;
-        break;
       case "EUC_KR":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(ECIEncodings data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of ECIEncodings.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of ECIEncodings instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of ECIEncodings instances.
   static List<ECIEncodings> listFromJson(List<dynamic> json) {
     return json.map((value) => ECIEncodings.fromJson(value)).toList();
   }

@@ -1,8 +1,10 @@
+///
+/// HanXinVersion: [Auto, Version01, Version02, Version03, Version04, Version05, Version06, Version07, Version08, Version09, Version10, Version11, Version12, Version13, Version14, Version15, Version16, Version17, Version18, Version19, Version20, Version21, Version22, Version23, Version24, Version25, Version26, Version27, Version28, Version29, Version30, Version31, Version32, Version33, Version34, Version35, Version36, Version37, Version38, Version39, Version40, Version41, Version42, Version43, Version44, Version45, Version46, Version47, Version48, Version49, Version50, Version51, Version52, Version53, Version54, Version55, Version56, Version57, Version58, Version59, Version60, Version61, Version62, Version63, Version64, Version65, Version66, Version67, Version68, Version69, Version70, Version71, Version72, Version73, Version74, Version75, Version76, Version77, Version78, Version79, Version80, Version81, Version82, Version83, Version84]
 class HanXinVersion {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of HanXinVersion enum.
+  late final String _value;
 
-  HanXinVersion._internal(this.value);
+  HanXinVersion._internal(this._value);
 
   ///
   static HanXinVersion auto_ = HanXinVersion._internal("Auto");
@@ -259,281 +261,115 @@ class HanXinVersion {
   ///
   static HanXinVersion version84_ = HanXinVersion._internal("Version84");
 
+  /// Creates a HanXinVersion instance from a JSON representation.
   HanXinVersion.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Version01":
-        value = data;
-        break;
       case "Version02":
-        value = data;
-        break;
       case "Version03":
-        value = data;
-        break;
       case "Version04":
-        value = data;
-        break;
       case "Version05":
-        value = data;
-        break;
       case "Version06":
-        value = data;
-        break;
       case "Version07":
-        value = data;
-        break;
       case "Version08":
-        value = data;
-        break;
       case "Version09":
-        value = data;
-        break;
       case "Version10":
-        value = data;
-        break;
       case "Version11":
-        value = data;
-        break;
       case "Version12":
-        value = data;
-        break;
       case "Version13":
-        value = data;
-        break;
       case "Version14":
-        value = data;
-        break;
       case "Version15":
-        value = data;
-        break;
       case "Version16":
-        value = data;
-        break;
       case "Version17":
-        value = data;
-        break;
       case "Version18":
-        value = data;
-        break;
       case "Version19":
-        value = data;
-        break;
       case "Version20":
-        value = data;
-        break;
       case "Version21":
-        value = data;
-        break;
       case "Version22":
-        value = data;
-        break;
       case "Version23":
-        value = data;
-        break;
       case "Version24":
-        value = data;
-        break;
       case "Version25":
-        value = data;
-        break;
       case "Version26":
-        value = data;
-        break;
       case "Version27":
-        value = data;
-        break;
       case "Version28":
-        value = data;
-        break;
       case "Version29":
-        value = data;
-        break;
       case "Version30":
-        value = data;
-        break;
       case "Version31":
-        value = data;
-        break;
       case "Version32":
-        value = data;
-        break;
       case "Version33":
-        value = data;
-        break;
       case "Version34":
-        value = data;
-        break;
       case "Version35":
-        value = data;
-        break;
       case "Version36":
-        value = data;
-        break;
       case "Version37":
-        value = data;
-        break;
       case "Version38":
-        value = data;
-        break;
       case "Version39":
-        value = data;
-        break;
       case "Version40":
-        value = data;
-        break;
       case "Version41":
-        value = data;
-        break;
       case "Version42":
-        value = data;
-        break;
       case "Version43":
-        value = data;
-        break;
       case "Version44":
-        value = data;
-        break;
       case "Version45":
-        value = data;
-        break;
       case "Version46":
-        value = data;
-        break;
       case "Version47":
-        value = data;
-        break;
       case "Version48":
-        value = data;
-        break;
       case "Version49":
-        value = data;
-        break;
       case "Version50":
-        value = data;
-        break;
       case "Version51":
-        value = data;
-        break;
       case "Version52":
-        value = data;
-        break;
       case "Version53":
-        value = data;
-        break;
       case "Version54":
-        value = data;
-        break;
       case "Version55":
-        value = data;
-        break;
       case "Version56":
-        value = data;
-        break;
       case "Version57":
-        value = data;
-        break;
       case "Version58":
-        value = data;
-        break;
       case "Version59":
-        value = data;
-        break;
       case "Version60":
-        value = data;
-        break;
       case "Version61":
-        value = data;
-        break;
       case "Version62":
-        value = data;
-        break;
       case "Version63":
-        value = data;
-        break;
       case "Version64":
-        value = data;
-        break;
       case "Version65":
-        value = data;
-        break;
       case "Version66":
-        value = data;
-        break;
       case "Version67":
-        value = data;
-        break;
       case "Version68":
-        value = data;
-        break;
       case "Version69":
-        value = data;
-        break;
       case "Version70":
-        value = data;
-        break;
       case "Version71":
-        value = data;
-        break;
       case "Version72":
-        value = data;
-        break;
       case "Version73":
-        value = data;
-        break;
       case "Version74":
-        value = data;
-        break;
       case "Version75":
-        value = data;
-        break;
       case "Version76":
-        value = data;
-        break;
       case "Version77":
-        value = data;
-        break;
       case "Version78":
-        value = data;
-        break;
       case "Version79":
-        value = data;
-        break;
       case "Version80":
-        value = data;
-        break;
       case "Version81":
-        value = data;
-        break;
       case "Version82":
-        value = data;
-        break;
       case "Version83":
-        value = data;
-        break;
       case "Version84":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(HanXinVersion data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of HanXinVersion.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of HanXinVersion instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of HanXinVersion instances.
   static List<HanXinVersion> listFromJson(List<dynamic> json) {
     return json.map((value) => HanXinVersion.fromJson(value)).toList();
   }

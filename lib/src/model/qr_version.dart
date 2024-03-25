@@ -1,8 +1,10 @@
+///
+/// QRVersion: [Auto, Version01, Version02, Version03, Version04, Version05, Version06, Version07, Version08, Version09, Version10, Version11, Version12, Version13, Version14, Version15, Version16, Version17, Version18, Version19, Version20, Version21, Version22, Version23, Version24, Version25, Version26, Version27, Version28, Version29, Version30, Version31, Version32, Version33, Version34, Version35, Version36, Version37, Version38, Version39, Version40, VersionM1, VersionM2, VersionM3, VersionM4]
 class QRVersion {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of QRVersion enum.
+  late final String _value;
 
-  QRVersion._internal(this.value);
+  QRVersion._internal(this._value);
 
   ///
   static QRVersion auto_ = QRVersion._internal("Auto");
@@ -139,161 +141,75 @@ class QRVersion {
   ///
   static QRVersion versionM4_ = QRVersion._internal("VersionM4");
 
+  /// Creates a QRVersion instance from a JSON representation.
   QRVersion.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "Version01":
-        value = data;
-        break;
       case "Version02":
-        value = data;
-        break;
       case "Version03":
-        value = data;
-        break;
       case "Version04":
-        value = data;
-        break;
       case "Version05":
-        value = data;
-        break;
       case "Version06":
-        value = data;
-        break;
       case "Version07":
-        value = data;
-        break;
       case "Version08":
-        value = data;
-        break;
       case "Version09":
-        value = data;
-        break;
       case "Version10":
-        value = data;
-        break;
       case "Version11":
-        value = data;
-        break;
       case "Version12":
-        value = data;
-        break;
       case "Version13":
-        value = data;
-        break;
       case "Version14":
-        value = data;
-        break;
       case "Version15":
-        value = data;
-        break;
       case "Version16":
-        value = data;
-        break;
       case "Version17":
-        value = data;
-        break;
       case "Version18":
-        value = data;
-        break;
       case "Version19":
-        value = data;
-        break;
       case "Version20":
-        value = data;
-        break;
       case "Version21":
-        value = data;
-        break;
       case "Version22":
-        value = data;
-        break;
       case "Version23":
-        value = data;
-        break;
       case "Version24":
-        value = data;
-        break;
       case "Version25":
-        value = data;
-        break;
       case "Version26":
-        value = data;
-        break;
       case "Version27":
-        value = data;
-        break;
       case "Version28":
-        value = data;
-        break;
       case "Version29":
-        value = data;
-        break;
       case "Version30":
-        value = data;
-        break;
       case "Version31":
-        value = data;
-        break;
       case "Version32":
-        value = data;
-        break;
       case "Version33":
-        value = data;
-        break;
       case "Version34":
-        value = data;
-        break;
       case "Version35":
-        value = data;
-        break;
       case "Version36":
-        value = data;
-        break;
       case "Version37":
-        value = data;
-        break;
       case "Version38":
-        value = data;
-        break;
       case "Version39":
-        value = data;
-        break;
       case "Version40":
-        value = data;
-        break;
       case "VersionM1":
-        value = data;
-        break;
       case "VersionM2":
-        value = data;
-        break;
       case "VersionM3":
-        value = data;
-        break;
       case "VersionM4":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QRVersion data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of QRVersion.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of QRVersion instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of QRVersion instances.
   static List<QRVersion> listFromJson(List<dynamic> json) {
     return json.map((value) => QRVersion.fromJson(value)).toList();
   }

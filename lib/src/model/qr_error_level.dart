@@ -1,8 +1,10 @@
+///
+/// QRErrorLevel: [LevelL, LevelM, LevelQ, LevelH]
 class QRErrorLevel {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of QRErrorLevel enum.
+  late final String _value;
 
-  QRErrorLevel._internal(this.value);
+  QRErrorLevel._internal(this._value);
 
   ///
   static QRErrorLevel levelL_ = QRErrorLevel._internal("LevelL");
@@ -16,38 +18,34 @@ class QRErrorLevel {
   ///
   static QRErrorLevel levelH_ = QRErrorLevel._internal("LevelH");
 
+  /// Creates a QRErrorLevel instance from a JSON representation.
   QRErrorLevel.fromJson(dynamic data) {
     switch (data) {
       case "LevelL":
-        value = data;
-        break;
       case "LevelM":
-        value = data;
-        break;
       case "LevelQ":
-        value = data;
-        break;
       case "LevelH":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(QRErrorLevel data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of QRErrorLevel.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of QRErrorLevel instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of QRErrorLevel instances.
   static List<QRErrorLevel> listFromJson(List<dynamic> json) {
     return json.map((value) => QRErrorLevel.fromJson(value)).toList();
   }

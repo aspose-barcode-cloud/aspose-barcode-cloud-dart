@@ -1,8 +1,10 @@
+///
+/// CustomerInformationInterpretingType: [CTable, NTable, Other]
 class CustomerInformationInterpretingType {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of CustomerInformationInterpretingType enum.
+  late final String _value;
 
-  CustomerInformationInterpretingType._internal(this.value);
+  CustomerInformationInterpretingType._internal(this._value);
 
   ///
   static CustomerInformationInterpretingType cTable_ =
@@ -16,35 +18,33 @@ class CustomerInformationInterpretingType {
   static CustomerInformationInterpretingType other_ =
       CustomerInformationInterpretingType._internal("Other");
 
+  /// Creates a CustomerInformationInterpretingType instance from a JSON representation.
   CustomerInformationInterpretingType.fromJson(dynamic data) {
     switch (data) {
       case "CTable":
-        value = data;
-        break;
       case "NTable":
-        value = data;
-        break;
       case "Other":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(CustomerInformationInterpretingType data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of CustomerInformationInterpretingType.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of CustomerInformationInterpretingType instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of CustomerInformationInterpretingType instances.
   static List<CustomerInformationInterpretingType> listFromJson(
       List<dynamic> json) {
     return json

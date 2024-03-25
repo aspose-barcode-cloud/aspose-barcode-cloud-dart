@@ -1,8 +1,10 @@
+///
+/// DataMatrixVersion: [Auto, RowsColumns, ECC000_9x9, ECC000_050_11x11, ECC000_100_13x13, ECC000_100_15x15, ECC000_140_17x17, ECC000_140_19x19, ECC000_140_21x21, ECC000_140_23x23, ECC000_140_25x25, ECC000_140_27x27, ECC000_140_29x29, ECC000_140_31x31, ECC000_140_33x33, ECC000_140_35x35, ECC000_140_37x37, ECC000_140_39x39, ECC000_140_41x41, ECC000_140_43x43, ECC000_140_45x45, ECC000_140_47x47, ECC000_140_49x49, ECC200_10x10, ECC200_12x12, ECC200_14x14, ECC200_16x16, ECC200_18x18, ECC200_20x20, ECC200_22x22, ECC200_24x24, ECC200_26x26, ECC200_32x32, ECC200_36x36, ECC200_40x40, ECC200_44x44, ECC200_48x48, ECC200_52x52, ECC200_64x64, ECC200_72x72, ECC200_80x80, ECC200_88x88, ECC200_96x96, ECC200_104x104, ECC200_120x120, ECC200_132x132, ECC200_144x144, ECC200_8x18, ECC200_8x32, ECC200_12x26, ECC200_12x36, ECC200_16x36, ECC200_16x48, DMRE_8x48, DMRE_8x64, DMRE_8x80, DMRE_8x96, DMRE_8x120, DMRE_8x144, DMRE_12x64, DMRE_12x88, DMRE_16x64, DMRE_20x36, DMRE_20x44, DMRE_20x64, DMRE_22x48, DMRE_24x48, DMRE_24x64, DMRE_26x40, DMRE_26x48, DMRE_26x64]
 class DataMatrixVersion {
-  /// The underlying value of this enum member.
-  String? value;
+  /// The underlying value of DataMatrixVersion enum.
+  late final String _value;
 
-  DataMatrixVersion._internal(this.value);
+  DataMatrixVersion._internal(this._value);
 
   ///
   static DataMatrixVersion auto_ = DataMatrixVersion._internal("Auto");
@@ -283,239 +285,101 @@ class DataMatrixVersion {
   static DataMatrixVersion dMRE26x64_ =
       DataMatrixVersion._internal("DMRE_26x64");
 
+  /// Creates a DataMatrixVersion instance from a JSON representation.
   DataMatrixVersion.fromJson(dynamic data) {
     switch (data) {
       case "Auto":
-        value = data;
-        break;
       case "RowsColumns":
-        value = data;
-        break;
       case "ECC000_9x9":
-        value = data;
-        break;
       case "ECC000_050_11x11":
-        value = data;
-        break;
       case "ECC000_100_13x13":
-        value = data;
-        break;
       case "ECC000_100_15x15":
-        value = data;
-        break;
       case "ECC000_140_17x17":
-        value = data;
-        break;
       case "ECC000_140_19x19":
-        value = data;
-        break;
       case "ECC000_140_21x21":
-        value = data;
-        break;
       case "ECC000_140_23x23":
-        value = data;
-        break;
       case "ECC000_140_25x25":
-        value = data;
-        break;
       case "ECC000_140_27x27":
-        value = data;
-        break;
       case "ECC000_140_29x29":
-        value = data;
-        break;
       case "ECC000_140_31x31":
-        value = data;
-        break;
       case "ECC000_140_33x33":
-        value = data;
-        break;
       case "ECC000_140_35x35":
-        value = data;
-        break;
       case "ECC000_140_37x37":
-        value = data;
-        break;
       case "ECC000_140_39x39":
-        value = data;
-        break;
       case "ECC000_140_41x41":
-        value = data;
-        break;
       case "ECC000_140_43x43":
-        value = data;
-        break;
       case "ECC000_140_45x45":
-        value = data;
-        break;
       case "ECC000_140_47x47":
-        value = data;
-        break;
       case "ECC000_140_49x49":
-        value = data;
-        break;
       case "ECC200_10x10":
-        value = data;
-        break;
       case "ECC200_12x12":
-        value = data;
-        break;
       case "ECC200_14x14":
-        value = data;
-        break;
       case "ECC200_16x16":
-        value = data;
-        break;
       case "ECC200_18x18":
-        value = data;
-        break;
       case "ECC200_20x20":
-        value = data;
-        break;
       case "ECC200_22x22":
-        value = data;
-        break;
       case "ECC200_24x24":
-        value = data;
-        break;
       case "ECC200_26x26":
-        value = data;
-        break;
       case "ECC200_32x32":
-        value = data;
-        break;
       case "ECC200_36x36":
-        value = data;
-        break;
       case "ECC200_40x40":
-        value = data;
-        break;
       case "ECC200_44x44":
-        value = data;
-        break;
       case "ECC200_48x48":
-        value = data;
-        break;
       case "ECC200_52x52":
-        value = data;
-        break;
       case "ECC200_64x64":
-        value = data;
-        break;
       case "ECC200_72x72":
-        value = data;
-        break;
       case "ECC200_80x80":
-        value = data;
-        break;
       case "ECC200_88x88":
-        value = data;
-        break;
       case "ECC200_96x96":
-        value = data;
-        break;
       case "ECC200_104x104":
-        value = data;
-        break;
       case "ECC200_120x120":
-        value = data;
-        break;
       case "ECC200_132x132":
-        value = data;
-        break;
       case "ECC200_144x144":
-        value = data;
-        break;
       case "ECC200_8x18":
-        value = data;
-        break;
       case "ECC200_8x32":
-        value = data;
-        break;
       case "ECC200_12x26":
-        value = data;
-        break;
       case "ECC200_12x36":
-        value = data;
-        break;
       case "ECC200_16x36":
-        value = data;
-        break;
       case "ECC200_16x48":
-        value = data;
-        break;
       case "DMRE_8x48":
-        value = data;
-        break;
       case "DMRE_8x64":
-        value = data;
-        break;
       case "DMRE_8x80":
-        value = data;
-        break;
       case "DMRE_8x96":
-        value = data;
-        break;
       case "DMRE_8x120":
-        value = data;
-        break;
       case "DMRE_8x144":
-        value = data;
-        break;
       case "DMRE_12x64":
-        value = data;
-        break;
       case "DMRE_12x88":
-        value = data;
-        break;
       case "DMRE_16x64":
-        value = data;
-        break;
       case "DMRE_20x36":
-        value = data;
-        break;
       case "DMRE_20x44":
-        value = data;
-        break;
       case "DMRE_20x64":
-        value = data;
-        break;
       case "DMRE_22x48":
-        value = data;
-        break;
       case "DMRE_24x48":
-        value = data;
-        break;
       case "DMRE_24x64":
-        value = data;
-        break;
       case "DMRE_26x40":
-        value = data;
-        break;
       case "DMRE_26x48":
-        value = data;
-        break;
       case "DMRE_26x64":
-        value = data;
+        _value = data;
         break;
       default:
         throw Exception('Unknown enum value to decode: $data');
     }
   }
 
-  static dynamic encode(DataMatrixVersion data) {
-    return data.value;
-  }
-
+  /// Returns a JSON representation of DataMatrixVersion.
   String? toJson() {
-    return value;
+    return _value;
   }
 
   @override
   String toString() {
-    return value == null ? "null" : value.toString();
+    return _value.toString();
   }
 
+  /// Converts a list of JSON objects to a list of DataMatrixVersion instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of DataMatrixVersion instances.
   static List<DataMatrixVersion> listFromJson(List<dynamic> json) {
     return json.map((value) => DataMatrixVersion.fromJson(value)).toList();
   }

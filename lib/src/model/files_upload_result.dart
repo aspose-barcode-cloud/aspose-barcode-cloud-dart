@@ -2,13 +2,15 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 import '../../aspose_barcode_cloud.dart';
 
+/// File upload result
 class FilesUploadResult {
-  /* List of uploaded file names */
+  /// List of uploaded file names
   List<String>? uploaded = [];
 
-/* List of errors. */
+  /// List of errors.
   List<Error>? errors = [];
 
+  /// Constructor
   FilesUploadResult();
 
   @override
@@ -16,27 +18,23 @@ class FilesUploadResult {
     return 'FilesUploadResult[uploaded=$uploaded, errors=$errors, ]';
   }
 
+  /// Creates a FilesUploadResult instance from a JSON representation.
   FilesUploadResult.fromJson(Map<String, dynamic> json) {
     uploaded =
         (json['uploaded'] as List).map((item) => item as String).toList();
     errors = Error.listFromJson(json['errors']);
   }
 
+  /// Returns a JSON representation of FilesUploadResult.
   Map<String, dynamic> toJson() {
     return {'Uploaded': uploaded, 'Errors': errors};
   }
 
+  /// Converts a list of JSON objects to a list of FilesUploadResult instances.
+  ///
+  /// @param json The list of JSON objects to convert.
+  /// @return A list of FilesUploadResult instances.
   static List<FilesUploadResult> listFromJson(List<dynamic> json) {
     return json.map((value) => FilesUploadResult.fromJson(value)).toList();
-  }
-
-  static Map<String, FilesUploadResult> mapFromJson(
-      Map<String, Map<String, dynamic>> json) {
-    final map = <String, FilesUploadResult>{};
-    if (json.isNotEmpty) {
-      json.forEach((String key, Map<String, dynamic> value) =>
-          map[key] = FilesUploadResult.fromJson(value));
-    }
-    return map;
   }
 }
