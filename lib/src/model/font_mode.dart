@@ -7,10 +7,12 @@ class FontMode {
   FontMode._internal(this._value);
 
   ///
-  static FontMode auto_ = FontMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final FontMode Auto = FontMode._internal("Auto");
 
   ///
-  static FontMode manual_ = FontMode._internal("Manual");
+  // ignore: non_constant_identifier_names
+  static final FontMode Manual = FontMode._internal("Manual");
 
   /// Creates a FontMode instance from a JSON representation.
   FontMode.fromJson(dynamic data) {

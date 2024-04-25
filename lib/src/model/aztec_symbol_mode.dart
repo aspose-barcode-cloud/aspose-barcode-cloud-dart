@@ -7,16 +7,21 @@ class AztecSymbolMode {
   AztecSymbolMode._internal(this._value);
 
   ///
-  static AztecSymbolMode auto_ = AztecSymbolMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final AztecSymbolMode Auto = AztecSymbolMode._internal("Auto");
 
   ///
-  static AztecSymbolMode compact_ = AztecSymbolMode._internal("Compact");
+  // ignore: non_constant_identifier_names
+  static final AztecSymbolMode Compact = AztecSymbolMode._internal("Compact");
 
   ///
-  static AztecSymbolMode fullRange_ = AztecSymbolMode._internal("FullRange");
+  // ignore: non_constant_identifier_names
+  static final AztecSymbolMode FullRange =
+      AztecSymbolMode._internal("FullRange");
 
   ///
-  static AztecSymbolMode rune_ = AztecSymbolMode._internal("Rune");
+  // ignore: non_constant_identifier_names
+  static final AztecSymbolMode Rune = AztecSymbolMode._internal("Rune");
 
   /// Creates a AztecSymbolMode instance from a JSON representation.
   AztecSymbolMode.fromJson(dynamic data) {

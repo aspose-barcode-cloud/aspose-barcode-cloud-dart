@@ -7,10 +7,14 @@ class CodabarChecksumMode {
   CodabarChecksumMode._internal(this._value);
 
   ///
-  static CodabarChecksumMode mod10_ = CodabarChecksumMode._internal("Mod10");
+  // ignore: non_constant_identifier_names
+  static final CodabarChecksumMode Mod10 =
+      CodabarChecksumMode._internal("Mod10");
 
   ///
-  static CodabarChecksumMode mod16_ = CodabarChecksumMode._internal("Mod16");
+  // ignore: non_constant_identifier_names
+  static final CodabarChecksumMode Mod16 =
+      CodabarChecksumMode._internal("Mod16");
 
   /// Creates a CodabarChecksumMode instance from a JSON representation.
   CodabarChecksumMode.fromJson(dynamic data) {

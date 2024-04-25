@@ -7,18 +7,23 @@ class AvailableGraphicsUnit {
   AvailableGraphicsUnit._internal(this._value);
 
   /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit pixel_ =
+  // ignore: non_constant_identifier_names
+  static final AvailableGraphicsUnit Pixel =
       AvailableGraphicsUnit._internal("Pixel");
 
   /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit point_ =
+  // ignore: non_constant_identifier_names
+  static final AvailableGraphicsUnit Point =
       AvailableGraphicsUnit._internal("Point");
 
   /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit inch_ = AvailableGraphicsUnit._internal("Inch");
+  // ignore: non_constant_identifier_names
+  static final AvailableGraphicsUnit Inch =
+      AvailableGraphicsUnit._internal("Inch");
 
   /// Subset of GraphicsUnit.
-  static AvailableGraphicsUnit millimeter_ =
+  // ignore: non_constant_identifier_names
+  static final AvailableGraphicsUnit Millimeter =
       AvailableGraphicsUnit._internal("Millimeter");
 
   /// Creates a AvailableGraphicsUnit instance from a JSON representation.

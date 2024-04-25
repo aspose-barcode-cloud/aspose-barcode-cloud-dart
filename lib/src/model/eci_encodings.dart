@@ -7,85 +7,112 @@ class ECIEncodings {
   ECIEncodings._internal(this._value);
 
   ///
-  static ECIEncodings nONE_ = ECIEncodings._internal("NONE");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings NONE = ECIEncodings._internal("NONE");
 
   ///
-  static ECIEncodings iSO88591_ = ECIEncodings._internal("ISO_8859_1");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_1 = ECIEncodings._internal("ISO_8859_1");
 
   ///
-  static ECIEncodings iSO88592_ = ECIEncodings._internal("ISO_8859_2");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_2 = ECIEncodings._internal("ISO_8859_2");
 
   ///
-  static ECIEncodings iSO88593_ = ECIEncodings._internal("ISO_8859_3");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_3 = ECIEncodings._internal("ISO_8859_3");
 
   ///
-  static ECIEncodings iSO88594_ = ECIEncodings._internal("ISO_8859_4");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_4 = ECIEncodings._internal("ISO_8859_4");
 
   ///
-  static ECIEncodings iSO88595_ = ECIEncodings._internal("ISO_8859_5");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_5 = ECIEncodings._internal("ISO_8859_5");
 
   ///
-  static ECIEncodings iSO88596_ = ECIEncodings._internal("ISO_8859_6");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_6 = ECIEncodings._internal("ISO_8859_6");
 
   ///
-  static ECIEncodings iSO88597_ = ECIEncodings._internal("ISO_8859_7");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_7 = ECIEncodings._internal("ISO_8859_7");
 
   ///
-  static ECIEncodings iSO88598_ = ECIEncodings._internal("ISO_8859_8");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_8 = ECIEncodings._internal("ISO_8859_8");
 
   ///
-  static ECIEncodings iSO88599_ = ECIEncodings._internal("ISO_8859_9");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_9 = ECIEncodings._internal("ISO_8859_9");
 
   ///
-  static ECIEncodings iSO885910_ = ECIEncodings._internal("ISO_8859_10");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_10 = ECIEncodings._internal("ISO_8859_10");
 
   ///
-  static ECIEncodings iSO885911_ = ECIEncodings._internal("ISO_8859_11");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_11 = ECIEncodings._internal("ISO_8859_11");
 
   ///
-  static ECIEncodings iSO885913_ = ECIEncodings._internal("ISO_8859_13");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_13 = ECIEncodings._internal("ISO_8859_13");
 
   ///
-  static ECIEncodings iSO885914_ = ECIEncodings._internal("ISO_8859_14");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_14 = ECIEncodings._internal("ISO_8859_14");
 
   ///
-  static ECIEncodings iSO885915_ = ECIEncodings._internal("ISO_8859_15");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_15 = ECIEncodings._internal("ISO_8859_15");
 
   ///
-  static ECIEncodings iSO885916_ = ECIEncodings._internal("ISO_8859_16");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings ISO_8859_16 = ECIEncodings._internal("ISO_8859_16");
 
   ///
-  static ECIEncodings shiftJIS_ = ECIEncodings._internal("Shift_JIS");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Shift_JIS = ECIEncodings._internal("Shift_JIS");
 
   ///
-  static ECIEncodings win1250_ = ECIEncodings._internal("Win1250");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Win1250 = ECIEncodings._internal("Win1250");
 
   ///
-  static ECIEncodings win1251_ = ECIEncodings._internal("Win1251");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Win1251 = ECIEncodings._internal("Win1251");
 
   ///
-  static ECIEncodings win1252_ = ECIEncodings._internal("Win1252");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Win1252 = ECIEncodings._internal("Win1252");
 
   ///
-  static ECIEncodings win1256_ = ECIEncodings._internal("Win1256");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Win1256 = ECIEncodings._internal("Win1256");
 
   ///
-  static ECIEncodings uTF16BE_ = ECIEncodings._internal("UTF16BE");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings UTF16BE = ECIEncodings._internal("UTF16BE");
 
   ///
-  static ECIEncodings uTF8_ = ECIEncodings._internal("UTF8");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings UTF8 = ECIEncodings._internal("UTF8");
 
   ///
-  static ECIEncodings uSASCII_ = ECIEncodings._internal("US_ASCII");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings US_ASCII = ECIEncodings._internal("US_ASCII");
 
   ///
-  static ECIEncodings big5_ = ECIEncodings._internal("Big5");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings Big5 = ECIEncodings._internal("Big5");
 
   ///
-  static ECIEncodings gB18030_ = ECIEncodings._internal("GB18030");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings GB18030 = ECIEncodings._internal("GB18030");
 
   ///
-  static ECIEncodings eUCKR_ = ECIEncodings._internal("EUC_KR");
+  // ignore: non_constant_identifier_names
+  static final ECIEncodings EUC_KR = ECIEncodings._internal("EUC_KR");
 
   /// Creates a ECIEncodings instance from a JSON representation.
   ECIEncodings.fromJson(dynamic data) {

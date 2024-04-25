@@ -9,7 +9,7 @@ void main() {
   test('.putBarcodeGenerateFile', () async {
     final ResultImageInfo generated = await TestConfig.barcodeApi
         .putBarcodeGenerateFile(
-            remoteFileName, EncodeBarcodeType.qR_.toString(), remoteFileName,
+            remoteFileName, EncodeBarcodeType.QR.toString(), remoteFileName,
             folder: TestConfig.folder);
 
     expect(generated, isNotNull);
@@ -20,8 +20,8 @@ void main() {
 
   test('.putBarcodeRecognizeFromBody', () async {
     final params = ReaderParams();
-    params.preset = PresetType.highPerformance_;
-    params.types = [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_];
+    params.preset = PresetType.HighPerformance;
+    params.types = [DecodeBarcodeType.QR, DecodeBarcodeType.DataMatrix];
 
     final BarcodeResponseList recognized =
         await TestConfig.barcodeApi.putBarcodeRecognizeFromBody(

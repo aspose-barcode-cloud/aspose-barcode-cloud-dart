@@ -7,13 +7,16 @@ class DotCodeEncodeMode {
   DotCodeEncodeMode._internal(this._value);
 
   ///
-  static DotCodeEncodeMode auto_ = DotCodeEncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final DotCodeEncodeMode Auto = DotCodeEncodeMode._internal("Auto");
 
   ///
-  static DotCodeEncodeMode bytes_ = DotCodeEncodeMode._internal("Bytes");
+  // ignore: non_constant_identifier_names
+  static final DotCodeEncodeMode Bytes = DotCodeEncodeMode._internal("Bytes");
 
   ///
-  static DotCodeEncodeMode extendedCodetext_ =
+  // ignore: non_constant_identifier_names
+  static final DotCodeEncodeMode ExtendedCodetext =
       DotCodeEncodeMode._internal("ExtendedCodetext");
 
   /// Creates a DotCodeEncodeMode instance from a JSON representation.

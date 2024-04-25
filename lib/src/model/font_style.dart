@@ -7,19 +7,24 @@ class FontStyle {
   FontStyle._internal(this._value);
 
   ///
-  static FontStyle regular_ = FontStyle._internal("Regular");
+  // ignore: non_constant_identifier_names
+  static final FontStyle Regular = FontStyle._internal("Regular");
 
   ///
-  static FontStyle bold_ = FontStyle._internal("Bold");
+  // ignore: non_constant_identifier_names
+  static final FontStyle Bold = FontStyle._internal("Bold");
 
   ///
-  static FontStyle italic_ = FontStyle._internal("Italic");
+  // ignore: non_constant_identifier_names
+  static final FontStyle Italic = FontStyle._internal("Italic");
 
   ///
-  static FontStyle underline_ = FontStyle._internal("Underline");
+  // ignore: non_constant_identifier_names
+  static final FontStyle Underline = FontStyle._internal("Underline");
 
   ///
-  static FontStyle strikeout_ = FontStyle._internal("Strikeout");
+  // ignore: non_constant_identifier_names
+  static final FontStyle Strikeout = FontStyle._internal("Strikeout");
 
   /// Creates a FontStyle instance from a JSON representation.
   FontStyle.fromJson(dynamic data) {

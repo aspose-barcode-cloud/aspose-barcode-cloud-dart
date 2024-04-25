@@ -7,22 +7,29 @@ class HanXinEncodeMode {
   HanXinEncodeMode._internal(this._value);
 
   ///
-  static HanXinEncodeMode auto_ = HanXinEncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode Auto = HanXinEncodeMode._internal("Auto");
 
   ///
-  static HanXinEncodeMode binary_ = HanXinEncodeMode._internal("Binary");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode Binary = HanXinEncodeMode._internal("Binary");
 
   ///
-  static HanXinEncodeMode eCI_ = HanXinEncodeMode._internal("ECI");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode ECI = HanXinEncodeMode._internal("ECI");
 
   ///
-  static HanXinEncodeMode unicode_ = HanXinEncodeMode._internal("Unicode");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode Unicode = HanXinEncodeMode._internal("Unicode");
 
   ///
-  static HanXinEncodeMode uRI_ = HanXinEncodeMode._internal("URI");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode URI = HanXinEncodeMode._internal("URI");
 
   ///
-  static HanXinEncodeMode extended_ = HanXinEncodeMode._internal("Extended");
+  // ignore: non_constant_identifier_names
+  static final HanXinEncodeMode Extended =
+      HanXinEncodeMode._internal("Extended");
 
   /// Creates a HanXinEncodeMode instance from a JSON representation.
   HanXinEncodeMode.fromJson(dynamic data) {

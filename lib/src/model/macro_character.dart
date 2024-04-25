@@ -7,13 +7,16 @@ class MacroCharacter {
   MacroCharacter._internal(this._value);
 
   ///
-  static MacroCharacter none_ = MacroCharacter._internal("None");
+  // ignore: non_constant_identifier_names
+  static final MacroCharacter None = MacroCharacter._internal("None");
 
   ///
-  static MacroCharacter macro05_ = MacroCharacter._internal("Macro05");
+  // ignore: non_constant_identifier_names
+  static final MacroCharacter Macro05 = MacroCharacter._internal("Macro05");
 
   ///
-  static MacroCharacter macro06_ = MacroCharacter._internal("Macro06");
+  // ignore: non_constant_identifier_names
+  static final MacroCharacter Macro06 = MacroCharacter._internal("Macro06");
 
   /// Creates a MacroCharacter instance from a JSON representation.
   MacroCharacter.fromJson(dynamic data) {

@@ -7,13 +7,17 @@ class QREncodeType {
   QREncodeType._internal(this._value);
 
   ///
-  static QREncodeType auto_ = QREncodeType._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final QREncodeType Auto = QREncodeType._internal("Auto");
 
   ///
-  static QREncodeType forceQR_ = QREncodeType._internal("ForceQR");
+  // ignore: non_constant_identifier_names
+  static final QREncodeType ForceQR = QREncodeType._internal("ForceQR");
 
   ///
-  static QREncodeType forceMicroQR_ = QREncodeType._internal("ForceMicroQR");
+  // ignore: non_constant_identifier_names
+  static final QREncodeType ForceMicroQR =
+      QREncodeType._internal("ForceMicroQR");
 
   /// Creates a QREncodeType instance from a JSON representation.
   QREncodeType.fromJson(dynamic data) {

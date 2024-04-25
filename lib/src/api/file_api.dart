@@ -1,7 +1,8 @@
 import 'dart:typed_data' show Uint8List;
 
-import 'package:http/http.dart' show MultipartFile, MultipartRequest;
+import 'package:http/http.dart' show MultipartFile;
 
+import '../http/multipart_request_plus.dart';
 import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
@@ -233,15 +234,11 @@ class FileApi {
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest? mp;
+      MultipartRequestPlus? mp;
 
-      mp = MultipartRequest('PUT', Uri.parse(requestPath));
-      // ignore: unnecessary_null_comparison
-      if (file != null) {
-        hasFields = true;
-        mp.fields['File'] = file.field;
-        mp.files.add(file);
-      }
+      mp = MultipartRequestPlus('PUT', Uri.parse(requestPath));
+      hasFields = true;
+      mp.files.add(file);
 
       if (hasFields) {
         postBody = mp;

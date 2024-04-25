@@ -7,13 +7,19 @@ class Pdf417MacroTerminator {
   Pdf417MacroTerminator._internal(this._value);
 
   ///
-  static Pdf417MacroTerminator auto_ = Pdf417MacroTerminator._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final Pdf417MacroTerminator Auto =
+      Pdf417MacroTerminator._internal("Auto");
 
   ///
-  static Pdf417MacroTerminator none_ = Pdf417MacroTerminator._internal("None");
+  // ignore: non_constant_identifier_names
+  static final Pdf417MacroTerminator None =
+      Pdf417MacroTerminator._internal("None");
 
   ///
-  static Pdf417MacroTerminator set_ = Pdf417MacroTerminator._internal("Set");
+  // ignore: non_constant_identifier_names
+  static final Pdf417MacroTerminator Set =
+      Pdf417MacroTerminator._internal("Set");
 
   /// Creates a Pdf417MacroTerminator instance from a JSON representation.
   Pdf417MacroTerminator.fromJson(dynamic data) {

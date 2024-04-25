@@ -7,22 +7,28 @@ class QREncodeMode {
   QREncodeMode._internal(this._value);
 
   ///
-  static QREncodeMode auto_ = QREncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode Auto = QREncodeMode._internal("Auto");
 
   ///
-  static QREncodeMode bytes_ = QREncodeMode._internal("Bytes");
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode Bytes = QREncodeMode._internal("Bytes");
 
   ///
-  static QREncodeMode utf8BOM_ = QREncodeMode._internal("Utf8BOM");
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode Utf8BOM = QREncodeMode._internal("Utf8BOM");
 
   ///
-  static QREncodeMode utf16BEBOM_ = QREncodeMode._internal("Utf16BEBOM");
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode Utf16BEBOM = QREncodeMode._internal("Utf16BEBOM");
 
   ///
-  static QREncodeMode eCIEncoding_ = QREncodeMode._internal("ECIEncoding");
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode ECIEncoding = QREncodeMode._internal("ECIEncoding");
 
   ///
-  static QREncodeMode extendedCodetext_ =
+  // ignore: non_constant_identifier_names
+  static final QREncodeMode ExtendedCodetext =
       QREncodeMode._internal("ExtendedCodetext");
 
   /// Creates a QREncodeMode instance from a JSON representation.

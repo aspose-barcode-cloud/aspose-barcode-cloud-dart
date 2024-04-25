@@ -1,7 +1,8 @@
 import 'dart:typed_data' show Uint8List;
 
-import 'package:http/http.dart' show MultipartFile, MultipartRequest;
+import 'package:http/http.dart' show MultipartFile;
 
+import '../http/multipart_request_plus.dart';
 import '../../aspose_barcode_cloud.dart';
 import '../api_helper.dart';
 
@@ -665,13 +666,11 @@ class BarcodeApi {
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest? mp;
+      MultipartRequestPlus? mp;
 
-      mp = MultipartRequest('POST', Uri.parse(requestPath));
-      // ignore: unnecessary_null_comparison
+      mp = MultipartRequestPlus('POST', Uri.parse(requestPath));
       if (image != null) {
         hasFields = true;
-        mp.fields['image'] = image.field;
         mp.files.add(image);
       }
 
@@ -1058,6 +1057,78 @@ class BarcodeApi {
     } else {
       return _apiClient.deserialize(response.body, 'ResultImageInfo')
           as ResultImageInfo;
+    }
+  }
+
+  ///
+  /// Quickly scan a barcode from an image.
+  ///
+  Future<BarcodeResponseList> scanBarcode(MultipartFile imageFile,
+      {List<DecodeBarcodeType>? decodeTypes, int? timeout}) async {
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    // create path and map variables
+    final String requestPath = "/barcode/scan".replaceAll("{format}", "json");
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+
+    final List<String> contentTypes = ["multipart/form-data"];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    if (contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequestPlus? mp;
+
+      mp = MultipartRequestPlus('POST', Uri.parse(requestPath));
+      hasFields = true;
+      mp.files.add(imageFile);
+
+      if (decodeTypes != null) {
+        hasFields = true;
+        final List<String> stringValues =
+            decodeTypes.map((i) => parameterToString(i)).toList();
+        mp.fields['decodeTypes'] = stringValues;
+      }
+
+      if (timeout != null) {
+        hasFields = true;
+        mp.fields['timeout'] = [parameterToString(timeout)];
+      }
+
+      if (hasFields) {
+        postBody = mp;
+      }
+    } else {
+      if (decodeTypes != null) {
+        formParams['decodeTypes'] = parameterToString(decodeTypes);
+      }
+      if (timeout != null) {
+        formParams['timeout'] = parameterToString(timeout);
+      }
+    }
+
+    final response = await _apiClient.invokeAPI(
+        requestPath,
+        'POST',
+        queryParams,
+        postBody,
+        headerParams,
+        formParams,
+        contentType,
+        authNames);
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    } else {
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
+          as BarcodeResponseList;
     }
   }
 }

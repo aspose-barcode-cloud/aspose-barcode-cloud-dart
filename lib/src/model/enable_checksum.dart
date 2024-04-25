@@ -7,13 +7,16 @@ class EnableChecksum {
   EnableChecksum._internal(this._value);
 
   ///
-  static EnableChecksum default_ = EnableChecksum._internal("Default");
+  // ignore: non_constant_identifier_names
+  static final EnableChecksum Default = EnableChecksum._internal("Default");
 
   ///
-  static EnableChecksum yes_ = EnableChecksum._internal("Yes");
+  // ignore: non_constant_identifier_names
+  static final EnableChecksum Yes = EnableChecksum._internal("Yes");
 
   ///
-  static EnableChecksum no_ = EnableChecksum._internal("No");
+  // ignore: non_constant_identifier_names
+  static final EnableChecksum No = EnableChecksum._internal("No");
 
   /// Creates a EnableChecksum instance from a JSON representation.
   EnableChecksum.fromJson(dynamic data) {

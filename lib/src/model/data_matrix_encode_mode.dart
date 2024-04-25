@@ -7,34 +7,47 @@ class DataMatrixEncodeMode {
   DataMatrixEncodeMode._internal(this._value);
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode auto_ = DataMatrixEncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode Auto =
+      DataMatrixEncodeMode._internal("Auto");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode aSCII_ = DataMatrixEncodeMode._internal("ASCII");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode ASCII =
+      DataMatrixEncodeMode._internal("ASCII");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode full_ = DataMatrixEncodeMode._internal("Full");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode Full =
+      DataMatrixEncodeMode._internal("Full");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode custom_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode Custom =
       DataMatrixEncodeMode._internal("Custom");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode c40_ = DataMatrixEncodeMode._internal("C40");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode C40 = DataMatrixEncodeMode._internal("C40");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode text_ = DataMatrixEncodeMode._internal("Text");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode Text =
+      DataMatrixEncodeMode._internal("Text");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode eDIFACT_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode EDIFACT =
       DataMatrixEncodeMode._internal("EDIFACT");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode aNSIX12_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode ANSIX12 =
       DataMatrixEncodeMode._internal("ANSIX12");
 
   /// DataMatrix encoder&#39;s encoding mode, default to Auto
-  static DataMatrixEncodeMode extendedCodetext_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEncodeMode ExtendedCodetext =
       DataMatrixEncodeMode._internal("ExtendedCodetext");
 
   /// Creates a DataMatrixEncodeMode instance from a JSON representation.

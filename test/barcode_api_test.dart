@@ -23,7 +23,7 @@ void main() {
       final BarcodeResponseList recognized =
           await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
         image: barcode,
-        preset: PresetType.highPerformance_.toString(),
+        preset: PresetType.HighPerformance.toString(),
       );
 
       expect(recognized, isNotNull);

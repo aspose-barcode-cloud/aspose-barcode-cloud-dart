@@ -7,19 +7,24 @@ class MaxiCodeMode {
   MaxiCodeMode._internal(this._value);
 
   ///
-  static MaxiCodeMode mode2_ = MaxiCodeMode._internal("Mode2");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeMode Mode2 = MaxiCodeMode._internal("Mode2");
 
   ///
-  static MaxiCodeMode mode3_ = MaxiCodeMode._internal("Mode3");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeMode Mode3 = MaxiCodeMode._internal("Mode3");
 
   ///
-  static MaxiCodeMode mode4_ = MaxiCodeMode._internal("Mode4");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeMode Mode4 = MaxiCodeMode._internal("Mode4");
 
   ///
-  static MaxiCodeMode mode5_ = MaxiCodeMode._internal("Mode5");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeMode Mode5 = MaxiCodeMode._internal("Mode5");
 
   ///
-  static MaxiCodeMode mode6_ = MaxiCodeMode._internal("Mode6");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeMode Mode6 = MaxiCodeMode._internal("Mode6");
 
   /// Creates a MaxiCodeMode instance from a JSON representation.
   MaxiCodeMode.fromJson(dynamic data) {

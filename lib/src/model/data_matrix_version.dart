@@ -7,282 +7,357 @@ class DataMatrixVersion {
   DataMatrixVersion._internal(this._value);
 
   ///
-  static DataMatrixVersion auto_ = DataMatrixVersion._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion Auto = DataMatrixVersion._internal("Auto");
 
   ///
-  static DataMatrixVersion rowsColumns_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion RowsColumns =
       DataMatrixVersion._internal("RowsColumns");
 
   ///
-  static DataMatrixVersion eCC0009x9_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_9x9 =
       DataMatrixVersion._internal("ECC000_9x9");
 
   ///
-  static DataMatrixVersion eCC00005011x11_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_050_11x11 =
       DataMatrixVersion._internal("ECC000_050_11x11");
 
   ///
-  static DataMatrixVersion eCC00010013x13_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_100_13x13 =
       DataMatrixVersion._internal("ECC000_100_13x13");
 
   ///
-  static DataMatrixVersion eCC00010015x15_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_100_15x15 =
       DataMatrixVersion._internal("ECC000_100_15x15");
 
   ///
-  static DataMatrixVersion eCC00014017x17_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_17x17 =
       DataMatrixVersion._internal("ECC000_140_17x17");
 
   ///
-  static DataMatrixVersion eCC00014019x19_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_19x19 =
       DataMatrixVersion._internal("ECC000_140_19x19");
 
   ///
-  static DataMatrixVersion eCC00014021x21_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_21x21 =
       DataMatrixVersion._internal("ECC000_140_21x21");
 
   ///
-  static DataMatrixVersion eCC00014023x23_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_23x23 =
       DataMatrixVersion._internal("ECC000_140_23x23");
 
   ///
-  static DataMatrixVersion eCC00014025x25_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_25x25 =
       DataMatrixVersion._internal("ECC000_140_25x25");
 
   ///
-  static DataMatrixVersion eCC00014027x27_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_27x27 =
       DataMatrixVersion._internal("ECC000_140_27x27");
 
   ///
-  static DataMatrixVersion eCC00014029x29_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_29x29 =
       DataMatrixVersion._internal("ECC000_140_29x29");
 
   ///
-  static DataMatrixVersion eCC00014031x31_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_31x31 =
       DataMatrixVersion._internal("ECC000_140_31x31");
 
   ///
-  static DataMatrixVersion eCC00014033x33_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_33x33 =
       DataMatrixVersion._internal("ECC000_140_33x33");
 
   ///
-  static DataMatrixVersion eCC00014035x35_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_35x35 =
       DataMatrixVersion._internal("ECC000_140_35x35");
 
   ///
-  static DataMatrixVersion eCC00014037x37_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_37x37 =
       DataMatrixVersion._internal("ECC000_140_37x37");
 
   ///
-  static DataMatrixVersion eCC00014039x39_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_39x39 =
       DataMatrixVersion._internal("ECC000_140_39x39");
 
   ///
-  static DataMatrixVersion eCC00014041x41_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_41x41 =
       DataMatrixVersion._internal("ECC000_140_41x41");
 
   ///
-  static DataMatrixVersion eCC00014043x43_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_43x43 =
       DataMatrixVersion._internal("ECC000_140_43x43");
 
   ///
-  static DataMatrixVersion eCC00014045x45_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_45x45 =
       DataMatrixVersion._internal("ECC000_140_45x45");
 
   ///
-  static DataMatrixVersion eCC00014047x47_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_47x47 =
       DataMatrixVersion._internal("ECC000_140_47x47");
 
   ///
-  static DataMatrixVersion eCC00014049x49_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC000_140_49x49 =
       DataMatrixVersion._internal("ECC000_140_49x49");
 
   ///
-  static DataMatrixVersion eCC20010x10_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_10x10 =
       DataMatrixVersion._internal("ECC200_10x10");
 
   ///
-  static DataMatrixVersion eCC20012x12_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_12x12 =
       DataMatrixVersion._internal("ECC200_12x12");
 
   ///
-  static DataMatrixVersion eCC20014x14_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_14x14 =
       DataMatrixVersion._internal("ECC200_14x14");
 
   ///
-  static DataMatrixVersion eCC20016x16_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_16x16 =
       DataMatrixVersion._internal("ECC200_16x16");
 
   ///
-  static DataMatrixVersion eCC20018x18_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_18x18 =
       DataMatrixVersion._internal("ECC200_18x18");
 
   ///
-  static DataMatrixVersion eCC20020x20_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_20x20 =
       DataMatrixVersion._internal("ECC200_20x20");
 
   ///
-  static DataMatrixVersion eCC20022x22_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_22x22 =
       DataMatrixVersion._internal("ECC200_22x22");
 
   ///
-  static DataMatrixVersion eCC20024x24_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_24x24 =
       DataMatrixVersion._internal("ECC200_24x24");
 
   ///
-  static DataMatrixVersion eCC20026x26_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_26x26 =
       DataMatrixVersion._internal("ECC200_26x26");
 
   ///
-  static DataMatrixVersion eCC20032x32_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_32x32 =
       DataMatrixVersion._internal("ECC200_32x32");
 
   ///
-  static DataMatrixVersion eCC20036x36_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_36x36 =
       DataMatrixVersion._internal("ECC200_36x36");
 
   ///
-  static DataMatrixVersion eCC20040x40_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_40x40 =
       DataMatrixVersion._internal("ECC200_40x40");
 
   ///
-  static DataMatrixVersion eCC20044x44_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_44x44 =
       DataMatrixVersion._internal("ECC200_44x44");
 
   ///
-  static DataMatrixVersion eCC20048x48_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_48x48 =
       DataMatrixVersion._internal("ECC200_48x48");
 
   ///
-  static DataMatrixVersion eCC20052x52_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_52x52 =
       DataMatrixVersion._internal("ECC200_52x52");
 
   ///
-  static DataMatrixVersion eCC20064x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_64x64 =
       DataMatrixVersion._internal("ECC200_64x64");
 
   ///
-  static DataMatrixVersion eCC20072x72_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_72x72 =
       DataMatrixVersion._internal("ECC200_72x72");
 
   ///
-  static DataMatrixVersion eCC20080x80_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_80x80 =
       DataMatrixVersion._internal("ECC200_80x80");
 
   ///
-  static DataMatrixVersion eCC20088x88_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_88x88 =
       DataMatrixVersion._internal("ECC200_88x88");
 
   ///
-  static DataMatrixVersion eCC20096x96_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_96x96 =
       DataMatrixVersion._internal("ECC200_96x96");
 
   ///
-  static DataMatrixVersion eCC200104x104_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_104x104 =
       DataMatrixVersion._internal("ECC200_104x104");
 
   ///
-  static DataMatrixVersion eCC200120x120_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_120x120 =
       DataMatrixVersion._internal("ECC200_120x120");
 
   ///
-  static DataMatrixVersion eCC200132x132_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_132x132 =
       DataMatrixVersion._internal("ECC200_132x132");
 
   ///
-  static DataMatrixVersion eCC200144x144_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_144x144 =
       DataMatrixVersion._internal("ECC200_144x144");
 
   ///
-  static DataMatrixVersion eCC2008x18_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_8x18 =
       DataMatrixVersion._internal("ECC200_8x18");
 
   ///
-  static DataMatrixVersion eCC2008x32_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_8x32 =
       DataMatrixVersion._internal("ECC200_8x32");
 
   ///
-  static DataMatrixVersion eCC20012x26_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_12x26 =
       DataMatrixVersion._internal("ECC200_12x26");
 
   ///
-  static DataMatrixVersion eCC20012x36_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_12x36 =
       DataMatrixVersion._internal("ECC200_12x36");
 
   ///
-  static DataMatrixVersion eCC20016x36_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_16x36 =
       DataMatrixVersion._internal("ECC200_16x36");
 
   ///
-  static DataMatrixVersion eCC20016x48_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion ECC200_16x48 =
       DataMatrixVersion._internal("ECC200_16x48");
 
   ///
-  static DataMatrixVersion dMRE8x48_ = DataMatrixVersion._internal("DMRE_8x48");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x48 =
+      DataMatrixVersion._internal("DMRE_8x48");
 
   ///
-  static DataMatrixVersion dMRE8x64_ = DataMatrixVersion._internal("DMRE_8x64");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x64 =
+      DataMatrixVersion._internal("DMRE_8x64");
 
   ///
-  static DataMatrixVersion dMRE8x80_ = DataMatrixVersion._internal("DMRE_8x80");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x80 =
+      DataMatrixVersion._internal("DMRE_8x80");
 
   ///
-  static DataMatrixVersion dMRE8x96_ = DataMatrixVersion._internal("DMRE_8x96");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x96 =
+      DataMatrixVersion._internal("DMRE_8x96");
 
   ///
-  static DataMatrixVersion dMRE8x120_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x120 =
       DataMatrixVersion._internal("DMRE_8x120");
 
   ///
-  static DataMatrixVersion dMRE8x144_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_8x144 =
       DataMatrixVersion._internal("DMRE_8x144");
 
   ///
-  static DataMatrixVersion dMRE12x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_12x64 =
       DataMatrixVersion._internal("DMRE_12x64");
 
   ///
-  static DataMatrixVersion dMRE12x88_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_12x88 =
       DataMatrixVersion._internal("DMRE_12x88");
 
   ///
-  static DataMatrixVersion dMRE16x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_16x64 =
       DataMatrixVersion._internal("DMRE_16x64");
 
   ///
-  static DataMatrixVersion dMRE20x36_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_20x36 =
       DataMatrixVersion._internal("DMRE_20x36");
 
   ///
-  static DataMatrixVersion dMRE20x44_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_20x44 =
       DataMatrixVersion._internal("DMRE_20x44");
 
   ///
-  static DataMatrixVersion dMRE20x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_20x64 =
       DataMatrixVersion._internal("DMRE_20x64");
 
   ///
-  static DataMatrixVersion dMRE22x48_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_22x48 =
       DataMatrixVersion._internal("DMRE_22x48");
 
   ///
-  static DataMatrixVersion dMRE24x48_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_24x48 =
       DataMatrixVersion._internal("DMRE_24x48");
 
   ///
-  static DataMatrixVersion dMRE24x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_24x64 =
       DataMatrixVersion._internal("DMRE_24x64");
 
   ///
-  static DataMatrixVersion dMRE26x40_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_26x40 =
       DataMatrixVersion._internal("DMRE_26x40");
 
   ///
-  static DataMatrixVersion dMRE26x48_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_26x48 =
       DataMatrixVersion._internal("DMRE_26x48");
 
   ///
-  static DataMatrixVersion dMRE26x64_ =
+  // ignore: non_constant_identifier_names
+  static final DataMatrixVersion DMRE_26x64 =
       DataMatrixVersion._internal("DMRE_26x64");
 
   /// Creates a DataMatrixVersion instance from a JSON representation.

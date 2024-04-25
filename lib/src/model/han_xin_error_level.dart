@@ -7,16 +7,20 @@ class HanXinErrorLevel {
   HanXinErrorLevel._internal(this._value);
 
   ///
-  static HanXinErrorLevel l1_ = HanXinErrorLevel._internal("L1");
+  // ignore: non_constant_identifier_names
+  static final HanXinErrorLevel L1 = HanXinErrorLevel._internal("L1");
 
   ///
-  static HanXinErrorLevel l2_ = HanXinErrorLevel._internal("L2");
+  // ignore: non_constant_identifier_names
+  static final HanXinErrorLevel L2 = HanXinErrorLevel._internal("L2");
 
   ///
-  static HanXinErrorLevel l3_ = HanXinErrorLevel._internal("L3");
+  // ignore: non_constant_identifier_names
+  static final HanXinErrorLevel L3 = HanXinErrorLevel._internal("L3");
 
   ///
-  static HanXinErrorLevel l4_ = HanXinErrorLevel._internal("L4");
+  // ignore: non_constant_identifier_names
+  static final HanXinErrorLevel L4 = HanXinErrorLevel._internal("L4");
 
   /// Creates a HanXinErrorLevel instance from a JSON representation.
   HanXinErrorLevel.fromJson(dynamic data) {

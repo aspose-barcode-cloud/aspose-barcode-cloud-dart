@@ -7,25 +7,32 @@ class Code128EncodeMode {
   Code128EncodeMode._internal(this._value);
 
   ///
-  static Code128EncodeMode auto_ = Code128EncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode Auto = Code128EncodeMode._internal("Auto");
 
   ///
-  static Code128EncodeMode codeA_ = Code128EncodeMode._internal("CodeA");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeA = Code128EncodeMode._internal("CodeA");
 
   ///
-  static Code128EncodeMode codeB_ = Code128EncodeMode._internal("CodeB");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeB = Code128EncodeMode._internal("CodeB");
 
   ///
-  static Code128EncodeMode codeAB_ = Code128EncodeMode._internal("CodeAB");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeAB = Code128EncodeMode._internal("CodeAB");
 
   ///
-  static Code128EncodeMode codeC_ = Code128EncodeMode._internal("CodeC");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeC = Code128EncodeMode._internal("CodeC");
 
   ///
-  static Code128EncodeMode codeAC_ = Code128EncodeMode._internal("CodeAC");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeAC = Code128EncodeMode._internal("CodeAC");
 
   ///
-  static Code128EncodeMode codeBC_ = Code128EncodeMode._internal("CodeBC");
+  // ignore: non_constant_identifier_names
+  static final Code128EncodeMode CodeBC = Code128EncodeMode._internal("CodeBC");
 
   /// Creates a Code128EncodeMode instance from a JSON representation.
   Code128EncodeMode.fromJson(dynamic data) {

@@ -7,31 +7,40 @@ class Pdf417ErrorLevel {
   Pdf417ErrorLevel._internal(this._value);
 
   ///
-  static Pdf417ErrorLevel level0_ = Pdf417ErrorLevel._internal("Level0");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level0 = Pdf417ErrorLevel._internal("Level0");
 
   ///
-  static Pdf417ErrorLevel level1_ = Pdf417ErrorLevel._internal("Level1");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level1 = Pdf417ErrorLevel._internal("Level1");
 
   ///
-  static Pdf417ErrorLevel level2_ = Pdf417ErrorLevel._internal("Level2");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level2 = Pdf417ErrorLevel._internal("Level2");
 
   ///
-  static Pdf417ErrorLevel level3_ = Pdf417ErrorLevel._internal("Level3");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level3 = Pdf417ErrorLevel._internal("Level3");
 
   ///
-  static Pdf417ErrorLevel level4_ = Pdf417ErrorLevel._internal("Level4");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level4 = Pdf417ErrorLevel._internal("Level4");
 
   ///
-  static Pdf417ErrorLevel level5_ = Pdf417ErrorLevel._internal("Level5");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level5 = Pdf417ErrorLevel._internal("Level5");
 
   ///
-  static Pdf417ErrorLevel level6_ = Pdf417ErrorLevel._internal("Level6");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level6 = Pdf417ErrorLevel._internal("Level6");
 
   ///
-  static Pdf417ErrorLevel level7_ = Pdf417ErrorLevel._internal("Level7");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level7 = Pdf417ErrorLevel._internal("Level7");
 
   ///
-  static Pdf417ErrorLevel level8_ = Pdf417ErrorLevel._internal("Level8");
+  // ignore: non_constant_identifier_names
+  static final Pdf417ErrorLevel Level8 = Pdf417ErrorLevel._internal("Level8");
 
   /// Creates a Pdf417ErrorLevel instance from a JSON representation.
   Pdf417ErrorLevel.fromJson(dynamic data) {

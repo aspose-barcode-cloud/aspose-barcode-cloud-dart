@@ -8,7 +8,7 @@ void main() {
 
   test('.putGenerateMultiple', () async {
     final barcode = GeneratorParams()
-      ..typeOfBarcode = EncodeBarcodeType.qR_
+      ..typeOfBarcode = EncodeBarcodeType.QR
       ..text = "test";
 
     final generatorParamsList = GeneratorParamsList()
@@ -29,15 +29,15 @@ void main() {
         await TestConfig.barcodeApi.getBarcodeRecognize(
       remoteFileName,
       folder: TestConfig.folder,
-      preset: PresetType.highPerformance_.toString(),
-      types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
+      preset: PresetType.HighPerformance.toString(),
+      types: [DecodeBarcodeType.QR, DecodeBarcodeType.DataMatrix],
     );
 
     expect(recognized.barcodes, isNotNull);
     expect(recognized.barcodes, isNotEmpty);
 
     final first = recognized.barcodes![0];
-    expect(first.type, equals(DecodeBarcodeType.qR_.toString()));
+    expect(first.type, equals(DecodeBarcodeType.QR.toString()));
     expect(first.barcodeValue, "test");
   });
 }

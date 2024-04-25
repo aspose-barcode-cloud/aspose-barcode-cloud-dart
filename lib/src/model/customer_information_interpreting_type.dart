@@ -7,15 +7,18 @@ class CustomerInformationInterpretingType {
   CustomerInformationInterpretingType._internal(this._value);
 
   ///
-  static CustomerInformationInterpretingType cTable_ =
+  // ignore: non_constant_identifier_names
+  static final CustomerInformationInterpretingType CTable =
       CustomerInformationInterpretingType._internal("CTable");
 
   ///
-  static CustomerInformationInterpretingType nTable_ =
+  // ignore: non_constant_identifier_names
+  static final CustomerInformationInterpretingType NTable =
       CustomerInformationInterpretingType._internal("NTable");
 
   ///
-  static CustomerInformationInterpretingType other_ =
+  // ignore: non_constant_identifier_names
+  static final CustomerInformationInterpretingType Other =
       CustomerInformationInterpretingType._internal("Other");
 
   /// Creates a CustomerInformationInterpretingType instance from a JSON representation.

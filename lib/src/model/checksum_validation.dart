@@ -7,13 +7,17 @@ class ChecksumValidation {
   ChecksumValidation._internal(this._value);
 
   ///
-  static ChecksumValidation default_ = ChecksumValidation._internal("Default");
+  // ignore: non_constant_identifier_names
+  static final ChecksumValidation Default =
+      ChecksumValidation._internal("Default");
 
   ///
-  static ChecksumValidation on_ = ChecksumValidation._internal("On");
+  // ignore: non_constant_identifier_names
+  static final ChecksumValidation On = ChecksumValidation._internal("On");
 
   ///
-  static ChecksumValidation off_ = ChecksumValidation._internal("Off");
+  // ignore: non_constant_identifier_names
+  static final ChecksumValidation Off = ChecksumValidation._internal("Off");
 
   /// Creates a ChecksumValidation instance from a JSON representation.
   ChecksumValidation.fromJson(dynamic data) {
