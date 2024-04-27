@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.24.4
+
+* Minimal version of Dart SDK updated from **2.12.0** to **2.17.0**
+* Added new **scanBarcode** endpoint for quick scan
+* Improved enum names
+
 ## 1.24.3
 
 * March 2024 Release
