@@ -7,19 +7,24 @@ class ITF14BorderType {
   ITF14BorderType._internal(this._value);
 
   ///
-  static ITF14BorderType none_ = ITF14BorderType._internal("None");
+  // ignore: non_constant_identifier_names
+  static final ITF14BorderType None = ITF14BorderType._internal("None");
 
   ///
-  static ITF14BorderType frame_ = ITF14BorderType._internal("Frame");
+  // ignore: non_constant_identifier_names
+  static final ITF14BorderType Frame = ITF14BorderType._internal("Frame");
 
   ///
-  static ITF14BorderType bar_ = ITF14BorderType._internal("Bar");
+  // ignore: non_constant_identifier_names
+  static final ITF14BorderType Bar = ITF14BorderType._internal("Bar");
 
   ///
-  static ITF14BorderType frameOut_ = ITF14BorderType._internal("FrameOut");
+  // ignore: non_constant_identifier_names
+  static final ITF14BorderType FrameOut = ITF14BorderType._internal("FrameOut");
 
   ///
-  static ITF14BorderType barOut_ = ITF14BorderType._internal("BarOut");
+  // ignore: non_constant_identifier_names
+  static final ITF14BorderType BarOut = ITF14BorderType._internal("BarOut");
 
   /// Creates a ITF14BorderType instance from a JSON representation.
   ITF14BorderType.fromJson(dynamic data) {

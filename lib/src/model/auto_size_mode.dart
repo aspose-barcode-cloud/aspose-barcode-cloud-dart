@@ -7,13 +7,17 @@ class AutoSizeMode {
   AutoSizeMode._internal(this._value);
 
   ///
-  static AutoSizeMode none_ = AutoSizeMode._internal("None");
+  // ignore: non_constant_identifier_names
+  static final AutoSizeMode None = AutoSizeMode._internal("None");
 
   ///
-  static AutoSizeMode nearest_ = AutoSizeMode._internal("Nearest");
+  // ignore: non_constant_identifier_names
+  static final AutoSizeMode Nearest = AutoSizeMode._internal("Nearest");
 
   ///
-  static AutoSizeMode interpolation_ = AutoSizeMode._internal("Interpolation");
+  // ignore: non_constant_identifier_names
+  static final AutoSizeMode Interpolation =
+      AutoSizeMode._internal("Interpolation");
 
   /// Creates a AutoSizeMode instance from a JSON representation.
   AutoSizeMode.fromJson(dynamic data) {

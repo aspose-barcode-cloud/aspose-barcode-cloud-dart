@@ -8,13 +8,17 @@ import 'test_config.dart';
 
 void main() {
   test('.postGenerateMultiple', () async {
-    final barcode = GeneratorParams()
-      ..typeOfBarcode = EncodeBarcodeType.qR_
-      ..text = "text"
-      ..textLocation = CodeLocation.none_;
+    final qrCode = GeneratorParams()
+      ..typeOfBarcode = EncodeBarcodeType.QR
+      ..text = "QR text"
+      ..textLocation = CodeLocation.None;
+    final code128 = GeneratorParams()
+      ..typeOfBarcode = EncodeBarcodeType.Code128
+      ..text = "Code128 text";
 
     final generatorParamsList = GeneratorParamsList()
-      ..barcodeBuilders!.add(barcode);
+      ..barcodeBuilders!.add(qrCode)
+      ..barcodeBuilders!.add(code128);
 
     final Uint8List generated =
         await TestConfig.barcodeApi.postGenerateMultiple(generatorParamsList);
@@ -22,6 +26,6 @@ void main() {
     expect(generated, isNotNull);
     expect(generated, isNotEmpty);
     expect(generated.length, greaterThan(0));
-    File("qr.png").writeAsBytesSync(generated);
+    File("qr_and_code128.png").writeAsBytesSync(generated);
   });
 }

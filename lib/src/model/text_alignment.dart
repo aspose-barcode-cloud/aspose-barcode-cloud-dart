@@ -7,13 +7,16 @@ class TextAlignment {
   TextAlignment._internal(this._value);
 
   ///
-  static TextAlignment left_ = TextAlignment._internal("Left");
+  // ignore: non_constant_identifier_names
+  static final TextAlignment Left = TextAlignment._internal("Left");
 
   ///
-  static TextAlignment center_ = TextAlignment._internal("Center");
+  // ignore: non_constant_identifier_names
+  static final TextAlignment Center = TextAlignment._internal("Center");
 
   ///
-  static TextAlignment right_ = TextAlignment._internal("Right");
+  // ignore: non_constant_identifier_names
+  static final TextAlignment Right = TextAlignment._internal("Right");
 
   /// Creates a TextAlignment instance from a JSON representation.
   TextAlignment.fromJson(dynamic data) {

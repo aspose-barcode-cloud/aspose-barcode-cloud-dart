@@ -7,304 +7,402 @@ class DecodeBarcodeType {
   DecodeBarcodeType._internal(this._value);
 
   /// See DecodeType
-  static DecodeBarcodeType all_ = DecodeBarcodeType._internal("all");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType all = DecodeBarcodeType._internal("all");
 
   /// See DecodeType
-  static DecodeBarcodeType australiaPost_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType AustraliaPost =
       DecodeBarcodeType._internal("AustraliaPost");
 
   /// See DecodeType
-  static DecodeBarcodeType aztec_ = DecodeBarcodeType._internal("Aztec");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Aztec = DecodeBarcodeType._internal("Aztec");
 
   /// See DecodeType
-  static DecodeBarcodeType iSBN_ = DecodeBarcodeType._internal("ISBN");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ISBN = DecodeBarcodeType._internal("ISBN");
 
   /// See DecodeType
-  static DecodeBarcodeType codabar_ = DecodeBarcodeType._internal("Codabar");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Codabar =
+      DecodeBarcodeType._internal("Codabar");
 
   /// See DecodeType
-  static DecodeBarcodeType code11_ = DecodeBarcodeType._internal("Code11");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code11 = DecodeBarcodeType._internal("Code11");
 
   /// See DecodeType
-  static DecodeBarcodeType code128_ = DecodeBarcodeType._internal("Code128");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code128 =
+      DecodeBarcodeType._internal("Code128");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1Code128_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1Code128 =
       DecodeBarcodeType._internal("GS1Code128");
 
   /// See DecodeType
-  static DecodeBarcodeType code39Extended_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code39Extended =
       DecodeBarcodeType._internal("Code39Extended");
 
   /// See DecodeType
-  static DecodeBarcodeType code39Standard_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code39Standard =
       DecodeBarcodeType._internal("Code39Standard");
 
   /// See DecodeType
-  static DecodeBarcodeType code93Extended_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code93Extended =
       DecodeBarcodeType._internal("Code93Extended");
 
   /// See DecodeType
-  static DecodeBarcodeType code93Standard_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code93Standard =
       DecodeBarcodeType._internal("Code93Standard");
 
   /// See DecodeType
-  static DecodeBarcodeType dataMatrix_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DataMatrix =
       DecodeBarcodeType._internal("DataMatrix");
 
   /// See DecodeType
-  static DecodeBarcodeType deutschePostIdentcode_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DeutschePostIdentcode =
       DecodeBarcodeType._internal("DeutschePostIdentcode");
 
   /// See DecodeType
-  static DecodeBarcodeType deutschePostLeitcode_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DeutschePostLeitcode =
       DecodeBarcodeType._internal("DeutschePostLeitcode");
 
   /// See DecodeType
-  static DecodeBarcodeType eAN13_ = DecodeBarcodeType._internal("EAN13");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType EAN13 = DecodeBarcodeType._internal("EAN13");
 
   /// See DecodeType
-  static DecodeBarcodeType eAN14_ = DecodeBarcodeType._internal("EAN14");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType EAN14 = DecodeBarcodeType._internal("EAN14");
 
   /// See DecodeType
-  static DecodeBarcodeType eAN8_ = DecodeBarcodeType._internal("EAN8");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType EAN8 = DecodeBarcodeType._internal("EAN8");
 
   /// See DecodeType
-  static DecodeBarcodeType iATA2of5_ = DecodeBarcodeType._internal("IATA2of5");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType IATA2of5 =
+      DecodeBarcodeType._internal("IATA2of5");
 
   /// See DecodeType
-  static DecodeBarcodeType interleaved2of5_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Interleaved2of5 =
       DecodeBarcodeType._internal("Interleaved2of5");
 
   /// See DecodeType
-  static DecodeBarcodeType iSSN_ = DecodeBarcodeType._internal("ISSN");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ISSN = DecodeBarcodeType._internal("ISSN");
 
   /// See DecodeType
-  static DecodeBarcodeType iSMN_ = DecodeBarcodeType._internal("ISMN");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ISMN = DecodeBarcodeType._internal("ISMN");
 
   /// See DecodeType
-  static DecodeBarcodeType italianPost25_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ItalianPost25 =
       DecodeBarcodeType._internal("ItalianPost25");
 
   /// See DecodeType
-  static DecodeBarcodeType iTF14_ = DecodeBarcodeType._internal("ITF14");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ITF14 = DecodeBarcodeType._internal("ITF14");
 
   /// See DecodeType
-  static DecodeBarcodeType iTF6_ = DecodeBarcodeType._internal("ITF6");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType ITF6 = DecodeBarcodeType._internal("ITF6");
 
   /// See DecodeType
-  static DecodeBarcodeType macroPdf417_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MacroPdf417 =
       DecodeBarcodeType._internal("MacroPdf417");
 
   /// See DecodeType
-  static DecodeBarcodeType matrix2of5_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Matrix2of5 =
       DecodeBarcodeType._internal("Matrix2of5");
 
   /// See DecodeType
-  static DecodeBarcodeType mSI_ = DecodeBarcodeType._internal("MSI");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MSI = DecodeBarcodeType._internal("MSI");
 
   /// See DecodeType
-  static DecodeBarcodeType oneCode_ = DecodeBarcodeType._internal("OneCode");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType OneCode =
+      DecodeBarcodeType._internal("OneCode");
 
   /// See DecodeType
-  static DecodeBarcodeType oPC_ = DecodeBarcodeType._internal("OPC");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType OPC = DecodeBarcodeType._internal("OPC");
 
   /// See DecodeType
-  static DecodeBarcodeType patchCode_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType PatchCode =
       DecodeBarcodeType._internal("PatchCode");
 
   /// See DecodeType
-  static DecodeBarcodeType pdf417_ = DecodeBarcodeType._internal("Pdf417");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Pdf417 = DecodeBarcodeType._internal("Pdf417");
 
   /// See DecodeType
-  static DecodeBarcodeType microPdf417_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MicroPdf417 =
       DecodeBarcodeType._internal("MicroPdf417");
 
   /// See DecodeType
-  static DecodeBarcodeType planet_ = DecodeBarcodeType._internal("Planet");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Planet = DecodeBarcodeType._internal("Planet");
 
   /// See DecodeType
-  static DecodeBarcodeType postnet_ = DecodeBarcodeType._internal("Postnet");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Postnet =
+      DecodeBarcodeType._internal("Postnet");
 
   /// See DecodeType
-  static DecodeBarcodeType pZN_ = DecodeBarcodeType._internal("PZN");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType PZN = DecodeBarcodeType._internal("PZN");
 
   /// See DecodeType
-  static DecodeBarcodeType qR_ = DecodeBarcodeType._internal("QR");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType QR = DecodeBarcodeType._internal("QR");
 
   /// See DecodeType
-  static DecodeBarcodeType microQR_ = DecodeBarcodeType._internal("MicroQR");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MicroQR =
+      DecodeBarcodeType._internal("MicroQR");
 
   /// See DecodeType
-  static DecodeBarcodeType rM4SCC_ = DecodeBarcodeType._internal("RM4SCC");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType RM4SCC = DecodeBarcodeType._internal("RM4SCC");
 
   /// See DecodeType
-  static DecodeBarcodeType sCC14_ = DecodeBarcodeType._internal("SCC14");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType SCC14 = DecodeBarcodeType._internal("SCC14");
 
   /// See DecodeType
-  static DecodeBarcodeType sSCC18_ = DecodeBarcodeType._internal("SSCC18");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType SSCC18 = DecodeBarcodeType._internal("SSCC18");
 
   /// See DecodeType
-  static DecodeBarcodeType standard2of5_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Standard2of5 =
       DecodeBarcodeType._internal("Standard2of5");
 
   /// See DecodeType
-  static DecodeBarcodeType supplement_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Supplement =
       DecodeBarcodeType._internal("Supplement");
 
   /// See DecodeType
-  static DecodeBarcodeType uPCA_ = DecodeBarcodeType._internal("UPCA");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType UPCA = DecodeBarcodeType._internal("UPCA");
 
   /// See DecodeType
-  static DecodeBarcodeType uPCE_ = DecodeBarcodeType._internal("UPCE");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType UPCE = DecodeBarcodeType._internal("UPCE");
 
   /// See DecodeType
-  static DecodeBarcodeType vIN_ = DecodeBarcodeType._internal("VIN");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType VIN = DecodeBarcodeType._internal("VIN");
 
   /// See DecodeType
-  static DecodeBarcodeType pharmacode_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Pharmacode =
       DecodeBarcodeType._internal("Pharmacode");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1DataMatrix_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1DataMatrix =
       DecodeBarcodeType._internal("GS1DataMatrix");
 
   /// See DecodeType
-  static DecodeBarcodeType databarOmniDirectional_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarOmniDirectional =
       DecodeBarcodeType._internal("DatabarOmniDirectional");
 
   /// See DecodeType
-  static DecodeBarcodeType databarTruncated_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarTruncated =
       DecodeBarcodeType._internal("DatabarTruncated");
 
   /// See DecodeType
-  static DecodeBarcodeType databarLimited_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarLimited =
       DecodeBarcodeType._internal("DatabarLimited");
 
   /// See DecodeType
-  static DecodeBarcodeType databarExpanded_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarExpanded =
       DecodeBarcodeType._internal("DatabarExpanded");
 
   /// See DecodeType
-  static DecodeBarcodeType swissPostParcel_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType SwissPostParcel =
       DecodeBarcodeType._internal("SwissPostParcel");
 
   /// See DecodeType
-  static DecodeBarcodeType australianPosteParcel_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType AustralianPosteParcel =
       DecodeBarcodeType._internal("AustralianPosteParcel");
 
   /// See DecodeType
-  static DecodeBarcodeType code16K_ = DecodeBarcodeType._internal("Code16K");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code16K =
+      DecodeBarcodeType._internal("Code16K");
 
   /// See DecodeType
-  static DecodeBarcodeType databarStackedOmniDirectional_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarStackedOmniDirectional =
       DecodeBarcodeType._internal("DatabarStackedOmniDirectional");
 
   /// See DecodeType
-  static DecodeBarcodeType databarStacked_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarStacked =
       DecodeBarcodeType._internal("DatabarStacked");
 
   /// See DecodeType
-  static DecodeBarcodeType databarExpandedStacked_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DatabarExpandedStacked =
       DecodeBarcodeType._internal("DatabarExpandedStacked");
 
   /// See DecodeType
-  static DecodeBarcodeType compactPdf417_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType CompactPdf417 =
       DecodeBarcodeType._internal("CompactPdf417");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1QR_ = DecodeBarcodeType._internal("GS1QR");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1QR = DecodeBarcodeType._internal("GS1QR");
 
   /// See DecodeType
-  static DecodeBarcodeType maxiCode_ = DecodeBarcodeType._internal("MaxiCode");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MaxiCode =
+      DecodeBarcodeType._internal("MaxiCode");
 
   /// See DecodeType
-  static DecodeBarcodeType micrE13B_ = DecodeBarcodeType._internal("MicrE13B");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType MicrE13B =
+      DecodeBarcodeType._internal("MicrE13B");
 
   /// See DecodeType
-  static DecodeBarcodeType code32_ = DecodeBarcodeType._internal("Code32");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Code32 = DecodeBarcodeType._internal("Code32");
 
   /// See DecodeType
-  static DecodeBarcodeType dataLogic2of5_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DataLogic2of5 =
       DecodeBarcodeType._internal("DataLogic2of5");
 
   /// See DecodeType
-  static DecodeBarcodeType dotCode_ = DecodeBarcodeType._internal("DotCode");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DotCode =
+      DecodeBarcodeType._internal("DotCode");
 
   /// See DecodeType
-  static DecodeBarcodeType dutchKIX_ = DecodeBarcodeType._internal("DutchKIX");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType DutchKIX =
+      DecodeBarcodeType._internal("DutchKIX");
 
   /// See DecodeType
-  static DecodeBarcodeType codablockF_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType CodablockF =
       DecodeBarcodeType._internal("CodablockF");
 
   /// See DecodeType
-  static DecodeBarcodeType mailmark_ = DecodeBarcodeType._internal("Mailmark");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType Mailmark =
+      DecodeBarcodeType._internal("Mailmark");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1DotCode_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1DotCode =
       DecodeBarcodeType._internal("GS1DotCode");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCCode39LIC_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCCode39LIC =
       DecodeBarcodeType._internal("HIBCCode39LIC");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCCode128LIC_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCCode128LIC =
       DecodeBarcodeType._internal("HIBCCode128LIC");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCAztecLIC_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCAztecLIC =
       DecodeBarcodeType._internal("HIBCAztecLIC");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCDataMatrixLIC_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCDataMatrixLIC =
       DecodeBarcodeType._internal("HIBCDataMatrixLIC");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCQRLIC_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCQRLIC =
       DecodeBarcodeType._internal("HIBCQRLIC");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCCode39PAS_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCCode39PAS =
       DecodeBarcodeType._internal("HIBCCode39PAS");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCCode128PAS_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCCode128PAS =
       DecodeBarcodeType._internal("HIBCCode128PAS");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCAztecPAS_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCAztecPAS =
       DecodeBarcodeType._internal("HIBCAztecPAS");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCDataMatrixPAS_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCDataMatrixPAS =
       DecodeBarcodeType._internal("HIBCDataMatrixPAS");
 
   /// See DecodeType
-  static DecodeBarcodeType hIBCQRPAS_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HIBCQRPAS =
       DecodeBarcodeType._internal("HIBCQRPAS");
 
   /// See DecodeType
-  static DecodeBarcodeType hanXin_ = DecodeBarcodeType._internal("HanXin");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType HanXin = DecodeBarcodeType._internal("HanXin");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1HanXin_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1HanXin =
       DecodeBarcodeType._internal("GS1HanXin");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1Aztec_ = DecodeBarcodeType._internal("GS1Aztec");
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1Aztec =
+      DecodeBarcodeType._internal("GS1Aztec");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1CompositeBar_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1CompositeBar =
       DecodeBarcodeType._internal("GS1CompositeBar");
 
   /// See DecodeType
-  static DecodeBarcodeType gS1MicroPdf417_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType GS1MicroPdf417 =
       DecodeBarcodeType._internal("GS1MicroPdf417");
 
   /// See DecodeType
-  static DecodeBarcodeType mostCommonlyUsed_ =
+  // ignore: non_constant_identifier_names
+  static final DecodeBarcodeType mostCommonlyUsed =
       DecodeBarcodeType._internal("mostCommonlyUsed");
 
   /// Creates a DecodeBarcodeType instance from a JSON representation.

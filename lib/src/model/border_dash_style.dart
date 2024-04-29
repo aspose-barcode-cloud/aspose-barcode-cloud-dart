@@ -7,19 +7,25 @@ class BorderDashStyle {
   BorderDashStyle._internal(this._value);
 
   ///
-  static BorderDashStyle solid_ = BorderDashStyle._internal("Solid");
+  // ignore: non_constant_identifier_names
+  static final BorderDashStyle Solid = BorderDashStyle._internal("Solid");
 
   ///
-  static BorderDashStyle dash_ = BorderDashStyle._internal("Dash");
+  // ignore: non_constant_identifier_names
+  static final BorderDashStyle Dash = BorderDashStyle._internal("Dash");
 
   ///
-  static BorderDashStyle dot_ = BorderDashStyle._internal("Dot");
+  // ignore: non_constant_identifier_names
+  static final BorderDashStyle Dot = BorderDashStyle._internal("Dot");
 
   ///
-  static BorderDashStyle dashDot_ = BorderDashStyle._internal("DashDot");
+  // ignore: non_constant_identifier_names
+  static final BorderDashStyle DashDot = BorderDashStyle._internal("DashDot");
 
   ///
-  static BorderDashStyle dashDotDot_ = BorderDashStyle._internal("DashDotDot");
+  // ignore: non_constant_identifier_names
+  static final BorderDashStyle DashDotDot =
+      BorderDashStyle._internal("DashDotDot");
 
   /// Creates a BorderDashStyle instance from a JSON representation.
   BorderDashStyle.fromJson(dynamic data) {

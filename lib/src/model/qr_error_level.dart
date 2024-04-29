@@ -7,16 +7,20 @@ class QRErrorLevel {
   QRErrorLevel._internal(this._value);
 
   ///
-  static QRErrorLevel levelL_ = QRErrorLevel._internal("LevelL");
+  // ignore: non_constant_identifier_names
+  static final QRErrorLevel LevelL = QRErrorLevel._internal("LevelL");
 
   ///
-  static QRErrorLevel levelM_ = QRErrorLevel._internal("LevelM");
+  // ignore: non_constant_identifier_names
+  static final QRErrorLevel LevelM = QRErrorLevel._internal("LevelM");
 
   ///
-  static QRErrorLevel levelQ_ = QRErrorLevel._internal("LevelQ");
+  // ignore: non_constant_identifier_names
+  static final QRErrorLevel LevelQ = QRErrorLevel._internal("LevelQ");
 
   ///
-  static QRErrorLevel levelH_ = QRErrorLevel._internal("LevelH");
+  // ignore: non_constant_identifier_names
+  static final QRErrorLevel LevelH = QRErrorLevel._internal("LevelH");
 
   /// Creates a QRErrorLevel instance from a JSON representation.
   QRErrorLevel.fromJson(dynamic data) {

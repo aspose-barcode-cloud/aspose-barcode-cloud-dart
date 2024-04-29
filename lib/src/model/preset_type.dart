@@ -7,24 +7,31 @@ class PresetType {
   PresetType._internal(this._value);
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType highPerformance_ = PresetType._internal("HighPerformance");
+  // ignore: non_constant_identifier_names
+  static final PresetType HighPerformance =
+      PresetType._internal("HighPerformance");
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType normalQuality_ = PresetType._internal("NormalQuality");
+  // ignore: non_constant_identifier_names
+  static final PresetType NormalQuality = PresetType._internal("NormalQuality");
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType highQualityDetection_ =
+  // ignore: non_constant_identifier_names
+  static final PresetType HighQualityDetection =
       PresetType._internal("HighQualityDetection");
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType maxQualityDetection_ =
+  // ignore: non_constant_identifier_names
+  static final PresetType MaxQualityDetection =
       PresetType._internal("MaxQualityDetection");
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType highQuality_ = PresetType._internal("HighQuality");
+  // ignore: non_constant_identifier_names
+  static final PresetType HighQuality = PresetType._internal("HighQuality");
 
   /// See QualitySettings allows to configure recognition quality and speed manually.
-  static PresetType maxBarCodes_ = PresetType._internal("MaxBarCodes");
+  // ignore: non_constant_identifier_names
+  static final PresetType MaxBarCodes = PresetType._internal("MaxBarCodes");
 
   /// Creates a PresetType instance from a JSON representation.
   PresetType.fromJson(dynamic data) {

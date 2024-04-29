@@ -7,139 +7,184 @@ class QRVersion {
   QRVersion._internal(this._value);
 
   ///
-  static QRVersion auto_ = QRVersion._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Auto = QRVersion._internal("Auto");
 
   ///
-  static QRVersion version01_ = QRVersion._internal("Version01");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version01 = QRVersion._internal("Version01");
 
   ///
-  static QRVersion version02_ = QRVersion._internal("Version02");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version02 = QRVersion._internal("Version02");
 
   ///
-  static QRVersion version03_ = QRVersion._internal("Version03");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version03 = QRVersion._internal("Version03");
 
   ///
-  static QRVersion version04_ = QRVersion._internal("Version04");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version04 = QRVersion._internal("Version04");
 
   ///
-  static QRVersion version05_ = QRVersion._internal("Version05");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version05 = QRVersion._internal("Version05");
 
   ///
-  static QRVersion version06_ = QRVersion._internal("Version06");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version06 = QRVersion._internal("Version06");
 
   ///
-  static QRVersion version07_ = QRVersion._internal("Version07");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version07 = QRVersion._internal("Version07");
 
   ///
-  static QRVersion version08_ = QRVersion._internal("Version08");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version08 = QRVersion._internal("Version08");
 
   ///
-  static QRVersion version09_ = QRVersion._internal("Version09");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version09 = QRVersion._internal("Version09");
 
   ///
-  static QRVersion version10_ = QRVersion._internal("Version10");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version10 = QRVersion._internal("Version10");
 
   ///
-  static QRVersion version11_ = QRVersion._internal("Version11");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version11 = QRVersion._internal("Version11");
 
   ///
-  static QRVersion version12_ = QRVersion._internal("Version12");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version12 = QRVersion._internal("Version12");
 
   ///
-  static QRVersion version13_ = QRVersion._internal("Version13");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version13 = QRVersion._internal("Version13");
 
   ///
-  static QRVersion version14_ = QRVersion._internal("Version14");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version14 = QRVersion._internal("Version14");
 
   ///
-  static QRVersion version15_ = QRVersion._internal("Version15");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version15 = QRVersion._internal("Version15");
 
   ///
-  static QRVersion version16_ = QRVersion._internal("Version16");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version16 = QRVersion._internal("Version16");
 
   ///
-  static QRVersion version17_ = QRVersion._internal("Version17");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version17 = QRVersion._internal("Version17");
 
   ///
-  static QRVersion version18_ = QRVersion._internal("Version18");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version18 = QRVersion._internal("Version18");
 
   ///
-  static QRVersion version19_ = QRVersion._internal("Version19");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version19 = QRVersion._internal("Version19");
 
   ///
-  static QRVersion version20_ = QRVersion._internal("Version20");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version20 = QRVersion._internal("Version20");
 
   ///
-  static QRVersion version21_ = QRVersion._internal("Version21");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version21 = QRVersion._internal("Version21");
 
   ///
-  static QRVersion version22_ = QRVersion._internal("Version22");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version22 = QRVersion._internal("Version22");
 
   ///
-  static QRVersion version23_ = QRVersion._internal("Version23");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version23 = QRVersion._internal("Version23");
 
   ///
-  static QRVersion version24_ = QRVersion._internal("Version24");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version24 = QRVersion._internal("Version24");
 
   ///
-  static QRVersion version25_ = QRVersion._internal("Version25");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version25 = QRVersion._internal("Version25");
 
   ///
-  static QRVersion version26_ = QRVersion._internal("Version26");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version26 = QRVersion._internal("Version26");
 
   ///
-  static QRVersion version27_ = QRVersion._internal("Version27");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version27 = QRVersion._internal("Version27");
 
   ///
-  static QRVersion version28_ = QRVersion._internal("Version28");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version28 = QRVersion._internal("Version28");
 
   ///
-  static QRVersion version29_ = QRVersion._internal("Version29");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version29 = QRVersion._internal("Version29");
 
   ///
-  static QRVersion version30_ = QRVersion._internal("Version30");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version30 = QRVersion._internal("Version30");
 
   ///
-  static QRVersion version31_ = QRVersion._internal("Version31");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version31 = QRVersion._internal("Version31");
 
   ///
-  static QRVersion version32_ = QRVersion._internal("Version32");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version32 = QRVersion._internal("Version32");
 
   ///
-  static QRVersion version33_ = QRVersion._internal("Version33");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version33 = QRVersion._internal("Version33");
 
   ///
-  static QRVersion version34_ = QRVersion._internal("Version34");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version34 = QRVersion._internal("Version34");
 
   ///
-  static QRVersion version35_ = QRVersion._internal("Version35");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version35 = QRVersion._internal("Version35");
 
   ///
-  static QRVersion version36_ = QRVersion._internal("Version36");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version36 = QRVersion._internal("Version36");
 
   ///
-  static QRVersion version37_ = QRVersion._internal("Version37");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version37 = QRVersion._internal("Version37");
 
   ///
-  static QRVersion version38_ = QRVersion._internal("Version38");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version38 = QRVersion._internal("Version38");
 
   ///
-  static QRVersion version39_ = QRVersion._internal("Version39");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version39 = QRVersion._internal("Version39");
 
   ///
-  static QRVersion version40_ = QRVersion._internal("Version40");
+  // ignore: non_constant_identifier_names
+  static final QRVersion Version40 = QRVersion._internal("Version40");
 
   ///
-  static QRVersion versionM1_ = QRVersion._internal("VersionM1");
+  // ignore: non_constant_identifier_names
+  static final QRVersion VersionM1 = QRVersion._internal("VersionM1");
 
   ///
-  static QRVersion versionM2_ = QRVersion._internal("VersionM2");
+  // ignore: non_constant_identifier_names
+  static final QRVersion VersionM2 = QRVersion._internal("VersionM2");
 
   ///
-  static QRVersion versionM3_ = QRVersion._internal("VersionM3");
+  // ignore: non_constant_identifier_names
+  static final QRVersion VersionM3 = QRVersion._internal("VersionM3");
 
   ///
-  static QRVersion versionM4_ = QRVersion._internal("VersionM4");
+  // ignore: non_constant_identifier_names
+  static final QRVersion VersionM4 = QRVersion._internal("VersionM4");
 
   /// Creates a QRVersion instance from a JSON representation.
   QRVersion.fromJson(dynamic data) {

@@ -7,13 +7,16 @@ class AztecEncodeMode {
   AztecEncodeMode._internal(this._value);
 
   ///
-  static AztecEncodeMode auto_ = AztecEncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final AztecEncodeMode Auto = AztecEncodeMode._internal("Auto");
 
   ///
-  static AztecEncodeMode bytes_ = AztecEncodeMode._internal("Bytes");
+  // ignore: non_constant_identifier_names
+  static final AztecEncodeMode Bytes = AztecEncodeMode._internal("Bytes");
 
   ///
-  static AztecEncodeMode extendedCodetext_ =
+  // ignore: non_constant_identifier_names
+  static final AztecEncodeMode ExtendedCodetext =
       AztecEncodeMode._internal("ExtendedCodetext");
 
   /// Creates a AztecEncodeMode instance from a JSON representation.

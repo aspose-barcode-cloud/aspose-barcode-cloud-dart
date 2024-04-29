@@ -4,7 +4,7 @@ import '../../aspose_barcode_cloud.dart';
 
 /// AustralianPost barcode parameters.
 class AustralianPostParams {
-  /// Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\"
+  /// Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other
   CustomerInformationInterpretingType? encodingTable;
 
   /// Short bar's height of AustralianPost barcode.

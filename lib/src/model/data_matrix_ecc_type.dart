@@ -7,25 +7,33 @@ class DataMatrixEccType {
   DataMatrixEccType._internal(this._value);
 
   ///
-  static DataMatrixEccType eccAuto_ = DataMatrixEccType._internal("EccAuto");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType EccAuto =
+      DataMatrixEccType._internal("EccAuto");
 
   ///
-  static DataMatrixEccType ecc000_ = DataMatrixEccType._internal("Ecc000");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc000 = DataMatrixEccType._internal("Ecc000");
 
   ///
-  static DataMatrixEccType ecc050_ = DataMatrixEccType._internal("Ecc050");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc050 = DataMatrixEccType._internal("Ecc050");
 
   ///
-  static DataMatrixEccType ecc080_ = DataMatrixEccType._internal("Ecc080");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc080 = DataMatrixEccType._internal("Ecc080");
 
   ///
-  static DataMatrixEccType ecc100_ = DataMatrixEccType._internal("Ecc100");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc100 = DataMatrixEccType._internal("Ecc100");
 
   ///
-  static DataMatrixEccType ecc140_ = DataMatrixEccType._internal("Ecc140");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc140 = DataMatrixEccType._internal("Ecc140");
 
   ///
-  static DataMatrixEccType ecc200_ = DataMatrixEccType._internal("Ecc200");
+  // ignore: non_constant_identifier_names
+  static final DataMatrixEccType Ecc200 = DataMatrixEccType._internal("Ecc200");
 
   /// Creates a DataMatrixEccType instance from a JSON representation.
   DataMatrixEccType.fromJson(dynamic data) {

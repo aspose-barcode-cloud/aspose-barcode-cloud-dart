@@ -7,19 +7,24 @@ class PatchFormat {
   PatchFormat._internal(this._value);
 
   ///
-  static PatchFormat patchOnly_ = PatchFormat._internal("PatchOnly");
+  // ignore: non_constant_identifier_names
+  static final PatchFormat PatchOnly = PatchFormat._internal("PatchOnly");
 
   ///
-  static PatchFormat a4_ = PatchFormat._internal("A4");
+  // ignore: non_constant_identifier_names
+  static final PatchFormat A4 = PatchFormat._internal("A4");
 
   ///
-  static PatchFormat a4LANDSCAPE_ = PatchFormat._internal("A4_LANDSCAPE");
+  // ignore: non_constant_identifier_names
+  static final PatchFormat A4_LANDSCAPE = PatchFormat._internal("A4_LANDSCAPE");
 
   ///
-  static PatchFormat uSLetter_ = PatchFormat._internal("US_Letter");
+  // ignore: non_constant_identifier_names
+  static final PatchFormat US_Letter = PatchFormat._internal("US_Letter");
 
   ///
-  static PatchFormat uSLetterLANDSCAPE_ =
+  // ignore: non_constant_identifier_names
+  static final PatchFormat US_Letter_LANDSCAPE =
       PatchFormat._internal("US_Letter_LANDSCAPE");
 
   /// Creates a PatchFormat instance from a JSON representation.

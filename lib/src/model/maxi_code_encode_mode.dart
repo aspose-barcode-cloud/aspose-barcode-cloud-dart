@@ -7,13 +7,16 @@ class MaxiCodeEncodeMode {
   MaxiCodeEncodeMode._internal(this._value);
 
   ///
-  static MaxiCodeEncodeMode auto_ = MaxiCodeEncodeMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeEncodeMode Auto = MaxiCodeEncodeMode._internal("Auto");
 
   ///
-  static MaxiCodeEncodeMode bytes_ = MaxiCodeEncodeMode._internal("Bytes");
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeEncodeMode Bytes = MaxiCodeEncodeMode._internal("Bytes");
 
   ///
-  static MaxiCodeEncodeMode extendedCodetext_ =
+  // ignore: non_constant_identifier_names
+  static final MaxiCodeEncodeMode ExtendedCodetext =
       MaxiCodeEncodeMode._internal("ExtendedCodetext");
 
   /// Creates a MaxiCodeEncodeMode instance from a JSON representation.

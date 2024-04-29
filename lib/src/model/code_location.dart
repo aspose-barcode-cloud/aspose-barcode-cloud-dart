@@ -7,13 +7,16 @@ class CodeLocation {
   CodeLocation._internal(this._value);
 
   ///
-  static CodeLocation below_ = CodeLocation._internal("Below");
+  // ignore: non_constant_identifier_names
+  static final CodeLocation Below = CodeLocation._internal("Below");
 
   ///
-  static CodeLocation above_ = CodeLocation._internal("Above");
+  // ignore: non_constant_identifier_names
+  static final CodeLocation Above = CodeLocation._internal("Above");
 
   ///
-  static CodeLocation none_ = CodeLocation._internal("None");
+  // ignore: non_constant_identifier_names
+  static final CodeLocation None = CodeLocation._internal("None");
 
   /// Creates a CodeLocation instance from a JSON representation.
   CodeLocation.fromJson(dynamic data) {

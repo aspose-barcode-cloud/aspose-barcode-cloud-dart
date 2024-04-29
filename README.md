@@ -3,7 +3,7 @@
 [![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml)
 
 - API version: 3.0
-- SDK version: 1.24.3
+- SDK version: 1.24.4
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -34,7 +34,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 1.24.3
+  aspose_barcode_cloud: 1.24.4
 ```
 
 ## Sample usage
@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *BarcodeApi* | [**putBarcodeGenerateFile**](doc/api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 *BarcodeApi* | [**putBarcodeRecognizeFromBody**](doc/api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
 *BarcodeApi* | [**putGenerateMultiple**](doc/api/BarcodeApi.md#putgeneratemultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
+*BarcodeApi* | [**scanBarcode**](doc/api/BarcodeApi.md#scanbarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
 *FileApi* | [**copyFile**](doc/api/FileApi.md#copyfile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
 *FileApi* | [**deleteFile**](doc/api/FileApi.md#deletefile) | **DELETE** /barcode/storage/file/{path} | Delete file
 *FileApi* | [**downloadFile**](doc/api/FileApi.md#downloadfile) | **GET** /barcode/storage/file/{path} | Download file

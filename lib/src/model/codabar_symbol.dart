@@ -7,16 +7,20 @@ class CodabarSymbol {
   CodabarSymbol._internal(this._value);
 
   ///
-  static CodabarSymbol a_ = CodabarSymbol._internal("A");
+  // ignore: non_constant_identifier_names
+  static final CodabarSymbol A = CodabarSymbol._internal("A");
 
   ///
-  static CodabarSymbol b_ = CodabarSymbol._internal("B");
+  // ignore: non_constant_identifier_names
+  static final CodabarSymbol B = CodabarSymbol._internal("B");
 
   ///
-  static CodabarSymbol c_ = CodabarSymbol._internal("C");
+  // ignore: non_constant_identifier_names
+  static final CodabarSymbol C = CodabarSymbol._internal("C");
 
   ///
-  static CodabarSymbol d_ = CodabarSymbol._internal("D");
+  // ignore: non_constant_identifier_names
+  static final CodabarSymbol D = CodabarSymbol._internal("D");
 
   /// Creates a CodabarSymbol instance from a JSON representation.
   CodabarSymbol.fromJson(dynamic data) {

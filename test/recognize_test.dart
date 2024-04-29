@@ -12,8 +12,8 @@ void main() {
     final BarcodeResponseList recognized =
         await TestConfig.barcodeApi.postBarcodeRecognizeFromUrlOrContent(
       image: barcode,
-      preset: PresetType.highPerformance_.toString(),
-      types: [DecodeBarcodeType.qR_, DecodeBarcodeType.dataMatrix_],
+      preset: PresetType.HighPerformance.toString(),
+      types: [DecodeBarcodeType.QR, DecodeBarcodeType.DataMatrix],
     );
 
     expect(recognized, isNotNull);

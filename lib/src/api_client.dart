@@ -2,14 +2,15 @@
 
 import 'dart:convert' show json;
 
-import 'package:http/http.dart' as Http show Client, MultipartRequest, Response;
+import 'package:http/http.dart' as Http show Client, Response;
 
+import 'http/multipart_request_plus.dart';
 import '../aspose_barcode_cloud.dart';
 import 'api_helper.dart';
 import 'auth/authentication.dart';
 
 /// Current SDK Version
-const SDK_VERSION = "1.24.3";
+const SDK_VERSION = "1.24.4";
 
 /// ApiClient is responsible for making HTTP requests to the API.
 class ApiClient {
@@ -288,8 +289,8 @@ class ApiClient {
     headerParams.addAll(_defaultHeaderMap);
     headerParams['Content-Type'] = contentType;
 
-    if (body is Http.MultipartRequest) {
-      final request = Http.MultipartRequest(method, Uri.parse(url));
+    if (body is MultipartRequestPlus) {
+      final request = MultipartRequestPlus(method, Uri.parse(url));
       request.fields.addAll(body.fields);
       request.files.addAll(body.files);
       request.headers.addAll(body.headers);

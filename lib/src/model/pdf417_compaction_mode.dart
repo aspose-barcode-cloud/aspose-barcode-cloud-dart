@@ -7,17 +7,23 @@ class Pdf417CompactionMode {
   Pdf417CompactionMode._internal(this._value);
 
   ///
-  static Pdf417CompactionMode auto_ = Pdf417CompactionMode._internal("Auto");
+  // ignore: non_constant_identifier_names
+  static final Pdf417CompactionMode Auto =
+      Pdf417CompactionMode._internal("Auto");
 
   ///
-  static Pdf417CompactionMode text_ = Pdf417CompactionMode._internal("Text");
+  // ignore: non_constant_identifier_names
+  static final Pdf417CompactionMode Text =
+      Pdf417CompactionMode._internal("Text");
 
   ///
-  static Pdf417CompactionMode numeric_ =
+  // ignore: non_constant_identifier_names
+  static final Pdf417CompactionMode Numeric =
       Pdf417CompactionMode._internal("Numeric");
 
   ///
-  static Pdf417CompactionMode binary_ =
+  // ignore: non_constant_identifier_names
+  static final Pdf417CompactionMode Binary =
       Pdf417CompactionMode._internal("Binary");
 
   /// Creates a Pdf417CompactionMode instance from a JSON representation.
