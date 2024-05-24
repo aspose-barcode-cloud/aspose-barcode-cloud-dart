@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.5
+
+* May 2024 Release
+
 ## 1.24.4
 
 * Minimal version of Dart SDK updated from **2.12.0** to **2.17.0**
