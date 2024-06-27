@@ -44,44 +44,55 @@ dependencies:
 The examples below show how you can generate QR barcode and save it into a local file and then recognize using **aspose_barcode_cloud**:
 
 ```dart
-import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart' as barcode;
-
-import 'dart:typed_data';
 import 'dart:io';
+import 'dart:typed_data';
 
-import 'package:http/http.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
+import 'package:http/http.dart' show MultipartFile;
 
 Future<void> main() async {
   const fileName = "qr.png";
-  // Setup
-  final apiClient = barcode.ApiClient(
+
+  final api = BarcodeApi(ApiClient(Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
     clientSecret:
         "Client Secret from https://dashboard.aspose.cloud/applications",
-  );
-  final api = barcode.BarcodeApi(apiClient);
+    // For testing only
+    accessToken: Platform.environment["TEST_CONFIGURATION_ACCESS_TOKEN"],
+  )));
 
   // Generate image with barcode
-  Uint8List? generated =
-      await api.getBarcodeGenerate("QR", "text", textLocation: "None");
+  final Uint8List generated = await api.getBarcodeGenerate(
+    EncodeBarcodeType.QR.toString(),
+    "text",
+    textLocation: CodeLocation.None.toString(),
+  );
+
   // Save generated image to file
-  await File(fileName).writeAsBytes(generated!);
-  print("Generated image saved to " + fileName);
+  File(fileName).writeAsBytesSync(generated);
+  print("Generated image saved to '$fileName'");
 
   // Recognize generated image
   final formFile = MultipartFile.fromBytes("image", generated.toList(),
       filename: "barcode.png");
-  barcode.BarcodeResponseList? recognized =
-      await api.postBarcodeRecognizeFromUrlOrContent(image: formFile);
+  final BarcodeResponseList recognized = await api.scanBarcode(
+    formFile,
+    decodeTypes: [DecodeBarcodeType.QR],
+  );
 
-  print("Recognized Type: " + recognized!.barcodes![0].type!);
-  print("Recognized Value: " + recognized.barcodes![0].barcodeValue!);
+  if (recognized.barcodes != null && recognized.barcodes!.isNotEmpty) {
+    print("Recognized Type: ${recognized.barcodes![0].type!}");
+    print("Recognized Value: ${recognized.barcodes![0].barcodeValue!}");
+  } else {
+    print("No barcode found");
+  }
 }
+
 ```
 
 ## Dependencies
 
-- http: '>=0.13.0 <0.14.0'
+- http: '>=0.13.0 <2.0.0'
 
 ## Licensing
 
