@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.6
+
+* June 2024 Release
+
 ## 1.24.5
 
 * May 2024 Release
