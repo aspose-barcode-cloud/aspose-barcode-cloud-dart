@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.8
+
+* August 2024 Release
+
 ## 1.24.7
 
 * July 2024 Release
