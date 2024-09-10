@@ -5,10 +5,9 @@
 ```dart
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
-
 ## Allowable values
 
-* **TextAlignment.left_**
-* TextAlignment.center_
-* TextAlignment.right_
+* **TextAlignment.left**
+* TextAlignment.center
+* TextAlignment.right
 

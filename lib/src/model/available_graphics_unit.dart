@@ -1,4 +1,4 @@
-/// Subset of GraphicsUnit.
+/// Subset of Aspose.Drawing.GraphicsUnit.
 /// AvailableGraphicsUnit: [Pixel, Point, Inch, Millimeter]
 class AvailableGraphicsUnit {
   /// The underlying value of AvailableGraphicsUnit enum.
@@ -6,22 +6,22 @@ class AvailableGraphicsUnit {
 
   AvailableGraphicsUnit._internal(this._value);
 
-  /// Subset of GraphicsUnit.
+  /// Subset of Aspose.Drawing.GraphicsUnit.
   // ignore: non_constant_identifier_names
   static final AvailableGraphicsUnit Pixel =
       AvailableGraphicsUnit._internal("Pixel");
 
-  /// Subset of GraphicsUnit.
+  /// Subset of Aspose.Drawing.GraphicsUnit.
   // ignore: non_constant_identifier_names
   static final AvailableGraphicsUnit Point =
       AvailableGraphicsUnit._internal("Point");
 
-  /// Subset of GraphicsUnit.
+  /// Subset of Aspose.Drawing.GraphicsUnit.
   // ignore: non_constant_identifier_names
   static final AvailableGraphicsUnit Inch =
       AvailableGraphicsUnit._internal("Inch");
 
-  /// Subset of GraphicsUnit.
+  /// Subset of Aspose.Drawing.GraphicsUnit.
   // ignore: non_constant_identifier_names
   static final AvailableGraphicsUnit Millimeter =
       AvailableGraphicsUnit._internal("Millimeter");
@@ -29,10 +29,10 @@ class AvailableGraphicsUnit {
   /// Creates a AvailableGraphicsUnit instance from a JSON representation.
   AvailableGraphicsUnit.fromJson(dynamic data) {
     switch (data) {
-      case "Pixel":
-      case "Point":
-      case "Inch":
-      case "Millimeter":
+      case 'Pixel':
+      case 'Point':
+      case 'Inch':
+      case 'Millimeter':
         _value = data;
         break;
       default:

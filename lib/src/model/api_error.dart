@@ -1,23 +1,23 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
 
-/// ApiError
+/// Api Error.
 class ApiError {
-  /// code
-  String? code;
-
-  /// message
-  String? message;
-
-  /// description
-  String? description;
-
-  /// dateTime
-  DateTime? dateTime;
-
+  /// Gets or sets api error code.
+  String? code = ;
+  
+  /// Gets or sets error message.
+  String? message = ;
+  
+  /// Gets or sets error description.
+  String? description = ;
+  
+  /// Gets or sets server datetime.
+  DateTime? dateTime = ;
+  
   /// innerError
-  ApiError? innerError;
-
+  ApiError? innerError = ;
+  
   /// Constructor
   ApiError();
 
@@ -28,23 +28,32 @@ class ApiError {
 
   /// Creates a ApiError instance from a JSON representation.
   ApiError.fromJson(Map<String, dynamic> json) {
-    code = json['code'];
-    message = json['message'];
-    description = json['description'];
-    dateTime =
-        json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
-    innerError = ApiError.fromJson(json['innerError']);
+    code =
+        json['code']
+    ;
+    message =
+        json['message']
+    ;
+    description =
+        json['description']
+    ;
+    dateTime = json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
+    innerError =
+      
+      
+      ApiError.fromJson(json['innerError'])
+;
   }
 
   /// Returns a JSON representation of ApiError.
   Map<String, dynamic> toJson() {
     return {
-      'Code': code,
-      'Message': message,
-      'Description': description,
-      'DateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
-      'InnerError': innerError
-    };
+      'code': code,
+      'message': message,
+      'description': description,
+      'dateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
+      'innerError': innerError
+     };
   }
 
   /// Converts a list of JSON objects to a list of ApiError instances.
@@ -55,3 +64,4 @@ class ApiError {
     return json.map((value) => ApiError.fromJson(value)).toList();
   }
 }
+

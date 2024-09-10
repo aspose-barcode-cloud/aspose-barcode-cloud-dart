@@ -5,10 +5,9 @@
 ```dart
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
-
 ## Allowable values
 
-* **CodeLocation.below_**
-* CodeLocation.above_
-* CodeLocation.none_
+* **CodeLocation.below**
+* CodeLocation.above
+* CodeLocation.none
 

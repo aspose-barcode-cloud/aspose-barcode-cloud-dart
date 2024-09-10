@@ -5,7 +5,7 @@ import '../../aspose_barcode_cloud.dart';
 /// Represents information about barcode list.
 class BarcodeResponseList {
   /// List of barcodes which are present in image.
-  List<BarcodeResponse>? barcodes = [];
+  List<BarcodeResponse>? barcodes = const [];
 
   /// Constructor
   BarcodeResponseList();
@@ -17,12 +17,12 @@ class BarcodeResponseList {
 
   /// Creates a BarcodeResponseList instance from a JSON representation.
   BarcodeResponseList.fromJson(Map<String, dynamic> json) {
-    barcodes = BarcodeResponse.listFromJson(json['barcodes']);
+    barcodes = BarcodeResponse.fromJson(json['barcodes']);
   }
 
   /// Returns a JSON representation of BarcodeResponseList.
   Map<String, dynamic> toJson() {
-    return {'Barcodes': barcodes};
+    return {'barcodes': barcodes};
   }
 
   /// Converts a list of JSON objects to a list of BarcodeResponseList instances.
