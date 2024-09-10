@@ -5,14 +5,15 @@
 ```dart
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
+Api Error.
 
 ## Properties
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**code** | **String** |  | [optional] [default to null]
-**message** | **String** |  | [optional] [default to null]
-**description** | **String** |  | [optional] [default to null]
-**dateTime** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**innerError** | [**ApiError**](ApiError.md) |  | [optional] [default to null]
+**code** | **String** | Gets or sets api error code. | 
+**message** | **String** | Gets or sets error message. | 
+**description** | **String** | Gets or sets error description. | [optional] 
+**dateTime** | [**DateTime**](DateTime.md) | Gets or sets server datetime. | [optional] 
+**innerError** | [**ApiError**](ApiError.md) |  | [optional] 
 

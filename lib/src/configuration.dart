@@ -4,10 +4,10 @@ import 'dart:convert' show JsonEncoder, jsonDecode;
 import 'dart:io';
 
 /// Default token url
-const DEFAULT_TOKEN_URL = "https://api.aspose.cloud/connect/token";
+const DEFAULT_TOKEN_URL = "https://id.aspose.cloud/connect/token";
 
 /// Default API base path
-const DEFAULT_BASE_PATH = "https://api.aspose.cloud/v3.0";
+const DEFAULT_BASE_PATH = "https://api.aspose.cloud/v4.0";
 
 /// Configuration for ApiClient
 class Configuration {

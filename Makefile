@@ -13,6 +13,7 @@ lint: init
 test:
 	dart test --chain-stack-traces
 	dart example/main.dart
+	./scripts/run_snippets.sh
 
 .PHONY: format
 format:

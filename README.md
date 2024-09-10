@@ -2,8 +2,8 @@
 
 [![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml)
 
-- API version: 3.0
-- SDK version: 1.24.12
+- API version: 4.0
+- SDK version: 4.25.1
 
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
@@ -34,7 +34,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 1.24.12
+  aspose_barcode_cloud: 4.25.1
 ```
 
 ## Sample usage
@@ -48,41 +48,35 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
-import 'package:http/http.dart' show MultipartFile;
 
 Future<void> main() async {
   const fileName = "qr.png";
 
-  final api = BarcodeApi(ApiClient(Configuration(
+  final client = ApiClient(Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
     clientSecret:
         "Client Secret from https://dashboard.aspose.cloud/applications",
     // For testing only
     accessToken: Platform.environment["TEST_CONFIGURATION_ACCESS_TOKEN"],
-  )));
+  ));
 
+  final genApi = GenerateApi(client);
+  final scanApi = ScanApi(client);
   // Generate image with barcode
-  final Uint8List generated = await api.getBarcodeGenerate(
-    EncodeBarcodeType.QR.toString(),
-    "text",
-    textLocation: CodeLocation.None.toString(),
-  );
+  final Uint8List generated =
+      await genApi.generate(EncodeBarcodeType.QR, "text");
 
   // Save generated image to file
   File(fileName).writeAsBytesSync(generated);
   print("Generated image saved to '$fileName'");
 
   // Recognize generated image
-  final formFile = MultipartFile.fromBytes("image", generated.toList(),
-      filename: "barcode.png");
-  final BarcodeResponseList recognized = await api.scanBarcode(
-    formFile,
-    decodeTypes: [DecodeBarcodeType.QR],
-  );
 
-  if (recognized.barcodes != null && recognized.barcodes!.isNotEmpty) {
-    print("Recognized Type: ${recognized.barcodes![0].type!}");
-    print("Recognized Value: ${recognized.barcodes![0].barcodeValue!}");
+  final BarcodeResponseList recognized = await scanApi.scanMultipart(generated);
+
+  if (recognized.barcodes.isNotEmpty) {
+    print("Recognized Type: ${recognized.barcodes[0].type!}");
+    print("Recognized Value: ${recognized.barcodes[0].barcodeValue!}");
   } else {
     print("No barcode found");
   }
@@ -109,112 +103,38 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *<https://api.aspose.cloud/v3.0>*
+All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*BarcodeApi* | [**getBarcodeGenerate**](doc/api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
-*BarcodeApi* | [**getBarcodeRecognize**](doc/api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](doc/api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
-*BarcodeApi* | [**postGenerateMultiple**](doc/api/BarcodeApi.md#postgeneratemultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
-*BarcodeApi* | [**putBarcodeGenerateFile**](doc/api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
-*BarcodeApi* | [**putBarcodeRecognizeFromBody**](doc/api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
-*BarcodeApi* | [**putGenerateMultiple**](doc/api/BarcodeApi.md#putgeneratemultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
-*BarcodeApi* | [**scanBarcode**](doc/api/BarcodeApi.md#scanbarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
-*FileApi* | [**copyFile**](doc/api/FileApi.md#copyfile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
-*FileApi* | [**deleteFile**](doc/api/FileApi.md#deletefile) | **DELETE** /barcode/storage/file/{path} | Delete file
-*FileApi* | [**downloadFile**](doc/api/FileApi.md#downloadfile) | **GET** /barcode/storage/file/{path} | Download file
-*FileApi* | [**moveFile**](doc/api/FileApi.md#movefile) | **PUT** /barcode/storage/file/move/{srcPath} | Move file
-*FileApi* | [**uploadFile**](doc/api/FileApi.md#uploadfile) | **PUT** /barcode/storage/file/{path} | Upload file
-*FolderApi* | [**copyFolder**](doc/api/FolderApi.md#copyfolder) | **PUT** /barcode/storage/folder/copy/{srcPath} | Copy folder
-*FolderApi* | [**createFolder**](doc/api/FolderApi.md#createfolder) | **PUT** /barcode/storage/folder/{path} | Create the folder
-*FolderApi* | [**deleteFolder**](doc/api/FolderApi.md#deletefolder) | **DELETE** /barcode/storage/folder/{path} | Delete folder
-*FolderApi* | [**getFilesList**](doc/api/FolderApi.md#getfileslist) | **GET** /barcode/storage/folder/{path} | Get all files and folders within a folder
-*FolderApi* | [**moveFolder**](doc/api/FolderApi.md#movefolder) | **PUT** /barcode/storage/folder/move/{srcPath} | Move folder
-*StorageApi* | [**getDiscUsage**](doc/api/StorageApi.md#getdiscusage) | **GET** /barcode/storage/disc | Get disc usage
-*StorageApi* | [**getFileVersions**](doc/api/StorageApi.md#getfileversions) | **GET** /barcode/storage/version/{path} | Get file versions
-*StorageApi* | [**objectExists**](doc/api/StorageApi.md#objectexists) | **GET** /barcode/storage/exist/{path} | Check if file or folder exists
-*StorageApi* | [**storageExists**](doc/api/StorageApi.md#storageexists) | **GET** /barcode/storage/{storageName}/exist | Check if storage exists
+*GenerateApi* | [**generate**](doc/api/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
+*GenerateApi* | [**generateBody**](doc/api/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
+*GenerateApi* | [**generateMultipart**](doc/api/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
+*RecognizeApi* | [**recognize**](doc/api/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**recognizeBase64**](doc/api/RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+*RecognizeApi* | [**recognizeMultipart**](doc/api/RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*ScanApi* | [**scan**](doc/api/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**scanBase64**](doc/api/ScanApi.md#scanbase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+*ScanApi* | [**scanMultipart**](doc/api/ScanApi.md#scanmultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation For Models
 
 - [ApiError](doc/models/ApiError.md)
 - [ApiErrorResponse](doc/models/ApiErrorResponse.md)
-- [AustralianPostParams](doc/models/AustralianPostParams.md)
-- [AutoSizeMode](doc/models/AutoSizeMode.md)
-- [AvailableGraphicsUnit](doc/models/AvailableGraphicsUnit.md)
-- [AztecEncodeMode](doc/models/AztecEncodeMode.md)
-- [AztecParams](doc/models/AztecParams.md)
-- [AztecSymbolMode](doc/models/AztecSymbolMode.md)
+- [BarcodeImageFormat](doc/models/BarcodeImageFormat.md)
+- [BarcodeImageParams](doc/models/BarcodeImageParams.md)
 - [BarcodeResponse](doc/models/BarcodeResponse.md)
 - [BarcodeResponseList](doc/models/BarcodeResponseList.md)
-- [BorderDashStyle](doc/models/BorderDashStyle.md)
-- [CaptionParams](doc/models/CaptionParams.md)
-- [ChecksumValidation](doc/models/ChecksumValidation.md)
-- [CodabarChecksumMode](doc/models/CodabarChecksumMode.md)
-- [CodabarParams](doc/models/CodabarParams.md)
-- [CodabarSymbol](doc/models/CodabarSymbol.md)
-- [CodablockParams](doc/models/CodablockParams.md)
-- [Code128Emulation](doc/models/Code128Emulation.md)
-- [Code128EncodeMode](doc/models/Code128EncodeMode.md)
-- [Code128Params](doc/models/Code128Params.md)
-- [Code16KParams](doc/models/Code16KParams.md)
 - [CodeLocation](doc/models/CodeLocation.md)
-- [CouponParams](doc/models/CouponParams.md)
-- [CustomerInformationInterpretingType](doc/models/CustomerInformationInterpretingType.md)
-- [DataBarParams](doc/models/DataBarParams.md)
-- [DataMatrixEccType](doc/models/DataMatrixEccType.md)
-- [DataMatrixEncodeMode](doc/models/DataMatrixEncodeMode.md)
-- [DataMatrixParams](doc/models/DataMatrixParams.md)
-- [DataMatrixVersion](doc/models/DataMatrixVersion.md)
 - [DecodeBarcodeType](doc/models/DecodeBarcodeType.md)
-- [DiscUsage](doc/models/DiscUsage.md)
-- [DotCodeEncodeMode](doc/models/DotCodeEncodeMode.md)
-- [DotCodeParams](doc/models/DotCodeParams.md)
-- [ECIEncodings](doc/models/ECIEncodings.md)
-- [EnableChecksum](doc/models/EnableChecksum.md)
 - [EncodeBarcodeType](doc/models/EncodeBarcodeType.md)
-- [Error](doc/models/Error.md)
-- [ErrorDetails](doc/models/ErrorDetails.md)
-- [FileVersions](doc/models/FileVersions.md)
-- [FilesList](doc/models/FilesList.md)
-- [FilesUploadResult](doc/models/FilesUploadResult.md)
-- [FontMode](doc/models/FontMode.md)
-- [FontParams](doc/models/FontParams.md)
-- [FontStyle](doc/models/FontStyle.md)
-- [GeneratorParams](doc/models/GeneratorParams.md)
-- [GeneratorParamsList](doc/models/GeneratorParamsList.md)
-- [HanXinEncodeMode](doc/models/HanXinEncodeMode.md)
-- [HanXinErrorLevel](doc/models/HanXinErrorLevel.md)
-- [HanXinParams](doc/models/HanXinParams.md)
-- [HanXinVersion](doc/models/HanXinVersion.md)
-- [ITF14BorderType](doc/models/ITF14BorderType.md)
-- [ITFParams](doc/models/ITFParams.md)
-- [MacroCharacter](doc/models/MacroCharacter.md)
-- [MaxiCodeEncodeMode](doc/models/MaxiCodeEncodeMode.md)
-- [MaxiCodeMode](doc/models/MaxiCodeMode.md)
-- [MaxiCodeParams](doc/models/MaxiCodeParams.md)
-- [ObjectExist](doc/models/ObjectExist.md)
-- [Padding](doc/models/Padding.md)
-- [PatchCodeParams](doc/models/PatchCodeParams.md)
-- [PatchFormat](doc/models/PatchFormat.md)
-- [Pdf417CompactionMode](doc/models/Pdf417CompactionMode.md)
-- [Pdf417ErrorLevel](doc/models/Pdf417ErrorLevel.md)
-- [Pdf417MacroTerminator](doc/models/Pdf417MacroTerminator.md)
-- [Pdf417Params](doc/models/Pdf417Params.md)
-- [PostalParams](doc/models/PostalParams.md)
-- [PresetType](doc/models/PresetType.md)
-- [QREncodeMode](doc/models/QREncodeMode.md)
-- [QREncodeType](doc/models/QREncodeType.md)
-- [QRErrorLevel](doc/models/QRErrorLevel.md)
-- [QRVersion](doc/models/QRVersion.md)
-- [QrParams](doc/models/QrParams.md)
-- [ReaderParams](doc/models/ReaderParams.md)
+- [EncodeData](doc/models/EncodeData.md)
+- [EncodeDataType](doc/models/EncodeDataType.md)
+- [GenerateParams](doc/models/GenerateParams.md)
+- [GraphicsUnit](doc/models/GraphicsUnit.md)
+- [RecognitionImageKind](doc/models/RecognitionImageKind.md)
+- [RecognitionMode](doc/models/RecognitionMode.md)
+- [RecognizeBase64Request](doc/models/RecognizeBase64Request.md)
 - [RegionPoint](doc/models/RegionPoint.md)
-- [ResultImageInfo](doc/models/ResultImageInfo.md)
-- [StorageExist](doc/models/StorageExist.md)
-- [StorageFile](doc/models/StorageFile.md)
-- [StructuredAppend](doc/models/StructuredAppend.md)
-- [TextAlignment](doc/models/TextAlignment.md)
-- [FileVersion](doc/models/FileVersion.md)
+- [ScanBase64Request](doc/models/ScanBase64Request.md)
 
