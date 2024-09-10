@@ -5,13 +5,18 @@ import '../../aspose_barcode_cloud.dart';
 /// EncodeData
 class EncodeData {
   /// dataType
-  EncodeDataType? dataType = ;
   //enum dataTypeEnum {  StringData,  Base64Bytes,  HexBytes,  };
+  late EncodeDataType dataType;
+
   /// String represents data to encode
-  String? data = ;
-  
+
+  late String data;
+
   /// Constructor
-  EncodeData();
+  EncodeData(
+    this.dataType,
+    this.data,
+  );
 
   @override
   String toString() {
@@ -20,22 +25,13 @@ class EncodeData {
 
   /// Creates a EncodeData instance from a JSON representation.
   EncodeData.fromJson(Map<String, dynamic> json) {
-    dataType =
-      
-      
-      EncodeDataType.fromJson(json['dataType'])
-;
-    data =
-        json['data']
-    ;
+    dataType = EncodeDataType.fromJson(json['dataType']);
+    data = json['data'];
   }
 
   /// Returns a JSON representation of EncodeData.
   Map<String, dynamic> toJson() {
-    return {
-      'dataType': dataType,
-      'data': data
-     };
+    return {'dataType': dataType, 'data': data};
   }
 
   /// Converts a list of JSON objects to a list of EncodeData instances.
@@ -46,4 +42,3 @@ class EncodeData {
     return json.map((value) => EncodeData.fromJson(value)).toList();
   }
 }
-

@@ -4,10 +4,13 @@
 /// Scan barcode request.
 class ScanBase64Request {
   /// Barcode image bytes encoded as base-64.
-  String? fileBase64 = ;
-  
+
+  late String fileBase64;
+
   /// Constructor
-  ScanBase64Request();
+  ScanBase64Request(
+    this.fileBase64,
+  );
 
   @override
   String toString() {
@@ -16,16 +19,12 @@ class ScanBase64Request {
 
   /// Creates a ScanBase64Request instance from a JSON representation.
   ScanBase64Request.fromJson(Map<String, dynamic> json) {
-    fileBase64 =
-        json['fileBase64']
-    ;
+    fileBase64 = json['fileBase64'];
   }
 
   /// Returns a JSON representation of ScanBase64Request.
   Map<String, dynamic> toJson() {
-    return {
-      'fileBase64': fileBase64
-     };
+    return {'fileBase64': fileBase64};
   }
 
   /// Converts a list of JSON objects to a list of ScanBase64Request instances.
@@ -36,4 +35,3 @@ class ScanBase64Request {
     return json.map((value) => ScanBase64Request.fromJson(value)).toList();
   }
 }
-

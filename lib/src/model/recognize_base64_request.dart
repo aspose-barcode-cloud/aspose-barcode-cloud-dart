@@ -5,19 +5,24 @@ import '../../aspose_barcode_cloud.dart';
 /// Barcode recognize request
 class RecognizeBase64Request {
   /// Array of decode types to find on barcode
-  List<DecodeBarcodeType>? barcodeTypes = const [];
-  
+
+  late List<DecodeBarcodeType> barcodeTypes;
+
   /// recognitionMode
-  RecognitionMode? recognitionMode = ;
   //enum recognitionModeEnum {  Fast,  Normal,  Excellent,  };
+  RecognitionMode? recognitionMode;
+
   /// imageKind
-  RecognitionImageKind? imageKind = ;
   //enum imageKindEnum {  Photo,  ScannedDocument,  ClearImage,  };
+  RecognitionImageKind? imageKind;
+
   /// Barcode image bytes encoded as base-64.
-  String? fileBase64 = ;
-  
+
+  late String fileBase64;
+
   /// Constructor
-  RecognizeBase64Request();
+  RecognizeBase64Request(this.barcodeTypes, this.fileBase64,
+      [this.recognitionMode, this.imageKind]);
 
   @override
   String toString() {
@@ -26,24 +31,10 @@ class RecognizeBase64Request {
 
   /// Creates a RecognizeBase64Request instance from a JSON representation.
   RecognizeBase64Request.fromJson(Map<String, dynamic> json) {
-    barcodeTypes =
-      
-      
-      DecodeBarcodeType.fromJson(json['barcodeTypes'])
-;
-    recognitionMode =
-      
-      
-      RecognitionMode.fromJson(json['recognitionMode'])
-;
-    imageKind =
-      
-      
-      RecognitionImageKind.fromJson(json['imageKind'])
-;
-    fileBase64 =
-        json['fileBase64']
-    ;
+    barcodeTypes = DecodeBarcodeType.listFromJson(json['barcodeTypes']);
+    recognitionMode = RecognitionMode.fromJson(json['recognitionMode']);
+    imageKind = RecognitionImageKind.fromJson(json['imageKind']);
+    fileBase64 = json['fileBase64'];
   }
 
   /// Returns a JSON representation of RecognizeBase64Request.
@@ -53,7 +44,7 @@ class RecognizeBase64Request {
       'recognitionMode': recognitionMode,
       'imageKind': imageKind,
       'fileBase64': fileBase64
-     };
+    };
   }
 
   /// Converts a list of JSON objects to a list of RecognizeBase64Request instances.
@@ -64,4 +55,3 @@ class RecognizeBase64Request {
     return json.map((value) => RecognizeBase64Request.fromJson(value)).toList();
   }
 }
-

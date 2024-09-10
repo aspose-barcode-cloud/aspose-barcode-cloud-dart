@@ -4,13 +4,15 @@
 /// Wrapper around Drawing.Point for proper specification.
 class RegionPoint {
   /// X-coordinate
-  int? x = ;
-  
+
+  int? x;
+
   /// Y-coordinate
-  int? y = ;
-  
+
+  int? y;
+
   /// Constructor
-  RegionPoint();
+  RegionPoint([this.x, this.y]);
 
   @override
   String toString() {
@@ -19,20 +21,13 @@ class RegionPoint {
 
   /// Creates a RegionPoint instance from a JSON representation.
   RegionPoint.fromJson(Map<String, dynamic> json) {
-    x =
-        json['x']
-    ;
-    y =
-        json['y']
-    ;
+    x = json['x'];
+    y = json['y'];
   }
 
   /// Returns a JSON representation of RegionPoint.
   Map<String, dynamic> toJson() {
-    return {
-      'x': x,
-      'y': y
-     };
+    return {'x': x, 'y': y};
   }
 
   /// Converts a list of JSON objects to a list of RegionPoint instances.
@@ -43,4 +38,3 @@ class RegionPoint {
     return json.map((value) => RegionPoint.fromJson(value)).toList();
   }
 }
-

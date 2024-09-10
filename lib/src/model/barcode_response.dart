@@ -5,19 +5,23 @@ import '../../aspose_barcode_cloud.dart';
 /// Represents information about barcode.
 class BarcodeResponse {
   /// Barcode data.
-  String? barcodeValue = ;
-  
+
+  String? barcodeValue;
+
   /// Type of the barcode.
-  String? type = ;
-  
+
+  String? type;
+
   /// Region with barcode.
-  List<RegionPoint>? region = const [];
-  
+
+  List<RegionPoint>? region;
+
   /// Checksum of barcode.
-  String? checksum = ;
-  
+
+  String? checksum;
+
   /// Constructor
-  BarcodeResponse();
+  BarcodeResponse([this.barcodeValue, this.type, this.region, this.checksum]);
 
   @override
   String toString() {
@@ -26,20 +30,10 @@ class BarcodeResponse {
 
   /// Creates a BarcodeResponse instance from a JSON representation.
   BarcodeResponse.fromJson(Map<String, dynamic> json) {
-    barcodeValue =
-        json['barcodeValue']
-    ;
-    type =
-        json['type']
-    ;
-    region =
-      
-      
-      RegionPoint.fromJson(json['region'])
-;
-    checksum =
-        json['checksum']
-    ;
+    barcodeValue = json['barcodeValue'];
+    type = json['type'];
+    region = RegionPoint.listFromJson(json['region']);
+    checksum = json['checksum'];
   }
 
   /// Returns a JSON representation of BarcodeResponse.
@@ -49,7 +43,7 @@ class BarcodeResponse {
       'type': type,
       'region': region,
       'checksum': checksum
-     };
+    };
   }
 
   /// Converts a list of JSON objects to a list of BarcodeResponse instances.
@@ -60,4 +54,3 @@ class BarcodeResponse {
     return json.map((value) => BarcodeResponse.fromJson(value)).toList();
   }
 }
-

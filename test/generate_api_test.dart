@@ -1,0 +1,43 @@
+import 'package:test/test.dart';
+import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
+import 'test_config.dart';
+
+void main() {
+  group('barcodeGenerateApiTests', () {
+    test('should generate image with barcodeGenerateBarcodeTypeGet', () async {
+      final generated = await TestConfig.generateApi
+          .barcodeGenerateBarcodeTypeGet(EncodeBarcodeType.QR,
+              EncodeDataType.StringData, 'Testing generator',
+              foregroundColor: '0x001100');
+
+      final imageSize = generated.length;
+      expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
+    });
+
+    test('should generate image with barcodeGenerateBodyPost', () async {
+      final imageParams = BarcodeImageParams();
+      imageParams.backgroundColor = '0xffddff';
+
+      final encodeData =
+          EncodeData(EncodeDataType.StringData, "Testing generator");
+
+      final generateParams =
+          GenerateParams(EncodeBarcodeType.Pdf417, encodeData, imageParams);
+
+      final generated =
+          await TestConfig.generateApi.barcodeGenerateBodyPost(generateParams);
+
+      final imageSize = generated.length;
+      expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
+    });
+
+    test('should generate image with barcodeGenerateFormPost', () async {
+      final generated = await TestConfig.generateApi.barcodeGenerateFormPost(
+          EncodeBarcodeType.QR, EncodeDataType.StringData, 'Testing generator',
+          rotationAngle: 90);
+
+      final imageSize = generated.lengthInBytes;
+      expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
+    });
+  });
+}

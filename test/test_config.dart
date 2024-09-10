@@ -9,8 +9,9 @@ class TestConfig {
           Configuration.fromEnv(prefix: "TEST_CONFIGURATION_");
   static final apiClient = ApiClient(configuration);
 
-  static final barcodeApi = BarcodeApi(apiClient);
-
+  static final scanApi = ScanApi(apiClient);
+  static final generateApi = GenerateApi(apiClient);
+  static final recognizeApi = RecognizeApi(apiClient);
   static String folder = "BarcodeTests";
 
   static String generateRandomString(int len) {

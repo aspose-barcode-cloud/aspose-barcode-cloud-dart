@@ -23,8 +23,7 @@ class RecognizeApi {
 
     // create path and map variables
     final String requestPath = "/barcode/recognize/{barcodeType}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{barcodeType}", barcodeType);
+        .replaceAll("{barcodeType}", barcodeType.toString());
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -66,8 +65,7 @@ class RecognizeApi {
     Object? postBody = recognizeBase64Request;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/recognize-body".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/recognize-body";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -109,8 +107,7 @@ class RecognizeApi {
     Object? postBody;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/recognize-form".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/recognize-form";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -125,12 +122,12 @@ class RecognizeApi {
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequestPlus? mp;
+      MultipartRequestPlus mp =
+          MultipartRequestPlus('POST', Uri.parse(requestPath));
 
       hasFields = true;
       mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
-      mp = MultipartRequestPlus('POST', Uri.parse(requestPath));
       hasFields = true;
       mp.files.add(file);
 

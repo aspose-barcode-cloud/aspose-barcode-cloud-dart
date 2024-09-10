@@ -26,8 +26,8 @@ void main() {
         "Client Id from https://dashboard.aspose.cloud/applications");
     expect(config.clientSecret,
         "Client Secret from https://dashboard.aspose.cloud/applications");
-    expect(config.basePath, "https://api.aspose.cloud/v3.0");
-    expect(config.tokenUrl, "https://api.aspose.cloud/connect/token");
+    expect(config.basePath, "https://api.aspose.cloud/v4.0");
+    expect(config.tokenUrl, "https://id.aspose.cloud/connect/token");
     expect(config.accessToken, isNull);
   });
 }

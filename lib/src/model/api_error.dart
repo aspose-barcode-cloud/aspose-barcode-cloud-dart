@@ -4,22 +4,28 @@
 /// Api Error.
 class ApiError {
   /// Gets or sets api error code.
-  String? code = ;
-  
+
+  late String code;
+
   /// Gets or sets error message.
-  String? message = ;
-  
+
+  late String message;
+
   /// Gets or sets error description.
-  String? description = ;
-  
+
+  String? description;
+
   /// Gets or sets server datetime.
-  DateTime? dateTime = ;
-  
+
+  DateTime? dateTime;
+
   /// innerError
-  ApiError? innerError = ;
-  
+
+  ApiError? innerError;
+
   /// Constructor
-  ApiError();
+  ApiError(this.code, this.message,
+      [this.description, this.dateTime, this.innerError]);
 
   @override
   String toString() {
@@ -28,21 +34,12 @@ class ApiError {
 
   /// Creates a ApiError instance from a JSON representation.
   ApiError.fromJson(Map<String, dynamic> json) {
-    code =
-        json['code']
-    ;
-    message =
-        json['message']
-    ;
-    description =
-        json['description']
-    ;
-    dateTime = json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
-    innerError =
-      
-      
-      ApiError.fromJson(json['innerError'])
-;
+    code = json['code'];
+    message = json['message'];
+    description = json['description'];
+    dateTime =
+        json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
+    innerError = ApiError.fromJson(json['innerError']);
   }
 
   /// Returns a JSON representation of ApiError.
@@ -53,7 +50,7 @@ class ApiError {
       'description': description,
       'dateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
       'innerError': innerError
-     };
+    };
   }
 
   /// Converts a list of JSON objects to a list of ApiError instances.
@@ -64,4 +61,3 @@ class ApiError {
     return json.map((value) => ApiError.fromJson(value)).toList();
   }
 }
-

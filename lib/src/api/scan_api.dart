@@ -20,8 +20,7 @@ class ScanApi {
     Object? postBody = scanBase64Request;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/scan-body".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/scan-body";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -60,8 +59,7 @@ class ScanApi {
     Object? postBody;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/scan-form".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/scan-form";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -76,9 +74,9 @@ class ScanApi {
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequestPlus? mp;
+      MultipartRequestPlus mp =
+          MultipartRequestPlus('POST', Uri.parse(requestPath));
 
-      mp = MultipartRequestPlus('POST', Uri.parse(requestPath));
       hasFields = true;
       mp.files.add(file);
 
@@ -113,7 +111,7 @@ class ScanApi {
     Object? postBody;
 
     // create path and map variables
-    final String requestPath = "/barcode/scan".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/scan";
 
     // query params
     final List<QueryParam> queryParams = [];

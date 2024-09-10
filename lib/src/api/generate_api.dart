@@ -32,8 +32,7 @@ class GenerateApi {
 
     // create path and map variables
     final String requestPath = "/barcode/generate/{barcodeType}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{barcodeType}", barcodeType);
+        .replaceAll("{barcodeType}", barcodeType.toString());
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -112,8 +111,7 @@ class GenerateApi {
     Object? postBody = generateParams;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/generate-body".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/generate-body";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -163,8 +161,7 @@ class GenerateApi {
     Object? postBody;
 
     // create path and map variables
-    final String requestPath =
-        "/barcode/generate-form".replaceAll("{format}", "json");
+    final String requestPath = "/barcode/generate-form";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -179,7 +176,8 @@ class GenerateApi {
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequestPlus? mp;
+      MultipartRequestPlus mp =
+          MultipartRequestPlus('POST', Uri.parse(requestPath));
 
       hasFields = true;
       mp.fields['barcodeType'] = [parameterToString(barcodeType)];
