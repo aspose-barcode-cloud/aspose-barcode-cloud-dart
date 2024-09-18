@@ -39,7 +39,9 @@ class ApiError {
     description = json['description'];
     dateTime =
         json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
-    innerError = ApiError.fromJson(json['innerError']);
+    innerError = json['innerError'] == null
+        ? null
+        : ApiError.fromJson(json['innerError']);
   }
 
   /// Returns a JSON representation of ApiError.

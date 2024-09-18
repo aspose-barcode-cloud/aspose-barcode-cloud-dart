@@ -23,7 +23,7 @@ class ApiErrorResponse {
   /// Creates a ApiErrorResponse instance from a JSON representation.
   ApiErrorResponse.fromJson(Map<String, dynamic> json) {
     requestId = json['requestId'];
-    error = ApiError.fromJson(json['error']);
+    error = json['error'] == null ? null : ApiError.fromJson(json['error']);
   }
 
   /// Returns a JSON representation of ApiErrorResponse.

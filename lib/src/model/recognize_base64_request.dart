@@ -33,8 +33,12 @@ class RecognizeBase64Request {
   RecognizeBase64Request.fromJson(Map<String, dynamic> json) {
     barcodeTypes = DecodeBarcodeType.listFromJson(json['barcodeTypes']);
     fileBase64 = json['fileBase64'];
-    recognitionMode = RecognitionMode.fromJson(json['recognitionMode']);
-    imageKind = RecognitionImageKind.fromJson(json['imageKind']);
+    recognitionMode = json['recognitionMode'] == null
+        ? null
+        : RecognitionMode.fromJson(json['recognitionMode']);
+    imageKind = json['imageKind'] == null
+        ? null
+        : RecognitionImageKind.fromJson(json['imageKind']);
   }
 
   /// Returns a JSON representation of RecognizeBase64Request.

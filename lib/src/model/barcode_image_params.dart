@@ -69,13 +69,21 @@ class BarcodeImageParams {
 
   /// Creates a BarcodeImageParams instance from a JSON representation.
   BarcodeImageParams.fromJson(Map<String, dynamic> json) {
-    imageFormat = AvailableBarCodeImageFormat.fromJson(json['imageFormat']);
+    imageFormat = json['imageFormat'] == null
+        ? null
+        : AvailableBarCodeImageFormat.fromJson(json['imageFormat']);
     twoDDisplayText = json['twoDDisplayText'];
-    textLocation = CodeLocation.fromJson(json['textLocation']);
-    textAlignment = TextAlignment.fromJson(json['textAlignment']);
+    textLocation = json['textLocation'] == null
+        ? null
+        : CodeLocation.fromJson(json['textLocation']);
+    textAlignment = json['textAlignment'] == null
+        ? null
+        : TextAlignment.fromJson(json['textAlignment']);
     foregroundColor = json['foregroundColor'];
     backgroundColor = json['backgroundColor'];
-    units = AvailableGraphicsUnit.fromJson(json['units']);
+    units = json['units'] == null
+        ? null
+        : AvailableGraphicsUnit.fromJson(json['units']);
     resolution = json['resolution'];
     imageHeight = json['imageHeight'];
     imageWidth = json['imageWidth'];

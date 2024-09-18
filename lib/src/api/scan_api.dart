@@ -44,7 +44,18 @@ class ScanApi {
         authNames);
 
     if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
     } else {
       return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
@@ -96,7 +107,18 @@ class ScanApi {
         authNames);
 
     if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
     } else {
       return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;
@@ -130,7 +152,18 @@ class ScanApi {
         postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
     } else {
       return _apiClient.deserialize(response.body, 'BarcodeResponseList')
           as BarcodeResponseList;

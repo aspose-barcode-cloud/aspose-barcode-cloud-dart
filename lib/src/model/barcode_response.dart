@@ -32,7 +32,9 @@ class BarcodeResponse {
   BarcodeResponse.fromJson(Map<String, dynamic> json) {
     barcodeValue = json['barcodeValue'];
     type = json['type'];
-    region = RegionPoint.listFromJson(json['region']);
+    region = json['region'] == null
+        ? null
+        : RegionPoint.listFromJson(json['region']);
     checksum = json['checksum'];
   }
 

@@ -28,8 +28,9 @@ class GenerateParams {
   GenerateParams.fromJson(Map<String, dynamic> json) {
     barcodeType = EncodeBarcodeType.fromJson(json['barcodeType']);
     encodeData = EncodeData.fromJson(json['encodeData']);
-    barcodeImageParams =
-        BarcodeImageParams.fromJson(json['barcodeImageParams']);
+    barcodeImageParams = json['barcodeImageParams'] == null
+        ? null
+        : BarcodeImageParams.fromJson(json['barcodeImageParams']);
   }
 
   /// Returns a JSON representation of GenerateParams.

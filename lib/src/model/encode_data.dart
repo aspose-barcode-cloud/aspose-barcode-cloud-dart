@@ -22,7 +22,9 @@ class EncodeData {
 
   /// Creates a EncodeData instance from a JSON representation.
   EncodeData.fromJson(Map<String, dynamic> json) {
-    dataType = EncodeDataType.fromJson(json['dataType']);
+    dataType = json['dataType'] == null
+        ? null
+        : EncodeDataType.fromJson(json['dataType']);
     data = json['data'];
   }
 
