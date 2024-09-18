@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **barcodeRecognizeBarcodeTypeGet**
-> BarcodeResponseList barcodeRecognizeBarcodeTypeGet(barcodeType, url, recognitionMode, imageKind)
+> BarcodeResponseList barcodeRecognizeBarcodeTypeGet(barcodeType, fileUrl, recognitionMode, imageKind)
 
 Recognize barcode from file on server using GET requests with parameters in route and query string.
 
@@ -25,12 +25,12 @@ import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = RecognizeApi();
 final barcodeType = ; // DecodeBarcodeType | Type of barcode to recognize
-final url = url_example; // String | Url to barcode image
+final fileUrl = fileUrl_example; // String | Url to barcode image
 final recognitionMode = ; // RecognitionMode | Recognition mode
 final imageKind = ; // RecognitionImageKind | Image kind
 
 try {
-    final result = api_instance.barcodeRecognizeBarcodeTypeGet(barcodeType, url, recognitionMode, imageKind);
+    final result = api_instance.barcodeRecognizeBarcodeTypeGet(barcodeType, fileUrl, recognitionMode, imageKind);
     print(result);
 } catch (e) {
     print("Exception when calling RecognizeApi->barcodeRecognizeBarcodeTypeGet: $e\n");
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**DecodeBarcodeType**](.md)| Type of barcode to recognize | 
- **url** | **String**| Url to barcode image | 
+ **fileUrl** | **String**| Url to barcode image | 
  **recognitionMode** | [**RecognitionMode**](.md)| Recognition mode | [optional] 
  **imageKind** | [**RecognitionImageKind**](.md)| Image kind | [optional] 
 

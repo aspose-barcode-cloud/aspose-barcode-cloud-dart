@@ -106,7 +106,7 @@ class ScanApi {
   ///
   /// Scan barcode from file on server using GET requests with parameter in query string.
   ///
-  Future<BarcodeResponseList> barcodeScanGet(String url) async {
+  Future<BarcodeResponseList> barcodeScanGet(String fileUrl) async {
     // ignore: prefer_final_locals
     Object? postBody;
 
@@ -117,7 +117,8 @@ class ScanApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(convertParametersForCollectionFormat("", "url", url));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
 
     final List<String> contentTypes = [];
 

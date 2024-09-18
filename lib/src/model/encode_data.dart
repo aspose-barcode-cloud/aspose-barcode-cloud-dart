@@ -2,21 +2,18 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 import '../../aspose_barcode_cloud.dart';
 
-/// EncodeData
+/// Data to encode in barcode
 class EncodeData {
   /// dataType
   //enum dataTypeEnum {  StringData,  Base64Bytes,  HexBytes,  };
-  late EncodeDataType dataType;
+  EncodeDataType? dataType;
 
   /// String represents data to encode
 
   late String data;
 
   /// Constructor
-  EncodeData(
-    this.dataType,
-    this.data,
-  );
+  EncodeData(this.data, [this.dataType]);
 
   @override
   String toString() {

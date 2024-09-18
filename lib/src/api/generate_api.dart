@@ -15,8 +15,9 @@ class GenerateApi {
   /// Generate barcode using GET request with parameters in route and query string.
   ///
   Future<Uint8List> barcodeGenerateBarcodeTypeGet(
-      EncodeBarcodeType barcodeType, EncodeDataType dataType, String data,
-      {AvailableBarCodeImageFormat? imageFormat,
+      EncodeBarcodeType barcodeType, String data,
+      {EncodeDataType? dataType,
+      AvailableBarCodeImageFormat? imageFormat,
       String? twoDDisplayText,
       CodeLocation? textLocation,
       TextAlignment? textAlignment,
@@ -38,8 +39,10 @@ class GenerateApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams
-        .addAll(convertParametersForCollectionFormat("", "DataType", dataType));
+    if (dataType != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "DataType", dataType));
+    }
     queryParams.addAll(convertParametersForCollectionFormat("", "Data", data));
     if (imageFormat != null) {
       queryParams.addAll(
@@ -145,8 +148,9 @@ class GenerateApi {
   /// Generate barcode using POST request with parameters in url ecncoded form.
   ///
   Future<Uint8List> barcodeGenerateFormPost(
-      EncodeBarcodeType barcodeType, EncodeDataType dataType, String data,
-      {AvailableBarCodeImageFormat? imageFormat,
+      EncodeBarcodeType barcodeType, String data,
+      {EncodeDataType? dataType,
+      AvailableBarCodeImageFormat? imageFormat,
       String? twoDDisplayText,
       CodeLocation? textLocation,
       TextAlignment? textAlignment,
@@ -182,8 +186,10 @@ class GenerateApi {
       hasFields = true;
       mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
-      hasFields = true;
-      mp.fields['DataType'] = [parameterToString(dataType)];
+      if (dataType != null) {
+        hasFields = true;
+        mp.fields['DataType'] = [parameterToString(dataType)];
+      }
 
       hasFields = true;
       mp.fields['Data'] = [parameterToString(data)];
@@ -248,7 +254,9 @@ class GenerateApi {
       }
     } else {
       formParams['barcodeType'] = parameterToString(barcodeType);
-      formParams['DataType'] = parameterToString(dataType);
+      if (dataType != null) {
+        formParams['DataType'] = parameterToString(dataType);
+      }
       formParams['Data'] = parameterToString(data);
       if (imageFormat != null) {
         formParams['ImageFormat'] = parameterToString(imageFormat);

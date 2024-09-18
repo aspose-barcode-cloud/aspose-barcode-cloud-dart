@@ -8,6 +8,10 @@ class RecognizeBase64Request {
 
   late List<DecodeBarcodeType> barcodeTypes;
 
+  /// Barcode image bytes encoded as base-64.
+
+  late String fileBase64;
+
   /// recognitionMode
   //enum recognitionModeEnum {  Fast,  Normal,  Excellent,  };
   RecognitionMode? recognitionMode;
@@ -16,34 +20,30 @@ class RecognizeBase64Request {
   //enum imageKindEnum {  Photo,  ScannedDocument,  ClearImage,  };
   RecognitionImageKind? imageKind;
 
-  /// Barcode image bytes encoded as base-64.
-
-  late String fileBase64;
-
   /// Constructor
   RecognizeBase64Request(this.barcodeTypes, this.fileBase64,
       [this.recognitionMode, this.imageKind]);
 
   @override
   String toString() {
-    return 'RecognizeBase64Request[barcodeTypes=$barcodeTypes, recognitionMode=$recognitionMode, imageKind=$imageKind, fileBase64=$fileBase64, ]';
+    return 'RecognizeBase64Request[barcodeTypes=$barcodeTypes, fileBase64=$fileBase64, recognitionMode=$recognitionMode, imageKind=$imageKind, ]';
   }
 
   /// Creates a RecognizeBase64Request instance from a JSON representation.
   RecognizeBase64Request.fromJson(Map<String, dynamic> json) {
     barcodeTypes = DecodeBarcodeType.listFromJson(json['barcodeTypes']);
+    fileBase64 = json['fileBase64'];
     recognitionMode = RecognitionMode.fromJson(json['recognitionMode']);
     imageKind = RecognitionImageKind.fromJson(json['imageKind']);
-    fileBase64 = json['fileBase64'];
   }
 
   /// Returns a JSON representation of RecognizeBase64Request.
   Map<String, dynamic> toJson() {
     return {
       'barcodeTypes': barcodeTypes,
+      'fileBase64': fileBase64,
       'recognitionMode': recognitionMode,
-      'imageKind': imageKind,
-      'fileBase64': fileBase64
+      'imageKind': imageKind
     };
   }
 

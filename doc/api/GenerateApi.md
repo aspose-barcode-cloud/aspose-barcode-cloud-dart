@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **barcodeGenerateBarcodeTypeGet**
-> MultipartFile barcodeGenerateBarcodeTypeGet(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> MultipartFile barcodeGenerateBarcodeTypeGet(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
 Generate barcode using GET request with parameters in route and query string.
 
@@ -25,8 +25,8 @@ import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = GenerateApi();
 final barcodeType = ; // EncodeBarcodeType | Type of barcode to generate.
-final dataType = ; // EncodeDataType | Type of data to encode.
 final data = data_example; // String | String represents data to encode
+final dataType = ; // EncodeDataType | Type of data to encode.  Default value:  EncodeDataType.StringData.
 final imageFormat = ; // AvailableBarCodeImageFormat | Barcode output image format.  Default value: png
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = ; // CodeLocation | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
@@ -40,7 +40,7 @@ final imageWidth = 3.4; // double | Width of the barcode image in given units. D
 final rotationAngle = 56; // int | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
 
 try {
-    final result = api_instance.barcodeGenerateBarcodeTypeGet(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle);
+    final result = api_instance.barcodeGenerateBarcodeTypeGet(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle);
     print(result);
 } catch (e) {
     print("Exception when calling GenerateApi->barcodeGenerateBarcodeTypeGet: $e\n");
@@ -52,8 +52,8 @@ try {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | 
- **dataType** | [**EncodeDataType**](.md)| Type of data to encode. | 
  **data** | **String**| String represents data to encode | 
+ **dataType** | [**EncodeDataType**](.md)| Type of data to encode.  Default value:  EncodeDataType.StringData. | [optional] 
  **imageFormat** | [**AvailableBarCodeImageFormat**](.md)| Barcode output image format.  Default value: png | [optional] 
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | [**CodeLocation**](.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] 
@@ -121,7 +121,7 @@ No authorization required
 
 
 # **barcodeGenerateFormPost**
-> MultipartFile barcodeGenerateFormPost(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> MultipartFile barcodeGenerateFormPost(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
 Generate barcode using POST request with parameters in url ecncoded form.
 
@@ -131,8 +131,8 @@ import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = GenerateApi();
 final barcodeType = ; // EncodeBarcodeType | 
-final dataType = ; // EncodeDataType | 
 final data = data_example; // String | String represents data to encode
+final dataType = ; // EncodeDataType | 
 final imageFormat = ; // AvailableBarCodeImageFormat | 
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = ; // CodeLocation | 
@@ -146,7 +146,7 @@ final imageWidth = 3.4; // double | Width of the barcode image in given units. D
 final rotationAngle = 56; // int | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
 
 try {
-    final result = api_instance.barcodeGenerateFormPost(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle);
+    final result = api_instance.barcodeGenerateFormPost(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle);
     print(result);
 } catch (e) {
     print("Exception when calling GenerateApi->barcodeGenerateFormPost: $e\n");
@@ -158,8 +158,8 @@ try {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)|  | 
- **dataType** | [**EncodeDataType**](EncodeDataType.md)|  | 
  **data** | **String**| String represents data to encode | 
+ **dataType** | [**EncodeDataType**](EncodeDataType.md)|  | [optional] 
  **imageFormat** | [**AvailableBarCodeImageFormat**](AvailableBarCodeImageFormat.md)|  | [optional] 
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | [**CodeLocation**](CodeLocation.md)|  | [optional] 

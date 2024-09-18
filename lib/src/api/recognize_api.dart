@@ -15,7 +15,7 @@ class RecognizeApi {
   /// Recognize barcode from file on server using GET requests with parameters in route and query string.
   ///
   Future<BarcodeResponseList> barcodeRecognizeBarcodeTypeGet(
-      DecodeBarcodeType barcodeType, String url,
+      DecodeBarcodeType barcodeType, String fileUrl,
       {RecognitionMode? recognitionMode,
       RecognitionImageKind? imageKind}) async {
     // ignore: prefer_final_locals
@@ -29,7 +29,8 @@ class RecognizeApi {
     final List<QueryParam> queryParams = [];
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
-    queryParams.addAll(convertParametersForCollectionFormat("", "url", url));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
     if (recognitionMode != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
           "", "recognitionMode", recognitionMode));

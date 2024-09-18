@@ -95,7 +95,7 @@ No authorization required
 
 
 # **barcodeScanGet**
-> BarcodeResponseList barcodeScanGet(url)
+> BarcodeResponseList barcodeScanGet(fileUrl)
 
 Scan barcode from file on server using GET requests with parameter in query string.
 
@@ -104,10 +104,10 @@ Scan barcode from file on server using GET requests with parameter in query stri
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = ScanApi();
-final url = url_example; // String | Url to barcode image
+final fileUrl = fileUrl_example; // String | Url to barcode image
 
 try {
-    final result = api_instance.barcodeScanGet(url);
+    final result = api_instance.barcodeScanGet(fileUrl);
     print(result);
 } catch (e) {
     print("Exception when calling ScanApi->barcodeScanGet: $e\n");
@@ -118,7 +118,7 @@ try {
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **url** | **String**| Url to barcode image | 
+ **fileUrl** | **String**| Url to barcode image | 
 
 ### Return type
 
