@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **text** | **String** | Caption text. | [optional] [default to null]
 **alignment** | [**TextAlignment**](TextAlignment.md) | Text alignment. | [optional] [default to null]
-**color** | **String** | Text color. | [optional] [default to null]
+**color** | **String** | Text color.   Default value: black   Use named colors like: red, green, blue   Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] [default to null]
 **visible** | **bool** | Is caption visible. | [optional] [default to null]
 **font** | [**FontParams**](FontParams.md) | Font. | [optional] [default to null]
 **padding** | [**Padding**](Padding.md) | Padding. | [optional] [default to null]

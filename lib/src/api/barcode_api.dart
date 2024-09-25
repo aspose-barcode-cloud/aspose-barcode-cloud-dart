@@ -21,7 +21,6 @@ class BarcodeApi {
       String? textLocation,
       String? textAlignment,
       String? textColor,
-      String? fontSizeMode,
       bool? noWrap,
       double? resolution,
       double? resolutionX,
@@ -79,10 +78,6 @@ class BarcodeApi {
     if (textColor != null) {
       queryParams.addAll(
           convertParametersForCollectionFormat("", "TextColor", textColor));
-    }
-    if (fontSizeMode != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "FontSizeMode", fontSizeMode));
     }
     if (noWrap != null) {
       queryParams
@@ -751,7 +746,6 @@ class BarcodeApi {
       String? textLocation,
       String? textAlignment,
       String? textColor,
-      String? fontSizeMode,
       bool? noWrap,
       double? resolution,
       double? resolutionX,
@@ -812,10 +806,6 @@ class BarcodeApi {
     if (textColor != null) {
       queryParams.addAll(
           convertParametersForCollectionFormat("", "TextColor", textColor));
-    }
-    if (fontSizeMode != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "FontSizeMode", fontSizeMode));
     }
     if (noWrap != null) {
       queryParams
