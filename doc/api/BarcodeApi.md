@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 
 # **scanBarcode**
-> BarcodeResponseList scanBarcode(imageFile, decodeTypes, timeout)
+> BarcodeResponseList scanBarcode(imageFile, decodeTypes, timeout, checksumValidation)
 
 Quickly scan a barcode from an image.
 
@@ -638,9 +638,10 @@ final api_instance = BarcodeApi();
 final imageFile = /path/to/file.txt; // MultipartFile | Image as file
 final decodeTypes = []; // List<DecodeBarcodeType> | Types of barcode to recognize
 final timeout = 56; // int | Timeout of recognition process in milliseconds.  Default value is 15_000 (15 seconds).  Maximum value is 30_000 (1/2 minute).  In case of a timeout RequestTimeout (408) status will be returned.  Try reducing the image size to avoid timeout.
+final checksumValidation = checksumValidation_example; // String | Checksum validation setting. Default is ON.
 
 try {
-    final result = api_instance.scanBarcode(imageFile, decodeTypes, timeout);
+    final result = api_instance.scanBarcode(imageFile, decodeTypes, timeout, checksumValidation);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->scanBarcode: $e\n");
@@ -654,6 +655,7 @@ Name | Type | Description  | Notes
  **imageFile** | **MultipartFile**| Image as file | 
  **decodeTypes** | [**List&lt;DecodeBarcodeType&gt;**](DecodeBarcodeType.md)| Types of barcode to recognize | [optional] 
  **timeout** | **int**| Timeout of recognition process in milliseconds.  Default value is 15_000 (15 seconds).  Maximum value is 30_000 (1/2 minute).  In case of a timeout RequestTimeout (408) status will be returned.  Try reducing the image size to avoid timeout. | [optional] 
+ **checksumValidation** | **String**| Checksum validation setting. Default is ON. | [optional] 
 
 ### Return type
 

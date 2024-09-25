@@ -1054,7 +1054,9 @@ class BarcodeApi {
   /// Quickly scan a barcode from an image.
   ///
   Future<BarcodeResponseList> scanBarcode(MultipartFile imageFile,
-      {List<DecodeBarcodeType>? decodeTypes, int? timeout}) async {
+      {List<DecodeBarcodeType>? decodeTypes,
+      int? timeout,
+      String? checksumValidation}) async {
     // ignore: prefer_final_locals
     Object? postBody;
 
@@ -1092,6 +1094,13 @@ class BarcodeApi {
         mp.fields['timeout'] = [parameterToString(timeout)];
       }
 
+      if (checksumValidation != null) {
+        hasFields = true;
+        mp.fields['checksumValidation'] = [
+          parameterToString(checksumValidation)
+        ];
+      }
+
       if (hasFields) {
         postBody = mp;
       }
@@ -1101,6 +1110,10 @@ class BarcodeApi {
       }
       if (timeout != null) {
         formParams['timeout'] = parameterToString(timeout);
+      }
+      if (checksumValidation != null) {
+        formParams['checksumValidation'] =
+            parameterToString(checksumValidation);
       }
     }
 
