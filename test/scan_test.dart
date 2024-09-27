@@ -30,4 +30,24 @@ void main() {
       expect(recognized.barcodes![1].barcodeValue, equals('Code128 text'));
     },
   );
+
+  test(
+    '.scanBarcodes can scan Code39',
+    () async {
+      final barcode = await MultipartFile.fromPath("ImageFile", "Code39.jpg");
+      final BarcodeResponseList recognized =
+          await TestConfig.barcodeApi.scanBarcode(
+        barcode,
+        decodeTypes: [DecodeBarcodeType.Code39Extended],
+        checksumValidation: ChecksumValidation.Off.toString(),
+      );
+
+      expect(recognized, isNotNull);
+      expect(recognized.barcodes, isNotEmpty);
+      expect(recognized.barcodes!.length, equals(1));
+
+      expect(recognized.barcodes![0].type, equals('Code39Extended'));
+      expect(recognized.barcodes![0].barcodeValue, equals('8M93'));
+    },
+  );
 }

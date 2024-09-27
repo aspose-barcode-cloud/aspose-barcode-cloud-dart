@@ -10,7 +10,7 @@ class CaptionParams {
   /// Text alignment.
   TextAlignment? alignment;
 
-  /// Text color.
+  /// Text color.   Default value: black   Use named colors like: red, green, blue   Or HTML colors like: #FF0000, #00FF00, #0000FF
   String? color;
 
   /// Is caption visible.

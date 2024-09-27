@@ -19,7 +19,7 @@ class GeneratorParams {
   /// Text alignment.
   TextAlignment? textAlignment;
 
-  /// Specify the displaying CodeText's Color. Default value: Color.Black.
+  /// Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
   String? textColor;
 
   /// Specify the displaying Text's font. Default value: Arial 5pt regular. Ignored if FontSizeMode is set to FontSizeMode.Auto.
@@ -73,13 +73,13 @@ class GeneratorParams {
   /// Additional caption below barcode.
   CaptionParams? captionBelow;
 
-  /// Background color of the barcode image. Default value: Color.White.
+  /// Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
   String? backColor;
 
-  /// Bars color. Default value: Color.Black.
+  /// Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
   String? barColor;
 
-  /// Border color. Default value: Color.Black.
+  /// Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
   String? borderColor;
 
   /// Border width. Default value: 0. Ignored if Visible is set to false.
@@ -166,7 +166,7 @@ class GeneratorParams {
   /// PatchCode params.
   PatchCodeParams? patchCode;
 
-  /// Code128 params.
+  /// Code128 parameters
   Code128Params? code128;
 
   /// HanXin params.

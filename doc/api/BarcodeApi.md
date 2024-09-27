@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **getBarcodeGenerate**
-> MultipartFile getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format)
+> MultipartFile getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format)
 
 Generate barcode.
 
@@ -36,8 +36,7 @@ final text = text_example; // String | Text to encode.
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = textLocation_example; // String | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below.
 final textAlignment = textAlignment_example; // String | Text alignment.
-final textColor = textColor_example; // String | Specify the displaying CodeText's Color. Default value: Color.Black.
-final fontSizeMode = fontSizeMode_example; // String | Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+final textColor = textColor_example; // String | Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
 final noWrap = true; // bool | Specify word wraps (line breaks) within text. Default value: false.
 final resolution = 1.2; // double | Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
 final resolutionX = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
@@ -50,9 +49,9 @@ final barHeight = 1.2; // double | Height of the barcode in given units. Default
 final imageHeight = 1.2; // double | Height of the barcode image in given units. Default units: pixel.
 final imageWidth = 1.2; // double | Width of the barcode image in given units. Default units: pixel.
 final rotationAngle = 1.2; // double | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0.
-final backColor = backColor_example; // String | Background color of the barcode image. Default value: Color.White.
-final barColor = barColor_example; // String | Bars color. Default value: Color.Black.
-final borderColor = borderColor_example; // String | Border color. Default value: Color.Black.
+final backColor = backColor_example; // String | Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+final barColor = barColor_example; // String | Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+final borderColor = borderColor_example; // String | Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
 final borderWidth = 1.2; // double | Border width. Default value: 0. Ignored if Visible is set to false.
 final borderDashStyle = borderDashStyle_example; // String | Border dash style. Default value: BorderDashStyle.Solid.
 final borderVisible = true; // bool | Border visibility. If false than parameter Width is always ignored (0). Default value: false.
@@ -69,7 +68,7 @@ final useAntiAlias = true; // bool | Indicates whether is used anti-aliasing mod
 final format = format_example; // String | Result image format.
 
 try {
-    final result = api_instance.getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format);
+    final result = api_instance.getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, format);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->getBarcodeGenerate: $e\n");
@@ -85,8 +84,7 @@ Name | Type | Description  | Notes
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | **String**| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below. | [optional] 
  **textAlignment** | **String**| Text alignment. | [optional] 
- **textColor** | **String**| Specify the displaying CodeText&#39;s Color. Default value: Color.Black. | [optional] 
- **fontSizeMode** | **String**| Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto. | [optional] 
+ **textColor** | **String**| Specify the displaying CodeText&#39;s Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
  **noWrap** | **bool**| Specify word wraps (line breaks) within text. Default value: false. | [optional] 
  **resolution** | **double**| Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. | [optional] 
  **resolutionX** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional] 
@@ -99,9 +97,9 @@ Name | Type | Description  | Notes
  **imageHeight** | **double**| Height of the barcode image in given units. Default units: pixel. | [optional] 
  **imageWidth** | **double**| Width of the barcode image in given units. Default units: pixel. | [optional] 
  **rotationAngle** | **double**| BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. | [optional] 
- **backColor** | **String**| Background color of the barcode image. Default value: Color.White. | [optional] 
- **barColor** | **String**| Bars color. Default value: Color.Black. | [optional] 
- **borderColor** | **String**| Border color. Default value: Color.Black. | [optional] 
+ **backColor** | **String**| Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
+ **barColor** | **String**| Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
+ **borderColor** | **String**| Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
  **borderWidth** | **double**| Border width. Default value: 0. Ignored if Visible is set to false. | [optional] 
  **borderDashStyle** | **String**| Border dash style. Default value: BorderDashStyle.Solid. | [optional] 
  **borderVisible** | **bool**| Border visibility. If false than parameter Width is always ignored (0). Default value: false. | [optional] 
@@ -410,7 +408,7 @@ Name | Type | Description  | Notes
 
 
 # **putBarcodeGenerateFile**
-> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format)
+> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format)
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
@@ -427,8 +425,7 @@ final text = text_example; // String | Text to encode.
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = textLocation_example; // String | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below.
 final textAlignment = textAlignment_example; // String | Text alignment.
-final textColor = textColor_example; // String | Specify the displaying CodeText's Color. Default value: Color.Black.
-final fontSizeMode = fontSizeMode_example; // String | Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+final textColor = textColor_example; // String | Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
 final noWrap = true; // bool | Specify word wraps (line breaks) within text. Default value: false.
 final resolution = 1.2; // double | Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
 final resolutionX = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
@@ -441,9 +438,9 @@ final barHeight = 1.2; // double | Height of the barcode in given units. Default
 final imageHeight = 1.2; // double | Height of the barcode image in given units. Default units: pixel.
 final imageWidth = 1.2; // double | Width of the barcode image in given units. Default units: pixel.
 final rotationAngle = 1.2; // double | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0.
-final backColor = backColor_example; // String | Background color of the barcode image. Default value: Color.White.
-final barColor = barColor_example; // String | Bars color. Default value: Color.Black.
-final borderColor = borderColor_example; // String | Border color. Default value: Color.Black.
+final backColor = backColor_example; // String | Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+final barColor = barColor_example; // String | Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+final borderColor = borderColor_example; // String | Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
 final borderWidth = 1.2; // double | Border width. Default value: 0. Ignored if Visible is set to false.
 final borderDashStyle = borderDashStyle_example; // String | Border dash style. Default value: BorderDashStyle.Solid.
 final borderVisible = true; // bool | Border visibility. If false than parameter Width is always ignored (0). Default value: false.
@@ -462,7 +459,7 @@ final folder = folder_example; // String | Image's folder.
 final format = format_example; // String | The image format.
 
 try {
-    final result = api_instance.putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format);
+    final result = api_instance.putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, noWrap, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, useAntiAlias, storage, folder, format);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->putBarcodeGenerateFile: $e\n");
@@ -479,8 +476,7 @@ Name | Type | Description  | Notes
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | **String**| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below. | [optional] 
  **textAlignment** | **String**| Text alignment. | [optional] 
- **textColor** | **String**| Specify the displaying CodeText&#39;s Color. Default value: Color.Black. | [optional] 
- **fontSizeMode** | **String**| Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto. | [optional] 
+ **textColor** | **String**| Specify the displaying CodeText&#39;s Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
  **noWrap** | **bool**| Specify word wraps (line breaks) within text. Default value: false. | [optional] 
  **resolution** | **double**| Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. | [optional] 
  **resolutionX** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional] 
@@ -493,9 +489,9 @@ Name | Type | Description  | Notes
  **imageHeight** | **double**| Height of the barcode image in given units. Default units: pixel. | [optional] 
  **imageWidth** | **double**| Width of the barcode image in given units. Default units: pixel. | [optional] 
  **rotationAngle** | **double**| BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. | [optional] 
- **backColor** | **String**| Background color of the barcode image. Default value: Color.White. | [optional] 
- **barColor** | **String**| Bars color. Default value: Color.Black. | [optional] 
- **borderColor** | **String**| Border color. Default value: Color.Black. | [optional] 
+ **backColor** | **String**| Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
+ **barColor** | **String**| Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
+ **borderColor** | **String**| Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF | [optional] 
  **borderWidth** | **double**| Border width. Default value: 0. Ignored if Visible is set to false. | [optional] 
  **borderDashStyle** | **String**| Border dash style. Default value: BorderDashStyle.Solid. | [optional] 
  **borderVisible** | **bool**| Border visibility. If false than parameter Width is always ignored (0). Default value: false. | [optional] 
@@ -628,7 +624,7 @@ Name | Type | Description  | Notes
 
 
 # **scanBarcode**
-> BarcodeResponseList scanBarcode(imageFile, decodeTypes, timeout)
+> BarcodeResponseList scanBarcode(imageFile, decodeTypes, timeout, checksumValidation)
 
 Quickly scan a barcode from an image.
 
@@ -642,9 +638,10 @@ final api_instance = BarcodeApi();
 final imageFile = /path/to/file.txt; // MultipartFile | Image as file
 final decodeTypes = []; // List<DecodeBarcodeType> | Types of barcode to recognize
 final timeout = 56; // int | Timeout of recognition process in milliseconds.  Default value is 15_000 (15 seconds).  Maximum value is 30_000 (1/2 minute).  In case of a timeout RequestTimeout (408) status will be returned.  Try reducing the image size to avoid timeout.
+final checksumValidation = checksumValidation_example; // String | Checksum validation setting. Default is ON.
 
 try {
-    final result = api_instance.scanBarcode(imageFile, decodeTypes, timeout);
+    final result = api_instance.scanBarcode(imageFile, decodeTypes, timeout, checksumValidation);
     print(result);
 } catch (e) {
     print("Exception when calling BarcodeApi->scanBarcode: $e\n");
@@ -658,6 +655,7 @@ Name | Type | Description  | Notes
  **imageFile** | **MultipartFile**| Image as file | 
  **decodeTypes** | [**List&lt;DecodeBarcodeType&gt;**](DecodeBarcodeType.md)| Types of barcode to recognize | [optional] 
  **timeout** | **int**| Timeout of recognition process in milliseconds.  Default value is 15_000 (15 seconds).  Maximum value is 30_000 (1/2 minute).  In case of a timeout RequestTimeout (408) status will be returned.  Try reducing the image size to avoid timeout. | [optional] 
+ **checksumValidation** | **String**| Checksum validation setting. Default is ON. | [optional] 
 
 ### Return type
 
