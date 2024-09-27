@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.24.9
+
+* Update documentation
+
+* Add checksumValidation to Scan
+
+* Add tests for Code39 type without checksum
+
 ## 1.24.8
 
 * August 2024 Release
