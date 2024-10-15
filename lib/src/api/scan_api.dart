@@ -83,18 +83,12 @@ class ScanApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = [];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequestPlus mp =
-          MultipartRequestPlus('POST', Uri.parse(requestPath));
+    MultipartRequestPlus mp =
+        MultipartRequestPlus('POST', Uri.parse(requestPath));
 
-      hasFields = true;
-      mp.files.add(file);
+    mp.files.add(file);
 
-      if (hasFields) {
-        postBody = mp;
-      }
-    } else {}
+    postBody = mp;
 
     final response = await _apiClient.invokeAPI(
         requestPath,

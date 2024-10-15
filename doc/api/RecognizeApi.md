@@ -111,7 +111,7 @@ import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = RecognizeApi();
 final barcodeType = ; // DecodeBarcodeType | 
-final file = BINARY_DATA_HERE; // MultipartFile | 
+final file = BINARY_DATA_HERE; // MultipartFile | Barcode image file
 final recognitionMode = ; // RecognitionMode | 
 final imageKind = ; // RecognitionImageKind | 
 
@@ -128,7 +128,7 @@ try {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**DecodeBarcodeType**](DecodeBarcodeType.md)|  | 
- **file** | **MultipartFile****MultipartFile**|  | 
+ **file** | **MultipartFile****MultipartFile**| Barcode image file | 
  **recognitionMode** | [**RecognitionMode**](RecognitionMode.md)|  | [optional] 
  **imageKind** | [**RecognitionImageKind**](RecognitionImageKind.md)|  | [optional] 
 

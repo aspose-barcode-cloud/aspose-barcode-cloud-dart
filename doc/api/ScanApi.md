@@ -64,7 +64,7 @@ Scan barcode from file in request body using POST requests with parameter in mul
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 final api_instance = ScanApi();
-final file = BINARY_DATA_HERE; // MultipartFile | 
+final file = BINARY_DATA_HERE; // MultipartFile | Barcode image file
 
 try {
     final result = api_instance.barcodeScanFormPost(file);
@@ -78,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **file** | **MultipartFile****MultipartFile**|  | 
+ **file** | **MultipartFile****MultipartFile**| Barcode image file | 
 
 ### Return type
 

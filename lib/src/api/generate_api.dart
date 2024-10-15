@@ -194,126 +194,68 @@ class GenerateApi {
     final Map<String, String> headerParams = {};
     final Map<String, String> formParams = {};
 
-    final List<String> contentTypes = ["application/x-www-form-urlencoded"];
+    final List<String> contentTypes = ["multipart/form-data"];
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = [];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequestPlus mp =
-          MultipartRequestPlus('POST', Uri.parse(requestPath));
+    MultipartRequestPlus mp =
+        MultipartRequestPlus('POST', Uri.parse(requestPath));
 
-      hasFields = true;
-      mp.fields['barcodeType'] = [parameterToString(barcodeType)];
+    mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
-      if (dataType != null) {
-        hasFields = true;
-        mp.fields['DataType'] = [parameterToString(dataType)];
-      }
-
-      hasFields = true;
-      mp.fields['Data'] = [parameterToString(data)];
-
-      if (imageFormat != null) {
-        hasFields = true;
-        mp.fields['ImageFormat'] = [parameterToString(imageFormat)];
-      }
-
-      if (twoDDisplayText != null) {
-        hasFields = true;
-        mp.fields['TwoDDisplayText'] = [parameterToString(twoDDisplayText)];
-      }
-
-      if (textLocation != null) {
-        hasFields = true;
-        mp.fields['TextLocation'] = [parameterToString(textLocation)];
-      }
-
-      if (textAlignment != null) {
-        hasFields = true;
-        mp.fields['TextAlignment'] = [parameterToString(textAlignment)];
-      }
-
-      if (foregroundColor != null) {
-        hasFields = true;
-        mp.fields['ForegroundColor'] = [parameterToString(foregroundColor)];
-      }
-
-      if (backgroundColor != null) {
-        hasFields = true;
-        mp.fields['BackgroundColor'] = [parameterToString(backgroundColor)];
-      }
-
-      if (units != null) {
-        hasFields = true;
-        mp.fields['Units'] = [parameterToString(units)];
-      }
-
-      if (resolution != null) {
-        hasFields = true;
-        mp.fields['Resolution'] = [parameterToString(resolution)];
-      }
-
-      if (imageHeight != null) {
-        hasFields = true;
-        mp.fields['ImageHeight'] = [parameterToString(imageHeight)];
-      }
-
-      if (imageWidth != null) {
-        hasFields = true;
-        mp.fields['ImageWidth'] = [parameterToString(imageWidth)];
-      }
-
-      if (rotationAngle != null) {
-        hasFields = true;
-        mp.fields['RotationAngle'] = [parameterToString(rotationAngle)];
-      }
-
-      if (hasFields) {
-        postBody = mp;
-      }
-    } else {
-      formParams['barcodeType'] = parameterToString(barcodeType);
-      if (dataType != null) {
-        formParams['DataType'] = parameterToString(dataType);
-      }
-      formParams['Data'] = parameterToString(data);
-      if (imageFormat != null) {
-        formParams['ImageFormat'] = parameterToString(imageFormat);
-      }
-      if (twoDDisplayText != null) {
-        formParams['TwoDDisplayText'] = parameterToString(twoDDisplayText);
-      }
-      if (textLocation != null) {
-        formParams['TextLocation'] = parameterToString(textLocation);
-      }
-      if (textAlignment != null) {
-        formParams['TextAlignment'] = parameterToString(textAlignment);
-      }
-      if (foregroundColor != null) {
-        formParams['ForegroundColor'] = parameterToString(foregroundColor);
-      }
-      if (backgroundColor != null) {
-        formParams['BackgroundColor'] = parameterToString(backgroundColor);
-      }
-      if (units != null) {
-        formParams['Units'] = parameterToString(units);
-      }
-      if (resolution != null) {
-        formParams['Resolution'] = parameterToString(resolution);
-      }
-      if (imageHeight != null) {
-        formParams['ImageHeight'] = parameterToString(imageHeight);
-      }
-      if (imageWidth != null) {
-        formParams['ImageWidth'] = parameterToString(imageWidth);
-      }
-      if (rotationAngle != null) {
-        formParams['RotationAngle'] = parameterToString(rotationAngle);
-      }
+    if (dataType != null) {
+      mp.fields['DataType'] = [parameterToString(dataType)];
     }
+
+    mp.fields['Data'] = [parameterToString(data)];
+
+    if (imageFormat != null) {
+      mp.fields['ImageFormat'] = [parameterToString(imageFormat)];
+    }
+
+    if (twoDDisplayText != null) {
+      mp.fields['TwoDDisplayText'] = [parameterToString(twoDDisplayText)];
+    }
+
+    if (textLocation != null) {
+      mp.fields['TextLocation'] = [parameterToString(textLocation)];
+    }
+
+    if (textAlignment != null) {
+      mp.fields['TextAlignment'] = [parameterToString(textAlignment)];
+    }
+
+    if (foregroundColor != null) {
+      mp.fields['ForegroundColor'] = [parameterToString(foregroundColor)];
+    }
+
+    if (backgroundColor != null) {
+      mp.fields['BackgroundColor'] = [parameterToString(backgroundColor)];
+    }
+
+    if (units != null) {
+      mp.fields['Units'] = [parameterToString(units)];
+    }
+
+    if (resolution != null) {
+      mp.fields['Resolution'] = [parameterToString(resolution)];
+    }
+
+    if (imageHeight != null) {
+      mp.fields['ImageHeight'] = [parameterToString(imageHeight)];
+    }
+
+    if (imageWidth != null) {
+      mp.fields['ImageWidth'] = [parameterToString(imageWidth)];
+    }
+
+    if (rotationAngle != null) {
+      mp.fields['RotationAngle'] = [parameterToString(rotationAngle)];
+    }
+
+    postBody = mp;
 
     final response = await _apiClient.invokeAPI(
         requestPath,

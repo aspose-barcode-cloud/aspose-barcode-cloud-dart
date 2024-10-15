@@ -143,40 +143,22 @@ class RecognizeApi {
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     final List<String> authNames = [];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequestPlus mp =
-          MultipartRequestPlus('POST', Uri.parse(requestPath));
+    MultipartRequestPlus mp =
+        MultipartRequestPlus('POST', Uri.parse(requestPath));
 
-      hasFields = true;
-      mp.fields['barcodeType'] = [parameterToString(barcodeType)];
+    mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
-      hasFields = true;
-      mp.files.add(file);
+    mp.files.add(file);
 
-      if (recognitionMode != null) {
-        hasFields = true;
-        mp.fields['recognitionMode'] = [parameterToString(recognitionMode)];
-      }
-
-      if (imageKind != null) {
-        hasFields = true;
-        mp.fields['imageKind'] = [parameterToString(imageKind)];
-      }
-
-      if (hasFields) {
-        postBody = mp;
-      }
-    } else {
-      formParams['barcodeType'] = parameterToString(barcodeType);
-
-      if (recognitionMode != null) {
-        formParams['recognitionMode'] = parameterToString(recognitionMode);
-      }
-      if (imageKind != null) {
-        formParams['imageKind'] = parameterToString(imageKind);
-      }
+    if (recognitionMode != null) {
+      mp.fields['recognitionMode'] = [parameterToString(recognitionMode)];
     }
+
+    if (imageKind != null) {
+      mp.fields['imageKind'] = [parameterToString(imageKind)];
+    }
+
+    postBody = mp;
 
     final response = await _apiClient.invokeAPI(
         requestPath,

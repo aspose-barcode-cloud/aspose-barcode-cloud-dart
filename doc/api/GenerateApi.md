@@ -31,8 +31,8 @@ final imageFormat = ; // AvailableBarCodeImageFormat | Barcode output image form
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = ; // CodeLocation | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
 final textAlignment = ; // TextAlignment | Text alignment.  Default value: TextAligment.Left
-final foregroundColor = foregroundColor_example; // String | Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black.
-final backgroundColor = backgroundColor_example; // String | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White.
+final foregroundColor = foregroundColor_example; // String | Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
+final backgroundColor = backgroundColor_example; // String | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
 final units = ; // AvailableGraphicsUnit | Common Units for all measuring in query. Default units: pixel.
 final resolution = 3.4; // double | Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.
 final imageHeight = 3.4; // double | Height of the barcode image in given units. Default units: pixel.
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | [**CodeLocation**](.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] 
  **textAlignment** | [**TextAlignment**](.md)| Text alignment.  Default value: TextAligment.Left | [optional] 
- **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black. | [optional] 
- **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White. | [optional] 
+ **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black. | [optional] 
+ **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White. | [optional] 
  **units** | [**AvailableGraphicsUnit**](.md)| Common Units for all measuring in query. Default units: pixel. | [optional] 
  **resolution** | **double**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi. | [optional] 
  **imageHeight** | **double**| Height of the barcode image in given units. Default units: pixel. | [optional] 
@@ -137,8 +137,8 @@ final imageFormat = ; // AvailableBarCodeImageFormat |
 final twoDDisplayText = twoDDisplayText_example; // String | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 final textLocation = ; // CodeLocation | 
 final textAlignment = ; // TextAlignment | 
-final foregroundColor = foregroundColor_example; // String | Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black.
-final backgroundColor = backgroundColor_example; // String | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White.
+final foregroundColor = foregroundColor_example; // String | Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
+final backgroundColor = backgroundColor_example; // String | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
 final units = ; // AvailableGraphicsUnit | 
 final resolution = 3.4; // double | Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.
 final imageHeight = 3.4; // double | Height of the barcode image in given units. Default units: pixel.
@@ -164,8 +164,8 @@ Name | Type | Description  | Notes
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 
  **textLocation** | [**CodeLocation**](CodeLocation.md)|  | [optional] 
  **textAlignment** | [**TextAlignment**](TextAlignment.md)|  | [optional] 
- **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black. | [optional] 
- **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White. | [optional] 
+ **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black. | [optional] 
+ **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White. | [optional] 
  **units** | [**AvailableGraphicsUnit**](AvailableGraphicsUnit.md)|  | [optional] 
  **resolution** | **double**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi. | [optional] 
  **imageHeight** | **double**| Height of the barcode image in given units. Default units: pixel. | [optional] 
@@ -182,7 +182,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: multipart/form-data
  - **Accept**: image/png, image/bmp, image/gif, image/jpeg, image/svg+xml, image/tiff, application/json, application/xml
 
 
