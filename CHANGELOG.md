@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.10
+
+* October 2024 Release
+
 ## 1.24.9
 
 * Update documentation
