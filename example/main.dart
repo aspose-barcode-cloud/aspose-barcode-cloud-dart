@@ -29,7 +29,7 @@ Future<void> main() async {
   final formFile = MultipartFile.fromBytes("file", generated.toList(),
       filename: "barcode.png");
   final BarcodeResponseList recognized =
-      await scanApi.barcodeScanFormPost(formFile);
+      await scanApi.barcodeScanMultipartPost(formFile);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");

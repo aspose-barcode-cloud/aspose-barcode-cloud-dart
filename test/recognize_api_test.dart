@@ -12,9 +12,9 @@ void main() {
   test('.postBarcodeRecognizeFromUrlOrContent', () async {
     final barcode = await MultipartFile.fromPath("file", fileToRecognize);
     final BarcodeResponseList recognized = await TestConfig.recognizeApi
-        .barcodeRecognizeFormPost(DecodeBarcodeType.QR, barcode,
+        .barcodeRecognizeMultipartPost(DecodeBarcodeType.QR, barcode,
             recognitionMode: RecognitionMode.Fast,
-            imageKind: RecognitionImageKind.ClearImage);
+            recognitionImageKind: RecognitionImageKind.ClearImage);
 
     expect(recognized, isNotNull);
     expect(recognized.barcodes, isNotEmpty);
@@ -24,11 +24,11 @@ void main() {
 
   test("Barcode Recognize Barcode Type Get", () async {
     // Test case for barcode_recognize_barcode_type_get
-    var response = await TestConfig.recognizeApi.barcodeRecognizeBarcodeTypeGet(
+    var response = await TestConfig.recognizeApi.barcodeRecognizeGet(
       DecodeBarcodeType.QR,
       'https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png',
       recognitionMode: RecognitionMode.Fast,
-      imageKind: RecognitionImageKind.ClearImage,
+      recognitionImageKind: RecognitionImageKind.ClearImage,
     );
 
     expect(response.barcodes.length, equals(1));

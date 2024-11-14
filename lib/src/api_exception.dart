@@ -31,18 +31,16 @@ class ApiException implements Exception {
   String getDetails() {
     if (response != null) {
       ApiError? err = response!.error;
-      if (err != null) {
-        StringBuffer sb = StringBuffer();
+      StringBuffer sb = StringBuffer();
 
-        sb.write('${err.code}: ');
+      sb.write('${err.code}: ');
 
-        sb.write(err.message);
+      sb.write(err.message);
 
-        if (err.description != null) {
-          sb.write(err.description);
-        }
-        return sb.toString();
+      if (err.description != null) {
+        sb.write(err.description);
       }
+      return sb.toString();
     }
 
     return '';

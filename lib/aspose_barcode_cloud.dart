@@ -11,9 +11,7 @@ export 'src/api/scan_api.dart' show ScanApi;
 
 export 'src/model/api_error.dart' show ApiError;
 export 'src/model/api_error_response.dart' show ApiErrorResponse;
-export 'src/model/available_bar_code_image_format.dart'
-    show AvailableBarCodeImageFormat;
-export 'src/model/available_graphics_unit.dart' show AvailableGraphicsUnit;
+export 'src/model/barcode_image_format.dart' show BarcodeImageFormat;
 export 'src/model/barcode_image_params.dart' show BarcodeImageParams;
 export 'src/model/barcode_response.dart' show BarcodeResponse;
 export 'src/model/barcode_response_list.dart' show BarcodeResponseList;
@@ -23,9 +21,9 @@ export 'src/model/encode_barcode_type.dart' show EncodeBarcodeType;
 export 'src/model/encode_data.dart' show EncodeData;
 export 'src/model/encode_data_type.dart' show EncodeDataType;
 export 'src/model/generate_params.dart' show GenerateParams;
+export 'src/model/graphics_unit.dart' show GraphicsUnit;
 export 'src/model/recognition_image_kind.dart' show RecognitionImageKind;
 export 'src/model/recognition_mode.dart' show RecognitionMode;
 export 'src/model/recognize_base64_request.dart' show RecognizeBase64Request;
 export 'src/model/region_point.dart' show RegionPoint;
 export 'src/model/scan_base64_request.dart' show ScanBase64Request;
-export 'src/model/text_alignment.dart' show TextAlignment;

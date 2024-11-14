@@ -6,14 +6,17 @@ import '../../aspose_barcode_cloud.dart';
 class ApiErrorResponse {
   /// Gets or sets request Id.
 
-  String? requestId;
+  late String requestId;
 
   /// error
 
-  ApiError? error;
+  late ApiError error;
 
   /// Constructor
-  ApiErrorResponse([this.requestId, this.error]);
+  ApiErrorResponse(
+    this.requestId,
+    this.error,
+  );
 
   @override
   String toString() {
@@ -23,7 +26,7 @@ class ApiErrorResponse {
   /// Creates a ApiErrorResponse instance from a JSON representation.
   ApiErrorResponse.fromJson(Map<String, dynamic> json) {
     requestId = json['requestId'];
-    error = json['error'] == null ? null : ApiError.fromJson(json['error']);
+    error = ApiError.fromJson(json['error']);
   }
 
   /// Returns a JSON representation of ApiErrorResponse.

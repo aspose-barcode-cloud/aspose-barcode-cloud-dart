@@ -31,64 +31,7 @@ class ScanApi {
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
-
-    final response = await _apiClient.invokeAPI(
-        requestPath,
-        'POST',
-        queryParams,
-        postBody,
-        headerParams,
-        formParams,
-        contentType,
-        authNames);
-
-    if (response.statusCode >= 400) {
-      ApiErrorResponse error;
-      try {
-        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
-      } catch (e) {
-        throw ApiException(response.statusCode, response.body);
-      }
-      throw ApiException.withResponse(
-          response.statusCode,
-          response.reasonPhrase == null
-              ? "Api response error"
-              : response.reasonPhrase!,
-          error);
-    } else {
-      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
-          as BarcodeResponseList;
-    }
-  }
-
-  ///
-  /// Scan barcode from file in request body using POST requests with parameter in multipart form.
-  ///
-  Future<BarcodeResponseList> barcodeScanFormPost(MultipartFile file) async {
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    // create path and map variables
-    final String requestPath = "/barcode/scan-form";
-
-    // query params
-    final List<QueryParam> queryParams = [];
-    final Map<String, String> headerParams = {};
-    final Map<String, String> formParams = {};
-
-    final List<String> contentTypes = ["multipart/form-data"];
-
-    final String contentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
-
-    MultipartRequestPlus mp =
-        MultipartRequestPlus('POST', Uri.parse(requestPath));
-
-    mp.files.add(file);
-
-    postBody = mp;
+    final List<String> authNames = ["JWT"];
 
     final response = await _apiClient.invokeAPI(
         requestPath,
@@ -140,10 +83,68 @@ class ScanApi {
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
+    final List<String> authNames = ["JWT"];
 
     final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
+
+    if (response.statusCode >= 400) {
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
+    } else {
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
+          as BarcodeResponseList;
+    }
+  }
+
+  ///
+  /// Scan barcode from file in request body using POST requests with parameter in multipart form.
+  ///
+  Future<BarcodeResponseList> barcodeScanMultipartPost(
+      MultipartFile file) async {
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    // create path and map variables
+    final String requestPath = "/barcode/scan-multipart";
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+
+    final List<String> contentTypes = ["multipart/form-data"];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    MultipartRequestPlus mp =
+        MultipartRequestPlus('POST', Uri.parse(requestPath));
+
+    mp.files.add(file);
+
+    postBody = mp;
+
+    final response = await _apiClient.invokeAPI(
+        requestPath,
+        'POST',
+        queryParams,
+        postBody,
+        headerParams,
+        formParams,
+        contentType,
+        authNames);
 
     if (response.statusCode >= 400) {
       ApiErrorResponse error;

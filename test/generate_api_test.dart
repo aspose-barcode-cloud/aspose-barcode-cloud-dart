@@ -8,7 +8,7 @@ void main() {
       final generated = await TestConfig.generateApi
           .barcodeGenerateBarcodeTypeGet(
               EncodeBarcodeType.QR, 'Testing generator',
-              foregroundColor: '0x001100');
+              foregroundColor: '#001100');
 
       final imageSize = generated.length;
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
@@ -16,7 +16,7 @@ void main() {
 
     test('should generate image with barcodeGenerateBodyPost', () async {
       final imageParams = BarcodeImageParams();
-      imageParams.backgroundColor = '0xffddff';
+      imageParams.backgroundColor = '#ffddff';
 
       final encodeData = EncodeData("Testing generator");
 
@@ -31,7 +31,7 @@ void main() {
     });
 
     test('should generate image with barcodeGenerateFormPost', () async {
-      final generated = await TestConfig.generateApi.barcodeGenerateFormPost(
+      final generated = await TestConfig.generateApi.barcodeGenerateMultipartPost(
           EncodeBarcodeType.QR, 'Testing generator',
           dataType: EncodeDataType.StringData, rotationAngle: 90);
 

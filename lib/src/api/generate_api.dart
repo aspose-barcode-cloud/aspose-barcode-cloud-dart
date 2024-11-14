@@ -17,13 +17,11 @@ class GenerateApi {
   Future<Uint8List> barcodeGenerateBarcodeTypeGet(
       EncodeBarcodeType barcodeType, String data,
       {EncodeDataType? dataType,
-      AvailableBarCodeImageFormat? imageFormat,
-      String? twoDDisplayText,
+      BarcodeImageFormat? imageFormat,
       CodeLocation? textLocation,
-      TextAlignment? textAlignment,
       String? foregroundColor,
       String? backgroundColor,
-      AvailableGraphicsUnit? units,
+      GraphicsUnit? units,
       double? resolution,
       double? imageHeight,
       double? imageWidth,
@@ -41,59 +39,51 @@ class GenerateApi {
     final Map<String, String> formParams = {};
     if (dataType != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "DataType", dataType));
+          convertParametersForCollectionFormat("", "dataType", dataType));
     }
-    queryParams.addAll(convertParametersForCollectionFormat("", "Data", data));
+    queryParams.addAll(convertParametersForCollectionFormat("", "data", data));
     if (imageFormat != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "ImageFormat", imageFormat));
-    }
-    if (twoDDisplayText != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "TwoDDisplayText", twoDDisplayText));
+          convertParametersForCollectionFormat("", "imageFormat", imageFormat));
     }
     if (textLocation != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
-          "", "TextLocation", textLocation));
-    }
-    if (textAlignment != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "TextAlignment", textAlignment));
+          "", "textLocation", textLocation));
     }
     if (foregroundColor != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
-          "", "ForegroundColor", foregroundColor));
+          "", "foregroundColor", foregroundColor));
     }
     if (backgroundColor != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
-          "", "BackgroundColor", backgroundColor));
+          "", "backgroundColor", backgroundColor));
     }
     if (units != null) {
       queryParams
-          .addAll(convertParametersForCollectionFormat("", "Units", units));
+          .addAll(convertParametersForCollectionFormat("", "units", units));
     }
     if (resolution != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "Resolution", resolution));
+          convertParametersForCollectionFormat("", "resolution", resolution));
     }
     if (imageHeight != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "ImageHeight", imageHeight));
+          convertParametersForCollectionFormat("", "imageHeight", imageHeight));
     }
     if (imageWidth != null) {
       queryParams.addAll(
-          convertParametersForCollectionFormat("", "ImageWidth", imageWidth));
+          convertParametersForCollectionFormat("", "imageWidth", imageWidth));
     }
     if (rotationAngle != null) {
       queryParams.addAll(convertParametersForCollectionFormat(
-          "", "RotationAngle", rotationAngle));
+          "", "rotationAngle", rotationAngle));
     }
 
     final List<String> contentTypes = [];
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
+    final List<String> authNames = ["JWT"];
 
     final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
         postBody, headerParams, formParams, contentType, authNames);
@@ -136,7 +126,7 @@ class GenerateApi {
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
+    final List<String> authNames = ["JWT"];
 
     final response = await _apiClient.invokeAPI(
         requestPath,
@@ -167,18 +157,16 @@ class GenerateApi {
   }
 
   ///
-  /// Generate barcode using POST request with parameters in url ecncoded form.
+  /// Generate barcode using POST request with parameters in multipart form.
   ///
-  Future<Uint8List> barcodeGenerateFormPost(
+  Future<Uint8List> barcodeGenerateMultipartPost(
       EncodeBarcodeType barcodeType, String data,
       {EncodeDataType? dataType,
-      AvailableBarCodeImageFormat? imageFormat,
-      String? twoDDisplayText,
+      BarcodeImageFormat? imageFormat,
       CodeLocation? textLocation,
-      TextAlignment? textAlignment,
       String? foregroundColor,
       String? backgroundColor,
-      AvailableGraphicsUnit? units,
+      GraphicsUnit? units,
       double? resolution,
       double? imageHeight,
       double? imageWidth,
@@ -187,7 +175,7 @@ class GenerateApi {
     Object? postBody;
 
     // create path and map variables
-    final String requestPath = "/barcode/generate-form";
+    final String requestPath = "/barcode/generate-multipart";
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -198,7 +186,7 @@ class GenerateApi {
 
     final String contentType =
         contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = [];
+    final List<String> authNames = ["JWT"];
 
     MultipartRequestPlus mp =
         MultipartRequestPlus('POST', Uri.parse(requestPath));
@@ -206,53 +194,45 @@ class GenerateApi {
     mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
     if (dataType != null) {
-      mp.fields['DataType'] = [parameterToString(dataType)];
+      mp.fields['dataType'] = [parameterToString(dataType)];
     }
 
-    mp.fields['Data'] = [parameterToString(data)];
+    mp.fields['data'] = [parameterToString(data)];
 
     if (imageFormat != null) {
-      mp.fields['ImageFormat'] = [parameterToString(imageFormat)];
-    }
-
-    if (twoDDisplayText != null) {
-      mp.fields['TwoDDisplayText'] = [parameterToString(twoDDisplayText)];
+      mp.fields['imageFormat'] = [parameterToString(imageFormat)];
     }
 
     if (textLocation != null) {
-      mp.fields['TextLocation'] = [parameterToString(textLocation)];
-    }
-
-    if (textAlignment != null) {
-      mp.fields['TextAlignment'] = [parameterToString(textAlignment)];
+      mp.fields['textLocation'] = [parameterToString(textLocation)];
     }
 
     if (foregroundColor != null) {
-      mp.fields['ForegroundColor'] = [parameterToString(foregroundColor)];
+      mp.fields['foregroundColor'] = [parameterToString(foregroundColor)];
     }
 
     if (backgroundColor != null) {
-      mp.fields['BackgroundColor'] = [parameterToString(backgroundColor)];
+      mp.fields['backgroundColor'] = [parameterToString(backgroundColor)];
     }
 
     if (units != null) {
-      mp.fields['Units'] = [parameterToString(units)];
+      mp.fields['units'] = [parameterToString(units)];
     }
 
     if (resolution != null) {
-      mp.fields['Resolution'] = [parameterToString(resolution)];
+      mp.fields['resolution'] = [parameterToString(resolution)];
     }
 
     if (imageHeight != null) {
-      mp.fields['ImageHeight'] = [parameterToString(imageHeight)];
+      mp.fields['imageHeight'] = [parameterToString(imageHeight)];
     }
 
     if (imageWidth != null) {
-      mp.fields['ImageWidth'] = [parameterToString(imageWidth)];
+      mp.fields['imageWidth'] = [parameterToString(imageWidth)];
     }
 
     if (rotationAngle != null) {
-      mp.fields['RotationAngle'] = [parameterToString(rotationAngle)];
+      mp.fields['rotationAngle'] = [parameterToString(rotationAngle)];
     }
 
     postBody = mp;

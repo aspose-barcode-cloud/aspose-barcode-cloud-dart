@@ -11,6 +11,6 @@ ApiError Response
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**requestId** | **String** | Gets or sets request Id. | [optional] 
-**error** | [**ApiError**](ApiError.md) |  | [optional] 
+**requestId** | **String** | Gets or sets request Id. | 
+**error** | [**ApiError**](ApiError.md) |  | 
 

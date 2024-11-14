@@ -66,10 +66,8 @@ class ApiClient {
           return ApiError.fromJson(value);
         case 'ApiErrorResponse':
           return ApiErrorResponse.fromJson(value);
-        case 'AvailableBarCodeImageFormat':
-          return AvailableBarCodeImageFormat.fromJson(value);
-        case 'AvailableGraphicsUnit':
-          return AvailableGraphicsUnit.fromJson(value);
+        case 'BarcodeImageFormat':
+          return BarcodeImageFormat.fromJson(value);
         case 'BarcodeImageParams':
           return BarcodeImageParams.fromJson(value);
         case 'BarcodeResponse':
@@ -88,6 +86,8 @@ class ApiClient {
           return EncodeDataType.fromJson(value);
         case 'GenerateParams':
           return GenerateParams.fromJson(value);
+        case 'GraphicsUnit':
+          return GraphicsUnit.fromJson(value);
         case 'RecognitionImageKind':
           return RecognitionImageKind.fromJson(value);
         case 'RecognitionMode':
@@ -98,8 +98,6 @@ class ApiClient {
           return RegionPoint.fromJson(value);
         case 'ScanBase64Request':
           return ScanBase64Request.fromJson(value);
-        case 'TextAlignment':
-          return TextAlignment.fromJson(value);
         default:
           {
             RegExpMatch? match;

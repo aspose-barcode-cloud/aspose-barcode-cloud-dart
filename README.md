@@ -75,7 +75,7 @@ Future<void> main() async {
   final formFile = MultipartFile.fromBytes("file", generated.toList(),
       filename: "barcode.png");
   final BarcodeResponseList recognized =
-      await scanApi.barcodeScanFormPost(formFile);
+      await scanApi.barcodeScanMultipartPost(formFile);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");
@@ -112,20 +112,19 @@ Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *GenerateApi* | [**barcodeGenerateBarcodeTypeGet**](doc/api/GenerateApi.md#barcodegeneratebarcodetypeget) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
 *GenerateApi* | [**barcodeGenerateBodyPost**](doc/api/GenerateApi.md#barcodegeneratebodypost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**barcodeGenerateFormPost**](doc/api/GenerateApi.md#barcodegenerateformpost) | **POST** /barcode/generate-form | Generate barcode using POST request with parameters in url ecncoded form.
-*RecognizeApi* | [**barcodeRecognizeBarcodeTypeGet**](doc/api/RecognizeApi.md#barcoderecognizebarcodetypeget) | **GET** /barcode/recognize/{barcodeType} | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*GenerateApi* | [**barcodeGenerateMultipartPost**](doc/api/GenerateApi.md#barcodegeneratemultipartpost) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
 *RecognizeApi* | [**barcodeRecognizeBodyPost**](doc/api/RecognizeApi.md#barcoderecognizebodypost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**barcodeRecognizeFormPost**](doc/api/RecognizeApi.md#barcoderecognizeformpost) | **POST** /barcode/recognize-form | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*RecognizeApi* | [**barcodeRecognizeGet**](doc/api/RecognizeApi.md#barcoderecognizeget) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**barcodeRecognizeMultipartPost**](doc/api/RecognizeApi.md#barcoderecognizemultipartpost) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
 *ScanApi* | [**barcodeScanBodyPost**](doc/api/ScanApi.md#barcodescanbodypost) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**barcodeScanFormPost**](doc/api/ScanApi.md#barcodescanformpost) | **POST** /barcode/scan-form | Scan barcode from file in request body using POST requests with parameter in multipart form.
 *ScanApi* | [**barcodeScanGet**](doc/api/ScanApi.md#barcodescanget) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**barcodeScanMultipartPost**](doc/api/ScanApi.md#barcodescanmultipartpost) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation For Models
 
 - [ApiError](doc/models/ApiError.md)
 - [ApiErrorResponse](doc/models/ApiErrorResponse.md)
-- [AvailableBarCodeImageFormat](doc/models/AvailableBarCodeImageFormat.md)
-- [AvailableGraphicsUnit](doc/models/AvailableGraphicsUnit.md)
+- [BarcodeImageFormat](doc/models/BarcodeImageFormat.md)
 - [BarcodeImageParams](doc/models/BarcodeImageParams.md)
 - [BarcodeResponse](doc/models/BarcodeResponse.md)
 - [BarcodeResponseList](doc/models/BarcodeResponseList.md)
@@ -135,10 +134,10 @@ Class | Method | HTTP request | Description
 - [EncodeData](doc/models/EncodeData.md)
 - [EncodeDataType](doc/models/EncodeDataType.md)
 - [GenerateParams](doc/models/GenerateParams.md)
+- [GraphicsUnit](doc/models/GraphicsUnit.md)
 - [RecognitionImageKind](doc/models/RecognitionImageKind.md)
 - [RecognitionMode](doc/models/RecognitionMode.md)
 - [RecognizeBase64Request](doc/models/RecognizeBase64Request.md)
 - [RegionPoint](doc/models/RegionPoint.md)
 - [ScanBase64Request](doc/models/ScanBase64Request.md)
-- [TextAlignment](doc/models/TextAlignment.md)
 

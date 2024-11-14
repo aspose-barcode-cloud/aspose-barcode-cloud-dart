@@ -6,41 +6,33 @@ import '../../aspose_barcode_cloud.dart';
 class BarcodeImageParams {
   /// imageFormat
   //enum imageFormatEnum {  Gif,  Jpeg,  Png,  Tiff,  Svg,  };
-  AvailableBarCodeImageFormat? imageFormat;
-
-  /// Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
-
-  String? twoDDisplayText;
+  BarcodeImageFormat? imageFormat;
 
   /// textLocation
   //enum textLocationEnum {  Below,  Above,  None,  };
   CodeLocation? textLocation;
 
-  /// textAlignment
-  //enum textAlignmentEnum {  Left,  Center,  Right,  };
-  TextAlignment? textAlignment;
-
-  /// Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
+  /// Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
 
   String? foregroundColor;
 
-  /// Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
+  /// Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
 
   String? backgroundColor;
 
   /// units
   //enum unitsEnum {  Pixel,  Point,  Inch,  Millimeter,  };
-  AvailableGraphicsUnit? units;
+  GraphicsUnit? units;
 
-  /// Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.
+  /// Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot.
 
   double? resolution;
 
-  /// Height of the barcode image in given units. Default units: pixel.
+  /// Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
 
   double? imageHeight;
 
-  /// Width of the barcode image in given units. Default units: pixel.
+  /// Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
 
   double? imageWidth;
 
@@ -51,9 +43,7 @@ class BarcodeImageParams {
   /// Constructor
   BarcodeImageParams(
       [this.imageFormat,
-      this.twoDDisplayText,
       this.textLocation,
-      this.textAlignment,
       this.foregroundColor,
       this.backgroundColor,
       this.units,
@@ -64,26 +54,20 @@ class BarcodeImageParams {
 
   @override
   String toString() {
-    return 'BarcodeImageParams[imageFormat=$imageFormat, twoDDisplayText=$twoDDisplayText, textLocation=$textLocation, textAlignment=$textAlignment, foregroundColor=$foregroundColor, backgroundColor=$backgroundColor, units=$units, resolution=$resolution, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, ]';
+    return 'BarcodeImageParams[imageFormat=$imageFormat, textLocation=$textLocation, foregroundColor=$foregroundColor, backgroundColor=$backgroundColor, units=$units, resolution=$resolution, imageHeight=$imageHeight, imageWidth=$imageWidth, rotationAngle=$rotationAngle, ]';
   }
 
   /// Creates a BarcodeImageParams instance from a JSON representation.
   BarcodeImageParams.fromJson(Map<String, dynamic> json) {
     imageFormat = json['imageFormat'] == null
         ? null
-        : AvailableBarCodeImageFormat.fromJson(json['imageFormat']);
-    twoDDisplayText = json['twoDDisplayText'];
+        : BarcodeImageFormat.fromJson(json['imageFormat']);
     textLocation = json['textLocation'] == null
         ? null
         : CodeLocation.fromJson(json['textLocation']);
-    textAlignment = json['textAlignment'] == null
-        ? null
-        : TextAlignment.fromJson(json['textAlignment']);
     foregroundColor = json['foregroundColor'];
     backgroundColor = json['backgroundColor'];
-    units = json['units'] == null
-        ? null
-        : AvailableGraphicsUnit.fromJson(json['units']);
+    units = json['units'] == null ? null : GraphicsUnit.fromJson(json['units']);
     resolution = json['resolution'];
     imageHeight = json['imageHeight'];
     imageWidth = json['imageWidth'];
@@ -94,9 +78,7 @@ class BarcodeImageParams {
   Map<String, dynamic> toJson() {
     return {
       'imageFormat': imageFormat,
-      'twoDDisplayText': twoDDisplayText,
       'textLocation': textLocation,
-      'textAlignment': textAlignment,
       'foregroundColor': foregroundColor,
       'backgroundColor': backgroundColor,
       'units': units,

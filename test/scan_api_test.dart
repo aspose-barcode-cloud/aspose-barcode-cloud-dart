@@ -15,7 +15,7 @@ void main() {
       // TODO: Fix that field in MultipartFile can be any
       final barcode = await MultipartFile.fromPath("file", fileToRecognize);
       final BarcodeResponseList recognized =
-          await TestConfig.scanApi.barcodeScanFormPost(barcode);
+          await TestConfig.scanApi.barcodeScanMultipartPost(barcode);
 
       expect(recognized, isNotNull);
       expect(recognized.barcodes, isNotEmpty);

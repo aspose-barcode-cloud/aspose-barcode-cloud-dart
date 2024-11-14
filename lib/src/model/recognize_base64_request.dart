@@ -16,17 +16,17 @@ class RecognizeBase64Request {
   //enum recognitionModeEnum {  Fast,  Normal,  Excellent,  };
   RecognitionMode? recognitionMode;
 
-  /// imageKind
-  //enum imageKindEnum {  Photo,  ScannedDocument,  ClearImage,  };
-  RecognitionImageKind? imageKind;
+  /// recognitionImageKind
+  //enum recognitionImageKindEnum {  Photo,  ScannedDocument,  ClearImage,  };
+  RecognitionImageKind? recognitionImageKind;
 
   /// Constructor
   RecognizeBase64Request(this.barcodeTypes, this.fileBase64,
-      [this.recognitionMode, this.imageKind]);
+      [this.recognitionMode, this.recognitionImageKind]);
 
   @override
   String toString() {
-    return 'RecognizeBase64Request[barcodeTypes=$barcodeTypes, fileBase64=$fileBase64, recognitionMode=$recognitionMode, imageKind=$imageKind, ]';
+    return 'RecognizeBase64Request[barcodeTypes=$barcodeTypes, fileBase64=$fileBase64, recognitionMode=$recognitionMode, recognitionImageKind=$recognitionImageKind, ]';
   }
 
   /// Creates a RecognizeBase64Request instance from a JSON representation.
@@ -36,9 +36,9 @@ class RecognizeBase64Request {
     recognitionMode = json['recognitionMode'] == null
         ? null
         : RecognitionMode.fromJson(json['recognitionMode']);
-    imageKind = json['imageKind'] == null
+    recognitionImageKind = json['recognitionImageKind'] == null
         ? null
-        : RecognitionImageKind.fromJson(json['imageKind']);
+        : RecognitionImageKind.fromJson(json['recognitionImageKind']);
   }
 
   /// Returns a JSON representation of RecognizeBase64Request.
@@ -47,7 +47,7 @@ class RecognizeBase64Request {
       'barcodeTypes': barcodeTypes,
       'fileBase64': fileBase64,
       'recognitionMode': recognitionMode,
-      'imageKind': imageKind
+      'recognitionImageKind': recognitionImageKind
     };
   }
 
