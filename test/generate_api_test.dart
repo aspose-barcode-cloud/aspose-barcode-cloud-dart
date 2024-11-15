@@ -30,10 +30,11 @@ void main() {
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
     });
 
-    test('should generate image with barcodeGenerateFormPost', () async {
-      final generated = await TestConfig.generateApi.barcodeGenerateMultipartPost(
-          EncodeBarcodeType.QR, 'Testing generator',
-          dataType: EncodeDataType.StringData, rotationAngle: 90);
+    test('should generate image with barcodeGenerateMultipartPost', () async {
+      final generated = await TestConfig.generateApi
+          .barcodeGenerateMultipartPost(
+              EncodeBarcodeType.QR, 'Testing generator',
+              dataType: EncodeDataType.StringData, rotationAngle: 90);
 
       final imageSize = generated.lengthInBytes;
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
