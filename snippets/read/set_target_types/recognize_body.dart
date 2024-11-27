@@ -10,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -24,8 +25,8 @@ Future<void> main() async {
   final imageBase64 = base64Encode(fileBytes);
 
   final recognizeBase64Request = RecognizeBase64Request(
-     [DecodeBarcodeType.QR, DecodeBarcodeType.Pdf417],
-     imageBase64,
+    [DecodeBarcodeType.QR, DecodeBarcodeType.Pdf417],
+    imageBase64,
   );
 
   final BarcodeResponseList result =

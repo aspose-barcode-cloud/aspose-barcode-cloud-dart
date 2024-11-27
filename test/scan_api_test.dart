@@ -1,5 +1,4 @@
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
-import 'package:http/http.dart' show MultipartFile;
 import 'package:test/test.dart';
 import 'dart:io';
 import 'dart:convert';
@@ -12,8 +11,7 @@ void main() {
   test(
     '.scanBarcodes can scan 2 type',
     () async {
-      // TODO: Fix that field in MultipartFile can be any
-      final barcode = await MultipartFile.fromPath("file", fileToRecognize);
+      final barcode = await File(fileToRecognize).readAsBytes();
       final BarcodeResponseList recognized =
           await TestConfig.scanApi.barcodeScanMultipartPost(barcode);
 

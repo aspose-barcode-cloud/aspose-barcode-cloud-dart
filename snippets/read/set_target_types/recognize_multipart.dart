@@ -9,7 +9,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -20,10 +21,10 @@ Future<void> main() async {
 
   final file = File("../../../../../Pdf417.png");
   final fileName = file.absolute.path;
- 
-  final BarcodeResponseList result 
-          = await recognizeApi.barcodeRecognizeMultipartPost(
-            DecodeBarcodeType.Pdf417, file);
 
-  print("File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'");
+  final BarcodeResponseList result = await recognizeApi
+      .barcodeRecognizeMultipartPost(DecodeBarcodeType.Pdf417, file);
+
+  print(
+      "File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

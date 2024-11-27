@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -11,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -21,15 +21,14 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final fileName = '${Directory.current.path}${Platform.pathSeparator}Code39.png';
+  final fileName =
+      '${Directory.current.path}${Platform.pathSeparator}Code39.png';
 
   final Uint8List response = await generateApi.barcodeGenerateMultipartPost(
-    EncodeBarcodeType.Code39,
-    "Aspose",
-    foregroundColor: "Green",
-    backgroundColor: "Yellow",
-    imageFormat: BarcodeImageFormat.Gif
-  );
+      EncodeBarcodeType.Code39, "Aspose",
+      foregroundColor: "Green",
+      backgroundColor: "Yellow",
+      imageFormat: BarcodeImageFormat.Gif);
 
   File(fileName).writeAsBytesSync(response);
 

@@ -1,3 +1,5 @@
+import 'dart:typed_data' show Uint8List;
+
 import 'package:http/http.dart' show MultipartFile;
 
 import '../http/multipart_request_plus.dart';
@@ -111,7 +113,7 @@ class ScanApi {
   /// Scan barcode from file in request body using POST requests with parameter in multipart form.
   ///
   Future<BarcodeResponseList> barcodeScanMultipartPost(
-      MultipartFile file) async {
+      Uint8List fileBytes) async {
     // ignore: prefer_final_locals
     Object? postBody;
 
@@ -132,7 +134,8 @@ class ScanApi {
     MultipartRequestPlus mp =
         MultipartRequestPlus('POST', Uri.parse(requestPath));
 
-    mp.files.add(file);
+    mp.files.add(MultipartFile.fromBytes("file", fileBytes.toList(),
+        filename: "somefile.xyz"));
 
     postBody = mp;
 

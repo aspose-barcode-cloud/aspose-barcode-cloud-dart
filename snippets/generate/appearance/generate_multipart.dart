@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -11,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -22,10 +22,11 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final file = File(
-    Directory.current.path + Platform.pathSeparator + "Pdf417.svg",
+    "${Directory.current.path}${Platform.pathSeparator}Pdf417.svg",
   );
 
-  final Uint8List barcodeStream = await generateApi.barcodeGenerateMultipartPost(
+  final Uint8List barcodeStream =
+      await generateApi.barcodeGenerateMultipartPost(
     EncodeBarcodeType.Pdf417,
     "Aspose.BarCode.Cloud",
     textLocation: CodeLocation.Above,

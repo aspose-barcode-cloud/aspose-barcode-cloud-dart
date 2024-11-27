@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -11,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -22,7 +22,7 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final file = File(
-    Directory.current.path + Platform.pathSeparator + ".." + Platform.pathSeparator + ".." + Platform.pathSeparator + ".." + Platform.pathSeparator + "Pdf417.png",
+    "${Directory.current.path}${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}Pdf417.png",
   );
 
   final generateParams = GenerateParams(
@@ -36,7 +36,8 @@ Future<void> main() async {
       ..units = GraphicsUnit.Inch,
   );
 
-  final Uint8List response = await generateApi.barcodeGenerateBodyPost(generateParams);
+  final Uint8List response =
+      await generateApi.barcodeGenerateBodyPost(generateParams);
 
   file.writeAsBytesSync(response);
 

@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -11,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -27,15 +27,15 @@ Future<void> main() async {
   final recognizeBase64Request = RecognizeBase64Request(
     [DecodeBarcodeType.Aztec, DecodeBarcodeType.QR],
     imageBase64,
-    )
-    ..recognitionImageKind = RecognitionImageKind.ScannedDocument;
+  )..recognitionImageKind = RecognitionImageKind.ScannedDocument;
 
   final BarcodeResponseList result =
       await recognizeApi.barcodeRecognizeBodyPost(recognizeBase64Request);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];
-    print("File '$fileName' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
+    print(
+        "File '$fileName' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
   } else {
     print("File '$fileName' recognized, but no barcodes found.");
   }

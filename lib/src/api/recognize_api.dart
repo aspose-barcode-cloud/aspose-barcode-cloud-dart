@@ -1,3 +1,5 @@
+import 'dart:typed_data' show Uint8List;
+
 import 'package:http/http.dart' show MultipartFile;
 
 import '../http/multipart_request_plus.dart';
@@ -124,7 +126,7 @@ class RecognizeApi {
   /// Recognize barcode from file in request body using POST requests with parameters in multipart form.
   ///
   Future<BarcodeResponseList> barcodeRecognizeMultipartPost(
-      DecodeBarcodeType barcodeType, MultipartFile file,
+      DecodeBarcodeType barcodeType, Uint8List fileBytes,
       {RecognitionMode? recognitionMode,
       RecognitionImageKind? recognitionImageKind}) async {
     // ignore: prefer_final_locals
@@ -149,7 +151,8 @@ class RecognizeApi {
 
     mp.fields['barcodeType'] = [parameterToString(barcodeType)];
 
-    mp.files.add(file);
+    mp.files.add(MultipartFile.fromBytes("file", fileBytes.toList(),
+        filename: "somefile.xyz"));
 
     if (recognitionMode != null) {
       mp.fields['recognitionMode'] = [parameterToString(recognitionMode)];

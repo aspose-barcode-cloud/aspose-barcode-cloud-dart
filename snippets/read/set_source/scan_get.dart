@@ -9,7 +9,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -18,13 +19,16 @@ Future<void> main() async {
   final config = makeConfiguration();
   final scanApi = ScanApi(ApiClient(config));
 
-  final barcodeImageUrl = "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
+  final barcodeImageUrl =
+      "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
 
-  final BarcodeResponseList result = await scanApi.barcodeScanGet(barcodeImageUrl);
+  final BarcodeResponseList result =
+      await scanApi.barcodeScanGet(barcodeImageUrl);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];
-    print("File '$barcodeImageUrl' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
+    print(
+        "File '$barcodeImageUrl' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
   } else {
     print("File '$barcodeImageUrl' recognized, but no barcodes found.");
   }

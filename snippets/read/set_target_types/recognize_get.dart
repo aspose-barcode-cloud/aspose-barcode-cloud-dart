@@ -8,7 +8,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -17,9 +18,12 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final fileUrl = "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
+  final fileUrl =
+      "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
 
-  final BarcodeResponseList result = await recognizeApi.barcodeRecognizeGet(DecodeBarcodeType.MostCommonlyUsed,  fileUrl);
+  final BarcodeResponseList result = await recognizeApi.barcodeRecognizeGet(
+      DecodeBarcodeType.MostCommonlyUsed, fileUrl);
 
-  print("File '$fileUrl' recognized, result: '${result.barcodes[0].barcodeValue}'");
+  print(
+      "File '$fileUrl' recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

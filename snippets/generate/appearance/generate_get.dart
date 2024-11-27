@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -11,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -36,7 +36,8 @@ Future<void> main() async {
       ..textLocation = CodeLocation.Below,
   );
 
-  final Uint8List response = await generateApi.barcodeGenerateBodyPost(generateParams);
+  final Uint8List response =
+      await generateApi.barcodeGenerateBodyPost(generateParams);
 
   File(fileName).writeAsBytesSync(response);
 

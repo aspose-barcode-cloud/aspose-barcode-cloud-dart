@@ -10,7 +10,8 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
@@ -21,22 +22,20 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final file = File(
-    Directory.current.path + Platform.pathSeparator + "Code39.jpeg",
+    "${Directory.current.path}${Platform.pathSeparator}Code39.jpeg",
   );
 
-  final imageParams =  BarcodeImageParams()
-                        ..foregroundColor = "#FF0000"
-                        ..backgroundColor = "#FFFF00"
-                        ..imageFormat = BarcodeImageFormat.Jpeg
-                        ..rotationAngle = 90;
+  final imageParams = BarcodeImageParams()
+    ..foregroundColor = "#FF0000"
+    ..backgroundColor = "#FFFF00"
+    ..imageFormat = BarcodeImageFormat.Jpeg
+    ..rotationAngle = 90;
 
-  final generateParams = GenerateParams(
-  EncodeBarcodeType.Code39,
-    EncodeData("Aspose",  EncodeDataType.StringData),
-    imageParams
-      );
+  final generateParams = GenerateParams(EncodeBarcodeType.Code39,
+      EncodeData("Aspose", EncodeDataType.StringData), imageParams);
 
-  final Uint8List response = await generateApi.barcodeGenerateBodyPost(generateParams);
+  final Uint8List response =
+      await generateApi.barcodeGenerateBodyPost(generateParams);
 
   file.writeAsBytesSync(response);
 

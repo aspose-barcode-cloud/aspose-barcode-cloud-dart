@@ -1,10 +1,10 @@
-
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 Configuration makeConfiguration() {
   return Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-    clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+    clientSecret:
+        "Client Secret from https://dashboard.aspose.cloud/applications",
   );
 }
 

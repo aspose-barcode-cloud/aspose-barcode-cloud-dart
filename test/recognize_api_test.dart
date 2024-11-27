@@ -1,5 +1,4 @@
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
-import 'package:http/http.dart' show MultipartFile;
 import 'package:test/test.dart';
 import 'dart:io';
 import 'dart:convert';
@@ -9,8 +8,8 @@ import 'test_config.dart';
 void main() {
   final fileToRecognize = "qr.png";
 
-  test('.postBarcodeRecognizeFromUrlOrContent', () async {
-    final barcode = await MultipartFile.fromPath("file", fileToRecognize);
+  test('.barcodeRecognizeMultipartPost', () async {
+    final barcode = await File(fileToRecognize).readAsBytes();
     final BarcodeResponseList recognized = await TestConfig.recognizeApi
         .barcodeRecognizeMultipartPost(DecodeBarcodeType.QR, barcode,
             recognitionMode: RecognitionMode.Fast,

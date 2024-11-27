@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
@@ -10,13 +9,14 @@ Configuration makeConfiguration() {
   } else {
     return Configuration(
       clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-      clientSecret: "Client Secret from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
     );
   }
 }
 
 Future<void> main() async {
-  final fileName = Directory.current.path + Platform.pathSeparator + "qr.png";
+  final fileName = "${Directory.current.path}${Platform.pathSeparator}qr.png";
   final configuration = makeConfiguration();
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
@@ -26,7 +26,8 @@ Future<void> main() async {
     EncodeData("Aspose.BarCode.Cloud", EncodeDataType.StringData),
   );
 
-  final Uint8List response = await generateApi.barcodeGenerateBodyPost(generateParams);
+  final Uint8List response =
+      await generateApi.barcodeGenerateBodyPost(generateParams);
   final file = File(fileName);
   file.writeAsBytesSync(response);
 

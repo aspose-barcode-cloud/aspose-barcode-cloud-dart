@@ -48,7 +48,6 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
-import 'package:http/http.dart' show MultipartFile;
 
 Future<void> main() async {
   const fileName = "qr.png";
@@ -72,10 +71,9 @@ Future<void> main() async {
   print("Generated image saved to '$fileName'");
 
   // Recognize generated image
-  final formFile = MultipartFile.fromBytes("file", generated.toList(),
-      filename: "barcode.png");
+
   final BarcodeResponseList recognized =
-      await scanApi.barcodeScanMultipartPost(formFile);
+      await scanApi.barcodeScanMultipartPost(generated);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");

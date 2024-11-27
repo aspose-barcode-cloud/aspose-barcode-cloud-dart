@@ -2,8 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 void main() async {
-  final clientId = "<Your-Client-Id>";
-  final clientSecret = "<Your-Client-Secret>";
+  final clientId = "Client Id from https://dashboard.aspose.cloud/applications";
+  final clientSecret =
+      "Client Secret from https://dashboard.aspose.cloud/applications";
 
   final baseUrl = "https://id.aspose.cloud/";
   final endpoint = "connect/token";
@@ -24,7 +25,8 @@ void main() async {
       final data = jsonDecode(response.body);
       print(data);
     } else {
-      print("HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}");
+      print(
+          "HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}");
     }
   } catch (err) {
     print("An unexpected error occurred: $err");
