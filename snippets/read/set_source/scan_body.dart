@@ -19,8 +19,8 @@ Future<void> main() async {
   final config = makeConfiguration();
   final scanApi = ScanApi(ApiClient(config));
 
-  final fileName = File("../../../../../qr.png").absolute.path;
-  final fileBytes = File(fileName).readAsBytesSync();
+  final fileName = await File("${Directory.current.path}${Platform.pathSeparator}qr.png").absolute.path;
+  final fileBytes = await File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 
   final scanBase64Request = ScanBase64Request(imageBase64);

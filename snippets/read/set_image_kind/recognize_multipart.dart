@@ -18,11 +18,11 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final file = File("../../../../../Pdf417.png");
+  final file = await File("${Directory.current.path}${Platform.pathSeparator}Pdf417.png").readAsBytes();
 
   final BarcodeResponseList result = await recognizeApi
       .barcodeRecognizeMultipartPost(DecodeBarcodeType.MostCommonlyUsed, file);
 
   print(
-      "File '${file.absolute.path}' recognized, result: '${result.barcodes[0].barcodeValue}'");
+      "File recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

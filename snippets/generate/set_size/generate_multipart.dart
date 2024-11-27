@@ -31,7 +31,7 @@ Future<void> main() async {
       resolution: 150,
       units: GraphicsUnit.Point);
 
-  File(fileName).writeAsBytesSync(response);
+  await File(fileName).writeAsBytes(response);
 
   print("File '$fileName' generated.");
 }

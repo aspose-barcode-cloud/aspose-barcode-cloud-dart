@@ -30,7 +30,7 @@ Future<void> main() async {
       backgroundColor: "Yellow",
       imageFormat: BarcodeImageFormat.Gif);
 
-  File(fileName).writeAsBytesSync(response);
+  await File(fileName).writeAsBytes(response);
 
   print("File '$fileName' generated.");
 }

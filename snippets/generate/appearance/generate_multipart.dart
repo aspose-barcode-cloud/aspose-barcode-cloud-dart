@@ -21,7 +21,7 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final file = File(
+  final file = await File(
     "${Directory.current.path}${Platform.pathSeparator}Pdf417.svg",
   );
 
@@ -33,7 +33,7 @@ Future<void> main() async {
     imageFormat: BarcodeImageFormat.Svg,
   );
 
-  file.writeAsBytesSync(barcodeStream);
+  file.writeAsBytes(barcodeStream);
 
   print("File '${file.path}' generated.");
 }

@@ -19,9 +19,7 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final currentDir = Directory.current.path;
-  final file = File('$currentDir/../../../../../../qr.png');
-  final fileName = file.absolute.path;
+  final file = await File('${Directory.current.path}${Platform.pathSeparator}qr.png').readAsBytes();
 
   final BarcodeResponseList result = await recognizeApi
       .barcodeRecognizeMultipartPost(DecodeBarcodeType.QR, file);
@@ -29,8 +27,8 @@ Future<void> main() async {
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];
     print(
-        "File '$fileName' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
+        "File recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
   } else {
-    print("File '$fileName' recognized, but no barcodes found.");
+    print("File recognized, but no barcodes found.");
   }
 }

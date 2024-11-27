@@ -27,7 +27,7 @@ Future<void> main() async {
       EncodeBarcodeType.Code128, "4173706F73652E426172436F64652E436C6F7564",
       dataType: EncodeDataType.HexBytes);
 
-  final file = File(fileName);
+  final file = await File(fileName);
   await file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");

@@ -18,7 +18,7 @@ Configuration makeConfiguration() {
 
 Future<void> main() async {
   final fileName =
-      "${Directory.current.path}${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}Pdf417.png";
+      "${Directory.current.path}${Platform.pathSeparator}Pdf417.png";
 
   final configuration = makeConfiguration();
   final apiClient = ApiClient(configuration);
@@ -36,8 +36,8 @@ Future<void> main() async {
   final Uint8List response =
       await generateApi.barcodeGenerateBodyPost(generateParams);
 
-  final file = File(fileName);
-  file.writeAsBytesSync(response);
+  final file = await File(fileName);
+  file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");
 }

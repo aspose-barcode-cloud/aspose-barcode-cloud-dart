@@ -20,12 +20,12 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final fileName = File("../../../../../qr.png").absolute.path;
-  final fileBytes = File(fileName).readAsBytesSync();
+  final fileName = await File("${Directory.current.path}${Platform.pathSeparator}qr.png").absolute.path;
+  final fileBytes = await File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 
   final recognizeBase64Request = RecognizeBase64Request(
-    [DecodeBarcodeType.Pdf417],
+    [DecodeBarcodeType.QR],
     imageBase64,
   );
 

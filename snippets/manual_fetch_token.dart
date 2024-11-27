@@ -6,7 +6,7 @@ void main() async {
   final clientSecret =
       "Client Secret from https://dashboard.aspose.cloud/applications";
 
-  final baseUrl = "https://id.aspose.cloud/";
+  final baseUrl = "https://id-qa.aspose.cloud/";
   final endpoint = "connect/token";
 
   final payload = {
@@ -15,20 +15,17 @@ void main() async {
     "client_secret": clientSecret,
   };
 
-  try {
     final response = await http.post(
       Uri.parse(baseUrl + endpoint),
       body: payload,
     );
 
     if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      print(data);
+      final token = jsonDecode(response.body)['access_token'];
+      print("Token recieved successfully");
+      //Uncomment next line to view token.
+      //print(token);
     } else {
-      print(
-          "HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}");
+      throw Exception("HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}");
     }
-  } catch (err) {
-    print("An unexpected error occurred: $err");
-  }
 }

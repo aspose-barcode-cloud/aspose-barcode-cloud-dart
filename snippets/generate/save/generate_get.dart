@@ -21,13 +21,13 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final fileName =
-      "${Directory.current.path}${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}..${Platform.pathSeparator}Code128.jpeg";
+      "${Directory.current.path}${Platform.pathSeparator}Code128.jpeg";
 
   final Uint8List response = await generateApi.barcodeGenerateBarcodeTypeGet(
       EncodeBarcodeType.Code128, "Aspose.BarCode.Cloud");
 
-  final file = File(fileName);
-  file.writeAsBytesSync(response);
+  final file = await File(fileName);
+  file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");
 }
