@@ -8,9 +8,9 @@ import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 Specifies the file format of the image.
 ## Allowable values
 
-* **BarcodeImageFormat.gif**
+* **BarcodeImageFormat.png**
 * BarcodeImageFormat.jpeg
-* BarcodeImageFormat.png
-* BarcodeImageFormat.tiff
 * BarcodeImageFormat.svg
+* BarcodeImageFormat.tiff
+* BarcodeImageFormat.gif
 

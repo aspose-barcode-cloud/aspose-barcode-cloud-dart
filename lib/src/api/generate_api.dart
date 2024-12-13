@@ -12,105 +12,9 @@ class GenerateApi {
   final ApiClient _apiClient;
 
   ///
-  /// Generate barcode using GET request with parameters in route and query string.
-  ///
-  Future<Uint8List> barcodeGenerateBarcodeTypeGet(
-      EncodeBarcodeType barcodeType, String data,
-      {EncodeDataType? dataType,
-      BarcodeImageFormat? imageFormat,
-      CodeLocation? textLocation,
-      String? foregroundColor,
-      String? backgroundColor,
-      GraphicsUnit? units,
-      double? resolution,
-      double? imageHeight,
-      double? imageWidth,
-      int? rotationAngle}) async {
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    // create path and map variables
-    final String requestPath = "/barcode/generate/{barcodeType}"
-        .replaceAll("{barcodeType}", barcodeType.toString());
-
-    // query params
-    final List<QueryParam> queryParams = [];
-    final Map<String, String> headerParams = {};
-    final Map<String, String> formParams = {};
-    if (dataType != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "dataType", dataType));
-    }
-    queryParams.addAll(convertParametersForCollectionFormat("", "data", data));
-    if (imageFormat != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "imageFormat", imageFormat));
-    }
-    if (textLocation != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "textLocation", textLocation));
-    }
-    if (foregroundColor != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "foregroundColor", foregroundColor));
-    }
-    if (backgroundColor != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "backgroundColor", backgroundColor));
-    }
-    if (units != null) {
-      queryParams
-          .addAll(convertParametersForCollectionFormat("", "units", units));
-    }
-    if (resolution != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "resolution", resolution));
-    }
-    if (imageHeight != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "imageHeight", imageHeight));
-    }
-    if (imageWidth != null) {
-      queryParams.addAll(
-          convertParametersForCollectionFormat("", "imageWidth", imageWidth));
-    }
-    if (rotationAngle != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "rotationAngle", rotationAngle));
-    }
-
-    final List<String> contentTypes = [];
-
-    final String contentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = ["JWT"];
-
-    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
-
-    if (response.statusCode >= 400) {
-      ApiErrorResponse error;
-      try {
-        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
-      } catch (e) {
-        throw ApiException(response.statusCode, response.body);
-      }
-      throw ApiException.withResponse(
-          response.statusCode,
-          response.reasonPhrase == null
-              ? "Api response error"
-              : response.reasonPhrase!,
-          error);
-    } else {
-      return response.bodyBytes;
-    }
-  }
-
-  ///
   /// Generate barcode using POST request with parameters in body in json or xml format.
   ///
-  Future<Uint8List> barcodeGenerateBodyPost(
-      GenerateParams generateParams) async {
+  Future<Uint8List> generateBodyPostV4(GenerateParams generateParams) async {
     // ignore: prefer_final_locals
     Object? postBody = generateParams;
 
@@ -159,7 +63,7 @@ class GenerateApi {
   ///
   /// Generate barcode using POST request with parameters in multipart form.
   ///
-  Future<Uint8List> barcodeGenerateMultipartPost(
+  Future<Uint8List> generateFormPostV4(
       EncodeBarcodeType barcodeType, String data,
       {EncodeDataType? dataType,
       BarcodeImageFormat? imageFormat,
@@ -246,6 +150,100 @@ class GenerateApi {
         formParams,
         contentType,
         authNames);
+
+    if (response.statusCode >= 400) {
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
+    } else {
+      return response.bodyBytes;
+    }
+  }
+
+  ///
+  /// Generate barcode using GET request with parameters in route and query string.
+  ///
+  Future<Uint8List> generateGetV4(EncodeBarcodeType barcodeType, String data,
+      {EncodeDataType? dataType,
+      BarcodeImageFormat? imageFormat,
+      CodeLocation? textLocation,
+      String? foregroundColor,
+      String? backgroundColor,
+      GraphicsUnit? units,
+      double? resolution,
+      double? imageHeight,
+      double? imageWidth,
+      int? rotationAngle}) async {
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    // create path and map variables
+    final String requestPath = "/barcode/generate/{barcodeType}"
+        .replaceAll("{barcodeType}", barcodeType.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+    if (dataType != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "dataType", dataType));
+    }
+    queryParams.addAll(convertParametersForCollectionFormat("", "data", data));
+    if (imageFormat != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "imageFormat", imageFormat));
+    }
+    if (textLocation != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "textLocation", textLocation));
+    }
+    if (foregroundColor != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "foregroundColor", foregroundColor));
+    }
+    if (backgroundColor != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "backgroundColor", backgroundColor));
+    }
+    if (units != null) {
+      queryParams
+          .addAll(convertParametersForCollectionFormat("", "units", units));
+    }
+    if (resolution != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "resolution", resolution));
+    }
+    if (imageHeight != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "imageHeight", imageHeight));
+    }
+    if (imageWidth != null) {
+      queryParams.addAll(
+          convertParametersForCollectionFormat("", "imageWidth", imageWidth));
+    }
+    if (rotationAngle != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "rotationAngle", rotationAngle));
+    }
+
+    final List<String> contentTypes = [];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       ApiErrorResponse error;

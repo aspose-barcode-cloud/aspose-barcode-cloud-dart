@@ -23,10 +23,10 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final Uint8List response = await generateApi.barcodeGenerateMultipartPost(
+  final Uint8List response = await generateApi.generateFormPostV4(
       EncodeBarcodeType.Pdf417, "Aspose.BarCode.Cloud");
 
-  final file = await File(fileName);
+  final file = File(fileName);
   file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");

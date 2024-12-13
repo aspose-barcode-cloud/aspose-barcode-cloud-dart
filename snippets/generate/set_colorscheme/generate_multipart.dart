@@ -24,7 +24,7 @@ Future<void> main() async {
   final fileName =
       '${Directory.current.path}${Platform.pathSeparator}Code39.png';
 
-  final Uint8List response = await generateApi.barcodeGenerateMultipartPost(
+  final Uint8List response = await generateApi.generateFormPostV4(
       EncodeBarcodeType.Code39, "Aspose",
       foregroundColor: "Green",
       backgroundColor: "Yellow",

@@ -23,11 +23,11 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final Uint8List response = await generateApi.barcodeGenerateMultipartPost(
+  final Uint8List response = await generateApi.generateFormPostV4(
       EncodeBarcodeType.Code128, "4173706F73652E426172436F64652E436C6F7564",
       dataType: EncodeDataType.HexBytes);
 
-  final file = await File(fileName);
+  final file = File(fileName);
   await file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");

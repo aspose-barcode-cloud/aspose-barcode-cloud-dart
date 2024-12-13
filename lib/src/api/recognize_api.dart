@@ -16,7 +16,7 @@ class RecognizeApi {
   ///
   /// Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
   ///
-  Future<BarcodeResponseList> barcodeRecognizeBodyPost(
+  Future<BarcodeResponseList> recognizeBase64PostV4(
       RecognizeBase64Request recognizeBase64Request) async {
     // ignore: prefer_final_locals
     Object? postBody = recognizeBase64Request;
@@ -65,67 +65,9 @@ class RecognizeApi {
   }
 
   ///
-  /// Recognize barcode from file on server using GET requests with parameters in route and query string.
-  ///
-  Future<BarcodeResponseList> barcodeRecognizeGet(
-      DecodeBarcodeType barcodeType, String fileUrl,
-      {RecognitionMode? recognitionMode,
-      RecognitionImageKind? recognitionImageKind}) async {
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    // create path and map variables
-    final String requestPath = "/barcode/recognize";
-
-    // query params
-    final List<QueryParam> queryParams = [];
-    final Map<String, String> headerParams = {};
-    final Map<String, String> formParams = {};
-    queryParams.addAll(
-        convertParametersForCollectionFormat("", "barcodeType", barcodeType));
-    queryParams
-        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
-    if (recognitionMode != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "recognitionMode", recognitionMode));
-    }
-    if (recognitionImageKind != null) {
-      queryParams.addAll(convertParametersForCollectionFormat(
-          "", "recognitionImageKind", recognitionImageKind));
-    }
-
-    final List<String> contentTypes = [];
-
-    final String contentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = ["JWT"];
-
-    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
-
-    if (response.statusCode >= 400) {
-      ApiErrorResponse error;
-      try {
-        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
-      } catch (e) {
-        throw ApiException(response.statusCode, response.body);
-      }
-      throw ApiException.withResponse(
-          response.statusCode,
-          response.reasonPhrase == null
-              ? "Api response error"
-              : response.reasonPhrase!,
-          error);
-    } else {
-      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
-          as BarcodeResponseList;
-    }
-  }
-
-  ///
   /// Recognize barcode from file in request body using POST requests with parameters in multipart form.
   ///
-  Future<BarcodeResponseList> barcodeRecognizeMultipartPost(
+  Future<BarcodeResponseList> recognizeFormPostV4(
       DecodeBarcodeType barcodeType, Uint8List fileBytes,
       {RecognitionMode? recognitionMode,
       RecognitionImageKind? recognitionImageKind}) async {
@@ -175,6 +117,64 @@ class RecognizeApi {
         formParams,
         contentType,
         authNames);
+
+    if (response.statusCode >= 400) {
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
+    } else {
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
+          as BarcodeResponseList;
+    }
+  }
+
+  ///
+  /// Recognize barcode from file on server using GET requests with parameters in route and query string.
+  ///
+  Future<BarcodeResponseList> recognizeGetV4(
+      DecodeBarcodeType barcodeType, String fileUrl,
+      {RecognitionMode? recognitionMode,
+      RecognitionImageKind? recognitionImageKind}) async {
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    // create path and map variables
+    final String requestPath = "/barcode/recognize";
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+    queryParams.addAll(
+        convertParametersForCollectionFormat("", "barcodeType", barcodeType));
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
+    if (recognitionMode != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "recognitionMode", recognitionMode));
+    }
+    if (recognitionImageKind != null) {
+      queryParams.addAll(convertParametersForCollectionFormat(
+          "", "recognitionImageKind", recognitionImageKind));
+    }
+
+    final List<String> contentTypes = [];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       ApiErrorResponse error;

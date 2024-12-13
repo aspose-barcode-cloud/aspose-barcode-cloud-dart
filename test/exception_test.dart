@@ -9,7 +9,7 @@ void main() {
     try {
       // This should throw an ApiException
       await TestConfig.generateApi
-          .barcodeGenerateBarcodeTypeGet(EncodeBarcodeType.QR, '');
+          .generateGetV4(EncodeBarcodeType.QR, '');
     } on ApiException catch (e) {
       // Set thrown to true since we expect an exception to be thrown
       thrown = true;
@@ -24,7 +24,7 @@ void main() {
       expect(
           e.getDetails().replaceAll("\r", ""),
           equals(
-              "errorInvalidInputData: 1. Field name: 'Data'. Errors: The Data field is required."
+              "errorInvalidInputData: Error: Field name: \'Data\' errors: The Data field is required."
               "Operation Failed. The input data is not valid."));
     }
 

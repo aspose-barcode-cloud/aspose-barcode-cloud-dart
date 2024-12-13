@@ -19,11 +19,12 @@ Future<void> main() async {
   final config = makeConfiguration();
   final scanApi = ScanApi(ApiClient(config));
 
-  final file = await File("${Directory.current.path}${Platform.pathSeparator}qr.png").readAsBytes();
+  final file =
+      await File("${Directory.current.path}${Platform.pathSeparator}qr.png")
+          .readAsBytes();
 
   final BarcodeResponseList result =
-      await scanApi.barcodeScanMultipartPost(file);
+      await scanApi.scanFormPostV4(file);
 
-  print(
-      "File recognized, result: '${result.barcodes[0].barcodeValue}'");
+  print("File recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

@@ -30,9 +30,9 @@ Future<void> main() async {
   );
 
   final Uint8List response =
-      await generateApi.barcodeGenerateBodyPost(postParams);
+      await generateApi.generateBodyPostV4(postParams);
 
-  final file = await File(fileName);
+  final file = File(fileName);
   file.writeAsBytes(response);
 
   print("File '${file.path}' generated.");

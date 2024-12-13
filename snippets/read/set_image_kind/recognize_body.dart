@@ -20,8 +20,11 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final fileName = await File("${Directory.current.path}${Platform.pathSeparator}aztec.png").absolute.path;
-  final fileBytes = await File(fileName).readAsBytesSync();
+  final fileName =
+      File("${Directory.current.path}${Platform.pathSeparator}aztec.png")
+          .absolute
+          .path;
+  final fileBytes = File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 
   final recognizeBase64Request = RecognizeBase64Request(
@@ -30,7 +33,7 @@ Future<void> main() async {
   )..recognitionImageKind = RecognitionImageKind.ScannedDocument;
 
   final BarcodeResponseList result =
-      await recognizeApi.barcodeRecognizeBodyPost(recognizeBase64Request);
+      await recognizeApi.recognizeBase64PostV4(recognizeBase64Request);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];

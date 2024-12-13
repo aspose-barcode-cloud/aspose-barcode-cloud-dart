@@ -1,5 +1,5 @@
 /// Specifies the file format of the image.
-/// BarcodeImageFormat: [Gif, Jpeg, Png, Tiff, Svg]
+/// BarcodeImageFormat: [Png, Jpeg, Svg, Tiff, Gif]
 class BarcodeImageFormat {
   /// The underlying value of BarcodeImageFormat enum.
   late final String _value;
@@ -8,7 +8,7 @@ class BarcodeImageFormat {
 
   /// Specifies the file format of the image.
   // ignore: non_constant_identifier_names
-  static final BarcodeImageFormat Gif = BarcodeImageFormat._internal("Gif");
+  static final BarcodeImageFormat Png = BarcodeImageFormat._internal("Png");
 
   /// Specifies the file format of the image.
   // ignore: non_constant_identifier_names
@@ -16,7 +16,7 @@ class BarcodeImageFormat {
 
   /// Specifies the file format of the image.
   // ignore: non_constant_identifier_names
-  static final BarcodeImageFormat Png = BarcodeImageFormat._internal("Png");
+  static final BarcodeImageFormat Svg = BarcodeImageFormat._internal("Svg");
 
   /// Specifies the file format of the image.
   // ignore: non_constant_identifier_names
@@ -24,16 +24,16 @@ class BarcodeImageFormat {
 
   /// Specifies the file format of the image.
   // ignore: non_constant_identifier_names
-  static final BarcodeImageFormat Svg = BarcodeImageFormat._internal("Svg");
+  static final BarcodeImageFormat Gif = BarcodeImageFormat._internal("Gif");
 
   /// Creates a BarcodeImageFormat instance from a JSON representation.
   BarcodeImageFormat.fromJson(dynamic data) {
     switch (data) {
-      case 'Gif':
-      case 'Jpeg':
       case 'Png':
-      case 'Tiff':
+      case 'Jpeg':
       case 'Svg':
+      case 'Tiff':
+      case 'Gif':
         _value = data;
         break;
       default:

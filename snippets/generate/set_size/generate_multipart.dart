@@ -24,7 +24,7 @@ Future<void> main() async {
   final fileName =
       '${Directory.current.path}${Platform.pathSeparator}aztec.png';
 
-  final Uint8List response = await generateApi.barcodeGenerateMultipartPost(
+  final Uint8List response = await generateApi.generateFormPostV4(
       EncodeBarcodeType.Aztec, "Aspose.BarCode.Cloud",
       imageHeight: 200,
       imageWidth: 200,

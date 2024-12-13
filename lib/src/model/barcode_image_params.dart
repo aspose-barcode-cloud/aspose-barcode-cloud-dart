@@ -5,7 +5,7 @@ import '../../aspose_barcode_cloud.dart';
 /// Barcode image optional parameters
 class BarcodeImageParams {
   /// imageFormat
-  //enum imageFormatEnum {  Gif,  Jpeg,  Png,  Tiff,  Svg,  };
+  //enum imageFormatEnum {  Png,  Jpeg,  Svg,  Tiff,  Gif,  };
   BarcodeImageFormat? imageFormat;
 
   /// textLocation

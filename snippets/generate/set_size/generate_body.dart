@@ -21,7 +21,7 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final file = await File(
+  final file = File(
     "${Directory.current.path}${Platform.pathSeparator}Pdf417.png",
   );
 
@@ -37,7 +37,7 @@ Future<void> main() async {
   );
 
   final Uint8List response =
-      await generateApi.barcodeGenerateBodyPost(generateParams);
+      await generateApi.generateBodyPostV4(generateParams);
 
   file.writeAsBytes(response);
 

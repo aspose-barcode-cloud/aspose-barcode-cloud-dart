@@ -19,7 +19,7 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final result = await recognizeApi.barcodeRecognizeGet(
+  final result = await recognizeApi.recognizeGetV4(
     DecodeBarcodeType.QR,
     "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
     recognitionMode: RecognitionMode.Fast,

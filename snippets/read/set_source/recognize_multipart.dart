@@ -19,10 +19,12 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final file = await File('${Directory.current.path}${Platform.pathSeparator}qr.png').readAsBytes();
+  final file =
+      await File('${Directory.current.path}${Platform.pathSeparator}qr.png')
+          .readAsBytes();
 
   final BarcodeResponseList result = await recognizeApi
-      .barcodeRecognizeMultipartPost(DecodeBarcodeType.QR, file);
+      .recognizeFormPostV4(DecodeBarcodeType.QR, file);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];
