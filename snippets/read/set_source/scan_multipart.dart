@@ -23,8 +23,7 @@ Future<void> main() async {
       await File("${Directory.current.path}${Platform.pathSeparator}qr.png")
           .readAsBytes();
 
-  final BarcodeResponseList result =
-      await scanApi.scanFormPostV4(file);
+  final BarcodeResponseList result = await scanApi.scanMultipart(file);
 
   print("File recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

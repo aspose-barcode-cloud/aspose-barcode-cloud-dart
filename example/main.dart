@@ -18,7 +18,7 @@ Future<void> main() async {
   final scanApi = ScanApi(client);
   // Generate image with barcode
   final Uint8List generated =
-      await genApi.generateGetV4(EncodeBarcodeType.QR, "text");
+      await genApi.generate(EncodeBarcodeType.QR, "text");
 
   // Save generated image to file
   File(fileName).writeAsBytesSync(generated);
@@ -27,7 +27,7 @@ Future<void> main() async {
   // Recognize generated image
 
   final BarcodeResponseList recognized =
-      await scanApi.scanFormPostV4(generated);
+      await scanApi.scanMultipart(generated);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");

@@ -13,7 +13,7 @@ void main() {
     () async {
       final barcode = await File(fileToRecognize).readAsBytes();
       final BarcodeResponseList recognized =
-          await TestConfig.scanApi.scanFormPostV4(barcode);
+          await TestConfig.scanApi.scanMultipart(barcode);
 
       expect(recognized, isNotNull);
       expect(recognized.barcodes, isNotEmpty);
@@ -29,7 +29,7 @@ void main() {
 
   test("Barcode Scan Get", () async {
     // Test case for barcode_scan_get
-    var response = await TestConfig.scanApi.scanGetV4(
+    var response = await TestConfig.scanApi.scan(
         'https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png');
 
     expect(response.barcodes.length, equals(1));
@@ -44,7 +44,7 @@ void main() {
     var encodedString = base64Encode(imageBytes);
 
     var response = await TestConfig.scanApi
-        .scanBase64PostV4(ScanBase64Request(encodedString));
+        .scanBase64(ScanBase64Request(encodedString));
 
     expect(response.barcodes, isNotNull);
     expect(response.barcodes.length, equals(2));

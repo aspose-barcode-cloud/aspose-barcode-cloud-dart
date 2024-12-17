@@ -27,7 +27,7 @@ Future<void> main() async {
   final imageBase64 = base64Encode(fileBytes);
 
   final scanBase64Request = ScanBase64Request(imageBase64);
-  final result = await scanApi.scanBase64PostV4(scanBase64Request);
+  final result = await scanApi.scanBase64(scanBase64Request);
 
   print(
       "File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'");

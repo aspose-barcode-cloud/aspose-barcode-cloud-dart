@@ -35,7 +35,7 @@ Future<void> main() async {
       EncodeData("Aspose", EncodeDataType.StringData), imageParams);
 
   final Uint8List response =
-      await generateApi.generateBodyPostV4(generateParams);
+      await generateApi.generateBody(generateParams);
 
   file.writeAsBytes(response);
 

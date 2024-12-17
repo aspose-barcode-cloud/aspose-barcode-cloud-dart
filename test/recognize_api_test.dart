@@ -8,10 +8,10 @@ import 'test_config.dart';
 void main() {
   final fileToRecognize = "qr.png";
 
-  test('.recognizeFormPostV4', () async {
+  test('.recognizeMultipart', () async {
     final barcode = await File(fileToRecognize).readAsBytes();
     final BarcodeResponseList recognized = await TestConfig.recognizeApi
-        .recognizeFormPostV4(DecodeBarcodeType.QR, barcode,
+        .recognizeMultipart(DecodeBarcodeType.QR, barcode,
             recognitionMode: RecognitionMode.Fast,
             recognitionImageKind: RecognitionImageKind.ClearImage);
 
@@ -23,7 +23,7 @@ void main() {
 
   test("Barcode Recognize Barcode Type Get", () async {
     // Test case for barcode_recognize_barcode_type_get
-    var response = await TestConfig.recognizeApi.recognizeGetV4(
+    var response = await TestConfig.recognizeApi.recognize(
       DecodeBarcodeType.QR,
       'https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png',
       recognitionMode: RecognitionMode.Fast,
@@ -40,7 +40,7 @@ void main() {
     // Test case for barcode_recognize_body_post
     var imageBytes = await File(fileToRecognize).readAsBytes();
     var encodedString = base64Encode(imageBytes);
-    var response = await TestConfig.recognizeApi.recognizeBase64PostV4(
+    var response = await TestConfig.recognizeApi.recognizeBase64(
       RecognizeBase64Request(
         [DecodeBarcodeType.QR],
         encodedString,
@@ -53,6 +53,5 @@ void main() {
     expect(barcode.barcodeValue, equals('Aspose.BarCode.Cloud'));
     expect(barcode.region![0].x, greaterThan(0));
     expect(barcode.region![0].y, greaterThan(0));
- 
   });
 }

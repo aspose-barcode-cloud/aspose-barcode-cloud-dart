@@ -14,9 +14,54 @@ class ScanApi {
   final ApiClient _apiClient;
 
   ///
+  /// Scan barcode from file on server using GET requests with parameter in query string.
+  ///
+  Future<BarcodeResponseList> scan(String fileUrl) async {
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    // create path and map variables
+    final String requestPath = "/barcode/scan";
+
+    // query params
+    final List<QueryParam> queryParams = [];
+    final Map<String, String> headerParams = {};
+    final Map<String, String> formParams = {};
+    queryParams
+        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
+
+    final List<String> contentTypes = [];
+
+    final String contentType =
+        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    final List<String> authNames = ["JWT"];
+
+    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
+
+    if (response.statusCode >= 400) {
+      ApiErrorResponse error;
+      try {
+        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
+      } catch (e) {
+        throw ApiException(response.statusCode, response.body);
+      }
+      throw ApiException.withResponse(
+          response.statusCode,
+          response.reasonPhrase == null
+              ? "Api response error"
+              : response.reasonPhrase!,
+          error);
+    } else {
+      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
+          as BarcodeResponseList;
+    }
+  }
+
+  ///
   /// Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
   ///
-  Future<BarcodeResponseList> scanBase64PostV4(
+  Future<BarcodeResponseList> scanBase64(
       ScanBase64Request scanBase64Request) async {
     // ignore: prefer_final_locals
     Object? postBody = scanBase64Request;
@@ -67,7 +112,7 @@ class ScanApi {
   ///
   /// Scan barcode from file in request body using POST requests with parameter in multipart form.
   ///
-  Future<BarcodeResponseList> scanFormPostV4(Uint8List fileBytes) async {
+  Future<BarcodeResponseList> scanMultipart(Uint8List fileBytes) async {
     // ignore: prefer_final_locals
     Object? postBody;
 
@@ -102,51 +147,6 @@ class ScanApi {
         formParams,
         contentType,
         authNames);
-
-    if (response.statusCode >= 400) {
-      ApiErrorResponse error;
-      try {
-        error = _apiClient.deserialize(response.body, 'ApiErrorResponse');
-      } catch (e) {
-        throw ApiException(response.statusCode, response.body);
-      }
-      throw ApiException.withResponse(
-          response.statusCode,
-          response.reasonPhrase == null
-              ? "Api response error"
-              : response.reasonPhrase!,
-          error);
-    } else {
-      return _apiClient.deserialize(response.body, 'BarcodeResponseList')
-          as BarcodeResponseList;
-    }
-  }
-
-  ///
-  /// Scan barcode from file on server using GET requests with parameter in query string.
-  ///
-  Future<BarcodeResponseList> scanGetV4(String fileUrl) async {
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    // create path and map variables
-    final String requestPath = "/barcode/scan";
-
-    // query params
-    final List<QueryParam> queryParams = [];
-    final Map<String, String> headerParams = {};
-    final Map<String, String> formParams = {};
-    queryParams
-        .addAll(convertParametersForCollectionFormat("", "fileUrl", fileUrl));
-
-    final List<String> contentTypes = [];
-
-    final String contentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    final List<String> authNames = ["JWT"];
-
-    final response = await _apiClient.invokeAPI(requestPath, 'GET', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       ApiErrorResponse error;

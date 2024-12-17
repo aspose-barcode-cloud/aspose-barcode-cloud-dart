@@ -22,8 +22,8 @@ Future<void> main() async {
       await File("${Directory.current.path}${Platform.pathSeparator}Pdf417.png")
           .readAsBytes();
 
-  final BarcodeResponseList result = await recognizeApi
-      .recognizeFormPostV4(DecodeBarcodeType.MostCommonlyUsed, file);
+  final BarcodeResponseList result = await recognizeApi.recognizeMultipart(
+      DecodeBarcodeType.MostCommonlyUsed, file);
 
   print("File recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

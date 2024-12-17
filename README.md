@@ -64,7 +64,7 @@ Future<void> main() async {
   final scanApi = ScanApi(client);
   // Generate image with barcode
   final Uint8List generated =
-      await genApi.generateGetV4(EncodeBarcodeType.QR, "text");
+      await genApi.generate(EncodeBarcodeType.QR, "text");
 
   // Save generated image to file
   File(fileName).writeAsBytesSync(generated);
@@ -73,7 +73,7 @@ Future<void> main() async {
   // Recognize generated image
 
   final BarcodeResponseList recognized =
-      await scanApi.scanFormPostV4(generated);
+      await scanApi.scanMultipart(generated);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");
@@ -108,15 +108,15 @@ All URIs are relative to *<http://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*GenerateApi* | [**generateBodyPostV4**](doc/api/GenerateApi.md#generatebodypostv4) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**generateFormPostV4**](doc/api/GenerateApi.md#generateformpostv4) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
-*GenerateApi* | [**generateGetV4**](doc/api/GenerateApi.md#generategetv4) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
-*RecognizeApi* | [**recognizeBase64PostV4**](doc/api/RecognizeApi.md#recognizebase64postv4) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**recognizeFormPostV4**](doc/api/RecognizeApi.md#recognizeformpostv4) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
-*RecognizeApi* | [**recognizeGetV4**](doc/api/RecognizeApi.md#recognizegetv4) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
-*ScanApi* | [**scanBase64PostV4**](doc/api/ScanApi.md#scanbase64postv4) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**scanFormPostV4**](doc/api/ScanApi.md#scanformpostv4) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
-*ScanApi* | [**scanGetV4**](doc/api/ScanApi.md#scangetv4) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*GenerateApi* | [**generate**](doc/api/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
+*GenerateApi* | [**generateBody**](doc/api/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
+*GenerateApi* | [**generateMultipart**](doc/api/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
+*RecognizeApi* | [**recognize**](doc/api/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**recognizeBase64**](doc/api/RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+*RecognizeApi* | [**recognizeMultipart**](doc/api/RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*ScanApi* | [**scan**](doc/api/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**scanBase64**](doc/api/ScanApi.md#scanbase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+*ScanApi* | [**scanMultipart**](doc/api/ScanApi.md#scanmultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation For Models
 

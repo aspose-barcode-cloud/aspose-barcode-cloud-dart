@@ -22,8 +22,7 @@ Future<void> main() async {
   final barcodeImageUrl =
       "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
 
-  final BarcodeResponseList result =
-      await scanApi.scanGetV4(barcodeImageUrl);
+  final BarcodeResponseList result = await scanApi.scan(barcodeImageUrl);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];

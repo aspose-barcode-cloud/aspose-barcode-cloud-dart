@@ -4,17 +4,16 @@ import 'test_config.dart';
 
 void main() {
   group('barcodeGenerateApiTests', () {
-    test('should generate image with generateGetV4', () async {
-      final generated = await TestConfig.generateApi
-          .generateGetV4(
-              EncodeBarcodeType.QR, 'Testing generator',
-              foregroundColor: '#001100');
+    test('should generate image with generate', () async {
+      final generated = await TestConfig.generateApi.generate(
+          EncodeBarcodeType.QR, 'Testing generator',
+          foregroundColor: '#001100');
 
       final imageSize = generated.length;
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
     });
 
-    test('should generate image with generateBodyPostV4', () async {
+    test('should generate image with generateBody', () async {
       final imageParams = BarcodeImageParams();
       imageParams.backgroundColor = '#ffddff';
 
@@ -24,17 +23,16 @@ void main() {
           GenerateParams(EncodeBarcodeType.Pdf417, encodeData, imageParams);
 
       final generated =
-          await TestConfig.generateApi.generateBodyPostV4(generateParams);
+          await TestConfig.generateApi.generateBody(generateParams);
 
       final imageSize = generated.length;
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');
     });
 
-    test('should generate image with generateFormPostV4', () async {
-      final generated = await TestConfig.generateApi
-          .generateFormPostV4(
-              EncodeBarcodeType.QR, 'Testing generator',
-              dataType: EncodeDataType.StringData, rotationAngle: 90);
+    test('should generate image with generateMultipart', () async {
+      final generated = await TestConfig.generateApi.generateMultipart(
+          EncodeBarcodeType.QR, 'Testing generator',
+          dataType: EncodeDataType.StringData, rotationAngle: 90);
 
       final imageSize = generated.lengthInBytes;
       expect(imageSize, greaterThan(0), reason: 'ImageSize=$imageSize');

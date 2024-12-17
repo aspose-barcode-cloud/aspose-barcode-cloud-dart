@@ -33,7 +33,7 @@ Future<void> main() async {
   );
 
   final BarcodeResponseList result =
-      await recognizeApi.recognizeBase64PostV4(recognizeBase64Request);
+      await recognizeApi.recognizeBase64(recognizeBase64Request);
 
   print(
       "File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'");

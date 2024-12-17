@@ -25,8 +25,7 @@ Future<void> main() async {
     "${Directory.current.path}${Platform.pathSeparator}Pdf417.svg",
   );
 
-  final Uint8List barcodeStream =
-      await generateApi.generateFormPostV4(
+  final Uint8List barcodeStream = await generateApi.generateMultipart(
     EncodeBarcodeType.Pdf417,
     "Aspose.BarCode.Cloud",
     textLocation: CodeLocation.Above,

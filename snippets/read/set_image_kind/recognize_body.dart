@@ -33,7 +33,7 @@ Future<void> main() async {
   )..recognitionImageKind = RecognitionImageKind.ScannedDocument;
 
   final BarcodeResponseList result =
-      await recognizeApi.recognizeBase64PostV4(recognizeBase64Request);
+      await recognizeApi.recognizeBase64(recognizeBase64Request);
 
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];

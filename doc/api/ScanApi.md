@@ -9,13 +9,38 @@ All URIs are relative to *http://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**scanBase64PostV4**](ScanApi.md#scanBase64PostV4) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-[**scanFormPostV4**](ScanApi.md#scanFormPostV4) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
-[**scanGetV4**](ScanApi.md#scanGetV4) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+[**scan**](ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+[**scanBase64**](ScanApi.md#scanBase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+[**scanMultipart**](ScanApi.md#scanMultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 
-# **scanBase64PostV4**
-> BarcodeResponseList scanBase64PostV4(scanBase64Request)
+# **scan**
+> BarcodeResponseList scan(fileUrl)
+
+Scan barcode from file on server using GET requests with parameter in query string.
+
+### Parameters
+
+Name | Type | Description  | Notes
+---- | ---- | ------------ | -----
+ **fileUrl** | **String**| Url to barcode image | 
+
+### Return type
+
+[**BarcodeResponseList**](BarcodeResponseList.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+
+# **scanBase64**
+> BarcodeResponseList scanBase64(scanBase64Request)
 
 Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
 
@@ -39,8 +64,8 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/xml
 
 
-# **scanFormPostV4**
-> BarcodeResponseList scanFormPostV4(file)
+# **scanMultipart**
+> BarcodeResponseList scanMultipart(file)
 
 Scan barcode from file in request body using POST requests with parameter in multipart form.
 
@@ -61,31 +86,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/json, application/xml
-
-
-# **scanGetV4**
-> BarcodeResponseList scanGetV4(fileUrl)
-
-Scan barcode from file on server using GET requests with parameter in query string.
-
-### Parameters
-
-Name | Type | Description  | Notes
----- | ---- | ------------ | -----
- **fileUrl** | **String**| Url to barcode image | 
-
-### Return type
-
-[**BarcodeResponseList**](BarcodeResponseList.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
 

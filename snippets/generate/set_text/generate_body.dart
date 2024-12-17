@@ -29,8 +29,7 @@ Future<void> main() async {
     EncodeData("QXNwb3NlLkJhckNvZGUuQ2xvdWQ=", EncodeDataType.Base64Bytes),
   );
 
-  final Uint8List response =
-      await generateApi.generateBodyPostV4(postParams);
+  final Uint8List response = await generateApi.generateBody(postParams);
 
   final file = File(fileName);
   file.writeAsBytes(response);

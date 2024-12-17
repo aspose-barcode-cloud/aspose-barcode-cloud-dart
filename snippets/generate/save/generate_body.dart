@@ -34,7 +34,7 @@ Future<void> main() async {
   );
 
   final Uint8List response =
-      await generateApi.generateBodyPostV4(generateParams);
+      await generateApi.generateBody(generateParams);
 
   final file = File(fileName);
   file.writeAsBytes(response);

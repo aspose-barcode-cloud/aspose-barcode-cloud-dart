@@ -12,7 +12,7 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final result = await recognizeApi.recognizeGetV4(
+  final result = await recognizeApi.recognize(
     DecodeBarcodeType.QR,
     "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
   );
