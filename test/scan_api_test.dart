@@ -43,8 +43,8 @@ void main() {
     var imageBytes = await File(fileToRecognize).readAsBytes();
     var encodedString = base64Encode(imageBytes);
 
-    var response = await TestConfig.scanApi
-        .scanBase64(ScanBase64Request(encodedString));
+    var response =
+        await TestConfig.scanApi.scanBase64(ScanBase64Request(encodedString));
 
     expect(response.barcodes, isNotNull);
     expect(response.barcodes.length, equals(2));

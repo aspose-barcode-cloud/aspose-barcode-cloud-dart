@@ -21,7 +21,6 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-
   final Uint8List response =
       await generateApi.generate(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
   final file = File(fileName);

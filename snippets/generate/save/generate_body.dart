@@ -33,8 +33,7 @@ Future<void> main() async {
       ..imageFormat = BarcodeImageFormat.Jpeg,
   );
 
-  final Uint8List response =
-      await generateApi.generateBody(generateParams);
+  final Uint8List response = await generateApi.generateBody(generateParams);
 
   final file = File(fileName);
   file.writeAsBytes(response);

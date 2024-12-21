@@ -5,7 +5,7 @@
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
 
-All URIs are relative to *http://api.aspose.cloud/v4.0*
+All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------

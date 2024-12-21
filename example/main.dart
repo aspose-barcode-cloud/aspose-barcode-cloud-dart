@@ -26,8 +26,7 @@ Future<void> main() async {
 
   // Recognize generated image
 
-  final BarcodeResponseList recognized =
-      await scanApi.scanMultipart(generated);
+  final BarcodeResponseList recognized = await scanApi.scanMultipart(generated);
 
   if (recognized.barcodes.isNotEmpty) {
     print("Recognized Type: ${recognized.barcodes[0].type!}");

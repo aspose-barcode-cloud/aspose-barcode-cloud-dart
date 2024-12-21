@@ -34,8 +34,7 @@ Future<void> main() async {
   final generateParams = GenerateParams(EncodeBarcodeType.Code39,
       EncodeData("Aspose", EncodeDataType.StringData), imageParams);
 
-  final Uint8List response =
-      await generateApi.generateBody(generateParams);
+  final Uint8List response = await generateApi.generateBody(generateParams);
 
   file.writeAsBytes(response);
 

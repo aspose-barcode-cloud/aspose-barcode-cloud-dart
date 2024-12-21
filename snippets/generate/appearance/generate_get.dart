@@ -23,15 +23,15 @@ Future<void> main() async {
 
   final fileName = '${Directory.current.path}${Platform.pathSeparator}qr.png';
 
-  final Uint8List response =
-      await generateApi.generate(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud",
-          imageFormat: BarcodeImageFormat.Png,
-          foregroundColor: "Black",
-          backgroundColor: "White",
-          resolution: 300,
-          imageHeight: 200,
-          imageWidth: 200,
-          textLocation: CodeLocation.Below);
+  final Uint8List response = await generateApi.generate(
+      EncodeBarcodeType.QR, "Aspose.BarCode.Cloud",
+      imageFormat: BarcodeImageFormat.Png,
+      foregroundColor: "Black",
+      backgroundColor: "White",
+      resolution: 300,
+      imageHeight: 200,
+      imageWidth: 200,
+      textLocation: CodeLocation.Below);
 
   await File(fileName).writeAsBytes(response);
 

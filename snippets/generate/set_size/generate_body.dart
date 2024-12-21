@@ -36,8 +36,7 @@ Future<void> main() async {
       ..units = GraphicsUnit.Inch,
   );
 
-  final Uint8List response =
-      await generateApi.generateBody(generateParams);
+  final Uint8List response = await generateApi.generateBody(generateParams);
 
   file.writeAsBytes(response);
 
