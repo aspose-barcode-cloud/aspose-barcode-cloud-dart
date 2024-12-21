@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.24.12
+
+* December 2024 Release
+
+* The last major and minor version for [Aspose.BarCode.Cloud v3.0 API](https://api.aspose.cloud/v3.0/barcode/swagger/spec)
+
 ## 1.24.11
 
 * November 2024 Release
