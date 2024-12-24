@@ -10,7 +10,7 @@ import 'api_helper.dart';
 import 'auth/authentication.dart';
 
 /// Current SDK Version
-const SDK_VERSION = "1.24.11";
+const SDK_VERSION = "1.24.12";
 
 /// ApiClient is responsible for making HTTP requests to the API.
 class ApiClient {
@@ -268,7 +268,7 @@ class ApiClient {
   }
 
   /// Invoke HTTP request
-  /// We don't use a Map<String, String> for queryParams.
+  /// We don't use a Map&lt;String, String&gt; for queryParams.
   /// If collectionFormat is 'multi' a key might appear multiple times.
   Future<Http.Response> invokeAPI(
       String path,
