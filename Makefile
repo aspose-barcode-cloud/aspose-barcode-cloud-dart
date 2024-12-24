@@ -1,5 +1,5 @@
 .PHONY:	all
-all:	test	lint
+all:	lint	test
 
 .PHONY: init
 init:
