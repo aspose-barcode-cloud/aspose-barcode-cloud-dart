@@ -27,7 +27,7 @@ Future<void> main() async {
   print("Generated image saved to '$fileName'");
 
   // Recognize generated image
-  final formFile = MultipartFile.fromBytes("image", generated.toList(),
+  final formFile = MultipartFile.fromBytes("imageFile", generated.toList(),
       filename: "barcode.png");
   final BarcodeResponseList recognized = await api.scanBarcode(
     formFile,
