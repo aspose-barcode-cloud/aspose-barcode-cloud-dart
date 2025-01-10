@@ -75,10 +75,14 @@ class Configuration {
   }
 
   /// Load configuration from environment variables
-  static fromEnv({String prefix = ""}) {
-    final accessToken = Platform.environment["${prefix}ACCESS_TOKEN"];
-    return Configuration(
-      accessToken: accessToken,
-    );
+  static Configuration? fromEnv({String prefix = ""}) {
+    final String? accessToken = Platform.environment["${prefix}ACCESS_TOKEN"];
+    if (accessToken != null && accessToken.isNotEmpty) {
+      return Configuration(
+        accessToken: accessToken,
+      );
+    }
+
+    return null;
   }
 }
