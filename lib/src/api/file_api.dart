@@ -26,7 +26,7 @@ class FileApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/file/copy/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{srcPath}", srcPath);
+        .replaceAll("{" "srcPath" "}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -74,7 +74,7 @@ class FileApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -123,7 +123,7 @@ class FileApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -167,7 +167,7 @@ class FileApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/file/move/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{srcPath}", srcPath);
+        .replaceAll("{" "srcPath" "}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -215,7 +215,7 @@ class FileApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/file/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];

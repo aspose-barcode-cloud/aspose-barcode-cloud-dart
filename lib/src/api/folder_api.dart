@@ -19,7 +19,7 @@ class FolderApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/folder/copy/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{srcPath}", srcPath);
+        .replaceAll("{" "srcPath" "}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -62,7 +62,7 @@ class FolderApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/folder/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -100,7 +100,7 @@ class FolderApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/folder/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -148,7 +148,7 @@ class FolderApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/folder/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -186,7 +186,7 @@ class FolderApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/folder/move/{srcPath}"
         .replaceAll("{format}", "json")
-        .replaceAll("{srcPath}", srcPath);
+        .replaceAll("{" "srcPath" "}", srcPath);
 
     // query params
     final List<QueryParam> queryParams = [];

@@ -55,7 +55,7 @@ class StorageApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/version/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -94,7 +94,7 @@ class StorageApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/exist/{path}"
         .replaceAll("{format}", "json")
-        .replaceAll("{path}", path);
+        .replaceAll("{" "path" "}", path);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -136,7 +136,7 @@ class StorageApi {
     // create path and map variables
     final String requestPath = "/barcode/storage/{storageName}/exist"
         .replaceAll("{format}", "json")
-        .replaceAll("{storageName}", storageName);
+        .replaceAll("{" "storageName" "}", storageName);
 
     // query params
     final List<QueryParam> queryParams = [];

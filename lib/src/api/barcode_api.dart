@@ -260,7 +260,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{name}", name);
+        .replaceAll("{" "name" "}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -783,7 +783,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/generate"
         .replaceAll("{format}", "json")
-        .replaceAll("{name}", name);
+        .replaceAll("{" "name" "}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -966,7 +966,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/recognize"
         .replaceAll("{format}", "json")
-        .replaceAll("{name}", name);
+        .replaceAll("{" "name" "}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -1014,7 +1014,7 @@ class BarcodeApi {
     // create path and map variables
     final String requestPath = "/barcode/{name}/generateMultiple"
         .replaceAll("{format}", "json")
-        .replaceAll("{name}", name);
+        .replaceAll("{" "name" "}", name);
 
     // query params
     final List<QueryParam> queryParams = [];
