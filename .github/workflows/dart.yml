@@ -18,7 +18,10 @@ jobs:
         run: dart pub get
 
       - name: Dart test
-        run: dart test
+        run: | 
+          dart test
+          chmod +x scripts/*
+          ./scripts/run_snippets.sh
         env:
           TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 

@@ -9,6 +9,12 @@ void main() async {
   final baseUrl = "https://id.aspose.cloud/";
   final endpoint = "connect/token";
 
+  // Check the client_id is changed to not break github CI pipeline
+  if (clientId.startsWith("Client Id")) {
+    print("client_id not configured. Skip this snippet test");
+    return;
+  }
+
   final payload = {
     "grant_type": "client_credentials",
     "client_id": clientId,

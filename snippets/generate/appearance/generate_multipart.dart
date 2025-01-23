@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 Configuration makeConfiguration() {
-  final envToken = Platform.environment['TEST_CONFIGURATION_JWT_TOKEN'];
+  final envToken = Platform.environment['TEST_CONFIGURATION_ACCESS_TOKEN'];
   if (envToken != null) {
     return Configuration(accessToken: envToken);
   } else {
