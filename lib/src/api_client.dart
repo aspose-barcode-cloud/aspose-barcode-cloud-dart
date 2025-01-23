@@ -146,7 +146,7 @@ class ApiClient {
   }
 
   /// Invoke HTTP request
-  /// We don't use a Map<String, String> for queryParams.
+  /// We don't use a `Map<String, String>` for queryParams.
   /// If collectionFormat is 'multi' a key might appear multiple times.
   Future<Http.Response> invokeAPI(
       String path,
