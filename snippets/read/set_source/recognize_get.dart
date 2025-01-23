@@ -1,11 +1,18 @@
+import 'dart:io';
+
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 Configuration makeConfiguration() {
-  return Configuration(
-    clientId: "Client Id from https://dashboard.aspose.cloud/applications",
-    clientSecret:
-        "Client Secret from https://dashboard.aspose.cloud/applications",
-  );
+  final jwtToken = Platform.environment['TEST_CONFIGURATION_ACCESS_TOKEN'];
+  if (jwtToken != null) {
+    return Configuration(accessToken: jwtToken);
+  } else {
+    return Configuration(
+      clientId: "Client Id from https://dashboard.aspose.cloud/applications",
+      clientSecret:
+          "Client Secret from https://dashboard.aspose.cloud/applications",
+    );
+  }
 }
 
 Future<void> main() async {
