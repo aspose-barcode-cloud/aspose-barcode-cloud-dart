@@ -5,6 +5,11 @@
 - API version: 4.0
 - SDK version: 4.25.1
 
+## SDK and API Version Compatibility:
+
+- SDK Version 4.25.1 and Later: Starting from SDK version 25.1, all subsequent versions are compatible with API Version v4.0.
+- SDK Version 1.24.12 and Earlier: These versions are compatible with API Version v3.0.
+
 This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Dart or Flutter applications quickly and easily
 
 ## Demo applications
