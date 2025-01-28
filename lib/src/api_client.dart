@@ -10,7 +10,7 @@ import 'api_helper.dart';
 import 'auth/authentication.dart';
 
 /// Current SDK Version
-const SDK_VERSION = "1.24.12";
+const SDK_VERSION = "4.25.1";
 
 /// ApiClient is responsible for making HTTP requests to the API.
 class ApiClient {
@@ -66,160 +66,38 @@ class ApiClient {
           return ApiError.fromJson(value);
         case 'ApiErrorResponse':
           return ApiErrorResponse.fromJson(value);
-        case 'AustralianPostParams':
-          return AustralianPostParams.fromJson(value);
-        case 'AutoSizeMode':
-          return AutoSizeMode.fromJson(value);
-        case 'AvailableGraphicsUnit':
-          return AvailableGraphicsUnit.fromJson(value);
-        case 'AztecEncodeMode':
-          return AztecEncodeMode.fromJson(value);
-        case 'AztecParams':
-          return AztecParams.fromJson(value);
-        case 'AztecSymbolMode':
-          return AztecSymbolMode.fromJson(value);
+        case 'BarcodeImageFormat':
+          return BarcodeImageFormat.fromJson(value);
+        case 'BarcodeImageParams':
+          return BarcodeImageParams.fromJson(value);
         case 'BarcodeResponse':
           return BarcodeResponse.fromJson(value);
         case 'BarcodeResponseList':
           return BarcodeResponseList.fromJson(value);
-        case 'BorderDashStyle':
-          return BorderDashStyle.fromJson(value);
-        case 'CaptionParams':
-          return CaptionParams.fromJson(value);
-        case 'ChecksumValidation':
-          return ChecksumValidation.fromJson(value);
-        case 'CodabarChecksumMode':
-          return CodabarChecksumMode.fromJson(value);
-        case 'CodabarParams':
-          return CodabarParams.fromJson(value);
-        case 'CodabarSymbol':
-          return CodabarSymbol.fromJson(value);
-        case 'CodablockParams':
-          return CodablockParams.fromJson(value);
-        case 'Code128Emulation':
-          return Code128Emulation.fromJson(value);
-        case 'Code128EncodeMode':
-          return Code128EncodeMode.fromJson(value);
-        case 'Code128Params':
-          return Code128Params.fromJson(value);
-        case 'Code16KParams':
-          return Code16KParams.fromJson(value);
         case 'CodeLocation':
           return CodeLocation.fromJson(value);
-        case 'CouponParams':
-          return CouponParams.fromJson(value);
-        case 'CustomerInformationInterpretingType':
-          return CustomerInformationInterpretingType.fromJson(value);
-        case 'DataBarParams':
-          return DataBarParams.fromJson(value);
-        case 'DataMatrixEccType':
-          return DataMatrixEccType.fromJson(value);
-        case 'DataMatrixEncodeMode':
-          return DataMatrixEncodeMode.fromJson(value);
-        case 'DataMatrixParams':
-          return DataMatrixParams.fromJson(value);
-        case 'DataMatrixVersion':
-          return DataMatrixVersion.fromJson(value);
         case 'DecodeBarcodeType':
           return DecodeBarcodeType.fromJson(value);
-        case 'DiscUsage':
-          return DiscUsage.fromJson(value);
-        case 'DotCodeEncodeMode':
-          return DotCodeEncodeMode.fromJson(value);
-        case 'DotCodeParams':
-          return DotCodeParams.fromJson(value);
-        case 'ECIEncodings':
-          return ECIEncodings.fromJson(value);
-        case 'EnableChecksum':
-          return EnableChecksum.fromJson(value);
         case 'EncodeBarcodeType':
           return EncodeBarcodeType.fromJson(value);
-        case 'Error':
-          return Error.fromJson(value);
-        case 'ErrorDetails':
-          return ErrorDetails.fromJson(value);
-        case 'FileVersions':
-          return FileVersions.fromJson(value);
-        case 'FilesList':
-          return FilesList.fromJson(value);
-        case 'FilesUploadResult':
-          return FilesUploadResult.fromJson(value);
-        case 'FontMode':
-          return FontMode.fromJson(value);
-        case 'FontParams':
-          return FontParams.fromJson(value);
-        case 'FontStyle':
-          return FontStyle.fromJson(value);
-        case 'GeneratorParams':
-          return GeneratorParams.fromJson(value);
-        case 'GeneratorParamsList':
-          return GeneratorParamsList.fromJson(value);
-        case 'HanXinEncodeMode':
-          return HanXinEncodeMode.fromJson(value);
-        case 'HanXinErrorLevel':
-          return HanXinErrorLevel.fromJson(value);
-        case 'HanXinParams':
-          return HanXinParams.fromJson(value);
-        case 'HanXinVersion':
-          return HanXinVersion.fromJson(value);
-        case 'ITF14BorderType':
-          return ITF14BorderType.fromJson(value);
-        case 'ITFParams':
-          return ITFParams.fromJson(value);
-        case 'MacroCharacter':
-          return MacroCharacter.fromJson(value);
-        case 'MaxiCodeEncodeMode':
-          return MaxiCodeEncodeMode.fromJson(value);
-        case 'MaxiCodeMode':
-          return MaxiCodeMode.fromJson(value);
-        case 'MaxiCodeParams':
-          return MaxiCodeParams.fromJson(value);
-        case 'ObjectExist':
-          return ObjectExist.fromJson(value);
-        case 'Padding':
-          return Padding.fromJson(value);
-        case 'PatchCodeParams':
-          return PatchCodeParams.fromJson(value);
-        case 'PatchFormat':
-          return PatchFormat.fromJson(value);
-        case 'Pdf417CompactionMode':
-          return Pdf417CompactionMode.fromJson(value);
-        case 'Pdf417ErrorLevel':
-          return Pdf417ErrorLevel.fromJson(value);
-        case 'Pdf417MacroTerminator':
-          return Pdf417MacroTerminator.fromJson(value);
-        case 'Pdf417Params':
-          return Pdf417Params.fromJson(value);
-        case 'PostalParams':
-          return PostalParams.fromJson(value);
-        case 'PresetType':
-          return PresetType.fromJson(value);
-        case 'QREncodeMode':
-          return QREncodeMode.fromJson(value);
-        case 'QREncodeType':
-          return QREncodeType.fromJson(value);
-        case 'QRErrorLevel':
-          return QRErrorLevel.fromJson(value);
-        case 'QRVersion':
-          return QRVersion.fromJson(value);
-        case 'QrParams':
-          return QrParams.fromJson(value);
-        case 'ReaderParams':
-          return ReaderParams.fromJson(value);
+        case 'EncodeData':
+          return EncodeData.fromJson(value);
+        case 'EncodeDataType':
+          return EncodeDataType.fromJson(value);
+        case 'GenerateParams':
+          return GenerateParams.fromJson(value);
+        case 'GraphicsUnit':
+          return GraphicsUnit.fromJson(value);
+        case 'RecognitionImageKind':
+          return RecognitionImageKind.fromJson(value);
+        case 'RecognitionMode':
+          return RecognitionMode.fromJson(value);
+        case 'RecognizeBase64Request':
+          return RecognizeBase64Request.fromJson(value);
         case 'RegionPoint':
           return RegionPoint.fromJson(value);
-        case 'ResultImageInfo':
-          return ResultImageInfo.fromJson(value);
-        case 'StorageExist':
-          return StorageExist.fromJson(value);
-        case 'StorageFile':
-          return StorageFile.fromJson(value);
-        case 'StructuredAppend':
-          return StructuredAppend.fromJson(value);
-        case 'TextAlignment':
-          return TextAlignment.fromJson(value);
-        case 'FileVersion':
-          return FileVersion.fromJson(value);
+        case 'ScanBase64Request':
+          return ScanBase64Request.fromJson(value);
         default:
           {
             RegExpMatch? match;
@@ -268,7 +146,7 @@ class ApiClient {
   }
 
   /// Invoke HTTP request
-  /// We don't use a Map&lt;String, String&gt; for queryParams.
+  /// We don't use a `Map<String, String>` for queryParams.
   /// If collectionFormat is 'multi' a key might appear multiple times.
   Future<Http.Response> invokeAPI(
       String path,

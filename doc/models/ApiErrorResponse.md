@@ -5,11 +5,12 @@
 ```dart
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 ```
+ApiError Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**requestId** | **String** |  | [optional] [default to null]
-**error** | [**ApiError**](ApiError.md) |  | [optional] [default to null]
+**requestId** | **String** | Gets or sets request Id. | 
+**error** | [**ApiError**](ApiError.md) |  | 
 

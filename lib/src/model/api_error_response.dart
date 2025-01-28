@@ -2,16 +2,21 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 import '../../aspose_barcode_cloud.dart';
 
-/// ApiErrorResponse
+/// ApiError Response
 class ApiErrorResponse {
-  /// requestId
-  String? requestId;
+  /// Gets or sets request Id.
+
+  late String requestId;
 
   /// error
-  ApiError? error;
+
+  late ApiError error;
 
   /// Constructor
-  ApiErrorResponse();
+  ApiErrorResponse(
+    this.requestId,
+    this.error,
+  );
 
   @override
   String toString() {
@@ -26,7 +31,7 @@ class ApiErrorResponse {
 
   /// Returns a JSON representation of ApiErrorResponse.
   Map<String, dynamic> toJson() {
-    return {'RequestId': requestId, 'Error': error};
+    return {'requestId': requestId, 'error': error};
   }
 
   /// Converts a list of JSON objects to a list of ApiErrorResponse instances.

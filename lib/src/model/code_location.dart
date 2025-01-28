@@ -6,24 +6,19 @@ class CodeLocation {
 
   CodeLocation._internal(this._value);
 
-  ///
-  // ignore: non_constant_identifier_names
+  // ignore: non_constant_identifier_names, public_member_api_docs
   static final CodeLocation Below = CodeLocation._internal("Below");
-
-  ///
-  // ignore: non_constant_identifier_names
+  // ignore: non_constant_identifier_names, public_member_api_docs
   static final CodeLocation Above = CodeLocation._internal("Above");
-
-  ///
-  // ignore: non_constant_identifier_names
+  // ignore: non_constant_identifier_names, public_member_api_docs
   static final CodeLocation None = CodeLocation._internal("None");
 
   /// Creates a CodeLocation instance from a JSON representation.
   CodeLocation.fromJson(dynamic data) {
     switch (data) {
-      case "Below":
-      case "Above":
-      case "None":
+      case 'Below':
+      case 'Above':
+      case 'None':
         _value = data;
         break;
       default:

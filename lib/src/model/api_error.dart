@@ -1,25 +1,31 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: deprecated_member_use_from_same_package
 
-/// ApiError
+/// Api Error.
 class ApiError {
-  /// code
-  String? code;
+  /// Gets or sets api error code.
 
-  /// message
-  String? message;
+  late String code;
 
-  /// description
+  /// Gets or sets error message.
+
+  late String message;
+
+  /// Gets or sets error description.
+
   String? description;
 
-  /// dateTime
+  /// Gets or sets server datetime.
+
   DateTime? dateTime;
 
   /// innerError
+
   ApiError? innerError;
 
   /// Constructor
-  ApiError();
+  ApiError(this.code, this.message,
+      [this.description, this.dateTime, this.innerError]);
 
   @override
   String toString() {
@@ -33,17 +39,19 @@ class ApiError {
     description = json['description'];
     dateTime =
         json['dateTime'] == null ? null : DateTime.parse(json['dateTime']);
-    innerError = ApiError.fromJson(json['innerError']);
+    innerError = json['innerError'] == null
+        ? null
+        : ApiError.fromJson(json['innerError']);
   }
 
   /// Returns a JSON representation of ApiError.
   Map<String, dynamic> toJson() {
     return {
-      'Code': code,
-      'Message': message,
-      'Description': description,
-      'DateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
-      'InnerError': innerError
+      'code': code,
+      'message': message,
+      'description': description,
+      'dateTime': dateTime == null ? '' : dateTime!.toUtc().toIso8601String(),
+      'innerError': innerError
     };
   }
 
