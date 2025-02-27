@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.25.2
+
+* February 2025 Release
+
 ## 4.25.1
 
 * [Aspose.BarCode.Cloud API](https://api.aspose.cloud/v4.0/barcode/swagger/spec) version changed to v4.0.
