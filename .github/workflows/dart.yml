@@ -22,7 +22,7 @@ jobs:
           dart test
           chmod +x scripts/*
           ./scripts/run_snippets.sh   
-          chmod -x scripts/*
+          git clean -dfX
         env:
           TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 
