@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.25.3
+
+* March 2025 Release
+
 ## 4.25.2
 
 * February 2025 Release
