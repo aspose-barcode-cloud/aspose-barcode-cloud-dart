@@ -22,7 +22,7 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final fileName =
-      '${Directory.current.path}${Platform.pathSeparator}aztec.png';
+      '${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}aztec.png';
 
   final Uint8List response = await generateApi.generateMultipart(
       EncodeBarcodeType.Aztec, "Aspose.BarCode.Cloud",

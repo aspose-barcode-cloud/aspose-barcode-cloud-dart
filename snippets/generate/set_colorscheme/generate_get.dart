@@ -20,7 +20,8 @@ Future<void> main() async {
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);
 
-  final fileName = "${Directory.current.path}${Platform.pathSeparator}qr.png";
+  final fileName =
+      "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr.png";
 
   final Uint8List response = await generateApi.generate(
     EncodeBarcodeType.QR,

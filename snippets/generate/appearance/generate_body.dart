@@ -22,7 +22,7 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final file = File(
-    "${Directory.current.path}${Platform.pathSeparator}Code39.jpeg",
+    "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}Code39.jpeg",
   );
 
   final imageParams = BarcodeImageParams()

@@ -22,7 +22,7 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final file = File(
-    "${Directory.current.path}${Platform.pathSeparator}Pdf417.svg",
+    "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}Pdf417.svg",
   );
 
   final Uint8List barcodeStream = await generateApi.generateMultipart(

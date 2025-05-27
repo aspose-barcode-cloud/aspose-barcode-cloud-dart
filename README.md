@@ -55,7 +55,7 @@ import 'dart:typed_data';
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 Future<void> main() async {
-  const fileName = "qr.png";
+  final fileName = "test_data${Platform.pathSeparator}qr.png";
 
   final client = ApiClient(Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",
