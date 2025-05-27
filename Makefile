@@ -35,6 +35,7 @@ insert-example:
 .PHONY: update
 update:
 	dart pub upgrade
+	dart pub outdated
 
 .PHONY: cover
 cover:
