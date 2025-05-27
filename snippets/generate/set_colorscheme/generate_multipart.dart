@@ -22,7 +22,7 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final fileName =
-      '${Directory.current.path}${Platform.pathSeparator}Code39.png';
+      '${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}Code39.png';
 
   final Uint8List response = await generateApi.generateMultipart(
       EncodeBarcodeType.Code39, "Aspose",

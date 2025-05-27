@@ -16,7 +16,8 @@ Configuration makeConfiguration() {
 }
 
 Future<void> main() async {
-  final fileName = "${Directory.current.path}${Platform.pathSeparator}qr.png";
+  final fileName =
+      "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr.png";
   final configuration = makeConfiguration();
   final apiClient = ApiClient(configuration);
   final generateApi = GenerateApi(apiClient);

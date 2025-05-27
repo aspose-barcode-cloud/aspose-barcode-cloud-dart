@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'test_config.dart';
 
 void main() {
-  final fileToRecognize = "qr.png";
+  final fileToRecognize = "test_data${Platform.pathSeparator}qr.png";
 
   test('.recognizeMultipart', () async {
     final barcode = await File(fileToRecognize).readAsBytes();

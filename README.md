@@ -3,7 +3,7 @@
 [![Dart test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dart/actions/workflows/dart.yml)
 
 - API version: 4.0
-- SDK version: 4.25.4
+- SDK version: 4.25.5
 
 ## SDK and API Version Compatibility:
 
@@ -39,7 +39,7 @@ Add this dependency to your *pubspec.yaml*:
 
 ```yaml
 dependencies:
-  aspose_barcode_cloud: 4.25.4
+  aspose_barcode_cloud: 4.25.5
 ```
 
 ## Sample usage
@@ -55,7 +55,7 @@ import 'dart:typed_data';
 import 'package:aspose_barcode_cloud/aspose_barcode_cloud.dart';
 
 Future<void> main() async {
-  const fileName = "qr.png";
+  final fileName = "test_data${Platform.pathSeparator}qr.png";
 
   final client = ApiClient(Configuration(
     clientId: "Client Id from https://dashboard.aspose.cloud/applications",

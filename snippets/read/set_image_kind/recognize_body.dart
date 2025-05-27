@@ -20,10 +20,10 @@ Future<void> main() async {
   final config = makeConfiguration();
   final recognizeApi = RecognizeApi(ApiClient(config));
 
-  final fileName =
-      File("${Directory.current.path}${Platform.pathSeparator}aztec.png")
-          .absolute
-          .path;
+  final fileName = File(
+          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}aztec.png")
+      .absolute
+      .path;
   final fileBytes = File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 

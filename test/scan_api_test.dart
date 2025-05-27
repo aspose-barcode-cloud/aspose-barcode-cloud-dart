@@ -6,7 +6,8 @@ import 'dart:convert';
 import 'test_config.dart';
 
 void main() {
-  final fileToRecognize = "qr_and_code128.png";
+  final fileToRecognize =
+      "test_data${Platform.pathSeparator}qr_and_code128.png";
 
   test(
     '.scanBarcodes can scan 2 type',
