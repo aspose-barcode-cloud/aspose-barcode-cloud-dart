@@ -19,9 +19,9 @@ Future<void> main() async {
   final config = makeConfiguration();
   final scanApi = ScanApi(ApiClient(config));
 
-  final file =
-      await File("${Directory.current.path}${Platform.pathSeparator}qr.png")
-          .readAsBytes();
+  final file = await File(
+          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr.png")
+      .readAsBytes();
 
   final BarcodeResponseList result = await scanApi.scanMultipart(file);
 

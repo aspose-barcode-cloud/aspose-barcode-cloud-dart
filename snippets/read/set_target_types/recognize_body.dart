@@ -21,7 +21,7 @@ Future<void> main() async {
   final recognizeApi = RecognizeApi(ApiClient(config));
 
   final fileName = File(
-          "${Directory.current.path}${Platform.pathSeparator}qr_and_code128.png")
+          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr_and_code128.png")
       .absolute
       .path;
   final fileBytes = File(fileName).readAsBytesSync();
