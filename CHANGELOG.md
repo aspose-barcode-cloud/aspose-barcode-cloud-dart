@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.24.13
+
+* May 2025 Release
+
 ## 1.24.12
 
 * December 2024 Release
