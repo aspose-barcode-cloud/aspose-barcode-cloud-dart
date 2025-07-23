@@ -14,7 +14,7 @@ class RecognizeApi {
   final ApiClient _apiClient;
 
   ///
-  /// Recognize barcode from file on server using GET requests with parameters in route and query string.
+  /// Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
   ///
   Future<BarcodeResponseList> recognize(
       DecodeBarcodeType barcodeType, String fileUrl,
