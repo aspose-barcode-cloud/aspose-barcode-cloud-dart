@@ -2,6 +2,9 @@
 # See https://dart.dev/tools/analysis for details
 include: package:lints/recommended.yaml
 
+formatter:
+  trailing_commas: preserve
+
 linter:
   rules:
     package_api_docs: true
