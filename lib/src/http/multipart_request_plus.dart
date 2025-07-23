@@ -82,8 +82,10 @@ class MultipartRequestPlus extends BaseRequest {
 
   @override
   set contentLength(int? value) {
-    throw UnsupportedError('Cannot set the contentLength property of '
-        'multipart requests.');
+    throw UnsupportedError(
+      'Cannot set the contentLength property of '
+      'multipart requests.',
+    );
   }
 
   /// Freezes all mutable fields and returns a single-subscription [ByteStream]
@@ -160,10 +162,10 @@ class MultipartRequestPlus extends BaseRequest {
   String _boundaryString() {
     var prefix = 'dart-http-boundary-';
     var list = List<int>.generate(
-        _boundaryLength - prefix.length,
-        (index) =>
-            boundaryCharacters[_random.nextInt(boundaryCharacters.length)],
-        growable: false);
+      _boundaryLength - prefix.length,
+      (index) => boundaryCharacters[_random.nextInt(boundaryCharacters.length)],
+      growable: false,
+    );
     return '$prefix${String.fromCharCodes(list)}';
   }
 }

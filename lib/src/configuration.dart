@@ -77,8 +77,6 @@ class Configuration {
   /// Load configuration from environment variables
   static Configuration fromEnv({String prefix = ""}) {
     final accessToken = Platform.environment["${prefix}ACCESS_TOKEN"];
-    return Configuration(
-      accessToken: accessToken,
-    );
+    return Configuration(accessToken: accessToken);
   }
 }

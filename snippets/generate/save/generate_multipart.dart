@@ -24,7 +24,9 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final Uint8List response = await generateApi.generateMultipart(
-      EncodeBarcodeType.Pdf417, "Aspose.BarCode.Cloud");
+    EncodeBarcodeType.Pdf417,
+    "Aspose.BarCode.Cloud",
+  );
 
   final file = File(fileName);
   file.writeAsBytes(response);

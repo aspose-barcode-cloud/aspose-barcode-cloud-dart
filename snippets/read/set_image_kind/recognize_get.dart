@@ -21,9 +21,12 @@ Future<void> main() async {
   final imageUrl =
       "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png";
 
-  final BarcodeResponseList result =
-      await recognizeApi.recognize(DecodeBarcodeType.QR, imageUrl);
+  final BarcodeResponseList result = await recognizeApi.recognize(
+    DecodeBarcodeType.QR,
+    imageUrl,
+  );
 
   print(
-      "File '$imageUrl' recognized, result: '${result.barcodes[0].barcodeValue}'");
+    "File '$imageUrl' recognized, result: '${result.barcodes[0].barcodeValue}'",
+  );
 }

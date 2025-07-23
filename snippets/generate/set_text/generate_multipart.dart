@@ -24,8 +24,10 @@ Future<void> main() async {
   final generateApi = GenerateApi(apiClient);
 
   final Uint8List response = await generateApi.generateMultipart(
-      EncodeBarcodeType.Code128, "4173706F73652E426172436F64652E436C6F7564",
-      dataType: EncodeDataType.HexBytes);
+    EncodeBarcodeType.Code128,
+    "4173706F73652E426172436F64652E436C6F7564",
+    dataType: EncodeDataType.HexBytes,
+  );
 
   final file = File(fileName);
   await file.writeAsBytes(response);

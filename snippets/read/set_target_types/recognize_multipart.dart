@@ -20,11 +20,13 @@ Future<void> main() async {
   final recognizeApi = RecognizeApi(ApiClient(config));
 
   final file = await File(
-          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}Pdf417.png")
-      .readAsBytes();
+    "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}Pdf417.png",
+  ).readAsBytes();
 
-  final BarcodeResponseList result =
-      await recognizeApi.recognizeMultipart(DecodeBarcodeType.Pdf417, file);
+  final BarcodeResponseList result = await recognizeApi.recognizeMultipart(
+    DecodeBarcodeType.Pdf417,
+    file,
+  );
 
   print("File recognized, result: '${result.barcodes[0].barcodeValue}'");
 }

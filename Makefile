@@ -26,7 +26,7 @@ fix: init
 .PHONY: after-gen
 after-gen: fix insert-example
 	./scripts/annotate-deprecated.bash
-	@dart format .
+	dart format .
 
 .PHONY: insert-example
 insert-example:

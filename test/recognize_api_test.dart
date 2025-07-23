@@ -10,10 +10,13 @@ void main() {
 
   test('.recognizeMultipart', () async {
     final barcode = await File(fileToRecognize).readAsBytes();
-    final BarcodeResponseList recognized = await TestConfig.recognizeApi
-        .recognizeMultipart(DecodeBarcodeType.QR, barcode,
-            recognitionMode: RecognitionMode.Fast,
-            recognitionImageKind: RecognitionImageKind.ClearImage);
+    final BarcodeResponseList recognized =
+        await TestConfig.recognizeApi.recognizeMultipart(
+      DecodeBarcodeType.QR,
+      barcode,
+      recognitionMode: RecognitionMode.Fast,
+      recognitionImageKind: RecognitionImageKind.ClearImage,
+    );
 
     expect(recognized, isNotNull);
     expect(recognized.barcodes, isNotEmpty);
@@ -41,10 +44,7 @@ void main() {
     var imageBytes = await File(fileToRecognize).readAsBytes();
     var encodedString = base64Encode(imageBytes);
     var response = await TestConfig.recognizeApi.recognizeBase64(
-      RecognizeBase64Request(
-        [DecodeBarcodeType.QR],
-        encodedString,
-      ),
+      RecognizeBase64Request([DecodeBarcodeType.QR], encodedString),
     );
     expect(response.barcodes, isNotNull);
     expect(response.barcodes.length, equals(1));

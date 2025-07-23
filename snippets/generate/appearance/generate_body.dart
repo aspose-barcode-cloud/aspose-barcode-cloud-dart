@@ -31,8 +31,11 @@ Future<void> main() async {
     ..imageFormat = BarcodeImageFormat.Jpeg
     ..rotationAngle = 90;
 
-  final generateParams = GenerateParams(EncodeBarcodeType.Code39,
-      EncodeData("Aspose", EncodeDataType.StringData), imageParams);
+  final generateParams = GenerateParams(
+    EncodeBarcodeType.Code39,
+    EncodeData("Aspose", EncodeDataType.StringData),
+    imageParams,
+  );
 
   final Uint8List response = await generateApi.generateBody(generateParams);
 

@@ -13,8 +13,10 @@ import 'byte_stream.dart';
 ///     //=> "foo=bar&baz=bang"
 String mapToQuery(Map<String, String> map, {required Encoding encoding}) =>
     map.entries
-        .map((e) => '${Uri.encodeQueryComponent(e.key, encoding: encoding)}'
-            '=${Uri.encodeQueryComponent(e.value, encoding: encoding)}')
+        .map(
+          (e) => '${Uri.encodeQueryComponent(e.key, encoding: encoding)}'
+              '=${Uri.encodeQueryComponent(e.value, encoding: encoding)}',
+        )
         .join('&');
 
 /// Returns the [Encoding] that corresponds to [charset].
@@ -54,7 +56,11 @@ ByteStream toByteStream(Stream<List<int>> stream) {
 /// The return value, also a single-subscription [Stream] should be used in
 /// place of [stream] after calling this method.
 Stream<T> onDone<T>(Stream<T> stream, void Function() onDone) =>
-    stream.transform(StreamTransformer.fromHandlers(handleDone: (sink) {
-      sink.close();
-      onDone();
-    }));
+    stream.transform(
+      StreamTransformer.fromHandlers(
+        handleDone: (sink) {
+          sink.close();
+          onDone();
+        },
+      ),
+    );

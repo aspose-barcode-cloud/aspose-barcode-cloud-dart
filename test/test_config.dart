@@ -16,12 +16,14 @@ class TestConfig {
 
   static String generateRandomString(int len) {
     final r = Random();
-    return String.fromCharCodes(List.generate(
+    return String.fromCharCodes(
+      List.generate(
         len,
         (index) =>
             r.nextInt(26) // 26 letters
             +
-            97 // started from 'a'
-        ));
+            97, // started from 'a'
+      ),
+    );
   }
 }

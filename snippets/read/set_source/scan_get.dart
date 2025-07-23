@@ -27,7 +27,8 @@ Future<void> main() async {
   if (result.barcodes.isNotEmpty) {
     final barcode = result.barcodes[0];
     print(
-        "File '$barcodeImageUrl' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}");
+      "File '$barcodeImageUrl' recognized, results: value: '${barcode.barcodeValue}', type: ${barcode.type}",
+    );
   } else {
     print("File '$barcodeImageUrl' recognized, but no barcodes found.");
   }

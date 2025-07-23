@@ -20,9 +20,8 @@ Future<void> main() async {
   final scanApi = ScanApi(ApiClient(config));
 
   final fileName = File(
-          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr.png")
-      .absolute
-      .path;
+    "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr.png",
+  ).absolute.path;
   final fileBytes = File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 
@@ -30,5 +29,6 @@ Future<void> main() async {
   final result = await scanApi.scanBase64(scanBase64Request);
 
   print(
-      "File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'");
+    "File '$fileName' recognized, result: '${result.barcodes[0].barcodeValue}'",
+  );
 }

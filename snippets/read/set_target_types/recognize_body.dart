@@ -21,19 +21,19 @@ Future<void> main() async {
   final recognizeApi = RecognizeApi(ApiClient(config));
 
   final fileName = File(
-          "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr_and_code128.png")
-      .absolute
-      .path;
+    "${Directory.current.path}${Platform.pathSeparator}test_data${Platform.pathSeparator}qr_and_code128.png",
+  ).absolute.path;
   final fileBytes = File(fileName).readAsBytesSync();
   final imageBase64 = base64Encode(fileBytes);
 
-  final recognizeBase64Request = RecognizeBase64Request(
-    [DecodeBarcodeType.QR, DecodeBarcodeType.Code128],
-    imageBase64,
-  );
+  final recognizeBase64Request = RecognizeBase64Request([
+    DecodeBarcodeType.QR,
+    DecodeBarcodeType.Code128,
+  ], imageBase64);
 
-  final BarcodeResponseList result =
-      await recognizeApi.recognizeBase64(recognizeBase64Request);
+  final BarcodeResponseList result = await recognizeApi.recognizeBase64(
+    recognizeBase64Request,
+  );
 
   print("File '$fileName' recognized, results: ");
   for (final barcode in result.barcodes) {

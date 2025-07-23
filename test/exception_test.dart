@@ -21,10 +21,12 @@ void main() {
       expect(e.toString(), equals("ApiException 400: Bad Request"));
       //Check details of the error message, replacing any carriage returns
       expect(
-          e.getDetails().replaceAll("\r", ""),
-          equals(
-              "errorInvalidInputData: Error: Field name: 'Data' errors: The Data field is required."
-              "Operation Failed. The input data is not valid."));
+        e.getDetails().replaceAll("\r", ""),
+        equals(
+          "errorInvalidInputData: Error: Field name: 'Data' errors: The Data field is required."
+          "Operation Failed. The input data is not valid.",
+        ),
+      );
     }
 
     // Ensure that an exception was indeed thrown

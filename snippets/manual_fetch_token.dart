@@ -33,6 +33,7 @@ void main() async {
     //print(token);
   } else {
     throw Exception(
-        "HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}");
+      "HTTP error occurred: ${response.statusCode} - ${response.reasonPhrase}",
+    );
   }
 }
