@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.25.11
+
+* November 2025 Release
+
 ## 4.25.10
 
 * October 2025 Release
