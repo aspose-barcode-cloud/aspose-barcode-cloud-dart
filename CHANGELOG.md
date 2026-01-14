@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.26.1
+
+* January 2026 Release
+
 ## 4.25.12
 
 * December 2025 Release
